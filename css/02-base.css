@@ -1,0 +1,71 @@
+/* ============================================================
+   BASE · reinicio, tipografía, barra superior y pie
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--alto-barra) + 16px); }
+body {
+    margin: 0; font-family: var(--f-main); font-size: var(--t-md); line-height: 1.6;
+    color: var(--tx); background: var(--bg-alt);
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--azul); text-underline-offset: 3px; }
+a:hover { color: var(--azul-profundo); }
+h1, h2, h3, h4 { color: var(--azul-profundo); line-height: 1.2; margin: 0 0 var(--s-3); }
+h1 { font-family: var(--f-display); font-size: var(--t-2xl); font-weight: 400; letter-spacing: -.01em; }
+h2 { font-size: var(--t-xl); font-weight: 800; }
+h3 { font-size: var(--t-lg); font-weight: 700; }
+p { margin: 0 0 var(--s-3); }
+code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; }
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; border-radius: 4px; }
+main:focus { outline: none; }
+.icono { width: 1.15em; height: 1.15em; flex: none; }
+
+/* ── Barra superior ── */
+.barra {
+    position: sticky; top: 0; z-index: 50; height: var(--alto-barra);
+    background: var(--blanco); border-bottom: 1px solid var(--linea);
+}
+.barra__int { max-width: var(--ancho); height: 100%; margin: 0 auto; padding: 0 var(--s-4); display: flex; align-items: center; gap: var(--s-4); }
+.firma { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; color: var(--azul-profundo); margin-right: auto; }
+.firma__logo { border-radius: 8px; }
+.firma__txt { display: flex; flex-direction: column; line-height: 1.15; }
+.firma__txt b { font-weight: 800; font-size: 1rem; }
+.firma__txt small { font-size: .7rem; color: var(--tx-suave); }
+.nav { display: flex; gap: 2px; }
+.nav a {
+    padding: 8px 12px; border-radius: var(--r-pill); text-decoration: none;
+    font-size: var(--t-sm); font-weight: 600; color: var(--tx-suave); white-space: nowrap;
+}
+.nav a:hover { background: var(--azul-tinte); color: var(--azul-profundo); }
+.nav a[aria-current="page"] { background: var(--azul-profundo); color: var(--blanco); }
+.btn-icono { display: none; border: 1px solid var(--linea); background: var(--blanco); width: 42px; height: 42px; border-radius: var(--r-sm); color: var(--azul-profundo); cursor: pointer; align-items: center; justify-content: center; }
+.btn-icono .icono { width: 22px; height: 22px; }
+
+@media (max-width: 960px) {
+    .btn-icono { display: inline-flex; }
+    .nav {
+        display: none; position: absolute; top: var(--alto-barra); left: 0; right: 0;
+        flex-direction: column; padding: var(--s-3) var(--s-4) var(--s-4);
+        background: var(--blanco); border-bottom: 1px solid var(--linea); box-shadow: var(--sombra);
+    }
+    .nav.abierta { display: flex; }
+    .nav a { padding: 12px 14px; border-radius: var(--r-sm); }
+}
+
+/* ── Pie ── */
+.pie { margin-top: var(--s-6); background: var(--azul-profundo); color: #D7E1F0; }
+.pie__int { max-width: var(--ancho); margin: 0 auto; padding: var(--s-5) var(--s-4); display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--s-5); }
+.pie__autor { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-4); }
+.pie__autor img { border-radius: 10px; background: var(--blanco); padding: 3px; }
+.pie__autor b { display: block; color: var(--blanco); font-size: 1.05rem; }
+.pie__autor span { font-size: var(--t-sm); }
+.pie__insta { display: flex; gap: var(--s-3); align-items: flex-start; color: var(--amarillo); text-decoration: none; }
+.pie__insta .icono { width: 26px; height: 26px; margin-top: 2px; }
+.pie__insta b { display: block; font-size: var(--t-sm); }
+.pie__insta small { color: #B9C8E0; font-size: var(--t-xs); }
+.pie__insta:hover { text-decoration: underline; }
+.pie__nota p { font-size: var(--t-xs); line-height: 1.55; margin-bottom: var(--s-2); color: #B9C8E0; }
+.pie__copy { color: var(--blanco) !important; font-weight: 600; padding-top: var(--s-2); border-top: 1px solid rgba(255,255,255,.18); }
+@media (max-width: 760px) { .pie__int { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }

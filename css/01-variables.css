@@ -1,0 +1,84 @@
+/* ============================================================
+   FARMACOLOGÍA — Tokens de diseño
+   Familia visual de los recursos de soy Andrés Arango
+   (OVA de Arritmias, JULIA): misma paleta, misma escala de
+   espaciado, sombras teñidas de azul y radios amplios.
+
+   UN COLOR, UN TRABAJO
+   Azul profundo  → estructura: navegación, títulos, bloques clave.
+   Azul           → interacción: enlaces, botones, foco.
+   Amarillo       → acento: marca de "lo importante", nunca texto
+                    sobre blanco (no alcanza contraste).
+   Blanco         → la mayor parte de la superficie.
+   Estados        → escala propia, SIEMPRE acompañada de texto
+                    y de un glifo (no dependen sólo del color).
+   ============================================================ */
+
+:root {
+    /* Paleta principal */
+    --azul-profundo: #092755;
+    --azul:          #0A3E7C;
+    --amarillo:      #FBD785;
+    --blanco:        #FFFFFF;
+
+    /* Derivados */
+    --azul-tinte:     #EEF3FA;      /* fondo de selección / hover */
+    --azul-linea:     #D5E0EF;
+    --amarillo-tinte: #FEF6E2;      /* fondo de notas pedagógicas */
+    --amarillo-borde: #F1D08A;
+
+    /* Texto y superficies */
+    --tx:        #1F2A3A;
+    --tx-suave:  #5B6778;
+    --tx-tenue:  #8591A3;
+    --bg:        #FFFFFF;
+    --bg-alt:    #F6F8FB;
+    --linea:     #E3E8EF;
+
+    /* Estados de estudio (ver componente .estado) */
+    --st-pendiente:  #8591A3;
+    --st-estudio:    #0A3E7C;
+    --st-practicado: #9A6A12;
+    --st-dominado:   #3F7A52;
+
+    /* Retroalimentación */
+    --ok:        #2F6B45;
+    --ok-fondo:  #E7F2EA;
+    --err:       #9D2A1F;
+    --err-fondo: #FAE9E6;
+
+    /* Tipografía */
+    --f-main:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --f-display: 'Archivo Black', 'Inter', 'Segoe UI', sans-serif;
+
+    --t-xs:  .78rem;
+    --t-sm:  .875rem;
+    --t-md:  1rem;
+    --t-lg:  1.15rem;
+    --t-xl:  1.45rem;
+    --t-2xl: clamp(1.7rem, 3.2vw, 2.3rem);
+
+    /* Espaciado — escala 8 px (idéntica al OVA) */
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 20px;
+    --s-5: 30px;
+    --s-6: 48px;
+
+    /* Forma */
+    --r-lg: 20px;
+    --r-md: 14px;
+    --r-sm: 10px;
+    --r-pill: 999px;
+    --sombra:    0 10px 30px rgba(9, 39, 85, .07);
+    --sombra-sm: 0 2px 6px rgba(9, 39, 85, .06);
+
+    --ancho: 1120px;
+    --alto-barra: 64px;
+    --t-anim: .18s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root { --t-anim: 0s; }
+}

@@ -1,0 +1,115 @@
+/* ============================================================
+   COMPONENTES · botones, chips, paneles, flashcards, quiz,
+   barra de progreso, formularios
+   ============================================================ */
+
+/* ── Botones ── */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 20px; border: 2px solid var(--azul-profundo); border-radius: var(--r-pill);
+    background: var(--azul-profundo); color: var(--blanco); font: inherit; font-weight: 700; font-size: var(--t-sm);
+    text-decoration: none; cursor: pointer; transition: background var(--t-anim), transform var(--t-anim);
+}
+.btn:hover { background: var(--azul); border-color: var(--azul); color: var(--blanco); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn--sec { background: var(--blanco); color: var(--azul-profundo); border-color: var(--azul-linea); }
+.btn--sec:hover { background: var(--azul-tinte); color: var(--azul-profundo); border-color: var(--azul); }
+.btn--amarillo { background: var(--amarillo); border-color: var(--amarillo); color: var(--azul-profundo); }
+.btn--amarillo:hover { background: #FFE3A3; border-color: #FFE3A3; color: var(--azul-profundo); }
+.btn--fantasma { background: transparent; border-color: rgba(255,255,255,.55); color: var(--blanco); }
+.btn--fantasma:hover { background: rgba(255,255,255,.12); border-color: var(--blanco); color: var(--blanco); }
+.btn--chico { padding: 7px 14px; font-size: var(--t-xs); }
+.btn--sabe.btn--on, .btn--sabe:hover { background: var(--st-dominado); border-color: var(--st-dominado); color: var(--blanco); }
+.btn--rep.btn--on { background: var(--amarillo-tinte); border-color: var(--amarillo-borde); color: #6B4A06; }
+.btn--rep { background: var(--blanco); color: #6B4A06; border-color: var(--amarillo-borde); }
+.btn--rep:hover { background: var(--amarillo-tinte); color: #6B4A06; border-color: var(--amarillo-borde); }
+.fila-botones { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-4); }
+
+/* ── Chips ── */
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-bottom: var(--s-4); }
+.chips--off { opacity: .4; pointer-events: none; }
+.chip {
+    display: inline-flex; align-items: center; padding: 6px 14px; border-radius: var(--r-pill);
+    border: 1.5px solid var(--azul-linea); background: var(--blanco); color: var(--azul-profundo);
+    font: inherit; font-size: var(--t-xs); font-weight: 600; cursor: pointer;
+}
+.chip:hover { background: var(--azul-tinte); }
+.chip[aria-pressed="true"] { background: var(--azul-profundo); border-color: var(--azul-profundo); color: var(--blanco); }
+.chip--fijo { cursor: default; background: var(--azul-tinte); border-color: transparent; }
+.chip--fijo:hover { background: var(--azul-tinte); }
+.chip--amarillo { background: var(--amarillo-tinte); border-color: var(--amarillo-borde); color: #6B4A06; cursor: default; }
+
+/* ── Paneles ── */
+.panel { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--r-lg); padding: var(--s-5); box-shadow: var(--sombra-sm); }
+.panel__tit { font-size: var(--t-lg); }
+.ayuda { color: var(--tx-suave); font-size: var(--t-sm); }
+.ayuda--centro { text-align: center; margin-top: var(--s-3); }
+.aviso { margin-top: var(--s-5); padding: var(--s-3) var(--s-4); background: var(--amarillo-tinte); border: 1px solid var(--amarillo-borde); border-radius: var(--r-md); font-size: var(--t-sm); color: #5C4308; }
+.vacio { text-align: center; padding: var(--s-6) var(--s-4); }
+
+/* ── Formularios ── */
+.campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--s-4); font-size: var(--t-sm); font-weight: 600; color: var(--azul-profundo); }
+.campo select, .campo input, .buscador input {
+    font: inherit; font-weight: 500; color: var(--tx); padding: 11px 14px;
+    border: 1.5px solid var(--azul-linea); border-radius: var(--r-sm); background: var(--blanco); width: 100%;
+}
+.campo select:focus, .campo input:focus, .buscador input:focus { outline: 3px solid rgba(10,62,124,.25); border-color: var(--azul); }
+.campo__inp { display: flex; align-items: center; gap: var(--s-2); }
+.campo__inp em { font-style: normal; font-weight: 600; color: var(--tx-suave); white-space: nowrap; min-width: 4.5em; }
+.check { display: flex; gap: var(--s-2); align-items: center; font-size: var(--t-sm); margin-bottom: var(--s-4); cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--azul-profundo); }
+
+/* ── Barra de progreso ── */
+.barra-prog { height: 8px; background: var(--azul-tinte); border-radius: var(--r-pill); overflow: hidden; }
+.barra-prog i { display: block; height: 100%; background: var(--azul); border-radius: var(--r-pill); transition: width .3s; }
+
+/* ── Estado ── */
+.estado { font-size: var(--t-xs); font-weight: 700; color: var(--st-pendiente); display: inline-flex; gap: 4px; align-items: center; }
+.estado--ok { color: var(--st-dominado); }
+
+/* ── Flashcards ── */
+.fc__top { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); margin-bottom: var(--s-2); font-size: var(--t-sm); color: var(--tx-suave); }
+.fc .barra-prog, .quiz .barra-prog { margin-bottom: var(--s-4); }
+.fc__carta {
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: var(--s-3);
+    width: 100%; min-height: 280px; padding: var(--s-5); cursor: pointer; font: inherit; color: var(--blanco);
+    background: linear-gradient(160deg, var(--azul-profundo), var(--azul)); border: 0; border-radius: var(--r-lg); box-shadow: var(--sombra);
+}
+.fc__carta--resp { background: var(--blanco); color: var(--tx); border: 2px solid var(--azul); }
+.fc__lado { font-size: var(--t-xs); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--amarillo); }
+.fc__carta--resp .fc__lado { color: var(--azul); }
+.fc__txt { font-size: 1.3rem; font-weight: 600; line-height: 1.4; }
+.fc__pista { font-size: var(--t-xs); opacity: .75; }
+.fc__acciones { display: flex; flex-wrap: wrap; gap: var(--s-2); justify-content: center; margin-top: var(--s-4); }
+
+/* ── Quiz ── */
+.quiz__tipo { font-size: var(--t-xs); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--azul); margin-bottom: var(--s-2); }
+.quiz__texto { font-size: 1.3rem; font-weight: 700; margin-bottom: var(--s-4); }
+.opciones { display: grid; gap: var(--s-3); }
+.op {
+    display: flex; gap: var(--s-3); align-items: flex-start; text-align: left; width: 100%; padding: 14px 16px;
+    background: var(--blanco); border: 2px solid var(--azul-linea); border-radius: var(--r-md);
+    font: inherit; color: var(--tx); cursor: pointer; transition: border-color var(--t-anim), background var(--t-anim);
+}
+.op b { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--azul-tinte); color: var(--azul-profundo); font-size: var(--t-sm); text-transform: uppercase; }
+.op:hover:not(:disabled) { border-color: var(--azul); background: var(--azul-tinte); }
+.op:disabled { cursor: default; }
+.op--ok { border-color: var(--ok); background: var(--ok-fondo); }
+.op--ok b { background: var(--ok); color: var(--blanco); }
+.op--mal { border-color: var(--err); background: var(--err-fondo); }
+.op--mal b { background: var(--err); color: var(--blanco); }
+.feedback { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-radius: var(--r-md); font-size: var(--t-sm); }
+.feedback--ok { background: var(--ok-fondo); color: var(--ok); }
+.feedback--mal { background: var(--err-fondo); color: var(--err); }
+.feedback a { color: inherit; font-weight: 700; }
+.resultado { text-align: center; }
+.resultado__big { font-family: var(--f-display); font-size: 4rem; color: var(--azul-profundo); line-height: 1; margin: var(--s-3) 0; }
+.resultado__big small { font-size: 1.6rem; color: var(--tx-tenue); }
+.resultado__num { font-size: var(--t-lg); }
+.resultado .fila-botones { justify-content: center; }
+.resultado h3 { text-align: left; margin-top: var(--s-5); }
+.falladas { text-align: left; padding-left: 1.2em; font-size: var(--t-sm); }
+.falladas li { margin-bottom: var(--s-3); }
+.ok-txt { color: var(--ok); font-weight: 600; }
+.mal-txt { color: var(--err); font-weight: 600; }

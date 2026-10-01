@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmacología · soy Andrés Arango</title>
+<meta name="description" content="Tutorías y material de estudio de Farmacología en Enfermería. Elaborado por soy Andrés Arango.">
+<meta name="author" content="Andrés Arango">
+<meta name="robots" content="noindex, nofollow, noimageindex">
+<link rel="icon" type="image/png" href="assets/branding/logo-soy-andres-arango.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap">
+
+<link rel="stylesheet" href="css/01-variables.css">
+<link rel="stylesheet" href="css/02-base.css">
+<link rel="stylesheet" href="css/03-componentes.css">
+<link rel="stylesheet" href="css/04-vistas.css">
+</head>
+
+<body>
+
+<header class="barra">
+    <div class="barra__int">
+        <a class="firma" href="#/inicio" aria-label="Farmacología, inicio. Un recurso de soy Andrés Arango">
+            <img class="firma__logo" src="assets/branding/logo-soy-andres-arango.png" alt="" width="34" height="34">
+            <span class="firma__txt"><b>Farmacología</b><small>Un recurso de soy Andrés Arango</small></span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Principal">
+            <a href="#/inicio"      data-sec="inicio">Inicio</a>
+            <a href="#/sesiones"    data-sec="sesiones">Sesiones</a>
+            <a href="#/flashcards"  data-sec="flashcards">Flashcards</a>
+            <a href="#/quiz"        data-sec="quiz">Quiz</a>
+            <a href="#/calculadora" data-sec="calculadora">Calculadora</a>
+            <a href="#/examen"      data-sec="examen">Datos de examen</a>
+            <a href="#/progreso"    data-sec="progreso">Mi progreso</a>
+        </nav>
+
+        <button class="btn-icono barra__menu" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú" data-accion="menu">
+            <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+    </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer class="pie">
+    <div class="pie__int">
+        <div>
+            <div class="pie__autor">
+                <img src="assets/branding/logo-soy-andres-arango.png" alt="Logo soy Andrés Arango" width="48" height="48">
+                <div>
+                    <b>Elaborado por soy Andrés Arango</b>
+                    <span>Tutorías y material de estudio</span>
+                </div>
+            </div>
+            <a class="pie__insta" href="https://www.instagram.com/soyandresarango/" target="_blank" rel="noopener">
+                <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>
+                <span><b>Sígueme en Instagram · @soyandresarango</b><small>Para estar al tanto de temas de salud, estudio y enfermería</small></span>
+            </a>
+        </div>
+        <div class="pie__nota">
+            <p>Resumen de estudio elaborado a partir de las clases. Es un recurso independiente: no es una plataforma oficial de la FUCS ni reemplaza las clases, la bibliografía, los protocolos institucionales ni las evaluaciones del curso.</p>
+            <p>Las dosis y fórmulas son material de estudio. Antes de aplicarlas en la práctica clínica, verifícalas con la guía o el protocolo de tu institución.</p>
+            <p>Tu progreso se guarda sólo en este navegador.</p>
+            <p class="pie__copy">© 2026 Andrés Arango · soy Andrés Arango. Todos los derechos reservados. Queda prohibida la reproducción o distribución sin autorización del autor.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Orden de carga: datos → núcleo → componentes → vistas → arranque.
+     Scripts clásicos (no módulos) para que funcione abriendo index.html con doble clic. -->
+<script src="data/contenido.js"></script>
+
+<script src="js/core/00-util.js"></script>
+<script src="js/core/01-markdown.js"></script>
+<script src="js/core/02-datos.js"></script>
+<script src="js/core/03-estado.js"></script>
+<script src="js/core/04-router.js"></script>
+
+<script src="js/components/alcance.js"></script>
+<script src="js/components/flashcards.js"></script>
+<script src="js/components/quiz.js"></script>
+<script src="js/components/formulas.js"></script>
+
+<script src="js/modules/inicio.js"></script>
+<script src="js/modules/sesiones.js"></script>
+<script src="js/modules/farmaco.js"></script>
+<script src="js/modules/practica.js"></script>
+<script src="js/modules/calculadora.js"></script>
+<script src="js/modules/examen.js"></script>
+<script src="js/modules/progreso.js"></script>
+
+<script src="js/99-arranque.js"></script>
+</body>
+</html>
