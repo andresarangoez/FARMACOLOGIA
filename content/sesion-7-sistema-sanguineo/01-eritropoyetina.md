@@ -46,7 +46,7 @@ Las **células intersticiales peritubulares** (rodean los túbulos renales) prod
 - **Vía:** subcutánea (preferida — libera más prolongado, menos efectos secundarios) o intravenosa
 - **Pediatría:** 50 UI/kg, 3 veces/semana, ajustando según Hb
 
-> ⭐ **DATO DE EXAMEN:** Se inicia EPO con Hb < 10 g/L y se SUSPENDE cuando Hb > 12 g/L (riesgo de efectos secundarios importantes).
+> ⭐ **DATO DE EXAMEN:** Se inicia EPO con Hb < 10 g/dL y se SUSPENDE cuando Hb > 12 g/dL (riesgo de efectos secundarios importantes).
 
 Efecto terapéutico inicia ~24 horas post-administración. Control de hemograma generalmente semanal.
 
@@ -82,10 +82,10 @@ Efecto terapéutico inicia ~24 horas post-administración. Control de hemograma 
 ## Preguntas de quiz sugeridas
 
 1. **(Opción múltiple)** ¿Con qué nivel de hemoglobina se suspende la eritropoyetina?
-   - a) 8 g/L
-   - b) 10 g/L
-   - c) **12 g/L** ✓
-   - d) 14 g/L
+   - a) 8 g/dL
+   - b) 10 g/dL
+   - c) **12 g/dL** ✓
+   - d) 14 g/dL
 
 2. **(Opción múltiple)** ¿Cuál es el sensor que detecta la hipoxia y estimula la producción renal de EPO?
    - a) JAK2
@@ -106,5 +106,5 @@ Efecto terapéutico inicia ~24 horas post-administración. Control de hemograma 
 - **Q:** ¿Qué tipo de molécula es la EPO? → **A:** Hormona glicoproteica
 - **Q:** ¿Dónde se produce fisiológicamente la EPO? → **A:** Riñón (células intersticiales peritubulares)
 - **Q:** ¿Receptores a los que se liga la EPO en médula ósea? → **A:** JAK2 y STAT5
-- **Q:** Rango de Hb para iniciar y suspender EPO → **A:** Inicia <10 g/L, suspende >12 g/L
+- **Q:** Rango de Hb para iniciar y suspender EPO → **A:** Inicia <10 g/dL, suspende >12 g/dL
 - **Q:** ¿Qué laboratorios se piden para evaluar reservas de hierro antes de EPO? → **A:** Ferritina y transferrina

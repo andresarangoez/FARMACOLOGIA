@@ -27,8 +27,8 @@ La micobacteria ingresa por vía respiratoria (aerosoles/microgotas). Los macró
 | Fármaco | Mecanismo de acción | Nota |
 |---|---|---|
 | **Rifampicina** | Inhibe el **ARN polimerasa** | No permite que los bacilos crezcan/repliquen, intra y extracelular |
-| **Isoniazida** | Inhibe la síntesis de **ÁCIDOS MICÓLICOS** | Estos estructuran la pared bacteriana — elimina vacilos en crecimiento |
-| **Pirazinamida** | Actúa mejor en ambiente **ÁCIDO**, inhibe metabolismo energético | Destruye vacilos LATENTES (no se alimentan, no crecen) |
+| **Isoniazida** | Inhibe la síntesis de **ÁCIDOS MICÓLICOS** | Estos estructuran la pared bacteriana — elimina bacilos en crecimiento |
+| **Pirazinamida** | Actúa mejor en ambiente **ÁCIDO**, inhibe metabolismo energético | Destruye bacilos LATENTES (no se alimentan, no crecen) |
 | **Etambutol** | Inhibe la síntesis de la **pared bacteriana** | Evita resistencia bacteriana |
 
 ## Efectos secundarios por fármaco
