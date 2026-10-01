@@ -14,7 +14,8 @@ FA.vistas.inicio = {
             '<h1>Farmacología</h1>' +
             '<p class="hero__lead">Cuidado crítico neo-pediátrico · Sesiones ' + u.esc(lista) + '. Lee, practica con flashcards, pruébate con quizzes y calcula dosis paso a paso.</p>' +
             '<div class="fila-botones">' +
-            '<a class="btn btn--amarillo" href="#/sesiones">Empezar a estudiar ' + u.icono('flecha') + '</a>' +
+            '<a class="btn btn--amarillo" href="#/estudio">' + u.icono('reloj') + ' Modo estudio</a>' +
+            '<a class="btn btn--fantasma" href="#/sesiones">Ver sesiones</a>' +
             '<a class="btn btn--fantasma" href="#/quiz">Hacer un quiz</a>' +
             '</div>' +
             '<dl class="cifras">' +
@@ -35,9 +36,10 @@ FA.vistas.inicio = {
             '<p class="ayuda">Aquí se irán sumando nuevas sesiones para complementar el material.</p></section>' +
 
             '<section class="seccion-inicio"><h2>Herramientas</h2><div class="herramientas">' +
+            '<a class="herr" href="#/estudio">' + u.icono('reloj') + '<b>Modo estudio</b><span>¿Cuánto tiempo tienes hoy? Sesión con temporizador (pomodoro).</span></a>' +
             '<a class="herr" href="#/flashcards">' + u.icono('tarjeta') + '<b>Flashcards</b><span>Voltea tarjetas y marca lo que ya sabes.</span></a>' +
             '<a class="herr" href="#/quiz">' + u.icono('quiz') + '<b>Quiz</b><span>Por fármaco, por sesión o mezclando varias.</span></a>' +
-            '<a class="herr" href="#/calculadora">' + u.icono('calc') + '<b>Calculadora</b><span>8 fórmulas con el procedimiento paso a paso.</span></a>' +
+            '<a class="herr" href="#/calculadora">' + u.icono('calc') + '<b>Calculadora</b><span>' + FA.formulas.lista.length + ' fórmulas con el procedimiento paso a paso.</span></a>' +
             '<a class="herr herr--ex" href="#/examen">' + u.icono('estrella') + '<b>Datos de examen</b><span>' + T.examen + ' puntos que la docente marcó para el parcial.</span></a>' +
             '</div></section></div>';
     },

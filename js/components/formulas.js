@@ -31,12 +31,17 @@ FA.formulas = (function () {
                 if (p <= 10) { total = p * 100; t = 'Peso ≤ 10 kg'; f = 'total = peso × 100'; s = n(p) + ' × 100'; }
                 else if (p <= 20) { total = 1000 + (p - 10) * 50; t = 'Peso entre 10 y 20 kg'; f = 'total = 1000 + (peso − 10) × 50'; s = '1000 + (' + n(p) + ' − 10) × 50'; }
                 else { total = 1500 + (p - 20) * 20; t = 'Peso > 20 kg'; f = 'total = 1000 + 500 + (peso − 20) × 20'; s = '1500 + (' + n(p) + ' − 20) × 20'; }
+                var a = Math.min(p, 10), b = Math.max(0, Math.min(p, 20) - 10), c = Math.max(0, p - 20);
+                var rapido = a * 4 + b * 2 + c;
                 return {
                     pasos: [
                         { t: 'Paso 1 · Líquidos en 24 horas (' + t + ')', f: f, s: s, r: n(total) + ' mL/24 h' },
-                        { t: 'Paso 2 · Pasar a mL por hora', f: 'mL/hora = total ÷ 24', s: n(total) + ' ÷ 24', r: n(total / 24) + ' mL/h' }
+                        { t: 'Paso 2 · Pasar a mL por hora', f: 'mL/hora = total ÷ 24', s: n(total) + ' ÷ 24', r: n(total / 24) + ' mL/h' },
+                        { t: 'Paso 3 · Regla abreviada de cc/hora (4-2-1)', f: 'cc/hora = 10 kg × 4 + siguientes 10 kg × 2 + resto × 1',
+                          s: n(a) + ' × 4 + ' + n(b) + ' × 2 + ' + n(c) + ' × 1', r: n(rapido) + ' cc/h',
+                          n: 'La regla abreviada y el total ÷ 24 pueden diferir ligeramente.' }
                     ],
-                    resultados: [{ l: 'Mantenimiento', v: n(total), u: 'mL/24 h' }, { l: 'Velocidad', v: n(total / 24), u: 'mL/h' }]
+                    resultados: [{ l: 'Mantenimiento', v: n(total), u: 'mL/24 h' }, { l: 'Velocidad', v: n(total / 24), u: 'mL/h' }, { l: 'Regla abreviada', v: n(rapido), u: 'cc/h' }]
                 };
             }
         },
@@ -274,6 +279,70 @@ FA.formulas = (function () {
                         { t: 'Paso 2 · Regla de tres con la concentración de la mezcla', f: 'cc/hora = (mg/hora × volumen de la mezcla) ÷ mg en la mezcla', s: '(' + n(mgh, 3) + ' × ' + n(v.volmez) + ') ÷ ' + n(v.mg), r: n(cch) + ' cc/hora' }
                     ],
                     resultados: [{ l: 'Velocidad de infusión', v: n(cch), u: 'cc/hora' }, { l: 'Fármaco por hora', v: n(mgh, 3), u: 'mg/hora' }]
+                };
+            }
+        },
+
+        /* 9 ─────────────────────────────────────────── */
+        {
+            id: 'reposicion-potasio', nombre: 'Reposición de potasio', desc: 'Dosis EV, concentración y vía de administración',
+            campos: [
+                { id: 'modo', label: 'Situación', tipo: 'select', opciones: [
+                    { v: 'moderada', t: 'Hipokalemia moderada (2,6-3,0): 0,3 mEq/kg' },
+                    { v: 'severa', t: 'Hipokalemia severa (< 2,5): 0,5 mEq/kg' },
+                    { v: 'mant', t: 'Requerimiento diario: 2 mEq/kg/día' }] },
+                { id: 'peso', label: 'Peso', unidad: 'kg' },
+                { id: 'vol', label: 'Volumen de dilución', unidad: 'mL', si: function (v) { return v.modo !== 'mant'; } }
+            ],
+            ejemplo: { modo: 'severa', peso: 15, vol: 100 },
+            nota: 'Límites: vía periférica ≤ 40 mEq/L · vía central hasta 80 mEq/L · velocidad máxima 0,5 mEq/kg/hora · infusión en no menos de 1 hora.',
+            calcular: function (v) {
+                if (!(v.peso > 0)) return { error: 'El campo «Peso» debe ser mayor que 0.' };
+                if (v.modo === 'mant') {
+                    var est = 2 * v.peso, max = 3 * v.peso;
+                    return {
+                        pasos: [
+                            { t: 'Paso 1 · Requerimiento estándar', f: 'mEq/día = 2 mEq/kg/día × peso', s: '2 × ' + n(v.peso), r: n(est) + ' mEq/día' },
+                            { t: 'Paso 2 · Máximo permitido', f: 'mEq/día = 3 mEq/kg/día × peso', s: '3 × ' + n(v.peso), r: n(max) + ' mEq/día' }
+                        ],
+                        resultados: [{ l: 'Requerimiento estándar', v: n(est), u: 'mEq/día' }, { l: 'Máximo', v: n(max), u: 'mEq/día' }]
+                    };
+                }
+                if (!(v.vol > 0)) return { error: 'El campo «Volumen de dilución» debe ser mayor que 0.' };
+                var k = v.modo === 'severa' ? 0.5 : 0.3;
+                var dosis = k * v.peso, conc = dosis / (v.vol / 1000);
+                var via = conc <= 40 ? 'Puede administrarse por vía periférica (≤ 40 mEq/L).'
+                    : conc <= 80 ? 'Supera el límite periférico: requiere vía central con monitorización estricta, o más dilución si va por vía periférica.'
+                    : 'Supera incluso el límite central (80 mEq/L): diluir en mayor volumen.';
+                var tMin = Math.max(1, dosis / (0.5 * v.peso));
+                return {
+                    pasos: [
+                        { t: 'Paso 1 · Dosis total', f: 'mEq = mEq/kg × peso', s: n(k) + ' × ' + n(v.peso), r: n(dosis) + ' mEq' },
+                        { t: 'Paso 2 · Concentración en el volumen de dilución', f: 'mEq/L = mEq ÷ (mL ÷ 1000)', s: n(dosis) + ' ÷ ' + n(v.vol / 1000, 3), r: n(conc) + ' mEq/L' },
+                        { t: 'Paso 3 · ¿Vía periférica o central?', f: 'Periférica ≤ 40 mEq/L · central hasta 80 mEq/L', s: n(conc) + ' mEq/L', r: via },
+                        { t: 'Paso 4 · Tiempo mínimo de infusión', f: 'No menos de 1 hora y máximo 0,5 mEq/kg/hora', s: n(dosis) + ' ÷ (0,5 × ' + n(v.peso) + ')', r: 'no menos de ' + n(tMin) + ' h' }
+                    ],
+                    resultados: [{ l: 'Dosis total', v: n(dosis), u: 'mEq' }, { l: 'Concentración', v: n(conc), u: 'mEq/L' }]
+                };
+            }
+        },
+
+        /* 10 ────────────────────────────────────────── */
+        {
+            id: 'reposicion-calcio', nombre: 'Reposición de calcio', desc: 'Dosis por kilo: rango y dosis máxima',
+            campos: [{ id: 'peso', label: 'Peso', unidad: 'kg' }],
+            ejemplo: { peso: 3.7 },
+            nota: 'Dosis: 100 a 200 mg/kg/dosis, máximo 4 dosis al día, o 500 mg/kg/dosis.',
+            calcular: function (v) {
+                if (!(v.peso > 0)) return { error: 'El campo «Peso» debe ser mayor que 0.' };
+                var mn = 100 * v.peso, mx = 200 * v.peso, tope = 500 * v.peso;
+                return {
+                    pasos: [
+                        { t: 'Paso 1 · Dosis mínima', f: 'mg = 100 mg/kg × peso', s: '100 × ' + n(v.peso), r: n(mn) + ' mg' },
+                        { t: 'Paso 2 · Dosis máxima del rango', f: 'mg = 200 mg/kg × peso', s: '200 × ' + n(v.peso), r: n(mx) + ' mg' },
+                        { t: 'Paso 3 · Dosis máxima única (500 mg/kg)', f: 'mg = 500 mg/kg × peso', s: '500 × ' + n(v.peso), r: n(tope) + ' mg', n: 'Máximo 4 dosis al día. Evaluar si realmente se necesita repetir dosis altas por el riesgo de hipercalcemia.' }
+                    ],
+                    resultados: [{ l: 'Rango por dosis', v: n(mn) + ' – ' + n(mx), u: 'mg' }, { l: 'Dosis máxima única', v: n(tope), u: 'mg' }]
                 };
             }
         }

@@ -16,12 +16,13 @@ FA.router = (function () {
         { re: /^\/flashcards(?:\/([^/]+))?$/,   vista: 'flashcards',  params: ['alcance'] },
         { re: /^\/quiz(?:\/([^/]+))?$/,         vista: 'quiz',        params: ['alcance'] },
         { re: /^\/calculadora(?:\/([\w-]+))?$/, vista: 'calculadora', params: ['id'] },
+        { re: /^\/estudio$/,                    vista: 'estudio' },
         { re: /^\/examen$/,                     vista: 'examen' },
         { re: /^\/progreso$/,                   vista: 'progreso' }
     ];
     var SECCION = { inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
                     flashcards: 'flashcards', quiz: 'quiz', calculadora: 'calculadora',
-                    examen: 'examen', progreso: 'progreso' };
+                    examen: 'examen', progreso: 'progreso', estudio: 'estudio' };
 
     function resolver() {
         var ruta = decodeURIComponent(location.hash.replace(/^#/, '').split('?')[0]);

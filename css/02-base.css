@@ -41,7 +41,7 @@ main:focus { outline: none; }
 .btn-icono { display: none; border: 1px solid var(--linea); background: var(--blanco); width: 42px; height: 42px; border-radius: var(--r-sm); color: var(--azul-profundo); cursor: pointer; align-items: center; justify-content: center; }
 .btn-icono .icono { width: 22px; height: 22px; }
 
-@media (max-width: 960px) {
+@media (max-width: 1120px) {
     .btn-icono { display: inline-flex; }
     .nav {
         display: none; position: absolute; top: var(--alto-barra); left: 0; right: 0;

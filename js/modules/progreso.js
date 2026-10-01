@@ -12,7 +12,8 @@ FA.vistas.progreso = {
         var resp = FA.datos.preguntas(FA.datos.farmacos).filter(function (q) { return FA.estado.pregunta(q.id); });
         var falladas = FA.estado.falladas().filter(function (id) { return FA.datos.preguntas(FA.datos.farmacos).some(function (q) { return q.id === id; }); }).length;
 
-        var debiles = FA.datos.farmacos.map(function (f) {
+        var minutos = FA.estado.sesiones().reduce(function (a, s) { return a + s.min; }, 0);
+        var debiles =FA.datos.farmacos.map(function (f) {
             var fail = 0, ok = 0;
             f.quiz.forEach(function (q) { var r = FA.estado.pregunta(q.id); if (r) { fail += r.fail; ok += r.ok; } });
             return { f: f, fail: fail, ok: ok };
@@ -29,7 +30,8 @@ FA.vistas.progreso = {
             '<div><dt>Temas estudiados</dt><dd>' + estudiados + '<small>/' + T.farmacos + '</small></dd></div>' +
             '<div><dt>Flashcards "La sé"</dt><dd>' + sabe + '<small>/' + T.cards + '</small></dd></div>' +
             '<div><dt>Preguntas respondidas</dt><dd>' + resp.length + '<small>/' + T.preguntas + '</small></dd></div>' +
-            '<div><dt>Falladas por repasar</dt><dd>' + falladas + '</dd></div></dl>' +
+            '<div><dt>Falladas por repasar</dt><dd>' + falladas + '</dd></div>' +
+            '<div><dt>Modo estudio</dt><dd>' + minutos + '<small> min · ' + FA.estado.sesiones().length + ' sesiones</small></dd></div></dl>' +
 
             '<section class="seccion-inicio"><h2>Por sesión</h2><div class="lista-sesiones">' + FA.datos.sesiones.map(FA.c.tarjetaSesion).join('') + '</div></section>' +
 

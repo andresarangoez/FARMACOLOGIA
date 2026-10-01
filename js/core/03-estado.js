@@ -38,6 +38,12 @@ FA.estado = (function () {
         },
         historial: function () { return E.historial; },
 
+        registrarSesion: function (min, tema) {
+            E.sesiones = (E.sesiones || []).concat([{ f: new Date().toISOString(), min: min, tema: tema }]).slice(-200);
+            guardar();
+        },
+        sesiones: function () { return E.sesiones || []; },
+
         todo: function () { return E; },
         reiniciar: function () { E = vacio(); guardar(); }
     };
