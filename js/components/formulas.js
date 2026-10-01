@@ -283,6 +283,30 @@ FA.formulas = (function () {
             }
         },
 
+        /* acetaminofén ───────────────────────────────── */
+        {
+            id: 'acetaminofen', nombre: 'Acetaminofén', desc: 'Dosis por kilo según fiebre o dolor, y volumen de jarabe',
+            campos: [
+                { id: 'motivo', label: 'Indicación', tipo: 'select', opciones: [
+                    { v: '10', t: 'Fiebre: 10 mg/kg' },
+                    { v: '15', t: 'Dolor: 15 mg/kg' }] },
+                { id: 'peso', label: 'Peso', unidad: 'kg' }
+            ],
+            ejemplo: { motivo: '10', peso: 12 },
+            nota: 'Jarabe de 150 mg en 5 cc (30 mg/cc). Dosis de referencia: 10-15 mg/kg/dosis.',
+            calcular: function (v) {
+                if (!(v.peso > 0)) return { error: 'El campo «Peso» debe ser mayor que 0.' };
+                var k = v.motivo === '15' ? 15 : 10, mg = k * v.peso, cc = mg / 30;
+                return {
+                    pasos: [
+                        { t: 'Paso 1 · Dosis en mg', f: 'mg = mg/kg × peso', s: n(k) + ' × ' + n(v.peso), r: n(mg) + ' mg' },
+                        { t: 'Paso 2 · Volumen de jarabe (150 mg en 5 cc = 30 mg/cc)', f: 'cc = mg ÷ 30', s: n(mg) + ' ÷ 30', r: n(cc) + ' cc' }
+                    ],
+                    resultados: [{ l: 'Dosis', v: n(mg), u: 'mg' }, { l: 'Jarabe 150 mg/5 cc', v: n(cc), u: 'cc' }]
+                };
+            }
+        },
+
         /* 9 ─────────────────────────────────────────── */
         {
             id: 'reposicion-potasio', nombre: 'Reposición de potasio', desc: 'Dosis EV, concentración y vía de administración',

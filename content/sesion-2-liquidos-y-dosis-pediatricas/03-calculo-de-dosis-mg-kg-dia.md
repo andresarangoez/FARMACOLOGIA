@@ -45,7 +45,10 @@ dificultad_quiz: media
 | 10 mg/kg | Indicación por **fiebre** |
 | 15 mg/kg | Indicación por **dolor** |
 
-> El apunte trae como dosis máxima "2 g por kilo de peso", dato que no puede ser correcto tal como está escrito (2 g/kg sería una dosis tóxica). Verifica el tope máximo con tu docente o con el protocolo institucional.
+**Ejemplo: paciente de 12 kg**
+
+1. **Fiebre (10 mg/kg):** 10 × 12 = **120 mg**. El jarabe tiene 150 mg en 5 cc (30 mg/cc): 120 ÷ 30 = **4 cc**.
+2. **Dolor (15 mg/kg):** 15 × 12 = **180 mg**. 180 ÷ 30 = **6 cc**.
 
 ## Preguntas de quiz sugeridas
 
@@ -91,6 +94,12 @@ dificultad_quiz: media
    - c) Ambos 10 mg/kg
    - d) Ambos 15 mg/kg
 
+8. **(Opción múltiple)** Paciente de 12 kg con fiebre. Acetaminofén a 10 mg/kg, jarabe de 150 mg/5 cc. ¿Cuántos cc se dan?
+   - a) 2 cc
+   - b) **4 cc** ✓
+   - c) 6 cc
+   - d) 12 cc
+
 ## Flashcards sugeridas
 
 - **Q:** Dosis total diaria → **A:** mg/kg/día × peso (kg)
@@ -100,3 +109,4 @@ dificultad_quiz: media
 - **Q:** Piperacilina 300 mg/kg/día en 17 kg → **A:** 5100 mg al día; 1700 mg cada 8 horas
 - **Q:** Linezolid 10 mg/kg/día en 37 kg → **A:** 370 mg al día; 123,3 mg cada 8 horas
 - **Q:** Acetaminofén: dosis y presentación → **A:** 10-15 mg/kg/dosis; jarabe 150 mg/5 cc (10 mg/kg fiebre, 15 mg/kg dolor)
+- **Q:** Acetaminofén en 12 kg con fiebre (jarabe 150 mg/5 cc) → **A:** 10 × 12 = 120 mg; 120 ÷ 30 mg/cc = 4 cc
