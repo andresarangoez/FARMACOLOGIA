@@ -18,11 +18,12 @@ FA.router = (function () {
         { re: /^\/calculadora(?:\/([\w-]+))?$/, vista: 'calculadora', params: ['id'] },
         { re: /^\/estudio$/,                    vista: 'estudio' },
         { re: /^\/examen$/,                     vista: 'examen' },
+        { re: /^\/examen\/([\w-]+)$/,           vista: 'recurso',     params: ['id'] },
         { re: /^\/progreso$/,                   vista: 'progreso' }
     ];
     var SECCION = { inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
                     flashcards: 'flashcards', quiz: 'quiz', calculadora: 'calculadora',
-                    examen: 'examen', progreso: 'progreso', estudio: 'estudio' };
+                    examen: 'examen', recurso: 'examen', progreso: 'progreso', estudio: 'estudio' };
 
     function resolver() {
         var ruta = decodeURIComponent(location.hash.replace(/^#/, '').split('?')[0]);

@@ -120,6 +120,28 @@ FA.datos = (function () {
         if (advertencias.length && window.console) console.warn('Contenido con advertencias:', advertencias);
     }
 
+    /* Recursos de "Datos de examen" con página propia (talleres, simulacros) */
+    var extras = [];
+    (window.FARMA_EXAMEN || []).forEach(function (r) {
+        var f = FA.md.frontmatter(r.md), meta = f.meta;
+        if (!meta.id) { advertencias.push('Recurso sin id: ' + r.ruta); return; }
+        var secs = [], act = { titulo: 'Introducción', lineas: [] };
+        function cerrar() { if (act.lineas.join('').trim()) secs.push(act); }
+        f.cuerpo.split('\n').forEach(function (l) {
+            var h = /^##\s+(.*)$/.exec(l);
+            if (h) { cerrar(); act = { titulo: h[1].trim(), lineas: [] }; } else act.lineas.push(l);
+        });
+        cerrar();
+        extras.push({
+            id: meta.id, nombre: meta.nombre || meta.id, descripcion: meta.descripcion || '',
+            orden: parseInt(meta.orden, 10) || 99,
+            secciones: secs.map(function (s) {
+                return { titulo: s.titulo, id: u.slug(s.titulo), html: FA.md.html('## ' + s.titulo + '\n' + s.lineas.join('\n')) };
+            })
+        });
+    });
+    extras.sort(function (a, b) { return a.orden - b.orden; });
+
     construir();
 
     function preguntas(lista) { return [].concat.apply([], lista.map(function (f) { return f.quiz; })); }
@@ -127,6 +149,8 @@ FA.datos = (function () {
 
     return {
         farmacos: farmacos, sesiones: sesiones, advertencias: advertencias,
+        extras: extras,
+        extra: function (id) { return extras.filter(function (x) { return x.id === id; })[0]; },
         farmaco: function (id) { return porId[id]; },
         sesion: function (n) { return sesiones.filter(function (s) { return s.n === +n; })[0]; },
         preguntas: preguntas, cards: cards,

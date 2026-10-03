@@ -198,3 +198,13 @@ hr { border: 0; border-top: 1px solid var(--linea); margin: var(--s-4) 0; }
 .bloque.hecho { opacity: .55; }
 .bloque.hecho b::before { content: "✓ "; color: var(--st-dominado); }
 @media (max-width: 860px) { .sesion-estudio { grid-template-columns: 1fr; } }
+
+/* ── Impresión (taller para copiar a mano o guardar en PDF) ── */
+@media print {
+    .barra, .pie, .migas, .indice, .paginado, .fila-botones, .btn { display: none !important; }
+    body { background: #fff; }
+    .pagina { max-width: none; padding: 0; }
+    .contenido { border: 0; box-shadow: none; padding: 0; }
+    .seccion { break-inside: avoid-page; }
+    blockquote.dato { background: #fff; border: 1px solid #999; }
+}

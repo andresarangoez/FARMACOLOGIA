@@ -21,7 +21,7 @@ El progreso se guarda en `localStorage` del navegador (clave `farmacologia-v1`).
 | Flashcards | Por fármaco, sesión, varias sesiones o todo. Voltear, "La sé" / "Repasar", filtrar lo pendiente |
 | Quiz | Opción múltiple y V/F, opciones mezcladas, puntaje final, repaso de lo fallado |
 | Calculadora | 11 fórmulas con procedimiento **paso a paso** y ejemplo precargado |
-| Datos de examen | Todos los ⭐ reunidos por sesión y fármaco |
+| Datos de examen | Todos los ⭐ reunidos por sesión y fármaco, más talleres resueltos con página propia (`content/examen/`) |
 | Mi progreso | Temas estudiados, flashcards, preguntas falladas, temas más débiles, historial |
 
 ## Cómo agregar una sesión nueva
