@@ -1,7 +1,7 @@
-# Farmacología · soy Andrés Arango
+# Farmacología · Soy Andrés Arango
 
 Tutorías y material de estudio de Farmacología en Enfermería (cuidado crítico neo-pediátrico).
-**Elaborado por soy Andrés Arango.** © 2026 Andrés Arango. Todos los derechos reservados.
+**Elaborado por Soy Andrés Arango.** © 2026 Andrés Arango. Todos los derechos reservados.
 No es una plataforma oficial de la FUCS.
 
 Misma familia visual y de marca que `PROYECTO CENTRO DE ESTUDIO` (paleta azul profundo / azul / amarillo, Inter + Archivo Black, logo real).
@@ -47,7 +47,7 @@ css/                     01-variables · 02-base · 03-componentes · 04-vistas
 js/core/                 util · markdown · datos (modelo) · estado (progreso) · router
 js/components/           alcance · flashcards · quiz · formulas (las 8 de la calculadora)
 js/modules/              inicio · sesiones · farmaco · practica · calculadora · examen · progreso
-assets/branding/         logo real de soy Andrés Arango (sin modificar)
+assets/branding/         logo real de Soy Andrés Arango (sin modificar)
 tools/                   construir.ps1 (empaquetado) · servir.ps1 (servidor local opcional)
 docs/                    brief original y fórmulas fuente
 ```

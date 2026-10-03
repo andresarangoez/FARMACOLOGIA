@@ -20,7 +20,7 @@ dificultad_quiz: alta
 2. Bloquea la **transpeptidación**
 3. No se forma la pared celular
 
-> ⭐ **DATO DE EXAMEN — Solo gran positivos:** la vancomicina es una molécula muy grande y NO atraviesa la membrana externa de los gran negativos. Por eso solo es útil en **GRAN POSITIVOS**.
+> ⭐ **DATO DE EXAMEN — Solo gram positivos:** la vancomicina es una molécula muy grande y NO atraviesa la membrana externa de los gram negativos. Por eso solo es útil en **GRAM POSITIVOS**.
 
 ### Indicaciones
 
@@ -44,10 +44,10 @@ Mismo mecanismo que vancomicina. Diferencias:
 
 ## Preguntas de quiz sugeridas
 
-1. **(Opción múltiple)** ¿Por qué la vancomicina solo es útil en bacterias gran positivas?
+1. **(Opción múltiple)** ¿Por qué la vancomicina solo es útil en bacterias gram positivas?
    - a) Porque no tiene afinidad por el ribosoma
-   - b) **Es una molécula muy grande y no atraviesa la membrana externa de los gran negativos** ✓
-   - c) Porque los gran negativos son resistentes genéticamente
+   - b) **Es una molécula muy grande y no atraviesa la membrana externa de los gram negativos** ✓
+   - c) Porque los gram negativos son resistentes genéticamente
    - d) Porque requiere oxígeno para activarse
 
 2. **(Opción múltiple)** ¿En qué momento se deben medir los niveles de vancomicina?
@@ -67,7 +67,7 @@ Mismo mecanismo que vancomicina. Diferencias:
 ## Flashcards sugeridas
 
 - **Q:** Mecanismo de acción de la vancomicina → **A:** Se une a D-Ala-D-Ala, bloquea la transpeptidación del peptidoglicano
-- **Q:** ¿Por qué solo cubre gran positivos? → **A:** Es molécula grande, no atraviesa la membrana externa de gran negativos
+- **Q:** ¿Por qué solo cubre gram positivos? → **A:** Es molécula grande, no atraviesa la membrana externa de gram negativos
 - **Q:** ¿Cuándo se mide el nivel de vancomicina, pico o valle? → **A:** Valle (concentración más baja)
 - **Q:** Nivel tóxico de vancomicina → **A:** >20 (meta terapéutica: 12-14)
 - **Q:** ¿Qué causa el síndrome del hombre rojo? → **A:** Liberación de histamina por infusión rápida

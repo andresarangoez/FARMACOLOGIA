@@ -67,7 +67,7 @@ FA.router = (function () {
             try { vista.montar(cont, r.params); } catch (e) { console.error(e); }
         }
         var t = typeof vista.titulo === 'function' ? vista.titulo(r.params) : vista.titulo;
-        document.title = (t ? t + ' · ' : '') + 'Farmacología · soy Andrés Arango';
+        document.title = (t ? t + ' · ' : '') + 'Farmacología · Soy Andrés Arango';
         marcarMenu(r.vista);
         window.scrollTo(0, 0);
         main.focus({ preventScroll: true });

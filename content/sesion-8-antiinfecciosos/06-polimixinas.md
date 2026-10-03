@@ -11,11 +11,11 @@ dificultad_quiz: media
 
 ## Concepto
 
-Antiguos (1947), de **última alternativa** para gérmenes gran negativos multirresistentes en infecciones nosocomiales. La colistina se retiró en 1950 por nefrotoxicidad, reintroducida en 2000.
+Antiguos (1947), de **última alternativa** para gérmenes gram negativos multirresistentes en infecciones nosocomiales. La colistina se retiró en 1950 por nefrotoxicidad, reintroducida en 2000.
 
 ## Indicaciones
 
-Gran negativos multirresistentes:
+Gram negativos multirresistentes:
 - *Pseudomona aeruginosa*
 - *Acinetobacter baumannii*
 - *Klebsiella pneumoniae*
