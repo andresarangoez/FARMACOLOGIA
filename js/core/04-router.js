@@ -23,7 +23,7 @@ FA.router = (function () {
     ];
     var SECCION = { inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
                     flashcards: 'flashcards', quiz: 'quiz', calculadora: 'calculadora',
-                    examen: 'examen', recurso: 'examen', progreso: 'progreso', estudio: 'estudio' };
+                    examen: 'sesiones', recurso: 'sesiones', progreso: 'progreso', estudio: 'estudio' };
 
     function resolver() {
         var ruta = decodeURIComponent(location.hash.replace(/^#/, '').split('?')[0]);

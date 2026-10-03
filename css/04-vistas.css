@@ -208,3 +208,19 @@ hr { border: 0; border-top: 1px solid var(--linea); margin: var(--s-4) 0; }
     .seccion { break-inside: avoid-page; }
     blockquote.dato { background: #fff; border: 1px solid #999; }
 }
+
+/* ── Acceso con clave (Datos examen) ── */
+.tarjeta-s--bloq { background: var(--azul-profundo); border-color: var(--azul-profundo); color: #D7E1F0; }
+.tarjeta-s--bloq:hover { border-color: var(--amarillo); color: #D7E1F0; }
+.tarjeta-s--bloq .tarjeta-s__n { color: var(--amarillo); display: grid; place-items: center; }
+.tarjeta-s--bloq .tarjeta-s__n .icono { width: 2.4rem; height: 2.4rem; }
+.tarjeta-s--bloq .tarjeta-s__txt small, .tarjeta-s--bloq .tarjeta-s__lista, .tarjeta-s--bloq .tarjeta-s__prog small { color: #B9C8E0; }
+.tarjeta-s--bloq .tarjeta-s__txt b { color: var(--blanco); }
+.tarjeta-s--bloq .tarjeta-s__prog { text-align: right; }
+.candado { text-align: center; }
+.candado__icono { width: 64px; height: 64px; margin: 0 auto var(--s-3); display: grid; place-items: center; border-radius: 50%; background: var(--azul-profundo); color: var(--amarillo); }
+.candado__icono .icono { width: 30px; height: 30px; }
+.candado .lead { margin-left: auto; margin-right: auto; }
+.candado__form { max-width: 360px; margin: var(--s-4) auto 0; text-align: left; }
+.candado__error { color: var(--err); background: var(--err-fondo); border-radius: var(--r-sm); padding: var(--s-2) var(--s-3); font-size: var(--t-sm); font-weight: 600; }
+.candado .fila-botones { justify-content: center; }

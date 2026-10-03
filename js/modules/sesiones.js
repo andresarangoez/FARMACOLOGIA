@@ -22,7 +22,6 @@ FA.c = (function () {
             '<b class="tarjeta-f__nom">' + u.esc(f.nombre) + '</b>' +
             '<span class="tarjeta-f__grupo">' + u.esc(f.grupo) + '</span>' +
             '<span class="tarjeta-f__meta">' +
-            (f.examen.length ? '<span title="Datos de examen">' + '⭐ ' + f.examen.length + '</span>' : '') +
             '<span>' + f.cards.length + ' flashcards</span><span>' + f.quiz.length + ' preguntas</span></span>' +
             '</a>';
     }
@@ -52,7 +51,14 @@ FA.vistas.sesiones = {
                     '<div class="bloque-sesion__cab"><div><p class="eyebrow">Sesión ' + s.n + '</p><h2><a href="#/sesion/' + s.n + '">' + FA.u.esc(s.tema) + '</a></h2></div>' +
                     '<div class="bloque-sesion__prog">' + FA.c.barra(p.pct, 'Progreso de la sesión ' + s.n) + '<small>' + p.hechos + '/' + p.total + ' estudiados</small></div></div>' +
                     '<div class="rejilla">' + s.farmacos.map(FA.c.tarjetaFarmaco).join('') + '</div></section>';
-            }).join('') + '</div>';
+            }).join('') +
+            '<section class="bloque-sesion"><div class="bloque-sesion__cab"><div><p class="eyebrow">Acceso con clave</p><h2>Material protegido</h2></div></div>' +
+            '<a class="tarjeta-s tarjeta-s--bloq" href="#/examen">' +
+            '<span class="tarjeta-s__n">' + FA.u.icono('candado') + '</span>' +
+            '<span class="tarjeta-s__txt"><small>Material de estudio</small><b>Datos examen</b>' +
+            '<span class="tarjeta-s__lista">Se pide una clave para entrar</span></span>' +
+            '<span class="tarjeta-s__prog"><small>Abrir</small></span></a></section>' +
+            '</div>';
     }
 };
 
@@ -63,11 +69,10 @@ FA.vistas.sesion = {
         if (!s) return '<div class="vacio"><b>Esa sesión no existe</b><p><a href="#/sesiones">Ver todas las sesiones</a></p></div>';
         var pr = FA.c.progresoSesion(s);
         var nq = FA.datos.preguntas(s.farmacos).length, nc = FA.datos.cards(s.farmacos).length;
-        var ex = s.farmacos.reduce(function (a, f) { return a + f.examen.length; }, 0);
         return '<div class="pagina">' +
             '<nav class="migas" aria-label="Ruta"><a href="#/sesiones">Sesiones</a><span>/</span><b>Sesión ' + s.n + '</b></nav>' +
             '<header class="cabecera"><p class="eyebrow">Sesión ' + s.n + '</p><h1>' + u.esc(s.tema) + '</h1>' +
-            '<div class="cabecera__prog">' + FA.c.barra(pr.pct, 'Progreso') + '<small>' + pr.hechos + ' de ' + pr.total + ' temas estudiados · ' + ex + ' datos de examen</small></div>' +
+            '<div class="cabecera__prog">' + FA.c.barra(pr.pct, 'Progreso') + '<small>' + pr.hechos + ' de ' + pr.total + ' temas estudiados</small></div>' +
             '<div class="fila-botones">' +
             '<a class="btn" href="#/flashcards/sesion:' + s.n + '">' + u.icono('tarjeta') + ' Flashcards de la sesión (' + nc + ')</a>' +
             '<a class="btn btn--sec" href="#/quiz/sesion:' + s.n + '">' + u.icono('quiz') + ' Quiz de la sesión (' + nq + ')</a>' +

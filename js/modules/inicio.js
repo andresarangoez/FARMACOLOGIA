@@ -40,7 +40,6 @@ FA.vistas.inicio = {
             '<a class="herr" href="#/flashcards">' + u.icono('tarjeta') + '<b>Flashcards</b><span>Voltea tarjetas y marca lo que ya sabes.</span></a>' +
             '<a class="herr" href="#/quiz">' + u.icono('quiz') + '<b>Quiz</b><span>Por fármaco, por sesión o mezclando varias.</span></a>' +
             '<a class="herr" href="#/calculadora">' + u.icono('calc') + '<b>Calculadora</b><span>' + FA.formulas.lista.length + ' fórmulas con el procedimiento paso a paso.</span></a>' +
-            '<a class="herr herr--ex" href="#/examen">' + u.icono('estrella') + '<b>Datos de examen</b><span>' + T.examen + ' puntos que la docente marcó para el parcial.</span></a>' +
             '</div></section></div>';
     },
     montar: function (el) {

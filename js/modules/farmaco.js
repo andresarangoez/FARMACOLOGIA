@@ -24,7 +24,6 @@ FA.vistas.farmaco = {
             '</div>' +
             '<div class="etiquetas">' +
             (f.dificultad ? '<span class="chip chip--fijo">' + u.esc(DIF[f.dificultad] || f.dificultad) + '</span>' : '') +
-            (f.examen.length ? '<span class="chip chip--amarillo">⭐ ' + f.examen.length + ' datos de examen</span>' : '') +
             f.tags.map(function (t) { return '<span class="chip chip--fijo">#' + u.esc(t) + '</span>'; }).join('') +
             '</div>' +
             '<div class="fila-botones">' +
