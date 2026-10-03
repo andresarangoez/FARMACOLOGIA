@@ -10,7 +10,7 @@ FA.vistas.recurso = {
         var preguntas = r.secciones.filter(function (s) { return /^pregunta\s+\d+/i.test(s.titulo); });
         return '<div class="pagina pagina--lectura">' +
             '<nav class="migas" aria-label="Ruta"><a href="#/examen">Datos de examen</a><span>/</span><b>' + u.esc(r.nombre) + '</b></nav>' +
-            '<header class="cabecera"><p class="eyebrow">Datos de examen · Taller</p><h1>' + u.esc(r.nombre) + '</h1>' +
+            '<header class="cabecera"><p class="eyebrow">Datos de examen · ' + u.esc(r.tipo) + '</p><h1>' + u.esc(r.nombre) + '</h1>' +
             (r.descripcion ? '<p class="lead">' + u.esc(r.descripcion) + '</p>' : '') +
             '<div class="fila-botones"><button type="button" class="btn btn--sec" data-imprimir>Imprimir o guardar en PDF</button></div></header>' +
             (preguntas.length ? '<nav class="indice" aria-label="Preguntas"><b>Ir a</b>' + preguntas.map(function (s) {

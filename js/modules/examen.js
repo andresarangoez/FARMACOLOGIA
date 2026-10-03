@@ -15,7 +15,7 @@ FA.vistas.examen = {
                 '<div class="rejilla">' + FA.datos.extras.map(function (r) {
                     var nP = r.secciones.filter(function (s) { return /^pregunta\s+\d+/i.test(s.titulo); }).length;
                     return '<a class="tarjeta-f" href="#/examen/' + r.id + '">' +
-                        '<span class="tarjeta-f__top"><span class="chip chip--amarillo">⭐ Taller</span><span class="estado">Resuelto</span></span>' +
+                        '<span class="tarjeta-f__top"><span class="chip chip--amarillo">⭐ ' + u.esc(r.tipo) + '</span><span class="estado">Resuelto</span></span>' +
                         '<b class="tarjeta-f__nom">' + u.esc(r.nombre) + '</b>' +
                         '<span class="tarjeta-f__grupo">' + u.esc(r.descripcion) + '</span>' +
                         '<span class="tarjeta-f__meta">' + (nP ? '<span>' + nP + ' preguntas</span>' : '') + '<span>Abrir página</span></span></a>';

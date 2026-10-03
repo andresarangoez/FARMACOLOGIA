@@ -134,7 +134,7 @@ FA.datos = (function () {
         cerrar();
         extras.push({
             id: meta.id, nombre: meta.nombre || meta.id, descripcion: meta.descripcion || '',
-            orden: parseInt(meta.orden, 10) || 99,
+            tipo: meta.tipo || 'Taller', orden: parseInt(meta.orden, 10) || 99,
             secciones: secs.map(function (s) {
                 return { titulo: s.titulo, id: u.slug(s.titulo), html: FA.md.html('## ' + s.titulo + '\n' + s.lineas.join('\n')) };
             })
