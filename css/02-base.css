@@ -63,8 +63,9 @@ main:focus { outline: none; }
 .pie__insta .icono { width: 26px; height: 26px; margin-top: 2px; }
 .pie__insta b { display: block; font-size: var(--t-sm); }
 .pie__insta small { color: #B9C8E0; font-size: var(--t-xs); }
-.pie__insta:hover { color: var(--amarillo); text-decoration: underline; }
-.pie__insta:hover small { color: #D7E1F0; }
+.pie__insta:hover { color: var(--amarillo); text-decoration: none; }
+.pie__insta:hover b { text-decoration: underline; text-underline-offset: 3px; }
+.pie__insta:hover small { color: #D7E1F0; text-decoration: none; }
 .pie__nota p { font-size: var(--t-xs); line-height: 1.55; margin-bottom: var(--s-2); color: #B9C8E0; }
 .pie__copy { color: var(--blanco) !important; font-weight: 600; padding-top: var(--s-2); border-top: 1px solid rgba(255,255,255,.18); }
 @media (max-width: 760px) { .pie__int { grid-template-columns: 1fr; } }
