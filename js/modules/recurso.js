@@ -13,7 +13,9 @@ FA.vistas.recurso = {
             '<nav class="migas" aria-label="Ruta"><a href="#/examen">Datos examen</a><span>/</span><b>' + u.esc(r.nombre) + '</b></nav>' +
             '<header class="cabecera"><p class="eyebrow">Datos examen · ' + u.esc(r.tipo) + '</p><h1>' + u.esc(r.nombre) + '</h1>' +
             (r.descripcion ? '<p class="lead">' + u.esc(r.descripcion) + '</p>' : '') +
-            '<div class="fila-botones"><button type="button" class="btn btn--sec" data-imprimir>Imprimir o guardar en PDF</button></div></header>' +
+            '<div class="fila-botones">' +
+            (r.preguntas && r.preguntas.length ? '<a class="btn" href="#/examen/practicar/' + r.id + '">' + u.icono('reloj') + ' Practicar estas ' + r.preguntas.length + ' preguntas</a>' : '') +
+            '<button type="button" class="btn btn--sec" data-imprimir>Imprimir o guardar en PDF</button></div></header>' +
             (preguntas.length ? '<nav class="indice" aria-label="Preguntas"><b>Ir a</b>' + preguntas.map(function (s) {
                 var n = /^pregunta\s+(\d+)/i.exec(s.titulo)[1];
                 return '<a href="#" data-ir="' + s.id + '" title="' + u.esc(s.titulo) + '">P' + n + '</a>';

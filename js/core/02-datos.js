@@ -135,12 +135,35 @@ FA.datos = (function () {
         extras.push({
             id: meta.id, nombre: meta.nombre || meta.id, descripcion: meta.descripcion || '',
             tipo: meta.tipo || 'Taller', orden: parseInt(meta.orden, 10) || 99,
+            preguntas: parsearPreguntasExamen(secs, meta.id),
             secciones: secs.map(function (s) {
                 return { titulo: s.titulo, id: u.slug(s.titulo), html: FA.md.html('## ' + s.titulo + '\n' + s.lineas.join('\n')) };
             })
         });
     });
     extras.sort(function (a, b) { return a.orden - b.orden; });
+
+    /* Preguntas de opción múltiple de un recurso de examen:
+       "## Pregunta N. título" + "**Caso:** …" + opciones "- a) …" (la correcta lleva ✓) + "**Justificación:** …".
+       Se leen tal cual del .md; no se escribe nada nuevo. Las que no tienen 4 opciones con una sola correcta
+       (por ejemplo, las preguntas abiertas del taller) simplemente no entran al banco. */
+    function parsearPreguntasExamen(secs, rid) {
+        var arr = [];
+        secs.forEach(function (s) {
+            var m = /^Pregunta\s+(\d+)\.\s*(.*)$/i.exec(s.titulo); if (!m) return;
+            var q = { n: +m[1], titulo: m[2], fuente: rid, caso: '', opciones: [], justificacion: '' };
+            s.lineas.forEach(function (l) {
+                var c = /^\*\*Caso:\*\*\s*(.*)$/.exec(l); if (c) { q.caso = c[1].charAt(0).toUpperCase() + c[1].slice(1); return; }
+                var o = /^\s*-\s*([a-d])\)\s*(.*)$/.exec(l);
+                if (o) { q.opciones.push({ letra: o[1], txt: o[2].replace(/\u2713/g, '').replace(/\*\*/g, '').trim(), ok: /\u2713/.test(o[2]) }); return; }
+                var j = /^\*\*Justificación:\*\*\s*(.*)$/.exec(l); if (j) q.justificacion = j[1].charAt(0).toUpperCase() + j[1].slice(1);
+            });
+            if (q.opciones.length === 4 && q.opciones.filter(function (x) { return x.ok; }).length === 1 && q.caso) {
+                q.id = rid + '#p' + q.n; arr.push(q);
+            }
+        });
+        return arr;
+    }
 
     construir();
 
@@ -150,6 +173,9 @@ FA.datos = (function () {
     return {
         farmacos: farmacos, sesiones: sesiones, advertencias: advertencias,
         extras: extras,
+        bancoExamen: function (fuentes) {
+            return [].concat.apply([], extras.filter(function (e) { return !fuentes || fuentes.indexOf(e.id) >= 0; }).map(function (e) { return e.preguntas; }));
+        },
         extra: function (id) { return extras.filter(function (x) { return x.id === id; })[0]; },
         farmaco: function (id) { return porId[id]; },
         sesion: function (n) { return sesiones.filter(function (s) { return s.n === +n; })[0]; },

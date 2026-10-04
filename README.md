@@ -57,3 +57,13 @@ docs/                    brief original y fórmulas fuente
 - El contenido académico sale tal cual de los `.md` entregados (transcripciones de clase resumidas). No se inventa contenido.
 - Las dosis y fórmulas son material de estudio; el pie de página y la calculadora piden verificar con el protocolo institucional.
 - Encabezado: insignia azul profundo con logo blanco. Portada y pie: insignia blanca con logo azul profundo. Favicon: insignia azul. Todo sale del logo vectorizado (huecos uniformes de 8); la versión fiel al PNG original está en `logo-soy-andres-arango-fiel-original.svg`.
+
+## Banco de examen (dentro de la zona con clave)
+
+Entrando a **Datos examen** (clave en `js/core/05-acceso.js`) hay un botón **Banco de examen: práctica y simulacro**.
+
+- Usa las preguntas tipo caso de `content/examen/` que tienen 4 opciones (`- a) …`, la correcta con ✓), un `**Caso:**` y una `**Justificación:**`. Las preguntas abiertas del taller no entran. Agregar un `.md` nuevo con ese formato en `content/examen/` y correr `construir.bat` suma sus preguntas solas.
+- **Práctica:** respondes y ves la justificación al instante.
+- **Simulacro:** N preguntas al azar con tiempo (1, 1,5 o 2 min por pregunta), se puede ir y volver, y la justificación llega al terminar. Atajos: a-d responder, flechas moverse.
+- Las opciones se muestran en su orden original porque las justificaciones citan letras.
+- Los resultados se guardan aparte (`ex` y `exHist` en el progreso), por lo que no aparecen en "Mi progreso".

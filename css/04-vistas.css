@@ -236,3 +236,22 @@ hr { border: 0; border-top: 1px solid var(--linea); margin: var(--s-4) 0; }
 .acceso-clave__txt { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
 .acceso-clave__txt b { font-size: var(--t-sm); font-weight: 700; color: var(--tx-suave); }
 .acceso-clave__txt small { font-size: var(--t-xs); color: var(--tx-tenue); }
+
+/* ── Banco de examen: simulacro y práctica ── */
+.sim-top { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); margin-bottom: var(--s-2); font-size: var(--t-sm); color: var(--tx-suave); }
+.sim-reloj { font-family: var(--f-display); font-size: 1.6rem; color: var(--azul-profundo); letter-spacing: .02em; }
+.sim-reloj--alerta { color: var(--err); }
+.sim-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--s-4); }
+.sim-nav button { width: 34px; height: 34px; padding: 0; border-radius: 50%; border: 1.5px solid var(--azul-linea); background: var(--blanco); font: inherit; font-size: var(--t-xs); font-weight: 700; color: var(--tx-suave); cursor: pointer; }
+.sim-nav button.resp { background: var(--azul-tinte); color: var(--azul-profundo); border-color: var(--azul); }
+.sim-nav button[aria-current="true"] { background: var(--azul-profundo); border-color: var(--azul-profundo); color: var(--blanco); }
+.op--sel { border-color: var(--azul); background: var(--azul-tinte); }
+.op--sel b { background: var(--azul-profundo); color: var(--blanco); }
+.caso { font-size: 1.05rem; line-height: 1.55; margin-bottom: var(--s-4); }
+.just { display: block; margin-top: var(--s-2); color: var(--tx); }
+.feedback .just { color: inherit; }
+details.rev { text-align: left; border: 1px solid var(--linea); border-radius: var(--r-md); padding: var(--s-2) var(--s-4); margin-bottom: var(--s-2); background: var(--bg-alt); }
+details.rev summary { cursor: pointer; padding: var(--s-2) 0; font-size: var(--t-sm); }
+details.rev summary small { color: var(--tx-tenue); margin-left: var(--s-2); }
+details.rev p { font-size: var(--t-sm); margin: var(--s-2) 0; }
+.resultado details.rev { margin-left: 0; }

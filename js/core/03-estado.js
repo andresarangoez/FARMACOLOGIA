@@ -3,7 +3,7 @@
    ============================================================ */
 FA.estado = (function () {
     var CLAVE = 'farmacologia-v1';
-    var vacio = function () { return { estudiado: {}, cards: {}, preg: {}, historial: [] }; };
+    var vacio = function () { return { estudiado: {}, cards: {}, preg: {}, historial: [], ex: {}, exHist: [] }; };
     var E = vacio();
 
     try {
@@ -37,6 +37,20 @@ FA.estado = (function () {
             guardar();
         },
         historial: function () { return E.historial; },
+
+        /* Banco de examen (zona con clave): se guarda aparte para no mezclarlo con el progreso público */
+        examenResultado: function (qid, ok) {
+            E.ex = E.ex || {};
+            var r = E.ex[qid] || { ok: 0, fail: 0 };
+            if (ok) r.ok++; else r.fail++;
+            r.ult = ok; E.ex[qid] = r; guardar();
+        },
+        examenPregunta: function (qid) { return (E.ex || {})[qid] || null; },
+        examenFin: function (etiqueta, ok, total, seg) {
+            E.exHist = [{ f: new Date().toISOString(), e: etiqueta, ok: ok, t: total, s: seg || 0 }].concat(E.exHist || []).slice(0, 20);
+            guardar();
+        },
+        examenHistorial: function () { return E.exHist || []; },
 
         registrarSesion: function (min, tema) {
             E.sesiones = (E.sesiones || []).concat([{ f: new Date().toISOString(), min: min, tema: tema }]).slice(-200);
