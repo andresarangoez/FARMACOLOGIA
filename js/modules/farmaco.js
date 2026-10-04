@@ -30,12 +30,14 @@ FA.vistas.farmaco = {
             '<button type="button" class="btn ' + (est ? 'btn--sabe btn--on' : 'btn--sec') + '" data-estudiado aria-pressed="' + est + '">' + u.icono('check') + ' <span>' + (est ? 'Estudiado' : 'Marcar como estudiado') + '</span></button>' +
             (f.cards.length ? '<a class="btn btn--sec" href="#/flashcards/farmaco:' + f.id + '">' + u.icono('tarjeta') + ' Flashcards (' + f.cards.length + ')</a>' : '') +
             (f.quiz.length ? '<a class="btn btn--sec" href="#/quiz/farmaco:' + f.id + '">' + u.icono('quiz') + ' Quiz (' + f.quiz.length + ')</a>' : '') +
+            '<button type="button" class="btn btn--sec" data-imprimir>Imprimir este tema</button>' +
             '</div></header>' +
             (f.secciones.length > 2 ? '<nav class="indice" aria-label="En esta página"><b>En esta página</b>' +
                 f.secciones.map(function (s) { return '<a href="#" data-ir="' + s.id + '">' + u.inline(s.titulo) + '</a>'; }).join('') + '</nav>' : '') +
             '<article class="contenido">' +
             f.secciones.map(function (s) { return '<section class="seccion" data-sec="' + s.id + '">' + s.html + '</section>'; }).join('') +
             '</article>' +
+            '<p class="solo-impresion">' + u.esc(f.nombre) + ' · Sesión ' + f.sesion + ' · Material de estudio de Soy Andrés Arango · © 2026 Andrés Arango. Resumen de clase: verifica dosis y datos con tu docente y los protocolos de tu institución.</p>' +
             '<nav class="paginado" aria-label="Siguiente y anterior">' +
             (prev ? '<a href="#/farmaco/' + prev.id + '">' + u.icono('atras') + '<span><small>Anterior</small>' + u.esc(prev.nombre) + '</span></a>' : '<span></span>') +
             (next ? '<a href="#/farmaco/' + next.id + '" class="paginado__sig"><span><small>Siguiente</small>' + u.esc(next.nombre) + '</span>' + u.icono('flecha') + '</a>' : '<span></span>') +
@@ -48,6 +50,8 @@ FA.vistas.farmaco = {
             var s = el.querySelector('[data-sec="' + p.sec + '"]');
             if (s) { s.scrollIntoView({ block: 'start' }); s.classList.add('seccion--hallazgo'); setTimeout(function () { s.classList.remove('seccion--hallazgo'); }, 2200); }
         }, 30);
+        var imp = el.querySelector('[data-imprimir]');
+        if (imp) imp.addEventListener('click', function () { window.print(); });
         var btn = el.querySelector('[data-estudiado]');
         btn.addEventListener('click', function () {
             var v = !FA.estado.estudiado(f.id);

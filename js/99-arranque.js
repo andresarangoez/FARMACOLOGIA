@@ -3,6 +3,8 @@
    ============================================================ */
 (function () {
     var ACCIONES = {
+        tema: function () { FA.tema.alternar(); },
+        saltar: function () { var m = document.getElementById('app'); if (m) { m.focus(); m.scrollIntoView(); } },
         menu: function (btn) {
             var nav = document.getElementById('nav');
             var abierta = nav.classList.toggle('abierta');

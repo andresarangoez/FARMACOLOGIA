@@ -52,6 +52,7 @@ FA.router = (function () {
         if (btn) btn.setAttribute('aria-expanded', 'false');
     }
 
+    var primeraVista = true;
     function render() {
         var r = resolver();
         var vista = FA.vistas[r.vista];
@@ -72,7 +73,8 @@ FA.router = (function () {
         document.title = (t ? t + ' · ' : '') + 'Farmacología · Soy Andrés Arango';
         marcarMenu(r.vista);
         window.scrollTo(0, 0);
-        main.focus({ preventScroll: true });
+        /* en la carga inicial no se enfoca el contenido: así el primer Tab llega al enlace "Saltar al contenido" */
+        if (primeraVista) primeraVista = false; else main.focus({ preventScroll: true });
     }
 
     function ir(hash) {

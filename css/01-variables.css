@@ -30,13 +30,13 @@
     /* Texto y superficies */
     --tx:        #1F2A3A;
     --tx-suave:  #5B6778;
-    --tx-tenue:  #8591A3;
+    --tx-tenue:  #637085;
     --bg:        #FFFFFF;
     --bg-alt:    #F6F8FB;
     --linea:     #E3E8EF;
 
     /* Estados de estudio (ver componente .estado) */
-    --st-pendiente:  #8591A3;
+    --st-pendiente:  #637085;
     --st-estudio:    #0A3E7C;
     --st-practicado: #9A6A12;
     --st-dominado:   #3F7A52;
@@ -81,4 +81,22 @@
 
 @media (prefers-reduced-motion: reduce) {
     :root { --t-anim: 0s; }
+}
+
+/* ── Tokens semánticos (permiten el modo oscuro sin tocar los componentes) ──
+   --sup      superficie de tarjetas, paneles y barra
+   --titulo   color de títulos y texto de énfasis
+   --enlace   color de enlaces y acentos de interacción
+   --sel      fondo de botones y elementos seleccionados
+   --amb…     texto sobre los tintes ámbar de los datos de examen
+   En modo claro valen exactamente lo que valían antes. */
+:root {
+    --sup: #FFFFFF;
+    --titulo: var(--azul-profundo);
+    --enlace: var(--azul);
+    --sel: var(--azul-profundo);
+    --amb: #6B4A06;
+    --amb2: #5C4308;
+    --amb3: #4A3606;
+    --amb-ex: #8A5E0E;
 }
