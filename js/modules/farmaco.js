@@ -18,13 +18,13 @@ FA.vistas.farmaco = {
             '<p class="eyebrow">Sesión ' + f.sesion + ' · ' + u.esc(f.tema) + '</p>' +
             '<h1>' + u.esc(f.nombre) + '</h1>' +
             '<div class="meta">' +
-            (f.grupo ? '<span><small>Grupo farmacológico</small>' + u.esc(f.grupo) + '</span>' : '') +
+            (f.grupo ? '<span><small>Grupo farmacológico</small><a class="enlace-filtro" href="#/buscar?g=' + encodeURIComponent(f.grupo) + '" title="Ver otros temas de este grupo">' + u.esc(f.grupo) + '</a></span>' : '') +
             (f.linea ? '<span><small>Línea celular</small>' + u.esc(f.linea) + '</span>' : '') +
             (f.mecanismo ? '<span><small>Mecanismo en una línea</small>' + u.esc(f.mecanismo) + '</span>' : '') +
             '</div>' +
             '<div class="etiquetas">' +
             (f.dificultad ? '<span class="chip chip--fijo">' + u.esc(DIF[f.dificultad] || f.dificultad) + '</span>' : '') +
-            f.tags.map(function (t) { return '<span class="chip chip--fijo">#' + u.esc(t) + '</span>'; }).join('') +
+            f.tags.map(function (t) { return '<a class="chip" href="#/buscar?t=' + encodeURIComponent(t) + '" title="Ver temas con esta etiqueta">#' + u.esc(t) + '</a>'; }).join('') +
             '</div>' +
             '<div class="fila-botones">' +
             '<button type="button" class="btn ' + (est ? 'btn--sabe btn--on' : 'btn--sec') + '" data-estudiado aria-pressed="' + est + '">' + u.icono('check') + ' <span>' + (est ? 'Estudiado' : 'Marcar como estudiado') + '</span></button>' +
@@ -43,6 +43,11 @@ FA.vistas.farmaco = {
     },
     montar: function (el, p) {
         var f = FA.datos.farmaco(p.id); if (!f) return;
+        /* venir desde el buscador: saltar a la sección encontrada (después de que el enrutador suba al inicio) */
+        if (p.sec) setTimeout(function () {
+            var s = el.querySelector('[data-sec="' + p.sec + '"]');
+            if (s) { s.scrollIntoView({ block: 'start' }); s.classList.add('seccion--hallazgo'); setTimeout(function () { s.classList.remove('seccion--hallazgo'); }, 2200); }
+        }, 30);
         var btn = el.querySelector('[data-estudiado]');
         btn.addEventListener('click', function () {
             var v = !FA.estado.estudiado(f.id);
