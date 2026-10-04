@@ -52,12 +52,10 @@ FA.vistas.sesiones = {
                     '<div class="bloque-sesion__prog">' + FA.c.barra(p.pct, 'Progreso de la sesión ' + s.n) + '<small>' + p.hechos + '/' + p.total + ' estudiados</small></div></div>' +
                     '<div class="rejilla">' + s.farmacos.map(FA.c.tarjetaFarmaco).join('') + '</div></section>';
             }).join('') +
-            '<section class="bloque-sesion"><div class="bloque-sesion__cab"><div><p class="eyebrow">Acceso con clave</p><h2>Material protegido</h2></div></div>' +
-            '<a class="tarjeta-s tarjeta-s--bloq" href="#/examen">' +
-            '<span class="tarjeta-s__n">' + FA.u.icono('candado') + '</span>' +
-            '<span class="tarjeta-s__txt"><small>Material de estudio</small><b>Datos examen</b>' +
-            '<span class="tarjeta-s__lista">Se pide una clave para entrar</span></span>' +
-            '<span class="tarjeta-s__prog"><small>Abrir</small></span></a></section>' +
+            '<a class="acceso-clave" href="#/examen">' +
+            '<span class="acceso-clave__ico">' + FA.u.icono('candado') + '</span>' +
+            '<span class="acceso-clave__txt"><b>Material protegido</b><small>Material de estudio. Se pide una clave para entrar</small></span>' +
+            '<span class="acceso-clave__ir">' + FA.u.icono('flecha') + '</span></a>' +
             '</div>';
     }
 };
