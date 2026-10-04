@@ -276,3 +276,8 @@ mark { background: var(--amarillo); color: var(--azul-profundo); border-radius: 
 .enlace-filtro:hover { color: var(--azul); }
 .seccion--hallazgo { animation: hallazgo 2.2s ease-out; }
 @keyframes hallazgo { 0%, 60% { background: var(--amarillo-tinte); box-shadow: 0 0 0 8px var(--amarillo-tinte); } 100% { background: transparent; box-shadow: 0 0 0 8px transparent; } }
+
+/* ── Repaso espaciado ── */
+.cajas { font-size: var(--t-sm); color: var(--tx-suave); margin: 0 0 var(--s-4); line-height: 1.9; }
+.cajas b { color: var(--azul-profundo); }
+.caja { font-weight: 700; color: var(--azul); }

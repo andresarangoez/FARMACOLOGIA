@@ -17,7 +17,7 @@ FA.flashcards = (function () {
             var c = mazo[i], est = FA.estado.card(c.id);
             el.innerHTML =
                 '<div class="fc">' +
-                '<div class="fc__top"><span>Tarjeta <b>' + (i + 1) + '</b> de ' + mazo.length + '</span>' +
+                '<div class="fc__top"><span>Tarjeta <b>' + (i + 1) + '</b> de ' + mazo.length + ' · <span class="caja" title="Repaso espaciado: caja 1 cada día, caja 2 cada 3 días, caja 3 cada 7 días">' + (FA.estado.leitner(c.id) ? 'Caja ' + FA.estado.leitner(c.id).c + ' de 3' : 'Nueva') + '</span></span>' +
                 '<span class="chip chip--fijo">' + u.esc(nombre(c.farmaco)) + '</span></div>' +
                 '<div class="barra-prog" role="progressbar" aria-valuemin="0" aria-valuemax="' + mazo.length + '" aria-valuenow="' + i + '"><i style="width:' + u.pct(i, mazo.length) + '%"></i></div>' +
                 '<button type="button" class="fc__carta' + (volteada ? ' fc__carta--resp' : '') + '" data-voltear aria-live="polite">' +
@@ -44,6 +44,7 @@ FA.flashcards = (function () {
                 '<h2 class="panel__tit">¡Terminaste el mazo!</h2>' +
                 '<p class="resultado__num"><b>' + s + '</b> de ' + tot + ' marcadas como "La sé"</p>' +
                 '<p class="ayuda">' + r + ' para repasar · ' + (tot - s - r) + ' sin marcar</p>' +
+                '<p class="ayuda">Repaso espaciado: las que marcaste "Repasar" vuelven a tocar hoy; ' + FA.estado.leitnerManana(mazo.map(function (c) { return c.id; })) + ' de este mazo vuelven mañana.</p>' +
                 '<div class="fila-botones">' +
                 '<button type="button" class="btn" data-otra>Mezclar y repetir</button>' +
                 (r ? '<button type="button" class="btn btn--sec" data-solo-rep>Sólo las que debo repasar (' + r + ')</button>' : '') +
@@ -60,6 +61,7 @@ FA.flashcards = (function () {
         function marcar(v) {
             var c = mazo[i]; if (!c) return;
             FA.estado.marcarCard(c.id, FA.estado.card(c.id) === v ? null : v);
+            if (FA.estado.card(c.id)) FA.estado.leitnerMarcar(c.id, v === 'sabe');   // mueve la tarjeta entre cajas
             if (FA.estado.card(c.id)) avanzar(1); else pintar();
         }
 
