@@ -46,16 +46,19 @@ FA.vistas.inicio = {
             '</div></section></div>';
     },
     montar: function (el) {
-        var u = FA.u, inp = el.querySelector('[data-buscar]'), res = el.querySelector('[data-resultados]'), ses = el.querySelector('[data-sesiones]');
-        function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+        var u = FA.u, inp = el.querySelector('[data-buscar]'), res = el.querySelector('[data-resultados]');
+        /* usa el buscador global: busca en todo el texto y tolera variantes de escritura */
         inp.addEventListener('input', function () {
-            var q = norm(inp.value.trim());
+            var q = inp.value.trim();
             if (!q) { res.innerHTML = ''; return; }
-            var r = FA.datos.farmacos.filter(function (f) {
-                return norm([f.nombre, f.grupo, f.tema, f.tags.join(' ')].join(' ')).indexOf(q) >= 0;
-            });
-            res.innerHTML = r.length ? r.map(FA.c.tarjetaFarmaco).join('') :
-                '<p class="ayuda">Sin resultados para «' + u.esc(inp.value) + '».</p>';
+            var r = FA.buscar.buscar(q, {});
+            res.innerHTML = r.length
+                ? r.slice(0, 6).map(function (x) { return FA.c.tarjetaFarmaco(x.f); }).join('') +
+                  '<p class="ayuda" style="grid-column:1/-1"><a href="#/buscar?q=' + encodeURIComponent(q) + '">Ver los ' + r.length + ' resultados con el texto donde aparece →</a></p>'
+                : '<p class="ayuda">Sin resultados para «' + u.esc(inp.value) + '». <a href="#/buscar">Probar con filtros</a></p>';
+        });
+        inp.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && inp.value.trim()) FA.router.ir('#/buscar?q=' + encodeURIComponent(inp.value.trim()));
         });
     }
 };

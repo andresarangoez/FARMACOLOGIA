@@ -67,3 +67,14 @@ Entrando a **Datos examen** (clave en `js/core/05-acceso.js`) hay un botón **Ba
 - **Simulacro:** N preguntas al azar con tiempo (1, 1,5 o 2 min por pregunta), se puede ir y volver, y la justificación llega al terminar. Atajos: a-d responder, flechas moverse.
 - Las opciones se muestran en su orden original porque las justificaciones citan letras.
 - Los resultados se guardan aparte (`ex` y `exHist` en el progreso), por lo que no aparecen en "Mi progreso".
+
+## Buscador global y filtros
+
+Menú **Buscar** (`#/buscar`). Busca en **todo el texto** de los temas, no solo en el nombre.
+
+- Varias palabras = deben aparecer todas (en cualquier parte del tema).
+- Tolera tildes y variantes de escritura (clofazimina / clofacimina, vancomicina / bancomicina). La normalización está en `FA.buscar.norm` (`js/modules/buscar.js`) y mantiene la longitud del texto para que el resaltado caiga bien.
+- Filtros por **sesión**, **grupo farmacológico** y **etiqueta** (salen del frontmatter), solos o junto con la búsqueda. El estado queda en la URL (`#/buscar?q=…&s=7,8&g=…&t=…`), así que se puede compartir.
+- Cada fragmento enlaza a la **sección exacta** del tema (`#/farmaco/<id>/<sección>`) y la resalta un momento.
+- Las etiquetas y el grupo de cada tema son enlaces a esta búsqueda; el cuadro de la portada usa el mismo motor.
+- No incluye la zona con clave (Datos examen).

@@ -255,3 +255,24 @@ details.rev summary { cursor: pointer; padding: var(--s-2) 0; font-size: var(--t
 details.rev summary small { color: var(--tx-tenue); margin-left: var(--s-2); }
 details.rev p { font-size: var(--t-sm); margin: var(--s-2) 0; }
 .resultado details.rev { margin-left: 0; }
+
+/* ── Buscador global ── */
+.buscador-panel { margin-bottom: var(--s-4); }
+.buscador--grande { max-width: none; margin-bottom: var(--s-3); }
+.filtros-fila { display: grid; grid-template-columns: 1fr 1fr auto; gap: var(--s-3); align-items: end; }
+.filtros-fila .campo { margin-bottom: 0; }
+@media (max-width: 700px) { .filtros-fila { grid-template-columns: 1fr; } .filtros-fila .btn { justify-self: start; } }
+.resultados-b { display: grid; gap: var(--s-3); }
+.res-b { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--r-lg); padding: var(--s-4) var(--s-5); box-shadow: var(--sombra-sm); }
+.res-b__cab { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
+.res-b__nom { font-size: 1.1rem; font-weight: 800; color: var(--azul-profundo); text-decoration: none; }
+.res-b__nom:hover { text-decoration: underline; }
+.res-b__grupo { font-size: var(--t-sm); color: var(--tx-suave); margin: 2px 0 var(--s-2); }
+.snip { display: block; padding: var(--s-2) var(--s-3); margin-top: var(--s-2); border-left: 3px solid var(--azul-linea); border-radius: 0 var(--r-sm) var(--r-sm) 0; background: var(--bg-alt); text-decoration: none; color: var(--tx); font-size: var(--t-sm); }
+.snip:hover { border-left-color: var(--azul); background: var(--azul-tinte); color: var(--tx); }
+.snip small { display: block; font-size: var(--t-xs); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--tx-tenue); }
+mark { background: var(--amarillo); color: var(--azul-profundo); border-radius: 3px; padding: 0 2px; }
+.enlace-filtro { color: inherit; text-decoration: underline dotted; text-underline-offset: 3px; }
+.enlace-filtro:hover { color: var(--azul); }
+.seccion--hallazgo { animation: hallazgo 2.2s ease-out; }
+@keyframes hallazgo { 0%, 60% { background: var(--amarillo-tinte); box-shadow: 0 0 0 8px var(--amarillo-tinte); } 100% { background: transparent; box-shadow: 0 0 0 8px transparent; } }

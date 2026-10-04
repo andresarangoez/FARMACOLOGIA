@@ -12,7 +12,8 @@ FA.router = (function () {
         { re: /^\/inicio$/,                     vista: 'inicio' },
         { re: /^\/sesiones$/,                   vista: 'sesiones' },
         { re: /^\/sesion\/(\d+)$/,              vista: 'sesion',      params: ['n'] },
-        { re: /^\/farmaco\/([\w-]+)$/,          vista: 'farmaco',     params: ['id'] },
+        { re: /^\/farmaco\/([\w-]+)(?:\/([\w-]+))?$/, vista: 'farmaco', params: ['id', 'sec'] },
+        { re: /^\/buscar$/,                     vista: 'buscar' },
         { re: /^\/flashcards(?:\/([^/]+))?$/,   vista: 'flashcards',  params: ['alcance'] },
         { re: /^\/quiz(?:\/([^/]+))?$/,         vista: 'quiz',        params: ['alcance'] },
         { re: /^\/calculadora(?:\/([\w-]+))?$/, vista: 'calculadora', params: ['id'] },
@@ -22,7 +23,7 @@ FA.router = (function () {
         { re: /^\/examen\/([\w-]+)$/,           vista: 'recurso',     params: ['id'] },
         { re: /^\/progreso$/,                   vista: 'progreso' }
     ];
-    var SECCION = { inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
+    var SECCION = { buscar: 'buscar', inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
                     flashcards: 'flashcards', quiz: 'quiz', calculadora: 'calculadora',
                     examen: 'sesiones', recurso: 'sesiones', bancoExamen: 'sesiones', progreso: 'progreso', estudio: 'estudio' };
 
