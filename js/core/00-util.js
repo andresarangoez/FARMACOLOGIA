@@ -15,7 +15,7 @@ FA.u = (function () {
     function inline(s) {
         s = esc(s);
         s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
-        s = s.replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/\*\*(.+?)\*\*(?!\*)/g, '<strong>$1</strong>');
         s = s.replace(/(^|[^*\w])\*([^*\s](?:[^*]*?[^*\s])?)\*(?!\*)/g, '$1<em>$2</em>');
         return s;
     }
