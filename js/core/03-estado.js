@@ -3,8 +3,10 @@
    ============================================================ */
 FA.estado = (function () {
     var CLAVE = 'farmacologia-v1';
-    var vacio = function () { return { estudiado: {}, cards: {}, preg: {}, historial: [], ex: {}, exHist: [] }; };
+    var vacio = function () { return { estudiado: {}, cards: {}, preg: {}, historial: [], ex: {}, exHist: [], lei: {} }; };
     var E = vacio();
+    var DIAS_CAJA = { 1: 1, 2: 3, 3: 7 };
+    function finDeHoy() { var d = new Date(); d.setHours(23, 59, 59, 999); return d.getTime(); }
 
     try {
         var raw = window.localStorage.getItem(CLAVE);
@@ -21,6 +23,33 @@ FA.estado = (function () {
 
         card: function (id) { return E.cards[id] || null; },                 // 'sabe' | 'repasar' | null
         marcarCard: function (id, v) { if (v) E.cards[id] = v; else delete E.cards[id]; guardar(); },
+
+        /* Repaso espaciado de flashcards (3 cajas). Caja 1 = cada día, caja 2 = cada 3 días, caja 3 = cada 7 días.
+           "La sé" sube de caja; "Repasar" vuelve a la caja 1 y la tarjeta toca de nuevo hoy.
+           Una tarjeta nunca vista cuenta como "toca hoy". */
+        leitner: function (id) { return (E.lei || {})[id] || null; },
+        leitnerToca: function (id) { var l = (E.lei || {})[id]; return !l || l.p <= finDeHoy(); },
+        leitnerMarcar: function (id, sabe) {
+            E.lei = E.lei || {};
+            var l = E.lei[id], ahora = Date.now(), acc = sabe ? 's' : 'r';
+            if (l && l.a === acc && ahora - l.u < 600000) return l;          // evita subir dos veces por un doble toque
+            var c = sabe ? Math.min((l ? l.c : 1) + 1, 3) : 1;
+            E.lei[id] = { c: c, p: sabe ? ahora + DIAS_CAJA[c] * 86400000 : ahora, u: ahora, a: acc };
+            guardar(); return E.lei[id];
+        },
+        leitnerResumen: function (ids) {
+            var r = { nuevas: 0, c1: 0, c2: 0, c3: 0, hoy: 0 };
+            ids.forEach(function (id) {
+                var l = (E.lei || {})[id];
+                if (!l) r.nuevas++; else r['c' + l.c]++;
+                if (!l || l.p <= finDeHoy()) r.hoy++;
+            });
+            return r;
+        },
+        leitnerManana: function (ids) {
+            var ini = finDeHoy(), fin = ini + 86400000;
+            return ids.filter(function (id) { var l = (E.lei || {})[id]; return l && l.p > ini && l.p <= fin; }).length;
+        },
 
         resultado: function (qid, ok) {
             var r = E.preg[qid] || { ok: 0, fail: 0 };

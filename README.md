@@ -78,3 +78,18 @@ Menú **Buscar** (`#/buscar`). Busca en **todo el texto** de los temas, no solo 
 - Cada fragmento enlaza a la **sección exacta** del tema (`#/farmaco/<id>/<sección>`) y la resalta un momento.
 - Las etiquetas y el grupo de cada tema son enlaces a esta búsqueda; el cuadro de la portada usa el mismo motor.
 - No incluye la zona con clave (Datos examen).
+
+## Repaso espaciado de flashcards
+
+Sistema de **3 cajas** (se guarda en el navegador, clave `lei` dentro de `farmacologia-v1`):
+
+| Caja | Vuelve a tocar |
+|---|---|
+| 1 | cada día |
+| 2 | cada 3 días |
+| 3 | cada 7 días |
+
+- **La sé** sube la tarjeta de caja; **Repasar** la manda a la caja 1 y toca de nuevo hoy. Una tarjeta nunca vista cuenta como "toca hoy".
+- En **Flashcards** hay una casilla "Repaso espaciado: sólo las que me tocan hoy", el resumen de cuántas hay en cada caja y un botón directo (`#/flashcards/hoy`).
+- Cada tarjeta muestra su caja ("Nueva", "Caja 1 de 3"…). Los intervalos están en `DIAS_CAJA` (`js/core/03-estado.js`).
+- Convive con las marcas anteriores "La sé / Repasar" y con el filtro "Sólo las que aún no sé".
