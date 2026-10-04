@@ -67,6 +67,15 @@ FA.estado = (function () {
         },
         historial: function () { return E.historial; },
 
+        /* Actividades de pares (emparejar y "¿a qué fármaco pertenece?"): resultado por par */
+        parResultado: function (id, ok) {
+            E.par = E.par || {};
+            var r = E.par[id] || { ok: 0, fail: 0 };
+            if (ok) r.ok++; else r.fail++;
+            r.ult = ok; E.par[id] = r; guardar();
+        },
+        par: function (id) { return (E.par || {})[id] || null; },
+
         /* Banco de examen (zona con clave): se guarda aparte para no mezclarlo con el progreso público */
         examenResultado: function (qid, ok) {
             E.ex = E.ex || {};
