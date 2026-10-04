@@ -224,3 +224,11 @@ hr { border: 0; border-top: 1px solid var(--linea); margin: var(--s-4) 0; }
 .candado__form { max-width: 360px; margin: var(--s-4) auto 0; text-align: left; }
 .candado__error { color: var(--err); background: var(--err-fondo); border-radius: var(--r-sm); padding: var(--s-2) var(--s-3); font-size: var(--t-sm); font-weight: 600; }
 .candado .fila-botones { justify-content: center; }
+
+/* ── Portada: texto a la izquierda, insignia del logo a la derecha ── */
+.hero__fila { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-5); align-items: center; }
+.hero__logo { width: clamp(180px, 24vw, 270px); height: auto; border-radius: 50%; box-shadow: 0 14px 40px rgba(0, 0, 0, .28); }
+@media (max-width: 760px) {
+    .hero__fila { grid-template-columns: 1fr; gap: var(--s-4); }
+    .hero__logo { order: -1; width: 96px; }
+}

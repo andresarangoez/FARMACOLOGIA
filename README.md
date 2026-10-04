@@ -47,7 +47,7 @@ css/                     01-variables · 02-base · 03-componentes · 04-vistas
 js/core/                 util · markdown · datos (modelo) · estado (progreso) · router
 js/components/           alcance · flashcards · quiz · formulas (las 8 de la calculadora)
 js/modules/              inicio · sesiones · farmaco · practica · calculadora · examen · progreso
-assets/branding/         logo real de Soy Andrés Arango (sin modificar)
+assets/branding/         logo vectorial (SVG currentColor, negro, blanco, azul profundo), insignias circulares y favicon; logo-color.html cambia el color en RGB; el PNG original se conserva
 tools/                   construir.ps1 (empaquetado) · servir.ps1 (servidor local opcional)
 docs/                    brief original y fórmulas fuente
 ```
@@ -56,4 +56,4 @@ docs/                    brief original y fórmulas fuente
 
 - El contenido académico sale tal cual de los `.md` entregados (transcripciones de clase resumidas). No se inventa contenido.
 - Las dosis y fórmulas son material de estudio; el pie de página y la calculadora piden verificar con el protocolo institucional.
-- El logo se usa desde el archivo real, sin rediseñarlo.
+- Encabezado: insignia azul profundo con logo blanco. Portada y pie: insignia blanca con logo azul profundo. Favicon: insignia azul. Todo sale del logo vectorizado (huecos uniformes de 8); la versión fiel al PNG original está en `logo-soy-andres-arango-fiel-original.svg`.

@@ -27,7 +27,7 @@ main:focus { outline: none; }
 }
 .barra__int { max-width: var(--ancho); height: 100%; margin: 0 auto; padding: 0 var(--s-4); display: flex; align-items: center; gap: var(--s-4); }
 .firma { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; color: var(--azul-profundo); margin-right: auto; }
-.firma__logo { border-radius: 8px; }
+.firma__logo { border-radius: 50%; flex: none; }
 .firma__txt { display: flex; flex-direction: column; line-height: 1.15; }
 .firma__txt b { font-weight: 800; font-size: 1rem; }
 .firma__txt small { font-size: .7rem; color: var(--tx-suave); }
@@ -56,7 +56,7 @@ main:focus { outline: none; }
 .pie { margin-top: var(--s-6); background: var(--azul-profundo); color: #D7E1F0; }
 .pie__int { max-width: var(--ancho); margin: 0 auto; padding: var(--s-5) var(--s-4); display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--s-5); }
 .pie__autor { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-4); }
-.pie__autor img { border-radius: 10px; background: var(--blanco); padding: 3px; }
+.pie__autor img { border-radius: 50%; flex: none; }
 .pie__autor b { display: block; color: var(--blanco); font-size: 1.05rem; }
 .pie__autor span { font-size: var(--t-sm); }
 .pie__insta { display: flex; gap: var(--s-3); align-items: flex-start; color: var(--amarillo); text-decoration: none; }

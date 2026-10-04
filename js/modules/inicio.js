@@ -10,6 +10,7 @@ FA.vistas.inicio = {
         var lista = nums.length > 1 ? nums.slice(0, -1).join(', ') + ' y ' + nums[nums.length - 1] : String(nums[0] || '');
 
         return '<section class="hero"><div class="hero__int">' +
+            '<div class="hero__fila"><div class="hero__txt">' +
             '<p class="eyebrow eyebrow--claro">Tutorías y material de estudio</p>' +
             '<h1>Farmacología</h1>' +
             '<p class="hero__lead">Cuidado crítico neo-pediátrico · Sesiones ' + u.esc(lista) + '. Lee, practica con flashcards, pruébate con quizzes y calcula dosis paso a paso.</p>' +
@@ -17,6 +18,8 @@ FA.vistas.inicio = {
             '<a class="btn btn--amarillo" href="#/estudio">' + u.icono('reloj') + ' Modo estudio</a>' +
             '<a class="btn btn--fantasma" href="#/sesiones">Ver sesiones</a>' +
             '<a class="btn btn--fantasma" href="#/quiz">Hacer un quiz</a>' +
+            '</div></div>' +
+            '<img class="hero__logo" src="assets/branding/logo-soy-andres-arango-circulo-blanco.svg" alt="Logo Soy Andrés Arango" width="260" height="260">' +
             '</div>' +
             '<dl class="cifras">' +
             '<div><dt>Sesiones</dt><dd>' + T.sesiones + '</dd></div>' +
