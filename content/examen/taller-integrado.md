@@ -13,8 +13,6 @@ Esta es una **guía de estudio resuelta** del taller integrado (15 preguntas). E
 
 **Sobre las dosis máximas:** donde la clase no dio una dosis máxima, aparece como "no indicada en clase". No inventes un tope: búscalo en tu fuente (guía institucional, Red Book o Harriet Lane) y cítalo.
 
-**Dos puntos para confirmar con tu docente** (aparecen señalados dentro de las respuestas): (1) en el apunte de clase, la ADN girasa se asocia a grampositivos y la topoisomerasa IV a gramnegativos, y los libros de texto describen lo contrario; (2) en teicoplanina el apunte dice "1 dosis/día" y también "10 mg/kg c/12h".
-
 ## Pregunta 1. Era dorada de los antibióticos y evolución de cuatro grupos
 
 ### ¿Qué fue la "era dorada de los antibióticos"?
@@ -28,9 +26,9 @@ Es el período, aproximadamente de **1940 a la década de 1960**, en el que se d
 | 1928 | Fleming observa el efecto antibacteriano de *Penicillium* [complemento] |
 | 1932 | Domagk descubre que el colorante Prontosil cura infecciones por estreptococo: nacen las sulfonamidas |
 | 1940-1941 | Se purifica la penicilina y se usa en pacientes [complemento] |
-| 1940s | Era dorada: búsqueda sistemática en suelos; en 1949 el cloranfenicol (de *Streptomyces venezuelae*, suelo de Venezuela) se convierte en el primer antibiótico de síntesis química |
+| 1940s | Era dorada: búsqueda sistemática en suelos; el cloranfenicol (de *Streptomyces venezuelae*, suelo de Venezuela) se aísla en 1947 y en 1949 se convierte en el primer antibiótico de síntesis química |
 | 1944 | Estreptomicina, el primer fármaco útil contra la tuberculosis [complemento] |
-| 1950s | Tetraciclinas (de *Streptomyces aureofaciens*), vancomicina (*S. orientalis*, 1950; aprobada en 1958) y estreptograminas (*S. pristinaespiralis*, 1950) |
+| 1950s | Tetraciclinas (de *Streptomyces aureofaciens*), vancomicina (*S. orientalis*, 1950; aprobada en 1958) y estreptograminas (*S. pristinaespiralis*, década de 1950) |
 | 1960 | Ácido nalidíxico, la primera quinolona |
 
 **Cómo contribuyó al desarrollo de la terapia antimicrobiana:**
@@ -44,15 +42,15 @@ Es el período, aproximadamente de **1940 a la década de 1960**, en el que se d
 
 | | Tetraciclinas | Cloranfenicol | Sulfonamidas | Quinolonas |
 |---|---|---|---|---|
-| **Origen o descubrimiento** | Bacteria del suelo *S. aureofaciens*: sustancia amarilla antibacteriana → clortetraciclina ("Aureomicina", del latín "dorado") | 1949, de *S. venezuelae* (suelo de Venezuela); primer antibiótico de síntesis química | 1932, Domagk (Bayer) con el colorante Prontosil; el metabolismo hepático genera **sulfanilamida** | 1960, ácido nalidíxico; se relaciona con la síntesis de la cloroquina (antipalúdico) |
-| **Hitos históricos** | 1ª generación (1950s): tetraciclina, oxitetraciclina (*S. rimosus*). 2ª generación (1960-70): doxiciclina, minociclina. Siglo XXI: tigeciclina (glicilciclina) | Se usó desde 1940s para meningitis; 10 años después se documentaron efectos graves (anemia aplásica, síndrome del niño gris) | Derivados: sulfacetamida, sulfadiazina, sulfadoxina y la combinación trimetoprim-sulfametoxazol | 1980: fluoroquinolonas (se agrega flúor). 2ª gen. ciprofloxacino; 3ª levofloxacino; 4ª moxifloxacino |
+| **Origen o descubrimiento** | Bacteria del suelo *S. aureofaciens*: sustancia amarilla antibacteriana → clortetraciclina ("Aureomicina", del latín "dorado") | Aislado en 1947 de *S. venezuelae* (suelo de Venezuela); en 1949, primer antibiótico de síntesis química | 1932, Domagk (Bayer) con el colorante Prontosil; el metabolismo hepático genera **sulfanilamida** | 1960, ácido nalidíxico; se relaciona con la síntesis de la cloroquina (antipalúdico) |
+| **Hitos históricos** | 1ª generación (1950s): tetraciclina, oxitetraciclina (*S. rimosus*). 2ª generación (1960-70): doxiciclina, minociclina. Siglo XXI: tigeciclina (glicilciclina) | Se usó para meningitis tras su síntesis; unos 10 años después se documentaron efectos graves (anemia aplásica, síndrome del niño gris) | Derivados: sulfacetamida, sulfadiazina, sulfadoxina y la combinación trimetoprim-sulfametoxazol | 1980: fluoroquinolonas (se agrega flúor). 2ª gen. ciprofloxacino; 3ª levofloxacino; 4ª moxifloxacino |
 | **Representantes importantes** | Doxiciclina (la de elección en pediatría), tigeciclina | Cloranfenicol | TMP-SMX, sulfadiazina, sulfadoxina, sulfacetamida | Ciprofloxacino, levofloxacino, moxifloxacino |
-| **Importancia clínica** | Rickettsias, Lyme, brucelosis, bartonelosis, clamidia, profilaxis de malaria; tigeciclina para microorganismos resistentes | Meningitis bacteriana, fiebre tifoidea, abscesos cerebrales (cuando otros fallan) | Primeros antibacterianos sistémicos; toxoplasmosis, malaria, ITU, *Pneumocystis* | Pseudomonas, ántrax (ciprofloxacino), neumonía grave (levofloxacino) |
+| **Importancia clínica** | Rickettsias, Lyme, brucelosis, bartonelosis, clamidia, profilaxis de malaria; tigeciclina para microorganismos resistentes | Meningitis bacteriana, fiebre tifoidea, abscesos cerebrales (cuando otros fallan) | Primeros antibacterianos sistémicos; toxoplasmosis, malaria, ITU, *Pneumocystis* | Pseudomona, ántrax (ciprofloxacino), neumonía grave (levofloxacino) |
 | **Limitación en pediatría** | Solo en mayores de 8 años: tinción dental irreversible y retraso del crecimiento óseo | Síndrome del niño gris en prematuros (menores de 37 semanas); no es de primera línea | Contraindicado en menores de 2 meses (kernícterus con TMP-SMX) | Daño de cartílago y **rotura del tendón** en niños; moxifloxacino no es de primera línea |
 
 ### Línea de tiempo (para dibujar)
 
-1928 penicilina [complemento] → **1932 sulfonamidas** (Prontosil, Domagk) → 1940s tetraciclinas y búsqueda en suelos → **1949 cloranfenicol** → 1950s vancomicina y estreptograminas → **1960 ácido nalidíxico** (primera quinolona) → 1960-70 doxiciclina y minociclina → **1980 fluoroquinolonas** → siglo XXI tigeciclina.
+1928 penicilina [complemento] → **1932 sulfonamidas** (Prontosil, Domagk) → 1940s tetraciclinas y búsqueda en suelos → **1947 cloranfenicol aislado (síntesis química en 1949)** → 1950s vancomicina y estreptograminas → **1960 ácido nalidíxico** (primera quinolona) → 1960-70 doxiciclina y minociclina → **1980 fluoroquinolonas** → siglo XXI tigeciclina.
 
 ## Pregunta 2. Mapa conceptual de las tetraciclinas
 
@@ -62,7 +60,7 @@ Es el período, aproximadamente de **1940 a la década de 1960**, en el que se d
   - **Mecanismo**: entran a la bacteria por **porinas** y transporte activo → se unen a la subunidad **30S** del ribosoma → bloquean el sitio donde llega el **ARN de transferencia** (ARNt con el aminoácido) → no se alarga la proteína
   - **Blanco y sitio de acción**: ribosoma bacteriano, subunidad 30S
   - **Efecto**: **bacteriostático** (detiene el crecimiento, no mata directamente)
-  - **Espectro**: amplio (grampositivos, gramnegativos y microorganismos atípicos). Rickettsias, *Borrelia* (Lyme), *Brucella*, *Bartonella*, clamidia. Tigeciclina **no cubre bien Pseudomonas**
+  - **Espectro**: amplio (Gram positivos, Gram negativos y microorganismos atípicos). Rickettsias, *Borrelia* (Lyme), *Brucella*, *Bartonella*, clamidia. Tigeciclina **no cubre bien Pseudomona**
   - **Indicaciones**: rickettsias (garrapatas, piojos), tifus (pulga), enfermedad de Lyme, brucelosis, bartonelosis, clamidia, profilaxis de malaria
   - **Generaciones**
     - 1ª (1950s): tetraciclina, oxitetraciclina → amplio espectro
@@ -90,7 +88,7 @@ Es el período, aproximadamente de **1940 a la década de 1960**, en el que se d
 
 ### Origen e importancia histórica
 
-- **1949:** primer antibiótico de **síntesis química**, aislado de *Streptomyces venezuelae* (suelo de Venezuela).
+- **1947:** aislado de *Streptomyces venezuelae* (suelo de Venezuela); **1949:** primer antibiótico de **síntesis química**.
 - Pertenece a la era dorada de los antibióticos (1940s).
 - Se empezó a usar para meningitis, pero 10 años después se documentaron efectos secundarios graves (anemia aplásica y síndrome del niño gris), lo que lo dejó como fármaco de reserva.
 
@@ -172,19 +170,19 @@ En **1932**, el Dr. Gerhard Domagk (Bayer) estudiaba un colorante textil, el **P
 | **Estructura química** | Núcleo quinolónico sin flúor (ácido nalidíxico) | Quinolona **con átomo de flúor** (desde 1980) [complemento: en la posición 6] |
 | **Modificaciones farmacológicas** | Espectro estrecho | El flúor mejora la estabilidad y el **espectro** antibacteriano (más potencia y mejor penetración tisular [complemento]) |
 | **Mecanismo de acción** | Inhiben ADN girasa y topoisomerasa IV | Igual: inhiben **ADN girasa** (topoisomerasa II) y **topoisomerasa IV** → el ADN en replicación se rompe → **bactericida** |
-| **Blancos bacterianos** | ADN girasa y topoisomerasa IV | ADN girasa y topoisomerasa IV |
-| **Espectro** | Gramnegativos; poca cobertura de grampositivos | Amplio: gramnegativos (incluida *Pseudomonas*), grampositivos (levofloxacino) y anaerobios (moxifloxacino) |
+| **Blancos bacterianos** | ADN girasa (blanco principal en Gram negativos) y topoisomerasa IV (blanco principal en Gram positivos) | ADN girasa (blanco principal en Gram negativos) y topoisomerasa IV (blanco principal en Gram positivos) |
+| **Espectro** | Gram negativos; poca cobertura de Gram positivos | Amplio: Gram negativos (incluida *Pseudomona*), Gram positivos (levofloxacino) y anaerobios (moxifloxacino) |
 
-> **Para confirmar con tu docente:** en el apunte de clase la ADN girasa se asocia a grampositivos y la topoisomerasa IV a gramnegativos. [complemento] Los libros de texto (Goodman & Gilman, Katzung) lo describen al revés: la girasa es el blanco principal en gramnegativos y la topoisomerasa IV en grampositivos. Escribe la versión de tu docente y cita tu fuente.
+> La ADN girasa es el blanco principal de las quinolonas en las bacterias Gram negativas, y la topoisomerasa IV en las Gram positivas.
 
 ### Cuadro comparativo de las generaciones
 
 | Generación | Representantes | Características |
 |---|---|---|
-| 1ª (sin flúor) | Ácido nalidíxico (1960) | Gramnegativos; poca cobertura de grampositivos; limitado en niños por rotura tendinosa (Aquiles) |
-| 2ª | Ciprofloxacino, norfloxacino, ofloxacino | Gramnegativos, *Pseudomonas aeruginosa*, *E. coli*; ciprofloxacino es de primera línea en ántrax |
-| 3ª | Levofloxacino | Grampositivos; "quinolona respiratoria" (*Streptococcus pneumoniae*), buena penetración pulmonar |
-| 4ª | Moxifloxacino | Amplio espectro, incluye anaerobios; la más usada en pediatría según la clase, pero no de primera línea |
+| 1ª (sin flúor) | Ácido nalidíxico (1960) | Gram negativos; poca cobertura de Gram positivos; limitado en niños por rotura tendinosa (Aquiles) |
+| 2ª | Ciprofloxacino, norfloxacino, ofloxacino | Gram negativos, *Pseudomona aeruginosa*, *E. coli*; ciprofloxacino es de primera línea en ántrax |
+| 3ª | Levofloxacino | Gram positivos; "quinolona respiratoria" (*Streptococcus pneumoniae*), buena penetración pulmonar |
+| 4ª | Moxifloxacino | Amplio espectro, incluye anaerobios; uso limitado en pediatría (no es de primera línea) |
 
 ### Preguntas finales
 
@@ -197,10 +195,10 @@ Se **acumulan en los condrocitos**, generan **estrés oxidativo**, interfieren c
 El cartílago de crecimiento y articular contiene condrocitos donde el fármaco se acumula; el daño de estas células y de la matriz (colágeno) produce **artropatía**: dolor articular y dificultad para caminar.
 
 **¿Por qué el moxifloxacino no es habitualmente de primera elección en pediatría?**
-Es un fármaco de amplio espectro (grampositivos y anaerobios), por lo que se **reserva** para casos específicos y con **antibiograma**; su uso rutinario favorece la resistencia. [complemento] Además, hay menos experiencia pediátrica con este fármaco.
+Es un fármaco de amplio espectro (Gram positivos y anaerobios), por lo que se **reserva** para casos específicos y con **antibiograma**; su uso rutinario favorece la resistencia. [complemento] Además, hay menos experiencia pediátrica con este fármaco.
 
 **¿Qué características estructurales diferencian al levofloxacino y qué relación tiene con el ofloxacino?**
-El levofloxacino es de **tercera generación** y es **derivado del ofloxacino**. [complemento] Corresponde al **isómero levógiro (L)** del ofloxacino, que es el que tiene la actividad antibacteriana; esto mejora la potencia y la actividad contra grampositivos.
+El levofloxacino es de **tercera generación** y es **derivado del ofloxacino**. [complemento] Corresponde al **isómero levógiro (L)** del ofloxacino, que es el que tiene la actividad antibacteriana; esto mejora la potencia y la actividad contra Gram positivos.
 
 ## Pregunta 6. Fluoroquinolonas: seguridad y cuidados
 
@@ -230,7 +228,7 @@ El levofloxacino es de **tercera generación** y es **derivado del ofloxacino**.
 ### Qué son
 
 - **Oxazolidinonas:** grupo de antibióticos de **síntesis química**, desarrollado en los años 90 frente a gérmenes resistentes. Se usaban originalmente como herbicida (años 70-80) y eran tóxicas para humanos. El **linezolid** fue la primera oxazolidinona segura (FDA 2000).
-- **Estreptograminas:** derivadas de *Streptomyces pristinaespiralis* (1950). Son una **combinación sinérgica de dos sustancias** en un mismo vial: **dalfopristina** (estreptogramina A) y **quinupristina** (estreptogramina B).
+- **Estreptograminas:** derivadas de *Streptomyces pristinaespiralis* (década de 1950). Son una **combinación sinérgica de dos sustancias** en un mismo vial: **dalfopristina** (estreptogramina A) y **quinupristina** (estreptogramina B).
 
 ### Linezolid
 
@@ -272,14 +270,14 @@ El levofloxacino es de **tercera generación** y es **derivado del ofloxacino**.
 
 ### Qué son y desarrollo histórico
 
-Las **polimixinas** son antibióticos antiguos (1947) con **carga positiva**, de última alternativa para gramnegativos multirresistentes. La **colistina** (polimixina E) se retiró en 1950 por su **nefrotoxicidad** y se **reintrodujo en el año 2000**.
+Las **polimixinas** son antibióticos antiguos (1947) con **carga positiva**, de última alternativa para Gram negativos multirresistentes. La **colistina** (polimixina E) se retiró en 1950 por su **nefrotoxicidad** y se **reintrodujo en el año 2000**.
 
-**¿Por qué recuperaron importancia?** Porque aumentaron los **gramnegativos multirresistentes** de infecciones nosocomiales (*Pseudomonas aeruginosa*, *Acinetobacter baumannii* y *Klebsiella pneumoniae*) para los que casi no hay otras opciones.
+**¿Por qué recuperaron importancia?** Porque aumentaron los **Gram negativos multirresistentes** de infecciones nosocomiales (*Pseudomona aeruginosa*, *Acinetobacter baumannii* y *Klebsiella pneumoniae*) para los que casi no hay otras opciones.
 
 ### Esquema del mecanismo de acción
 
 1. Las polimixinas tienen **carga positiva**.
-2. Son atraídas por energía electrostática hacia el **lipopolisacárido (LPS)**, que tiene carga negativa, en la membrana externa del gramnegativo.
+2. Son atraídas por energía electrostática hacia el **lipopolisacárido (LPS)**, que tiene carga negativa, en la membrana externa del Gram negativo.
 3. **Desplazan el calcio y el magnesio** que mantenían estable y rígida la membrana (los cationes unen entre sí las moléculas de LPS).
 4. Al perderse esa estabilidad la membrana se desorganiza: **aumenta la permeabilidad**, el contenido celular escapa y ocurre **lisis**. Efecto **bactericida**.
 
@@ -307,7 +305,7 @@ Las **polimixinas** son antibióticos antiguos (1947) con **carga positiva**, de
 
 Los **glicopéptidos** son antibióticos de **molécula muy grande** que bloquean la formación de la pared bacteriana. Los estudiados en clase son la **vancomicina** y la **teicoplanina**.
 
-> ⭐ **Dato de examen de clase:** la vancomicina es una molécula muy grande y no atraviesa la membrana externa de los gramnegativos; por eso solo es útil en **grampositivos**.
+> ⭐ **Dato de examen de clase:** la vancomicina es una molécula muy grande y no atraviesa la membrana externa de los Gram negativos; por eso solo es útil en **Gram positivos**.
 
 ### Comparación
 
@@ -315,15 +313,15 @@ Los **glicopéptidos** son antibióticos de **molécula muy grande** que bloquea
 |---|---|---|
 | **Mecanismo de acción** | Se une al precursor **D-Ala-D-Ala** del peptidoglicano y bloquea la transpeptidación | Igual |
 | **Blanco farmacológico** | Precursor del peptidoglicano (D-Ala-D-Ala) → no se forma la pared celular | Igual |
-| **Espectro** | **Grampositivos:** *S. aureus*, *S. pneumoniae*, *Enterococcus faecalis* (sepsis neonatal, meningitis, osteomielitis, endocarditis) | Grampositivos (mismo espectro) |
-| **Diferencias farmacológicas** | Origen: *Streptomyces orientalis* (1950, aprobada en 1958; apodo "Mississippi Mud"). Requiere infusión lenta y monitorización de niveles | **Vida media más larga** (18-20 h); pH más neutro (menos vesicante); más costosa. Dosis: 10 mg/kg cada 12 horas (el apunte también dice "1 dosis/día"; confirma con tu docente) |
+| **Espectro** | **Gram positivos:** *S. aureus*, *S. pneumoniae*, *Enterococcus faecalis* (sepsis neonatal, meningitis, osteomielitis, endocarditis) | Gram positivos (mismo espectro) |
+| **Diferencias farmacológicas** | Origen: *Streptomyces orientalis* (1950, aprobada en 1958; apodo "Mississippi Mud"). Requiere infusión lenta y monitorización de niveles | **Vida media más larga** (18-20 h); pH más neutro (menos vesicante); más costosa. En niños mayores de 2 meses: infección severa o neutropénicos, 10 mg/kg cada 12 h (3 dosis: 0, 12 y 24 h) y luego 10 mg/kg cada 24 h; infección moderada, 10 mg/kg cada 12 h (3 dosis) y luego 6 mg/kg cada 24 h; IV o IM. Mantenimiento una vez al día |
 
 ### Vancomicina
 
 | Aspecto | Respuesta |
 |---|---|
-| **Dosis pediátrica** | **40-60 mg/kg/día** dividido cada 6 horas (aprox. 10 mg/kg/dosis). Dosis máxima: no indicada en clase |
-| **Vía de administración** | **Intravenosa**, en infusión de **no menos de 60-90 minutos** (nunca en bolo) |
+| **Dosis pediátrica** | **40-60 mg/kg/día** dividido cada 6 horas; es más frecuente usar **40 mg/kg/día** (10 mg/kg/dosis). Dosis máxima: no indicada en clase |
+| **Vía de administración** | **Intravenosa**, solo en perfusión lenta: **no más de 10 mg/min y al menos 60 minutos** (60-90 min en clase), bien diluida (al menos 100 mL por 500 mg o 200 mL por 1.000 mg); nunca en bolo |
 | **Principales efectos adversos** | Síndrome del hombre rojo, nefrotoxicidad y ototoxicidad (con niveles mayores de 20) |
 | **Reacción por administración rápida** | **Síndrome del hombre rojo:** liberación de **histamina** → vasodilatación, prurito e hipotensión |
 | **Monitorización** | **Niveles en valle** (concentración más baja, antes de la dosis, a las 24 h, control cada 72 h): meta **12-14**; **mayor de 20 es tóxico** |
@@ -332,7 +330,7 @@ Los **glicopéptidos** son antibióticos de **molécula muy grande** que bloquea
 
 **Tres cuidados de enfermería para una administración segura:**
 
-1. **Infundir en no menos de 60-90 minutos y nunca en bolo.** Justificación: la infusión rápida libera histamina y produce el síndrome del hombre rojo (hipotensión, prurito, vasodilatación).
+1. **Infundir en perfusión lenta (no más de 10 mg/min, al menos 60 minutos), bien diluida, y nunca en bolo.** Justificación: la infusión rápida libera histamina y produce el síndrome del hombre rojo (hipotensión, prurito, vasodilatación).
 2. **Tomar los niveles en valle (antes de la siguiente dosis) y vigilar la función renal (creatinina, diuresis).** Justificación: el valle refleja la concentración más baja; si es mayor de 20 hay riesgo de nefrotoxicidad y ototoxicidad.
 3. **Vigilar signos de ototoxicidad (disminución de la audición, zumbidos) y de nefrotoxicidad, y valorar el acceso venoso.** Justificación: son los efectos tóxicos dependientes de la concentración; [complemento] el fármaco es irritante para la vena.
 
@@ -342,7 +340,7 @@ Los **glicopéptidos** son antibióticos de **molécula muy grande** que bloquea
 
 La **daptomicina** es un **lipopéptido**: tiene una **base lipídica** y una **cadena de aminoácidos** que facilita su ingreso a la bacteria. Se obtuvo de *Streptomyces roseosporus*, se desarrolló desde 1980 y la FDA la aprobó en 2003.
 
-**Microorganismos:** excelente contra **grampositivos**, en especial **SARM** (endocarditis, infecciones de piel y tejidos blandos). [complemento] También se usa frente a enterococo resistente a vancomicina.
+**Microorganismos:** excelente contra **Gram positivos**, en especial **SARM** (endocarditis, infecciones de piel y tejidos blandos). [complemento] También se usa frente a enterococo resistente a vancomicina.
 
 ### Mecanismo de acción
 

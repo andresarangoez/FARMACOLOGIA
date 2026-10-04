@@ -61,7 +61,7 @@ Un paciente pediátrico de 6 kg requiere dosis máxima de calcio (500 mg/kg/dosi
 
 Un paciente presenta calcio sérico de 8,2 mg/dL. ¿Se considera hipocalcemia? Justifique con el valor de referencia.
 
-**Solución:** sí, se considera hipocalcemia. El valor de referencia indica hipocalcemia cuando el calcio sérico es menor a 8,5 mg/dL; 8,2 mg/dL está por debajo de ese umbral (rango normal: 8,8-10,8 mg/dL).
+**Solución:** sí, se considera hipocalcemia. El valor de referencia indica hipocalcemia cuando el calcio sérico es menor a 8,5 mg/dL; 8,2 mg/dL está por debajo de ese umbral (rango normal: 8,5-10,5 mg/dL).
 
 ## Preguntas de quiz sugeridas
 

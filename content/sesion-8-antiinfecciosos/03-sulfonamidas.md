@@ -33,7 +33,7 @@ dificultad_quiz: alta
 - **Uso principal: toxoplasmosis** — SIEMPRE combinada con **pirimetamina** (efecto sinérgico: bloquean la producción de ácido fólico del parásito por dos flancos distintos)
 - **Dosis toxoplasmosis:** 100-150 mg/kg c/6h
 - Manifestaciones de toxoplasmosis congénita: daño ocular (coriorretinitis), calcificaciones cerebrales, retraso del neurodesarrollo
-- En toxoplasmosis se suplementa con **ácido fólico al paciente** — la combinación ataca al parásito (*Toxoplasma gondii*), no al paciente
+- En toxoplasmosis se suplementa al paciente con **ácido folínico** (leucovorina) — la combinación ataca al parásito (*Toxoplasma gondii*), no al paciente
 - **Sulfadiazina de PLATA** (tópica): se evita en quemaduras en <6 meses — se asocia a retraso de reepitelización y pseudoescara
 
 ## Sulfadoxina
@@ -75,7 +75,7 @@ Mecanismo sinérgico doble:
 2. **(Opción múltiple)** ¿Con qué fármaco SIEMPRE se combina la sulfadiazina para tratar toxoplasmosis?
    - a) Trimetoprim
    - b) **Pirimetamina** ✓
-   - c) Clofacimina
+   - c) Clofazimina
    - d) Dapsona
 
 3. **(Verdadero/Falso)** El TMP-SMX es seguro en menores de 2 meses. → **Falso** (riesgo de Kernícterus)

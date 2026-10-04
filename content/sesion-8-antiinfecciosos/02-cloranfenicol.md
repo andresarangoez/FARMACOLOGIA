@@ -11,9 +11,10 @@ dificultad_quiz: alta
 
 ## Historia
 
-- **1949:** primer antibiótico de síntesis química (de *Streptomyces venezuelae*, aislado en suelo de Venezuela)
+- **1947:** aislado de *Streptomyces venezuelae* (suelo de Venezuela)
+- **1949:** síntesis química: primer antibiótico de síntesis química
 - Época de "la era dorada de los antibióticos" (1940s)
-- Comenzó a usarse en 1940 para meningitis, pero 10 años después se documentaron efectos secundarios graves
+- Se empezó a usar para meningitis tras su síntesis, pero unos 10 años después se documentaron efectos secundarios graves
 
 ## Mecanismo de acción
 

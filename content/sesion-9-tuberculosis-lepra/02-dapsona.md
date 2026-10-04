@@ -29,7 +29,7 @@ Igual que las sulfonamidas: compite con el **PABA**, bloquea la **dihidropteroat
 
 ## Dosis
 
-**1-2 mg/kg/día** — SIEMPRE en combinación (nunca sola, riesgo de resistencia). Se combina típicamente con clofacimina.
+**1-2 mg/kg/día** — SIEMPRE en combinación (nunca sola, riesgo de resistencia). Se combina típicamente con clofazimina.
 
 ## Efectos secundarios ⭐ DATOS DE EXAMEN
 
@@ -66,7 +66,7 @@ Otros efectos: fiebre, rash, hepatitis (activación del sistema inmune).
    - c) **Azul de metileno** ✓
    - d) N-acetilcisteína
 
-4. **(Verdadero/Falso)** La dapsona se administra sola, sin combinarse con otros fármacos. → **Falso** (siempre en combinación, típicamente con clofacimina)
+4. **(Verdadero/Falso)** La dapsona se administra sola, sin combinarse con otros fármacos. → **Falso** (siempre en combinación, típicamente con clofazimina)
 
 ## Flashcards sugeridas
 
@@ -74,4 +74,4 @@ Otros efectos: fiebre, rash, hepatitis (activación del sistema inmune).
 - **Q:** ¿Qué complicación hematológica causa el déficit de G6PD con dapsona? → **A:** Anemia hemolítica
 - **Q:** ¿Qué es la metahemoglobinemia? → **A:** Exceso de hierro oxidado en el glóbulo rojo, incapaz de transportar oxígeno
 - **Q:** Antídoto de la metahemoglobinemia → **A:** Azul de metileno
-- **Q:** ¿Con qué fármaco se combina típicamente la dapsona en lepra? → **A:** Clofacimina
+- **Q:** ¿Con qué fármaco se combina típicamente la dapsona en lepra? → **A:** Clofazimina

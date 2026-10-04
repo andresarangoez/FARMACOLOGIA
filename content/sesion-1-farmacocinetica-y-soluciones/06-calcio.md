@@ -37,10 +37,8 @@ dificultad_quiz: media
 
 | Tipo | Definición | Valor normal |
 |---|---|---|
-| **Calcio sérico** | Todo el calcio de la sangre; incluye el que está unido a las proteínas (aprox. 40%) y a aniones como citrato y fosfato (aprox. 10%) | 8,8 a 10,8 mg/dL |
+| **Calcio sérico** | Todo el calcio de la sangre; incluye el que está unido a las proteínas (aprox. 40%) y a aniones como citrato y fosfato (aprox. 10%) | 8,5 a 10,5 mg/dL |
 | **Calcio iónico (libre)** | Fracción metabólicamente activa (aprox. 50%): "el que trabaja". No depende de los niveles de proteínas | 1,20 a 1,32 mmol/L |
-
-> Dato a verificar con la docente: la lámina de historia del calcio muestra un rango del calcio sérico total de 8,5 a 10,5 mg/dL, mientras que la lámina de dosis y los apuntes usan 8,8 a 10,8 mg/dL.
 
 ## Dosis de reposición
 
@@ -62,11 +60,11 @@ dificultad_quiz: media
 1. **(Opción múltiple)** ¿Cuál es el valor normal del calcio sérico según los apuntes?
    - a) 1,20 a 1,32 mg/dL
    - b) 5 a 6 mg/dL
-   - c) **8,8 a 10,8 mg/dL** ✓
+   - c) **8,5 a 10,5 mg/dL** ✓
    - d) 12 a 14 mg/dL
 
 2. **(Opción múltiple)** ¿Cuál es el valor normal del calcio iónico?
-   - a) 8,8 a 10,8 mg/dL
+   - a) 8,5 a 10,5 mg/dL
    - b) **1,20 a 1,32 mmol/L** ✓
    - c) 0,2 a 0,4 mmol/L
    - d) 2,5 a 3,5 mmol/L
@@ -106,7 +104,7 @@ dificultad_quiz: media
 ## Flashcards sugeridas
 
 - **Q:** Calcio sérico vs. calcio iónico → **A:** Sérico: todo el calcio de la sangre, incluido el unido a proteínas. Iónico: la fracción libre, metabólicamente activa
-- **Q:** Valor normal del calcio sérico → **A:** 8,8 a 10,8 mg/dL
+- **Q:** Valor normal del calcio sérico → **A:** 8,5 a 10,5 mg/dL
 - **Q:** Valor normal del calcio iónico → **A:** 1,20 a 1,32 mmol/L
 - **Q:** Dosis de reposición de calcio → **A:** 100 a 200 mg/kg/dosis, máximo 4 dosis al día (o 500 mg/kg/dosis)
 - **Q:** ¿Dónde está el 99% del calcio? → **A:** En huesos y dientes

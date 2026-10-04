@@ -13,10 +13,10 @@ dificultad_quiz: alta
 
 | Generación | Representantes | Espectro / nota |
 |---|---|---|
-| 1ª (sin flúor) | Ácido nalidíxico (1960) | Gram negativos, poca cobertura gram positivos. Limitado en niños: rotura tendinosa (Aquiles) |
+| 1ª (sin flúor) | Ácido nalidíxico (1960) | Gram negativos, poca cobertura Gram positivos. Limitado en niños: rotura tendinosa (Aquiles) |
 | 2ª | **Ciprofloxacino**, norfloxacino, ofloxacino | Gram negativos — *Pseudomona aeruginosa*, *E. coli* |
 | 3ª | **Levofloxacino** | Gram positivos — "quinolonas respiratorias" (*Streptococcus pneumoniae*) |
-| 4ª | **Moxifloxacino** | Amplio espectro, incluye ANAEROBIOS — la más usada en pediatría |
+| 4ª | **Moxifloxacino** | Amplio espectro, incluye ANAEROBIOS — uso limitado en pediatría (no es de primera línea) |
 
 Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabilidad y espectro antibacteriano.
 
@@ -26,8 +26,8 @@ Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabil
 
 ## Mecanismo de acción (común a todas)
 
-1. Inhiben la **ADN girasa** (= topoisomerasa II, gram positivos) — se encarga de desenrollar el ADN en replicación
-2. Inhiben la **topoisomerasa IV** (gram negativos) — se encarga de reparación y replicación
+1. Inhiben la **ADN girasa** (= topoisomerasa II, blanco principal en Gram negativos) — se encarga de desenrollar el ADN en replicación
+2. Inhiben la **topoisomerasa IV** (blanco principal en Gram positivos) — se encarga de reparación y replicación
 3. Al inhibir ambas, el ADN que está en replicación se rompe, no puede copiarse
 4. Efecto **BACTERICIDA**
 
@@ -39,19 +39,19 @@ Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabil
 
 ## Levofloxacino (3ª generación, derivado de ofloxacino)
 
-- Quinolona respiratoria: mayor actividad gram positivos, buena penetración pulmonar
+- Quinolona respiratoria: mayor actividad Gram positivos, buena penetración pulmonar
 - Uso: neumonía grave, infecciones por Pseudomona resistentes, profilaxis de ántrax
 - **Dosis:** 10-20 mg/kg/día c/12h
 
 ## Moxifloxacino (4ª generación)
 
-- Estructura combinada de cipro+levo. Amplio espectro: gram positivos Y anaerobios facultativos
+- Estructura combinada de cipro+levo. Amplio espectro: Gram positivos Y anaerobios facultativos
 - Uso limitado y con antibiograma en pediatría (NO 1ª línea)
 - **Dosis:** 7.5-10 mg/kg c/24h, máx 400mg/día
 
 ## Efectos secundarios de clase (toda la familia)
 
-> ⭐ **DATO DE EXAMEN — Daño del cartílago (artropatía):** las quinolonas se acumulan en condrocitos, generan estrés oxidativo, interfieren con síntesis de colágeno y quelan magnesio. Vigilar dolor articular, dificultad para caminar. Uso limitado en mayores de 2 años.
+> ⭐ **DATO DE EXAMEN — Daño del cartílago (artropatía):** las quinolonas se acumulan en condrocitos, generan estrés oxidativo, interfieren con síntesis de colágeno y quelan magnesio. Vigilar dolor articular, dificultad para caminar. Uso limitado en menores de 2 años.
 
 **Neurotoxicidad:** atraviesan la BHE, inhiben el GABA (inhibitorio) → libera glutamato sin control → hiperestimulación neuronal → cefalea, mareo, confusión, convulsiones (↓umbral convulsivo).
 
@@ -86,7 +86,7 @@ Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabil
 
 4. **(Verdadero/Falso)** Las fluoroquinolonas pueden prolongar el intervalo QT por bloqueo de canales de potasio hERG. → **Verdadero**
 
-5. **(Opción múltiple)** ¿Cuál es la quinolona respiratoria de 3ª generación, útil en gram positivos?
+5. **(Opción múltiple)** ¿Cuál es la quinolona respiratoria de 3ª generación, útil en Gram positivos?
    - a) Ciprofloxacino
    - b) **Levofloxacino** ✓
    - c) Ácido nalidíxico

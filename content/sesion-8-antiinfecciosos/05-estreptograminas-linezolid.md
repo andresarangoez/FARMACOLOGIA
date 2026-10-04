@@ -10,7 +10,7 @@ dificultad_quiz: alta
 
 ## Estreptograminas (Quinupristina/Dalfopristina)
 
-Derivadas de *Streptomyces pristinaespiralis* (suelo de Japón, 1950). Combinación sinérgica de DOS sustancias en un solo vial:
+Derivadas de *Streptomyces pristinaespiralis* (origen francés, década de 1950). Combinación sinérgica de DOS sustancias en un solo vial:
 - **Dalfopristina** (estreptogramina A, 350mg)
 - **Quinupristina** (estreptogramina B, 150mg)
 

@@ -67,7 +67,7 @@ Son 10 preguntas de opción múltiple **tipo caso clínico integrador**: cada un
 
 ## Pregunta 6. Mecanismo de la daptomicina
 
-**Caso:** un paciente con una infección grave por un microorganismo grampositivo susceptible recibe daptomicina. ¿Cuál mecanismo y efecto son los más coherentes con su farmacología?
+**Caso:** un paciente con una infección grave por un microorganismo Gram positivo susceptible recibe daptomicina. ¿Cuál mecanismo y efecto son los más coherentes con su farmacología?
 
 - a) Daptomicina inhibe la síntesis de peptidoglucano mediante unión directa a los precursores terminales D-Ala-D-Ala.
 - b) Daptomicina se une a la subunidad 30S y bloquea la síntesis proteica sin alterar la membrana.
@@ -96,11 +96,11 @@ Son 10 preguntas de opción múltiple **tipo caso clínico integrador**: cada un
 - c) Las fluoroquinolonas inhiben la subunidad 50S y bloquean la formación de enlaces peptídicos durante la traducción.
 - d) Las fluoroquinolonas inhiben la síntesis de ácido fólico al bloquear de forma consecutiva dos enzimas de la vía metabólica.
 
-**Justificación:** las fluoroquinolonas inhiben la ADN girasa (topoisomerasa II, principalmente en grampositivos) y la topoisomerasa IV (principalmente en gramnegativos), ambas encargadas de desenrollar/reparar el ADN durante la replicación — al inhibirlas, el ADN se rompe y no puede replicarse, efecto bactericida. La opción b describe a las polimixinas, c a los fenicoles/oxazolidinonas, y d a las sulfonamidas/TMP-SMX.
+**Justificación:** las fluoroquinolonas inhiben la ADN girasa (topoisomerasa II, blanco principal en Gram negativos) y la topoisomerasa IV (blanco principal en Gram positivos), ambas encargadas de desenrollar/reparar el ADN durante la replicación — al inhibirlas, el ADN se rompe y no puede replicarse, efecto bactericida. La opción b describe a las polimixinas, c a los fenicoles/oxazolidinonas, y d a las sulfonamidas/TMP-SMX.
 
 ## Pregunta 9. Mecanismo de las polimixinas
 
-**Caso:** un paciente presenta una infección por un bacilo gramnegativo multirresistente susceptible a colistina. ¿Cuál mecanismo explica mejor la actividad de las polimixinas?
+**Caso:** un paciente presenta una infección por un bacilo Gram negativo multirresistente susceptible a colistina. ¿Cuál mecanismo explica mejor la actividad de las polimixinas?
 
 - a) **Las polimixinas interactúan con componentes del lipopolisacárido y desplazan cationes como calcio y magnesio, alterando la estabilidad y permeabilidad de la membrana bacteriana.** ✓
 - b) Las polimixinas bloquean la subunidad 50S e impiden la formación del complejo de iniciación.

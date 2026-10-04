@@ -26,10 +26,11 @@ dificultad_quiz: media
 
 > En el apunte original este resultado decía 1100 mg; matemáticamente 5100 ÷ 3 = 1700 mg por dosis. Revisa este dato con tu docente antes del parcial.
 
-## Ejemplo: linezolid 10 mg/kg/día, paciente de 37 kg, cada 8 horas
+## Ejemplo: linezolid 10 mg/kg cada 8 horas (máximo 30 mg/kg/día), paciente de 37 kg
 
-1. 10 mg × 37 kg = **370 mg en 24 horas**.
-2. 370 mg ÷ 3 dosis = **123,3 mg cada 8 horas**.
+1. Son 3 dosis al día de 10 mg/kg, es decir **30 mg/kg/día** (el máximo).
+2. Dosis total del día: 30 mg × 37 kg = **1110 mg en 24 horas**.
+3. Dosis por toma: 1110 mg ÷ 3 dosis = **370 mg cada 8 horas** (es decir, 10 mg × 37 kg).
 
 ## Ejemplo: amikacina 7,5-10 mg/kg/día (se usa 7,5), paciente de 2,7 kg
 
@@ -70,11 +71,11 @@ dificultad_quiz: media
    - c) **1700 mg** ✓
    - d) 850 mg
 
-4. **(Opción múltiple)** Linezolid 10 mg/kg/día cada 8 horas, paciente de 37 kg. ¿Cuál es la dosis por toma?
-   - a) 370 mg
-   - b) 185 mg
-   - c) **123,3 mg** ✓
-   - d) 12,3 mg
+4. **(Opción múltiple)** Linezolid 10 mg/kg cada 8 horas (máximo 30 mg/kg/día), paciente de 37 kg. ¿Cuál es la dosis por toma?
+   - a) **370 mg** ✓
+   - b) 123,3 mg
+   - c) 1110 mg
+   - d) 37 mg
 
 5. **(Opción múltiple)** Amikacina 7,5 mg/kg/día, paciente de 2,7 kg. ¿Cuál es la dosis total diaria?
    - a) 2,7 mg
@@ -107,6 +108,6 @@ dificultad_quiz: media
 - **Q:** Número de dosis de "cada 8 horas" → **A:** 3 dosis al día
 - **Q:** Vancomicina 40 mg/kg/día en 3,2 kg → **A:** 128 mg al día; ≈ 42,6 mg cada 8 horas
 - **Q:** Piperacilina 300 mg/kg/día en 17 kg → **A:** 5100 mg al día; 1700 mg cada 8 horas
-- **Q:** Linezolid 10 mg/kg/día en 37 kg → **A:** 370 mg al día; 123,3 mg cada 8 horas
+- **Q:** Linezolid 10 mg/kg cada 8 h (máx. 30 mg/kg/día) en 37 kg → **A:** 370 mg por toma; 1110 mg al día (30 mg/kg/día)
 - **Q:** Acetaminofén: dosis y presentación → **A:** 10-15 mg/kg/dosis; jarabe 150 mg/5 cc (10 mg/kg fiebre, 15 mg/kg dolor)
 - **Q:** Acetaminofén en 12 kg con fiebre (jarabe 150 mg/5 cc) → **A:** 10 × 12 = 120 mg; 120 ÷ 30 mg/cc = 4 cc

@@ -1,11 +1,11 @@
 ---
 id: clofacimina
-nombre: Clofacimina
+nombre: Clofazimina
 sesion: 9
 tema: Tuberculosis y lepra
 grupo_farmacologico: Fenazina
 mecanismo_resumen: Genera especies reactivas de oxígeno, daña membrana bacteriana
-tags: [lepra, clofacimina, poliquimioterapia, pigmentacion, pediatria]
+tags: [lepra, clofazimina, poliquimioterapia, pigmentacion, pediatria]
 dificultad_quiz: media
 ---
 
@@ -13,7 +13,7 @@ dificultad_quiz: media
 
 Desarrollada sobre 1950, derivada de un colorante (**fenazina**). Se estudió para tuberculosis, pero se descubrió que disminuía la lesión endotelial/papular que genera la lepra. Sobre los años 80 se usa en la terapia multidroga (**PQT** — poliquimioterapia) para lepra.
 
-Se conoce como un **"bactericida lento"**. La dapsona SIEMPRE va combinada con clofacimina (nunca sola) en el esquema de tratamiento.
+Se conoce como un **"bactericida lento"**. La dapsona SIEMPRE va combinada con clofazimina (nunca sola) en el esquema de tratamiento.
 
 ## Mecanismo de acción
 
@@ -34,24 +34,24 @@ Se conoce como un **"bactericida lento"**. La dapsona SIEMPRE va combinada con c
 
 ## Preguntas de quiz sugeridas
 
-1. **(Opción múltiple)** ¿Cuál es el mecanismo de acción de la clofacimina?
+1. **(Opción múltiple)** ¿Cuál es el mecanismo de acción de la clofazimina?
    - a) Bloquea la síntesis de ácido fólico
    - b) **Genera especies reactivas de oxígeno que dañan la membrana bacteriana** ✓
    - c) Inhibe la ADN girasa
    - d) Bloquea canales de potasio
 
-2. **(Opción múltiple)** ¿Cuál es el efecto secundario cutáneo característico de la clofacimina?
+2. **(Opción múltiple)** ¿Cuál es el efecto secundario cutáneo característico de la clofazimina?
    - a) Urticaria
    - b) **Pigmentación marrón/rojiza por acumulación en macrófagos dérmicos** ✓
    - c) Vitíligo
    - d) Fotosensibilidad severa
 
-3. **(Verdadero/Falso)** La clofacimina se considera un "bactericida rápido". → **Falso** (se conoce como bactericida LENTO)
+3. **(Verdadero/Falso)** La clofazimina se considera un "bactericida rápido". → **Falso** (se conoce como bactericida LENTO)
 
 ## Flashcards sugeridas
 
-- **Q:** ¿De qué colorante deriva la clofacimina? → **A:** Fenazina
-- **Q:** Mecanismo de acción de la clofacimina → **A:** Genera especies reactivas de oxígeno, daña membrana bacteriana
+- **Q:** ¿De qué colorante deriva la clofazimina? → **A:** Fenazina
+- **Q:** Mecanismo de acción de la clofazimina → **A:** Genera especies reactivas de oxígeno, daña membrana bacteriana
 - **Q:** ¿Qué efecto cutáneo característico produce? → **A:** Pigmentación marrón/rojiza (macrófagos dérmicos)
 - **Q:** ¿Por qué causa enteropatía por cristales? → **A:** Es poco soluble en agua, se cristaliza en el tubo gástrico
 - **Q:** ¿Con qué otro fármaco se combina siempre en lepra? → **A:** Dapsona (esquema PQT - poliquimioterapia)

@@ -41,7 +41,7 @@ Son las 20 preguntas del quiz, resueltas con la clave que dio 5.0. El formato de
 - c) Es un derivado directo del ácido nalidíxico, con características que favorecen una adecuada penetración en el tejido intestinal y actividad frente a patógenos digestivos.
 - d) Es un derivado directo de la moxifloxacina, con características que favorecen una adecuada penetración en el tejido óseo y actividad frente a patógenos articulares.
 
-**Justificación:** el levofloxacino (3ª generación) es el isómero levógiro (L) del ofloxacino, que es el que conserva la actividad antibacteriana. Se le llama "quinolona respiratoria" por su buena penetración pulmonar y su actividad frente a *Streptococcus pneumoniae*. El ciprofloxacino (2ª generación) se orienta más a gramnegativos y vía urinaria; el ácido nalidíxico es la quinolona de 1ª generación y la moxifloxacina es de 4ª generación, por lo que ninguno es el origen del levofloxacino.
+**Justificación:** el levofloxacino (3ª generación) es el isómero levógiro (L) del ofloxacino, que es el que conserva la actividad antibacteriana. Se le llama "quinolona respiratoria" por su buena penetración pulmonar y su actividad frente a *Streptococcus pneumoniae*. El ciprofloxacino (2ª generación) se orienta más a Gram negativos y vía urinaria; el ácido nalidíxico es la quinolona de 1ª generación y la moxifloxacina es de 4ª generación, por lo que ninguno es el origen del levofloxacino.
 
 ## Pregunta 4. Cuidados de enfermería con cloranfenicol
 
@@ -96,7 +96,7 @@ Son las 20 preguntas del quiz, resueltas con la clave que dio 5.0. El formato de
 - c) Es una oxazolidinona relacionada estructuralmente con el linezolid e inhibe la síntesis proteica al impedir la formación del complejo ribosomal bacteriano.
 - d) Es un glucopéptido relacionado estructuralmente con la vancomicina e inhibe la síntesis de la pared al unirse a los precursores del peptidoglucano.
 
-**Justificación:** la dapsona es una sulfona con el mismo mecanismo que las sulfonamidas: compite con el PABA y bloquea la dihidropteroato sintasa, inhibiendo la síntesis de ácido fólico de *M. leprae*. Siempre se usa en combinación (con clofacimina) para evitar resistencia. Las opciones b, c y d describen quinolonas, oxazolidinonas y glicopéptidos, que son grupos distintos.
+**Justificación:** la dapsona es una sulfona con el mismo mecanismo que las sulfonamidas: compite con el PABA y bloquea la dihidropteroato sintasa, inhibiendo la síntesis de ácido fólico de *M. leprae*. Siempre se usa en combinación (con clofazimina) para evitar resistencia. Las opciones b, c y d describen quinolonas, oxazolidinonas y glicopéptidos, que son grupos distintos.
 
 ## Pregunta 9. Eltrombopag: mecanismo
 
@@ -111,14 +111,14 @@ Son las 20 preguntas del quiz, resueltas con la clave que dio 5.0. El formato de
 
 ## Pregunta 10. Daptomicina: mecanismo y microorganismo
 
-**Caso:** la daptomicina se usa en infecciones graves por microorganismos grampositivos. Su efecto depende de una interacción específica con la membrana de la bacteria. ¿Cuál opción describe correctamente su mecanismo y uno de los microorganismos frente a los que se utiliza?
+**Caso:** la daptomicina se usa en infecciones graves por microorganismos Gram positivos. Su efecto depende de una interacción específica con la membrana de la bacteria. ¿Cuál opción describe correctamente su mecanismo y uno de los microorganismos frente a los que se utiliza?
 
-- a) **Se une a la membrana bacteriana dependiente de calcio, provoca despolarización y pérdida de funciones celulares; presenta actividad frente a *Staphylococcus aureus* resistente a meticilina (MRSA).** ✓
+- a) **Se une a la membrana bacteriana dependiente de calcio, provoca despolarización y pérdida de funciones celulares; presenta actividad frente a *Staphylococcus aureus* resistente a meticilina (SARM).** ✓
 - b) Se une a la pared bacteriana dependiente de calcio, provoca inhibición del peptidoglucano y pérdida de funciones celulares; presenta actividad frente a *Escherichia coli* productora de BLEE.
 - c) Se une al ADN bacteriano dependiente de calcio, provoca inhibición de la replicación y pérdida de funciones celulares; presenta actividad frente a *Klebsiella pneumoniae* productora de BLEE.
-- d) Se une al ribosoma bacteriano dependiente de calcio, provoca inhibición de la síntesis proteica y pérdida de funciones celulares; presenta actividad frente a *Pseudomonas aeruginosa* resistente.
+- d) Se une al ribosoma bacteriano dependiente de calcio, provoca inhibición de la síntesis proteica y pérdida de funciones celulares; presenta actividad frente a *Pseudomona aeruginosa* resistente.
 
-**Justificación:** la daptomicina necesita calcio para activarse, se inserta en la membrana bacteriana y forma poros que producen escape masivo de potasio, despolarización severa y lisis (efecto bactericida rápido). Es útil frente a grampositivos resistentes como SARM/MRSA (endocarditis, piel y tejidos blandos). Las demás opciones atribuyen un blanco incorrecto (pared, ADN, ribosoma) y gramnegativos, que no son su espectro. Recuerda que **no sirve en infecciones respiratorias** porque el surfactante pulmonar la inactiva.
+**Justificación:** la daptomicina necesita calcio para activarse, se inserta en la membrana bacteriana y forma poros que producen escape masivo de potasio, despolarización severa y lisis (efecto bactericida rápido). Es útil frente a Gram positivos resistentes como SARM (endocarditis, piel y tejidos blandos). Las demás opciones atribuyen un blanco incorrecto (pared, ADN, ribosoma) y Gram negativos, que no son su espectro. Recuerda que **no sirve en infecciones respiratorias** porque el surfactante pulmonar la inactiva.
 
 ## Pregunta 11. Cuidados de enfermería con antitrombina III
 
@@ -140,11 +140,11 @@ Son las 20 preguntas del quiz, resueltas con la clave que dio 5.0. El formato de
 - c) Es útil en la infección primaria porque destruye directamente la membrana micobacteriana y produce especies reactivas de oxígeno que eliminan los bacilos presentes en los tejidos.
 - d) **Es útil en el eritema nudoso leproso porque disminuye mediadores inflamatorios como TNF-α y modula la respuesta inmunitaria, reduciendo la inflamación asociada a esta reacción.** ✓
 
-**Justificación:** la talidomida es un inmunomodulador antiangiogénico que inhibe la producción de TNF-α y otras citocinas. Se usa en la reacción tipo 2 de la lepra (eritema nudoso leproso), donde hay nódulos dolorosos por inmunocomplejos. No es antimicobacteriano directo: inhibir ácido fólico es mecanismo de la dapsona, y las especies reactivas de oxígeno son mecanismo de la clofacimina. Su uso exige programa de acceso controlado por ser altamente teratogénica (focomelia).
+**Justificación:** la talidomida es un inmunomodulador antiangiogénico que inhibe la producción de TNF-α y otras citocinas. Se usa en la reacción tipo 2 de la lepra (eritema nudoso leproso), donde hay nódulos dolorosos por inmunocomplejos. No es antimicobacteriano directo: inhibir ácido fólico es mecanismo de la dapsona, y las especies reactivas de oxígeno son mecanismo de la clofazimina. Su uso exige programa de acceso controlado por ser altamente teratogénica (focomelia).
 
 ## Pregunta 13. Linezolid: trombocitopenia
 
-**Caso:** un paciente recibe linezolid durante un periodo prolongado por una infección por un grampositivo resistente. En el seguimiento hay disminución progresiva del recuento plaquetario y se decide vigilancia hematológica periódica. ¿Cuál opción explica este efecto adverso?
+**Caso:** un paciente recibe linezolid durante un periodo prolongado por una infección por un Gram positivo resistente. En el seguimiento hay disminución progresiva del recuento plaquetario y se decide vigilancia hematológica periódica. ¿Cuál opción explica este efecto adverso?
 
 - a) El linezolid puede producir leucocitosis, especialmente neutrofilia, cuyo riesgo aumenta con tratamientos superiores a dos semanas y requiere control periódico de los leucocitos.
 - b) El linezolid puede producir hemólisis, especialmente anemia, cuyo riesgo aumenta con tratamientos superiores a dos semanas y requiere control periódico de la hemoglobina.
