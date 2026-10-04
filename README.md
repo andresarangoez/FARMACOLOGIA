@@ -93,3 +93,12 @@ Sistema de **3 cajas** (se guarda en el navegador, clave `lei` dentro de `farmac
 - En **Flashcards** hay una casilla "Repaso espaciado: sólo las que me tocan hoy", el resumen de cuántas hay en cada caja y un botón directo (`#/flashcards/hoy`).
 - Cada tarjeta muestra su caja ("Nueva", "Caja 1 de 3"…). Los intervalos están en `DIAS_CAJA` (`js/core/03-estado.js`).
 - Convive con las marcas anteriores "La sé / Repasar" y con el filtro "Sólo las que aún no sé".
+
+## Modo oscuro, accesibilidad e impresión
+
+- **Modo oscuro:** botón con luna/sol en el encabezado. Por defecto sigue la preferencia del sistema; si la persona elige a mano, se recuerda (`farmacologia-tema` en localStorage). Un script mínimo del `<head>` pone el tema antes de pintar, así no hay parpadeo.
+  - Los colores semánticos están en `css/01-variables.css` (`--sup`, `--titulo`, `--enlace`, `--sel`, `--amb…`) y el modo oscuro solo los redefine en `css/05-oscuro.css`. En claro valen lo que valían antes.
+  - Si agregas un componente nuevo, usa esas variables (superficie = `--sup`, títulos = `--titulo`, enlaces = `--enlace`, botones/seleccionado = `--sel`) y se verá bien en los dos modos. Texto blanco sobre `--azul-profundo` es seguro; texto oscuro sobre amarillo hay que corregirlo en `05-oscuro.css`.
+  - Se midió el contraste de todo el texto en ambos modos: 0 casos bajo 4,5:1 (se oscureció el gris tenue del modo claro, que estaba en 3,2:1).
+- **Saltar al contenido:** primer elemento al pulsar Tab. El enrutador ya no enfoca el contenido en la carga inicial para que esto funcione.
+- **Imprimir un tema:** botón "Imprimir este tema" en cada tema. La hoja de impresión oculta menú, botones y pie, deja tablas y datos de examen con bordes y agrega la línea de autoría.

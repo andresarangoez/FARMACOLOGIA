@@ -1,0 +1,60 @@
+/* ============================================================
+   MODO OSCURO
+   Se activa con <html data-tema="oscuro"> (lo pone js/core/06-tema.js
+   según la preferencia del sistema o el botón del encabezado).
+   Solo redefine tokens y corrige las pocas piezas que dependían de
+   "blanco sobre azul profundo" o de "azul profundo sobre claro".
+   ============================================================ */
+:root[data-tema="oscuro"] {
+    color-scheme: dark;
+    --bg: #0B1422;      --bg-alt: #0E1A2C;   --sup: #132238;
+    --tx: #E4EAF3;      --tx-suave: #A9B6C9; --tx-tenue: #7E8DA3;
+    --linea: #22324B;   --azul-linea: #2B4262; --azul-tinte: #1A2E4A;
+    --titulo: #D5E3F8;  --enlace: #8DB8F2;
+    --azul: #3A78C9;    --sel: #2B63B3;
+    --amarillo-tinte: #3A2E12; --amarillo-borde: #75591F;
+    --amb: #F1D08A; --amb2: #F5DFA8; --amb3: #F3DDA6; --amb-ex: #F1D08A;
+    --ok: #7FCB9B;  --ok-fondo: #15301F;
+    --err: #FF9C90; --err-fondo: #3A1B18;
+    --st-pendiente: #7E8DA3; --st-estudio: #8DB8F2; --st-practicado: #E0A94A; --st-dominado: #6CC48E;
+    --sombra: 0 10px 30px rgba(0, 0, 0, .45);
+    --sombra-sm: 0 2px 6px rgba(0, 0, 0, .4);
+}
+
+/* texto oscuro sobre amarillo (el amarillo no cambia) */
+:root[data-tema="oscuro"] .btn--amarillo,
+:root[data-tema="oscuro"] .btn--amarillo:hover,
+:root[data-tema="oscuro"] .tarjeta--alt .btn:not(.btn--sec),
+:root[data-tema="oscuro"] mark { color: #092755; }
+
+/* texto sobre fondos de color que en claro eran "blanco sobre verde/rojo" */
+:root[data-tema="oscuro"] .op--ok b,
+:root[data-tema="oscuro"] .op--mal b,
+:root[data-tema="oscuro"] .btn--sabe.btn--on,
+:root[data-tema="oscuro"] .btn--sabe:hover { color: #0B1422; }
+
+/* logo: un aro fino lo separa de la barra oscura */
+:root[data-tema="oscuro"] .firma__logo { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .28); }
+
+/* tarjetas con barra superior blanca → superficie oscura */
+:root[data-tema="oscuro"] .barra { border-bottom-color: var(--linea); }
+:root[data-tema="oscuro"] tbody tr:nth-child(even) { background: rgba(255, 255, 255, .03); }
+:root[data-tema="oscuro"] tr.fila-examen,
+:root[data-tema="oscuro"] tr.fila-examen:nth-child(even) { background: var(--amarillo-tinte); }
+
+/* el botón de tema */
+.btn-tema { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--linea); border-radius: var(--r-sm); background: var(--sup); color: var(--titulo); cursor: pointer; }
+.btn-tema:hover { background: var(--azul-tinte); }
+.btn-tema .icono { width: 20px; height: 20px; }
+.btn-tema .sol { display: none; }
+:root[data-tema="oscuro"] .btn-tema .luna { display: none; }
+:root[data-tema="oscuro"] .btn-tema .sol { display: inline; }
+
+/* texto pequeño sobre el azul de "seleccionado" */
+:root[data-tema="oscuro"] .segmento button[aria-pressed="true"] small { color: #FFFFFF; }
+
+/* número de la fórmula activa: texto oscuro sobre el amarillo */
+:root[data-tema="oscuro"] .calc__op[aria-current="true"] .calc__n { color: #092755; }
+
+/* la portada conserva su degradado original (el azul de interacción es más claro en oscuro) */
+:root[data-tema="oscuro"] .hero { background: linear-gradient(135deg, #092755 0%, #0A3E7C 100%); }
