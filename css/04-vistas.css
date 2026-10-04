@@ -325,3 +325,11 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .origen { color: var(--tx-tenue); }
 @media (max-width: 560px) { .emp { grid-template-columns: 1fr 1fr; gap: var(--s-2); } .emp__item { padding: 10px; font-size: var(--t-xs); } }
 @media (prefers-reduced-motion: reduce) { .emp__item--mal { animation: none; } }
+
+/* ── ¿A qué fármaco pertenece? ── */
+.enigma { margin: var(--s-3) 0 var(--s-4); padding: var(--s-3) var(--s-4); border-left: 4px solid var(--enlace); background: var(--sup); border-radius: var(--r-sm, 8px); font-size: var(--t-lg, 1.1rem); line-height: 1.5; }
+.cada { margin: var(--s-2) 0 0; padding-left: 0; list-style: none; font-size: var(--t-sm); }
+.cada li { padding: var(--s-2) 0; border-top: 1px solid var(--borde, rgba(127,127,127,.25)); }
+.cada li:first-child { border-top: 0; }
+.cada .cada--ok b { color: var(--ok); }
+.cada .cada--mal b { color: var(--mal, #b3261e); }
