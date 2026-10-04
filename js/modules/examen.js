@@ -11,7 +11,8 @@ FA.vistas.examen = {
         return '<div class="pagina pagina--lectura">' +
             '<header class="cabecera"><p class="eyebrow">Material de estudio</p><h1>⭐ Datos examen</h1>' +
             '<p class="lead">' + T.examen + ' puntos que la docente señaló en clase como posibles preguntas. Cada uno lleva al tema donde está explicado.</p>' +
-            '<div class="fila-botones"><a class="btn" href="#/quiz">' + u.icono('quiz') + ' Probarme con un quiz</a></div></header>' +
+            '<div class="fila-botones"><a class="btn" href="#/examen/practicar">' + u.icono('reloj') + ' Banco de examen: práctica y simulacro</a>' +
+            '<a class="btn btn--sec" href="#/quiz">' + u.icono('quiz') + ' Probarme con un quiz</a></div></header>' +
             (FA.datos.extras.length ? '<section class="bloque-sesion"><div class="bloque-sesion__cab"><div><p class="eyebrow">Con página propia</p><h2>Talleres y simulacros</h2></div></div>' +
                 '<div class="rejilla">' + FA.datos.extras.map(function (r) {
                     var nP = r.secciones.filter(function (s) { return /^pregunta\s+\d+/i.test(s.titulo); }).length;
