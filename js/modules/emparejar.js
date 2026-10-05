@@ -165,7 +165,7 @@ FA.vistas.emparejar = (function () {
                     '<div class="panel alcance"><h2 class="panel__tit">¿Qué quieres emparejar?</h2>' +
                     '<div class="chips" data-tipos role="group" aria-label="Tipo">' + TIPOS.map(function (t) { return '<button type="button" class="chip" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '">' + t.txt + '</button>'; }).join('') + '</div>' +
                     '<p class="ayuda">Sesiones (si no eliges ninguna, entran todas)</p>' +
-                    '<div class="chips" data-ses>' + ses.map(function (s) { return '<button type="button" class="chip" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '">Sesión ' + s.n + ' · ' + u.esc(s.tema) + '</button>'; }).join('') + '</div>' +
+                    '<div class="chips chips--lista" data-ses>' + ses.map(function (s) { return '<button type="button" class="chip" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '">Sesión ' + s.n + ' · ' + u.esc(s.tema) + '</button>'; }).join('') + '</div>' +
                     '<label class="campo"><span>Pares por ronda</span><select data-n>' + [4, 5, 6, 8].map(function (n) { return '<option' + (n === st.n ? ' selected' : '') + '>' + n + '</option>'; }).join('') + '</select></label>' +
                     '<label class="check"><input type="checkbox" data-solo' + (st.solo ? ' checked' : '') + '> Sólo los pares que fallé la última vez</label>' +
                     '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p>' +
