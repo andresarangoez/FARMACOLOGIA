@@ -18,7 +18,7 @@
        (por ejemplo dapsona y sulfonamidas comparten mecanismo en la clase).
    ============================================================ */
 FA.pares = (function () {
-    var esFarmaco = function (f) { return f.sesion >= 7; };
+    var esFarmaco = function (f) { return f.sesion >= 7 && (f.quiz || []).length > 0; };   // sesiones 7+ con contenido (las plantillas vacías no cuentan)
     var PRIORIDAD = { tabla: 0, flashcard: 1, frontmatter: 2 };
 
     function corto(n) { return n.replace(/\s*\(.*$/, '').trim(); }
