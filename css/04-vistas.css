@@ -306,3 +306,22 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
     .badge-examen, .chip { background: #fff !important; border: 1px solid #777 !important; color: #000 !important; }
     strong { color: #000; }
 }
+
+/* ── Emparejar ── */
+.fila-botones--suelta { margin: 0 0 var(--s-4); }
+.emp-top { display: flex; justify-content: space-between; margin-bottom: var(--s-2); font-size: var(--t-sm); color: var(--tx-suave); }
+.emp { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--s-4); margin-top: var(--s-3); align-items: start; }
+.emp__col { display: grid; gap: var(--s-2); }
+.emp__item { text-align: left; padding: 12px 14px; border: 2px solid var(--azul-linea); border-radius: var(--r-md); background: var(--sup); color: var(--tx); font: inherit; font-size: var(--t-sm); line-height: 1.4; cursor: pointer; transition: border-color var(--t-anim), background var(--t-anim), transform var(--t-anim); }
+.emp__item small { display: block; font-size: var(--t-xs); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--tx-tenue); margin-bottom: 2px; }
+.emp__item--der { font-weight: 700; color: var(--titulo); display: flex; align-items: center; min-height: 48px; }
+.emp__item:hover:not(:disabled) { border-color: var(--azul); background: var(--azul-tinte); }
+.emp__item--sel { border-color: var(--azul); background: var(--azul-tinte); box-shadow: 0 0 0 3px rgba(10, 62, 124, .18); }
+.emp__item--ok { border-color: var(--ok); background: var(--ok-fondo); cursor: default; }
+.emp__item--mal { border-color: var(--err); background: var(--err-fondo); animation: temblor .35s; }
+.emp__item--arrastrando { opacity: .55; }
+.emp__item--sobre { border-style: dashed; border-color: var(--azul); background: var(--azul-tinte); }
+@keyframes temblor { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+.origen { color: var(--tx-tenue); }
+@media (max-width: 560px) { .emp { grid-template-columns: 1fr 1fr; gap: var(--s-2); } .emp__item { padding: 10px; font-size: var(--t-xs); } }
+@media (prefers-reduced-motion: reduce) { .emp__item--mal { animation: none; } }

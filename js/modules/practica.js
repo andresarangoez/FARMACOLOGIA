@@ -44,6 +44,7 @@
         titulo: 'Quiz',
         render: function () {
             return '<div class="pagina pagina--estrecha">' + cabecera('Quiz', 'Opción múltiple y verdadero/falso. Puedes hacer un quiz por fármaco, por sesión completa o mezclando varias sesiones.') +
+                '<div class="fila-botones fila-botones--suelta"><a class="btn btn--sec" href="#/emparejar">' + u.icono('tarjeta') + ' Emparejar mecanismos, efectos y fármacos</a></div>' +
                 '<div data-barra></div><div data-zona></div></div>';
         },
         montar: function (el, p) {
