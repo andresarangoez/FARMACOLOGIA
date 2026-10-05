@@ -42,6 +42,7 @@ FA.vistas.inicio = {
             '<a class="herr" href="#/estudio">' + u.icono('reloj') + '<b>Modo estudio</b><span>¿Cuánto tiempo tienes hoy? Sesión con temporizador (pomodoro).</span></a>' +
             '<a class="herr" href="#/flashcards">' + u.icono('tarjeta') + '<b>Flashcards</b><span>Voltea tarjetas y marca lo que ya sabes.</span></a>' +
             '<a class="herr" href="#/emparejar">' + u.icono('tarjeta') + '<b>Emparejar</b><span>Une cada mecanismo, efecto o grupo con su fármaco.</span></a>' +
+            '<a class="herr" href="#/comparar">' + u.icono('tarjeta') + '<b>Comparar fármacos</b><span>Grupo, mecanismo y efectos adversos en una tabla.</span></a>' +
             '<a class="herr" href="#/distractores">' + u.icono('quiz') + '<b>¿A qué fármaco pertenece?</b><span>Elige el fármaco entre 4 parecidos y ve qué hace cada opción.</span></a>' +
             '<a class="herr" href="#/quiz">' + u.icono('quiz') + '<b>Quiz</b><span>Por fármaco, por sesión o mezclando varias.</span></a>' +
             '<a class="herr" href="#/calculadora">' + u.icono('calc') + '<b>Calculadora</b><span>' + FA.formulas.lista.length + ' fórmulas con el procedimiento paso a paso.</span></a>' +

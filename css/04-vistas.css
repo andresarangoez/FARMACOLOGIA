@@ -332,4 +332,18 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .cada li { padding: var(--s-2) 0; border-top: 1px solid var(--borde, rgba(127,127,127,.25)); }
 .cada li:first-child { border-top: 0; }
 .cada .cada--ok b { color: var(--ok); }
-.cada .cada--mal b { color: var(--mal, #b3261e); }
+.cada .cada--mal b { color: var(--err); }
+
+/* ── Comparar fármacos ── */
+.comp__filtros { display: grid; gap: var(--s-3); margin-bottom: var(--s-3); }
+.comp { width: 100%; border-collapse: collapse; font-size: var(--t-sm); min-width: 760px; }
+.comp th, .comp td { text-align: left; vertical-align: top; padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--linea); }
+.comp thead th { position: sticky; top: 0; background: var(--sup); }
+.comp__ord { all: unset; cursor: pointer; font-weight: 800; color: var(--titulo); }
+.comp__ord:focus-visible { outline: 2px solid var(--enlace); outline-offset: 2px; }
+.comp th[aria-sort="ascending"] .comp__ord::after { content: " ▲"; font-size: .7em; }
+.comp th[aria-sort="descending"] .comp__ord::after { content: " ▼"; font-size: .7em; }
+.comp__lista { margin: 0; padding-left: 1.1em; }
+.sin-dato { color: var(--tx-tenue); }
+.comp tbody th { background: transparent; color: var(--titulo); font-weight: 700; }
+.comp tbody th a { color: var(--enlace); }

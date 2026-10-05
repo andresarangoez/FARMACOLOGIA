@@ -106,3 +106,7 @@ Sistema de **3 cajas** (se guarda en el navegador, clave `lei` dentro de `farmac
 ## ¿A qué fármaco pertenece? (`#/distractores`)
 
 Muestra un mecanismo, efecto adverso o grupo y hay que elegir el fármaco entre 4 parecidos. Reutiliza los pares que genera `js/core/07-pares.js` desde `content/` (no hay contenido nuevo). Los distractores salen de fármacos del mismo tipo que no son ambiguos con la respuesta. Al responder se muestra qué hace **cada** opción, con enlace al tema. El resultado se guarda por par (`par` en localStorage) y permite repetir sólo lo fallado. Teclas: a-d o 1-4.
+
+## Comparar fármacos (`#/comparar`)
+
+Tabla con Fármaco · Grupo · Mecanismo · Efectos adversos · Sesión, generada por `FA.pares.filas()` desde `content/`. Se puede buscar por texto (tolerante a tildes y variantes de escritura), filtrar por sesión y ordenar por columna. Si un tema aún no tiene mecanismo en los apuntes se muestra «—» (no se inventa). Las plantillas vacías (sin quiz) no entran en la tabla ni en los pares.
