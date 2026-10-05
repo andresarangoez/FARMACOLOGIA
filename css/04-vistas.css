@@ -347,3 +347,6 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .sin-dato { color: var(--tx-tenue); }
 .comp tbody th { background: transparent; color: var(--titulo); font-weight: 700; }
 .comp tbody th a { color: var(--enlace); }
+
+/* lista de sesiones: una por línea, en orden */
+.chips--lista { flex-direction: column; align-items: flex-start; }

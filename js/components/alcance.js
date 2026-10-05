@@ -59,7 +59,7 @@ FA.alcance = (function () {
             '<div class="panel alcance">' +
             '<h2 class="panel__tit">¿Qué quieres repasar?</h2>' +
             '<p class="ayuda">Elige una o varias sesiones para mezclarlas, o un solo fármaco. Si no eliges nada, entran todas.</p>' +
-            '<div class="chips" data-chips>' + chips + '</div>' +
+            '<div class="chips chips--lista" data-chips>' + chips + '</div>' +
             '<label class="campo"><span>O un solo fármaco / tema</span><select data-farmaco><option value="">Todos</option>' + opts + '</select></label>' +
             '<label class="check"><input type="checkbox" data-solo> ' +
             (esQuiz ? 'Sólo las preguntas que fallé la última vez' : 'Sólo las que aún no sé') + '</label>' +
