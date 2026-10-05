@@ -102,3 +102,7 @@ Sistema de **3 cajas** (se guarda en el navegador, clave `lei` dentro de `farmac
   - Se midió el contraste de todo el texto en ambos modos: 0 casos bajo 4,5:1 (se oscureció el gris tenue del modo claro, que estaba en 3,2:1).
 - **Saltar al contenido:** primer elemento al pulsar Tab. El enrutador ya no enfoca el contenido en la carga inicial para que esto funcione.
 - **Imprimir un tema:** botón "Imprimir este tema" en cada tema. La hoja de impresión oculta menú, botones y pie, deja tablas y datos de examen con bordes y agrega la línea de autoría.
+
+## ¿A qué fármaco pertenece? (`#/distractores`)
+
+Muestra un mecanismo, efecto adverso o grupo y hay que elegir el fármaco entre 4 parecidos. Reutiliza los pares que genera `js/core/07-pares.js` desde `content/` (no hay contenido nuevo). Los distractores salen de fármacos del mismo tipo que no son ambiguos con la respuesta. Al responder se muestra qué hace **cada** opción, con enlace al tema. El resultado se guarda por par (`par` en localStorage) y permite repetir sólo lo fallado. Teclas: a-d o 1-4.
