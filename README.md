@@ -118,3 +118,9 @@ Tabla con Fármaco · Grupo · Mecanismo · Efectos adversos · Sesión, generad
 - **Decimales:** los campos son de texto con teclado decimal y aceptan punto o coma (el `type="number"` rechazaba el punto en algunos teléfonos y navegadores en español).
 - **Flujo metabólico:** las dos fórmulas están como dos modos con su ejemplo: con orden médica (flujo → cc/hora) y con el goteo dado (cc/hora → flujo).
 - **Mi progreso** está oculto del menú por ahora (no hay base de datos de estudiantes); `#/progreso` redirige al inicio.
+
+## Vademécum (`#/vademecum`)
+
+Índice alfabético de fármacos: botones A-Z (los sin entradas aparecen atenuados), filtro por segunda letra y la lista debajo, ordenada y con encabezado por letra. Sin elegir letra se ve todo el índice. También hay un buscador dentro del índice y el estado queda en la URL (`#/vademecum?l=a&p=an&q=…`).
+
+Las entradas se generan solas desde los nombres de los temas en `content/` (sesión 4 en adelante con contenido, más Potasio, Calcio y Magnesio): el nombre del grupo, cada fármaco entre paréntesis o separado por «,» «/» «y», y algunos otros nombres (EPO, G-CSF…). Cada una enlaza a su tema. Los temas cuyo nombre no se puede partir solo (hoy los electrolitos) se indican a mano en `MANUAL` dentro de `js/modules/vademecum.js`. Al agregar un tema nuevo con quiz aparece solo.

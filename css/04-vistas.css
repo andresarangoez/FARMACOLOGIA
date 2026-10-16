@@ -354,3 +354,27 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 /* calculadora: unidad elegible (kg/g, mg/mcg) y equivalencia del peso */
 .campo__u { min-width: 5.2em; padding: 8px 10px; border: 1.5px solid var(--linea); border-radius: var(--r-sm, 8px); background: var(--sup); color: var(--tx); font: inherit; font-weight: 600; }
 .campo__eq { font-weight: 600; color: var(--tx-tenue); }
+
+/* ── Vademécum ── */
+.vm__panel { margin-bottom: var(--s-4); }
+.vm__tit { font-size: var(--t-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--tx-tenue); margin: 0 0 var(--s-3); }
+.vm__letras { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.vm__letra { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 12px; border: 0; background: var(--bg-alt); color: var(--titulo); font: inherit; font-weight: 800; cursor: pointer; }
+.vm__letra:hover:not(:disabled) { background: var(--azul-tinte); }
+.vm__letra[aria-pressed="true"] { background: var(--sel); color: var(--blanco); box-shadow: 0 6px 16px rgba(10, 62, 124, .25); }
+.vm__letra:disabled { opacity: .35; cursor: default; }
+.vm__letra:focus-visible { outline: 3px solid var(--enlace); outline-offset: 2px; }
+.vm__letras--chicas { justify-content: flex-start; }
+.vm__letra--chica { min-width: 40px; height: 36px; font-size: var(--t-sm); text-transform: lowercase; }
+.vm__letra--todos { min-width: 72px; }
+.vm__buscar { margin: var(--s-4) 0 var(--s-2); max-width: 520px; }
+.vm__grupo { margin-top: var(--s-4); }
+.vm__letra-tit { font-size: var(--t-lg, 1.25rem); color: var(--titulo); border-bottom: 2px solid var(--linea); padding-bottom: 4px; margin: 0 0 var(--s-2); scroll-margin-top: calc(var(--alto-barra) + 16px); }
+.vm__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.vm__item { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 8px 10px; border-radius: 10px; }
+.vm__item:hover { background: var(--azul-tinte); }
+.vm__item a { color: var(--enlace); text-decoration: none; font-size: 1.02rem; }
+.vm__item a:hover b, .vm__item a:focus-visible b { text-decoration: underline; }
+.vm__item small { flex-basis: 100%; color: var(--tx-tenue); }
+.vm__tipo { font-size: var(--t-xs); }
+@media (min-width: 720px) { .vm__item small { flex-basis: auto; margin-left: auto; } }
