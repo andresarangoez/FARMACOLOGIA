@@ -7,7 +7,7 @@
    ============================================================ */
 FA.frascos = (function () {
     var CAB = {
-        ampolla: 'Ampolla', pastilla: 'Pastilla', jarabe: 'Jarabe'
+        ampolla: 'Ampolla', vial: 'Vial', pastilla: 'Pastilla', jarabe: 'Jarabe', inhalador: 'Inhalador'
     };
 
     function hash(s) { var h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h; }
@@ -22,6 +22,7 @@ FA.frascos = (function () {
         d.innerHTML = '<svg width="0" height="0" style="position:absolute"><defs>' +
             '<clipPath id="fr-clip-amp"><path d="M55 240V460C55 480 75 490 100 490C125 490 145 480 145 460V240Z"/></clipPath>' +
             '<clipPath id="fr-clip-bot"><path d="M24 92C24 80 32 74 46 70L46 60H94L94 70C108 74 116 80 116 92V196C116 204 110 210 102 210H38C30 210 24 204 24 196Z"/></clipPath>' +
+            '<clipPath id="fr-clip-vial"><path d="M44 62C30 66 26 72 26 84V176C26 188 34 194 46 194H94C106 194 114 188 114 176V84C114 72 110 66 96 62Z"/></clipPath>' +
             '</defs></svg>';
         document.body.appendChild(d);
     }
@@ -41,6 +42,32 @@ FA.frascos = (function () {
               '<rect x="70" y="344" width="60" height="4" rx="2" fill="#cbd5e1"/><rect x="78" y="356" width="44" height="4" rx="2" fill="#cbd5e1"/>' +
               '<path class="fr-brillo" d="M63 215L63 450" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>' +
               '<path d="M64 200C70 180 90 165 92 155" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7" fill="none"/>' +
+            '</svg>',
+        vial:
+            '<svg class="fr fr--vial" viewBox="0 0 140 210" aria-hidden="true" focusable="false">' +
+              '<g clip-path="url(#fr-clip-vial)">' +
+                '<rect class="fr-c1" x="20" y="130" width="100" height="70"/>' +
+                '<ellipse class="fr-c2 fr-ola" cx="70" cy="130" rx="46" ry="7"/>' +
+                '<circle class="fr-bur b1" cx="52" cy="180" r="3.5"/><circle class="fr-bur b2" cx="86" cy="186" r="4.5"/><circle class="fr-bur b3" cx="68" cy="172" r="3"/>' +
+              '</g>' +
+              '<path class="fr-vidrio" d="M44 62C30 66 26 72 26 84V176C26 188 34 194 46 194H94C106 194 114 188 114 176V84C114 72 110 66 96 62Z"/>' +
+              '<rect class="fr-vidrio" x="44" y="46" width="52" height="18" rx="2"/>' +
+              '<rect x="34" y="36" width="72" height="12" rx="3" fill="#475569"/><rect class="fr-c3" x="38" y="12" width="64" height="26" rx="6"/>' +
+              '<ellipse cx="70" cy="14" rx="18" ry="5" fill="#fff" opacity=".45"/><rect x="38" y="30" width="64" height="3" fill="#fff" opacity=".3"/>' +
+              '<rect x="34" y="92" width="72" height="62" rx="5" fill="#fff" opacity=".96"/><rect class="fr-c3" x="34" y="92" width="72" height="12" rx="3"/>' +
+              '<rect x="44" y="114" width="52" height="8" rx="4" fill="#0f172a"/><rect class="fr-c3" x="50" y="129" width="40" height="6" rx="3"/><rect x="48" y="141" width="44" height="4" rx="2" fill="#cbd5e1"/>' +
+              '<path class="fr-brillo" d="M31 90L31 178" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>' +
+            '</svg>',
+        inhalador:
+            '<svg class="fr fr--inh" viewBox="0 0 190 210" aria-hidden="true" focusable="false">' +
+              '<circle class="fr-vapor v1" cx="150" cy="156" r="6"/><circle class="fr-vapor v2" cx="150" cy="156" r="5"/><circle class="fr-vapor v3" cx="150" cy="156" r="7"/>' +
+              '<rect class="fr-c1" x="46" y="8" width="46" height="100" rx="8"/>' +
+              '<rect class="fr-c3" x="46" y="8" width="46" height="14" rx="6"/>' +
+              '<rect x="52" y="42" width="34" height="46" rx="4" fill="#fff" opacity=".95"/><rect class="fr-c3" x="56" y="52" width="26" height="6" rx="3"/><rect x="56" y="64" width="26" height="4" rx="2" fill="#cbd5e1"/><rect x="56" y="74" width="20" height="4" rx="2" fill="#cbd5e1"/>' +
+              '<path class="fr-c3" d="M30 100H108A12 12 0 0 1 120 112V150H146A14 14 0 0 1 160 164V170A14 14 0 0 1 146 184H46A16 16 0 0 1 30 168Z"/>' +
+              '<path class="fr-vidrio" d="M30 100H108A12 12 0 0 1 120 112V150H146A14 14 0 0 1 160 164V170A14 14 0 0 1 146 184H46A16 16 0 0 1 30 168Z" fill="none"/>' +
+              '<ellipse cx="152" cy="167" rx="5" ry="9" fill="#0f172a" opacity=".55"/>' +
+              '<path class="fr-brillo" d="M38 112L38 160" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>' +
             '</svg>',
         pastilla:
             '<svg class="fr fr--pas" viewBox="0 0 170 130" aria-hidden="true" focusable="false">' +

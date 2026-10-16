@@ -423,3 +423,12 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .vm__det .fuente { margin: 6px 0 0; font-size: var(--t-xs); color: var(--tx-tenue); }
 .vm__pie { margin-top: var(--s-5); font-size: var(--t-sm); color: var(--tx-suave); }
 @media (max-width: 560px) { .vm__item--rico { grid-template-columns: 1fr; } }
+
+/* vial e inhalador */
+.fr--vial { height: 96px; }
+.fr--inh { height: 96px; }
+.fr-vapor { fill: hsl(var(--h) 85% 70%); opacity: 0; transform-box: fill-box; transform-origin: center; animation: fr-vapor 2.6s ease-out infinite; }
+.fr-vapor.v2 { animation-delay: .5s; }
+.fr-vapor.v3 { animation-delay: 1s; }
+@keyframes fr-vapor { 0% { transform: translate(0, 0) scale(.5); opacity: 0; } 20% { opacity: .75; } 100% { transform: translate(34px, -16px) scale(3.2); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .fr-vapor { animation: none !important; opacity: 0 !important; } }

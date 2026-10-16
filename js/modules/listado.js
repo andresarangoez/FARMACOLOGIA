@@ -59,11 +59,11 @@ FA.vistas.listado = (function () {
         var rico = p.d != null;
         var iconos = '', nota = '';
         if (rico) {
-            ['ampolla', 'jarabe', 'pastilla'].forEach(function (cat) {
+            ['ampolla', 'vial', 'jarabe', 'pastilla', 'inhalador'].forEach(function (cat) {
                 var c = p.cats[cat]; if (!c || (c.solo + c.comb) === 0) return;
                 iconos += FA.frascos.html(cat, clave(e.nombre), { tenue: c.solo === 0, titulo: c.solo === 0 ? 'Sólo en combinación con otros principios activos' : '' });
             });
-            if (!iconos) nota = '<p class="vm__nota">' + u.esc(p.d.nota || 'Sin presentación en ampolla, pastilla o jarabe.') + '</p>';
+            if (!iconos) nota = '<p class="vm__nota">' + u.esc(p.d.nota || 'Sin presentación en ampolla, vial, pastilla, jarabe o inhalador.') + '</p>';
             else if (p.otras.length) nota = '<p class="vm__nota">También: ' + u.esc(p.otras.slice(0, 4).join(', ')) + '.</p>';
         }
         return '<li class="vm__item' + (rico ? ' vm__item--rico' : '') + '">' +

@@ -87,7 +87,10 @@ Add-F 'antitrombinaiii' 'Antitrombina III' @('ANTITROMBINA')
 
 function Categoria($forma, $via) {
     $t = ($forma + ' ' + $via).ToUpper()
-    if ($t -match 'INYECTABLE|INFUSION|PARENTERAL|LIOFILIZ|RECONSTITUIR|INTRAVEN|INTRAMUSC|SUBCUTAN|INTRATRAQUEAL') { return 'ampolla' }
+    if ($t -match 'INHALACION|INHALADOR|NEBULIZ|AEROSOL|INHALATORI') { return 'inhalador' }
+    # vial = polvo/liofilizado a reconstituir, suspensiones o emulsiones inyectables, intratraqueal (surfactantes)
+    if ($t -match 'LIOFILIZ|RECONSTITUIR|POLVO PARA (SOLUCION|SUSPENSION) INYECTABLE|SUSPENSION INYECTABLE|EMULSION INYECTABLE|INTRATRAQUEAL') { return 'vial' }
+    if ($t -match 'INYECTABLE|INFUSION|PARENTERAL|INTRAVEN|INTRAMUSC|SUBCUTAN') { return 'ampolla' }
     if ($t -match 'JARABE|SUSPENSION ORAL|SOLUCION ORAL|ELIXIR|GOTAS|EMULSION ORAL|SUSPENSION|POLVO PARA SUSPENSION|GRANULOS') { if ($via -match 'ORAL') { return 'jarabe' } }
     if ($t -match 'TABLETA|CAPSULA|GRAGEA|COMPRIMIDO|CAPLET') { return 'pastilla' }
     return 'otra'
@@ -146,14 +149,14 @@ Complemento 'etambutol' 'Etambutol' @(
     [ordered]@{ cat = 'pastilla'; forma = 'Tableta recubierta'; via = 'Oral'; n = 1; comb = 0; ej = @('ECOX 400 mg (Vesalius Pharma)'); fuente = $vc; url = 'https://www.vademecum.es/colombia/medicamento/1560022/ecox-400-mg-tab-recubierta' }
 ) 'No aparece en los datos abiertos de INVIMA; sí en el Vademécum Colombia.'
 Complemento 'teicoplanina' 'Teicoplanina' @(
-    [ordered]@{ cat = 'ampolla'; forma = 'Liofilizado para solución inyectable'; via = 'Inyectable'; n = 1; comb = 0; ej = @('Teicoston 200 mg (Blau Farmacéutica)'); fuente = $vc; url = 'https://www.vademecum.es/colombia/equivalencias/1558401/teicoston-200-mg-liof-para-sol-iny-' },
-    [ordered]@{ cat = 'ampolla'; forma = 'Polvo y disolvente para solución inyectable'; via = 'Inyectable'; n = 1; comb = 0; ej = @('Teicoston 400 mg (Blau Farmacéutica)'); fuente = $vc; url = 'https://www.vademecum.es/colombia/equivalencias/1559258/teicoston-400-mg-polvo-y-disolv-para-sol-iny-' }
+    [ordered]@{ cat = 'vial'; forma = 'Liofilizado para solución inyectable'; via = 'Inyectable'; n = 1; comb = 0; ej = @('Teicoston 200 mg (Blau Farmacéutica)'); fuente = $vc; url = 'https://www.vademecum.es/colombia/equivalencias/1558401/teicoston-200-mg-liof-para-sol-iny-' },
+    [ordered]@{ cat = 'vial'; forma = 'Polvo y disolvente para solución inyectable'; via = 'Inyectable'; n = 1; comb = 0; ej = @('Teicoston 400 mg (Blau Farmacéutica)'); fuente = $vc; url = 'https://www.vademecum.es/colombia/equivalencias/1559258/teicoston-400-mg-polvo-y-disolv-para-sol-iny-' }
 ) 'No aparece en los datos abiertos de INVIMA; sí en el Vademécum Colombia.'
 $norma = 'Normas farmacológicas de INVIMA (agosto 2022)'
 $urlNorma = 'https://www.invima.gov.co/sites/default/files/medicamentos-productos-biologicos/Normas%20farmacologicas%20AGOSTO%202022%20(2).pdf'
 foreach ($par in @(@('quinupristina','Quinupristina'), @('dalfopristina','Dalfopristina'))) {
     Complemento $par[0] $par[1] @(
-        [ordered]@{ cat = 'ampolla'; forma = 'Polvo liofilizado para solución inyectable (vial 350 mg + 150 mg)'; via = 'Inyectable'; n = 1; comb = 0; ej = @('Quinupristina + dalfopristina (Synercid)'); fuente = $norma; url = $urlNorma }
+        [ordered]@{ cat = 'vial'; forma = 'Polvo liofilizado para solución inyectable (vial 350 mg + 150 mg)'; via = 'Inyectable'; n = 1; comb = 0; ej = @('Quinupristina + dalfopristina (Synercid)'); fuente = $norma; url = $urlNorma }
     ) 'Figura en las normas farmacológicas de INVIMA; no se confirmó una presentación comercial activa.'
 }
 
