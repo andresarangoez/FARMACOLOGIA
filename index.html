@@ -7,9 +7,9 @@
 <meta name="description" content="Tutorías y material de estudio de Farmacología en Enfermería. Elaborado por Soy Andrés Arango.">
 <meta name="author" content="Andrés Arango">
 <meta name="robots" content="noindex, nofollow, noimageindex">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <!-- Pone el tema (claro u oscuro) antes de pintar para evitar el parpadeo -->
-<script>(function(){var t=null;try{t=localStorage.getItem('farmacologia-tema');}catch(e){}if(!t){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'oscuro':'claro';}document.documentElement.setAttribute('data-tema',t);})();</script>
+<script>(function(){var t=null;try{t=localStorage.getItem('farmacologia-tema');}catch(e){}if(t!=='oscuro'&&t!=='claro'){t='claro';}document.documentElement.setAttribute('data-tema',t);})();</script>
 <link rel="icon" type="image/svg+xml" href="assets/branding/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/branding/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/branding/apple-touch-icon.png">
@@ -43,7 +43,6 @@
             <a href="#/flashcards"  data-sec="flashcards">Flashcards</a>
             <a href="#/quiz"        data-sec="quiz">Quiz</a>
             <a href="#/calculadora" data-sec="calculadora">Calculadora</a>
-            <a href="#/progreso"    data-sec="progreso">Mi progreso</a>
         </nav>
 
         <button type="button" class="btn-tema" data-accion="tema" aria-pressed="false" aria-label="Cambiar a modo oscuro" title="Modo oscuro">

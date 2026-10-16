@@ -1,8 +1,8 @@
 /* ============================================================
    NÚCLEO · tema claro / oscuro
    El atributo <html data-tema> ya lo puso el script mínimo del <head>
-   (para que no haya parpadeo). Aquí se gestiona el botón y el cambio
-   de preferencia del sistema mientras la persona no haya elegido.
+   (para que no haya parpadeo). Aquí se gestiona el botón.
+   Por defecto la página se ve en modo claro; el modo oscuro lo activa el estudiante con el botón.
    La elección manual se guarda en localStorage ('farmacologia-tema').
    ============================================================ */
 FA.tema = (function () {
@@ -28,12 +28,6 @@ FA.tema = (function () {
         try { window.localStorage.setItem(CLAVE, t); } catch (e) { }
     }
 
-    /* si no eligió a mano, seguir al sistema */
-    if (window.matchMedia) {
-        var mq = window.matchMedia('(prefers-color-scheme: dark)');
-        var cambio = function (e) { if (!guardado()) aplicar(e.matches ? 'oscuro' : 'claro'); };
-        if (mq.addEventListener) mq.addEventListener('change', cambio); else if (mq.addListener) mq.addListener(cambio);
-    }
     etiquetas();
 
     return { actual: actual, alternar: alternar, aplicar: aplicar };
