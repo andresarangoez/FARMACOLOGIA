@@ -291,7 +291,7 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 @page { margin: 14mm; }
 @media print {
     body { font-size: 11pt; color: #000; }
-    .saltar, .btn-tema, .barra__menu, .indice, .acceso-clave { display: none !important; }
+    .saltar, .btn-tema, .btn-lupa, .barra__menu, .indice, .acceso-clave { display: none !important; }
     .solo-impresion { display: block; margin-top: 18pt; padding-top: 6pt; border-top: 1px solid #999; font-size: 9pt; color: #333; }
     .cabecera { margin-bottom: 10pt; }
     .meta span { box-shadow: none; border: 1px solid #bbb; border-left: 4px solid #999; background: #fff; color: #000; }

@@ -46,7 +46,7 @@ FA.router = (function () {
 
     function marcarMenu(vista) {
         var sec = SECCION[vista] || '';
-        document.querySelectorAll('.nav a').forEach(function (a) {
+        document.querySelectorAll('.nav a, .btn-lupa').forEach(function (a) {
             if (a.dataset.sec === sec) a.setAttribute('aria-current', 'page');
             else a.removeAttribute('aria-current');
         });
