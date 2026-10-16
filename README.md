@@ -137,3 +137,5 @@ Cada fármaco muestra dibujos animados (ampolla, vial, pastilla, jarabe o inhala
 - La base abierta puede no tener todas las presentaciones (por ejemplo, la digoxina sólo aparece inyectable). Siempre verificar en el registro de INVIMA.
 
 En el listado hay un interruptor **«Mostrar presentaciones farmacológicas»** (activado por defecto): al apagarlo se ocultan los dibujos y el desplegable de presentaciones y queda solo el índice con nombres. La elección se recuerda en el navegador (`farmacologia-presentaciones` en localStorage).
+
+Las filas de **grupo** (Antihistamínicos de 2ª generación, Tetraciclinas, etc.) muestran debajo «Incluye:» con cada fármaco del grupo; al tocar uno, la lista salta a ese fármaco y lo resalta. Los dibujos del grupo son la unión de los de sus fármacos.
