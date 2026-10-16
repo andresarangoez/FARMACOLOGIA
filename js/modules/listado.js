@@ -59,25 +59,45 @@ FA.vistas.listado = (function () {
     function verPres() { try { return window.localStorage.getItem(CLAVE_PRES) !== '0'; } catch (e) { return true; } }
     function guardarPres(v) { try { window.localStorage.setItem(CLAVE_PRES, v ? '1' : '0'); } catch (e) { } }
 
+    /* presentaciones de un grupo = unión de las de sus fármacos */
+    function presentacionesGrupo(e) {
+        var cats = {};
+        (e.miembros || []).forEach(function (m) {
+            var p = presentaciones(m); if (!p.d) return;
+            Object.keys(p.cats).forEach(function (c) { var y = cats[c] || (cats[c] = { solo: 0, comb: 0 }); y.solo += p.cats[c].solo; y.comb += p.cats[c].comb; });
+        });
+        return cats;
+    }
+
+    function idFila(e) { return 'fx-' + clave(e.nombre) + '-' + e.tema; }
+
     function fila(e, conPres) {
-        var p = (e.tipo === 'Grupo' || !conPres) ? { d: null } : presentaciones(e);
-        var rico = p.d != null;
+        var esGrupo = e.tipo === 'Grupo' && e.miembros && e.miembros.length > 0;
+        var p = esGrupo ? { d: {}, cats: presentacionesGrupo(e), otras: [], formas: [] } : ((e.tipo === 'Grupo' || !conPres) ? { d: null } : presentaciones(e));
+        var rico = esGrupo || p.d != null;
         var iconos = '', nota = '';
-        if (rico) {
+        if (rico && conPres) {
             ['ampolla', 'vial', 'jarabe', 'pastilla', 'inhalador'].forEach(function (cat) {
                 var c = p.cats[cat]; if (!c || (c.solo + c.comb) === 0) return;
                 iconos += FA.frascos.html(cat, clave(e.nombre), { tenue: c.solo === 0, titulo: c.solo === 0 ? 'Sólo en combinación con otros principios activos' : '' });
             });
-            if (!iconos) nota = '<p class="vm__nota">' + u.esc(p.d.nota || 'Sin presentación en ampolla, vial, pastilla, jarabe o inhalador.') + '</p>';
-            else if (p.otras.length) nota = '<p class="vm__nota">También: ' + u.esc(p.otras.slice(0, 4).join(', ')) + '.</p>';
+            if (!esGrupo) {
+                if (!iconos) nota = '<p class="vm__nota">' + u.esc(p.d.nota || 'Sin presentación en ampolla, vial, pastilla, jarabe o inhalador.') + '</p>';
+                else if (p.otras.length) nota = '<p class="vm__nota">También: ' + u.esc(p.otras.slice(0, 4).join(', ')) + '.</p>';
+            }
         }
-        return '<li class="vm__item' + (rico ? ' vm__item--rico' : '') + '">' +
-            (rico ? '<div class="vm__icos">' + (iconos || '') + '</div>' : '') +
-            (rico ? '<div class="vm__cuerpo">' : '') +
+        var incluye = esGrupo ? '<p class="vm__incluye"><span>Incluye:</span> ' + e.miembros.map(function (m) {
+            return '<a href="#" class="vm__miembro" data-ir="' + idFila(m) + '" data-n="' + u.esc(m.key) + '">' + u.esc(m.nombre) + '</a>';
+        }).join('') + '</p>' : '';
+        var conCuerpo = rico && (conPres || esGrupo);
+        return '<li class="vm__item' + (conCuerpo && conPres ? ' vm__item--rico' : '') + '" id="' + idFila(e) + '">' +
+            (conCuerpo && conPres ? '<div class="vm__icos">' + (iconos || '') + '</div>' : '') +
+            (conCuerpo ? '<div class="vm__cuerpo">' : '') +
             '<div class="vm__linea"><a href="#/farmaco/' + e.tema + '"><b>' + u.esc(e.nombre) + '</b></a>' +
             '<span class="chip chip--fijo vm__tipo">Sesión ' + e.sesion + '</span></div>' +
             (function () { var t = [e.tipo !== 'Fármaco' ? e.tipo : '', e.nombre === e.temaNombre ? '' : u.esc(e.temaNombre)].filter(Boolean).join(' · '); return t ? '<small>' + t + '</small>' : ''; })() +
-            (rico ? nota + detalle(p) + '</div>' : '') + '</li>';
+            incluye +
+            (conCuerpo ? (esGrupo ? '' : nota + (conPres ? detalle(p) : '')) + '</div>' : '') + '</li>';
     }
 
     var cache = null;
@@ -106,6 +126,7 @@ FA.vistas.listado = (function () {
             });
         });
         lista.sort(function (a, b) { return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; });
+        lista.forEach(function (g) { if (g.tipo === "Grupo") g.miembros = lista.filter(function (x) { return x.tema === g.tema && x.tipo === "Fármaco"; }); });
         cache = lista; return lista;
     }
 
@@ -183,6 +204,15 @@ FA.vistas.listado = (function () {
             });
             prefEl.addEventListener('click', function (e) {
                 var b = e.target.closest('[data-p]'); if (!b) return; st.p = b.dataset.p; todo();
+            });
+            /* desde un grupo, saltar al fármaco que incluye */
+            listaEl.addEventListener('click', function (ev) {
+                var a = ev.target.closest('[data-ir]'); if (!a) return;
+                ev.preventDefault();
+                st.l = a.dataset.n.charAt(0); st.p = ''; st.q = ''; qEl.value = '';
+                todo();
+                var fila = document.getElementById(a.dataset.ir);
+                if (fila) { fila.scrollIntoView({ block: 'center' }); fila.classList.add('vm__resalta'); setTimeout(function () { fila.classList.remove('vm__resalta'); }, 2200); }
             });
             qEl.addEventListener('input', function () { st.q = qEl.value; pintarLista(); guardarUrl(); });
             todo();
