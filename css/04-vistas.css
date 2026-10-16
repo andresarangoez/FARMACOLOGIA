@@ -442,11 +442,5 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .vm__interruptor input:checked::after { transform: translateX(18px); }
 .vm__interruptor input:focus-visible { outline: 3px solid var(--enlace); outline-offset: 2px; }
 
-/* grupos: lista de los fármacos que incluyen */
-.vm__incluye { margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: var(--t-sm); }
-.vm__incluye span { font-weight: 700; color: var(--tx-suave); }
-.vm__miembro { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--azul-tinte); color: var(--enlace); text-decoration: none; font-weight: 600; }
-.vm__miembro:hover, .vm__miembro:focus-visible { background: var(--sel); color: var(--blanco); }
-.vm__resalta { animation: vm-resalta 2.2s ease-out; }
-@keyframes vm-resalta { 0%, 60% { background: var(--azul-tinte); box-shadow: 0 0 0 3px var(--enlace); } 100% { background: transparent; box-shadow: 0 0 0 0 transparent; } }
-@media (prefers-reduced-motion: reduce) { .vm__resalta { animation: none; background: var(--azul-tinte); } }
+/* grupo farmacológico al lado del fármaco */
+.vm__grupo-tag { font-size: var(--t-xs); font-weight: 700; color: var(--tx-suave); border: 1px solid var(--linea); border-radius: 999px; padding: 3px 10px; background: var(--sup); }
