@@ -28,12 +28,27 @@ FA.vistas.calculadora = {
 
         function visibles(f) { return f.campos.filter(function (c) { return !c.si || c.si(lectura(f)); }); }
 
+        /* Unidades alternativas de un campo: el peso puede escribirse en kg o en g; el fármaco en mg o mcg */
+        function unidadesDe(c) {
+            if (c.unidades) return c.unidades;
+            if (c.id === 'peso') return [{ v: 'kg', t: 'kg' }, { v: 'g', t: 'g' }];
+            return null;
+        }
+
         function lectura(f) {
             var v = {};
             f.campos.forEach(function (c) {
                 var raw = valores[f.id + '.' + c.id];
                 if (c.tipo === 'select') v[c.id] = raw != null ? raw : c.opciones[0].v;
-                else v[c.id] = raw === undefined || raw === '' ? NaN : numero(raw);
+                else {
+                    v[c.id] = raw === undefined || raw === '' ? NaN : numero(raw);
+                    var us = unidadesDe(c);
+                    if (us) {
+                        var u0 = valores[f.id + '.' + c.id + '_u'] || us[0].v;
+                        v[c.id + '_u'] = u0;
+                        if (c.id === 'peso' && u0 === 'g') v[c.id] = v[c.id] / 1000;   // el cálculo siempre trabaja en kg
+                    }
+                }
             });
             return v;
         }
@@ -49,8 +64,14 @@ FA.vistas.calculadora = {
                         return '<label class="campo"><span>' + u.esc(c.label) + '</span><select data-c="' + c.id + '">' +
                             c.opciones.map(function (o) { return '<option value="' + o.v + '"' + (v[c.id] === o.v ? ' selected' : '') + '>' + u.esc(o.t) + '</option>'; }).join('') + '</select></label>';
                     }
-                    var val = valores[f.id + '.' + c.id];
-                    return '<label class="campo"><span>' + u.esc(c.label) + '</span><span class="campo__inp"><input type="number" inputmode="decimal" step="any" min="0" data-c="' + c.id + '" value="' + (val == null ? '' : u.esc(val)) + '"><em>' + u.esc(c.unidad) + '</em></span></label>';
+                    var val = valores[f.id + '.' + c.id], us = unidadesDe(c), sel = valores[f.id + '.' + c.id + '_u'] || (us && us[0].v);
+                    /* campo de texto con teclado decimal: acepta punto o coma (type="number" rechaza el punto en algunos teléfonos y navegadores en español) */
+                    var unidad = us
+                        ? '<select class="campo__u" data-u="' + c.id + '" aria-label="Unidad de ' + u.esc(c.label.toLowerCase()) + '">' +
+                          us.map(function (o) { return '<option value="' + o.v + '"' + (sel === o.v ? ' selected' : '') + '>' + u.esc(o.t) + '</option>'; }).join('') + '</select>'
+                        : '<em>' + u.esc(c.unidad) + '</em>';
+                    var eq = (c.id === 'peso' && sel === 'g' && v.peso > 0) ? '<small class="campo__eq">= ' + FA.u.num(v.peso, 3) + ' kg</small>' : '';
+                    return '<label class="campo"><span>' + u.esc(c.label) + '</span><span class="campo__inp"><input type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" data-c="' + c.id + '" value="' + (val == null ? '' : u.esc(val)) + '">' + unidad + '</span>' + eq + '</label>';
                 }).join('') +
                 '<div class="fila-botones"><button type="button" class="btn btn--sec" data-ejemplo>Cargar ejemplo</button><button type="button" class="btn btn--sec" data-limpiar>Limpiar</button></div></form>' +
                 '<div data-resultado></div>';
@@ -83,20 +104,35 @@ FA.vistas.calculadora = {
             var op = e.target.closest('.calc__op');
             if (op) { actual = FA.formulas.buscar(op.dataset.f); history.replaceState(null, '', '#/calculadora/' + actual.id); pintarCampos(); return; }
             if (e.target.closest('[data-ejemplo]')) {
-                var ej = actual.ejemplo;
+                var ej = (actual.ejemplos && actual.ejemplos[lectura(actual).modo]) || actual.ejemplo;
+                actual.campos.forEach(function (c) { delete valores[actual.id + '.' + c.id + '_u']; });   // el ejemplo está en kg y mg
                 Object.keys(ej).forEach(function (k) { valores[actual.id + '.' + k] = ej[k]; });
                 pintarCampos(); return;
             }
             if (e.target.closest('[data-limpiar]')) {
-                actual.campos.forEach(function (c) { delete valores[actual.id + '.' + c.id]; });
+                actual.campos.forEach(function (c) { delete valores[actual.id + '.' + c.id]; delete valores[actual.id + '.' + c.id + '_u']; });
                 pintarCampos();
             }
         });
         el.addEventListener('input', function (e) {
             var c = e.target.closest('[data-c]'); if (!c || c.tagName === 'SELECT') return;
+            /* sólo dígitos y un separador decimal (punto o coma) */
+            var limpio = c.value.replace(/[^0-9.,]/g, ''), i = limpio.search(/[.,]/);
+            if (i >= 0) limpio = limpio.slice(0, i + 1) + limpio.slice(i + 1).replace(/[.,]/g, '');
+            if (limpio !== c.value) c.value = limpio;
             valores[actual.id + '.' + c.dataset.c] = c.value; calcular();
+            if (c.dataset.c === 'peso') actualizarEq(c);
         });
+        function actualizarEq(inp) {
+            var lab = inp.closest('label'), us = valores[actual.id + '.peso_u'], eq = lab.querySelector('.campo__eq'), p = numero(inp.value);
+            if (us === 'g' && p > 0) {
+                if (!eq) { eq = document.createElement('small'); eq.className = 'campo__eq'; lab.appendChild(eq); }
+                eq.textContent = '= ' + FA.u.num(p / 1000, 3) + ' kg';
+            } else if (eq) eq.remove();
+        }
         el.addEventListener('change', function (e) {
+            var s = e.target.closest('[data-u]');
+            if (s) { valores[actual.id + '.' + s.dataset.u + '_u'] = s.value; pintarCampos(); return; }
             var c = e.target.closest('[data-c]'); if (!c || c.tagName !== 'SELECT') return;
             valores[actual.id + '.' + c.dataset.c] = c.value; pintarCampos();
         });

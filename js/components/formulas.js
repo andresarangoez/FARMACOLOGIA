@@ -8,7 +8,11 @@
    Para agregar una fórmula, basta con sumar un objeto a la lista.
    ============================================================ */
 FA.formulas = (function () {
-    var n = FA.u.num;
+    /* Números pequeños (p. ej. 0.0346 cc/h) con 3 cifras significativas; el resto con 2 decimales, salvo que se indique */
+    function n(x, d) {
+        if (d == null && isFinite(x) && x !== 0 && Math.abs(x) < 1) return String(+x.toPrecision(3));
+        return FA.u.num(x, d);
+    }
 
     function positivos(v, campos, etiquetas) {
         for (var i = 0; i < campos.length; i++) {
@@ -95,14 +99,15 @@ FA.formulas = (function () {
             id: 'flujo-metabolico', nombre: 'Flujo metabólico (VIG)', desc: 'Velocidad de infusión de glucosa con dextrosa',
             campos: [
                 { id: 'modo', label: 'Qué quieres calcular', tipo: 'select', opciones: [
-                    { v: 'flujo', t: 'Flujo deseado → cc/hora' },
-                    { v: 'verificar', t: 'Verificar el flujo que recibe el paciente' }] },
-                { id: 'flujo', label: 'Flujo deseado', unidad: 'mg/kg/min', si: function (v) { return v.modo !== 'verificar'; } },
-                { id: 'cch', label: 'Volumen de la infusión', unidad: 'cc/hora', si: function (v) { return v.modo === 'verificar'; } },
+                    { v: 'flujo', t: 'Con orden médica: me dan el flujo (mg/kg/min) → calculo los cc/hora' },
+                    { v: 'verificar', t: 'Me dan los cc/hora → calculo el flujo metabólico (mg/kg/min)' }] },
+                { id: 'flujo', label: 'Flujo metabólico indicado', unidad: 'mg/kg/min', si: function (v) { return v.modo !== 'verificar'; } },
+                { id: 'cch', label: 'Volumen de la infusión (goteo)', unidad: 'cc/hora', si: function (v) { return v.modo === 'verificar'; } },
                 { id: 'peso', label: 'Peso', unidad: 'kg' },
                 { id: 'conc', label: 'Concentración de dextrosa', unidad: '%' }
             ],
             ejemplo: { modo: 'flujo', flujo: 6, peso: 3, conc: 10 },
+            ejemplos: { verificar: { modo: 'verificar', cch: 15, peso: 6, conc: 12 } },
             nota: 'Referencia: RNAT 4–6 mg/kg/min · RNPT 6–8 mg/kg/min.',
             calcular: function (v) {
                 var verif = v.modo === 'verificar';
@@ -168,26 +173,30 @@ FA.formulas = (function () {
 
         /* 5 ─────────────────────────────────────────── */
         {
-            id: 'constante-k', nombre: 'Constante K (vasoactivos)', desc: 'Infusión en mcg/kg/min: adrenalina, noradrenalina, dopamina, dobutamina',
+            id: 'constante-k', nombre: 'Dosis mcg/kg/min (constante K)', desc: 'Infusión de vasoactivos: adrenalina, noradrenalina, dopamina, dobutamina',
             campos: [
                 { id: 'modo', label: 'Qué quieres calcular', tipo: 'select', opciones: [
                     { v: 'cch', t: 'Dosis deseada → cc/hora' },
                     { v: 'dosis', t: 'Goteo actual → dosis que recibe' }] },
-                { id: 'mg', label: 'Fármaco en la mezcla', unidad: 'mg' },
+                { id: 'mg', label: 'Fármaco en la mezcla', unidad: 'dosis', unidades: [{ v: 'mg', t: 'mg' }, { v: 'mcg', t: 'mcg' }] },
                 { id: 'volmez', label: 'Volumen de la mezcla', unidad: 'cc' },
                 { id: 'peso', label: 'Peso', unidad: 'kg' },
                 { id: 'dosis', label: 'Dosis deseada', unidad: 'mcg/kg/min', si: function (v) { return v.modo !== 'dosis'; } },
                 { id: 'cch', label: 'Goteo actual', unidad: 'cc/hora', si: function (v) { return v.modo === 'dosis'; } }
             ],
-            ejemplo: { modo: 'cch', mg: 4, volmez: 100, peso: 12, dosis: 0.1 },
-            nota: 'K es la cantidad de fármaco (mcg/min) que entra por cada cc/hora de goteo.',
+            ejemplo: { modo: 'cch', mg: 1, volmez: 24, peso: 2.4, dosis: 0.01 },
+            ejemplos: { dosis: { modo: 'dosis', mg: 1, volmez: 24, peso: 2.4, cch: 0.035 } },
+            nota: 'K es la cantidad de fármaco (mcg/min) que entra por cada cc/hora de goteo. Ejemplo: adrenalina 1 mg (1 ampolla) completada a 24 cc, paciente de 2.4 kg, dosis 0.01 mcg/kg/min.',
             calcular: function (v) {
                 var inv = v.modo === 'dosis';
                 var e = positivos(v, inv ? ['mg', 'volmez', 'peso', 'cch'] : ['mg', 'volmez', 'peso', 'dosis'],
                     { mg: 'Fármaco en la mezcla', volmez: 'Volumen de la mezcla', peso: 'Peso', dosis: 'Dosis deseada', cch: 'Goteo actual' });
                 if (e) return { error: e };
-                var K = (v.mg * 1000) / (v.volmez * 60);
-                var p1 = { t: 'Paso 1 · Constante K', f: 'K = (mg × 1000) ÷ (volumen × 60)', s: '(' + n(v.mg) + ' × 1000) ÷ (' + n(v.volmez) + ' × 60)', r: 'K = ' + n(K, 4) };
+                var mcgTotal = v.mg_u === 'mcg' ? v.mg : v.mg * 1000;
+                var K = mcgTotal / (v.volmez * 60);
+                var p1 = { t: 'Paso 1 · Constante K', f: 'K = (fármaco en mcg) ÷ (volumen × 60)',
+                           s: n(mcgTotal, 4) + ' mcg ÷ (' + n(v.volmez) + ' × 60)', r: 'K = ' + n(K, 4),
+                           n: v.mg_u === 'mcg' ? '' : 'Los mg se pasan a mcg multiplicando por 1000.' };
                 if (!inv) {
                     var num = v.dosis * v.peso, cch = num / K;
                     return {

@@ -350,3 +350,7 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 
 /* lista de sesiones: una por línea, en orden */
 .chips--lista { flex-direction: column; align-items: flex-start; }
+
+/* calculadora: unidad elegible (kg/g, mg/mcg) y equivalencia del peso */
+.campo__u { min-width: 5.2em; padding: 8px 10px; border: 1.5px solid var(--linea); border-radius: var(--r-sm, 8px); background: var(--sup); color: var(--tx); font: inherit; font-weight: 600; }
+.campo__eq { font-weight: 600; color: var(--tx-tenue); }

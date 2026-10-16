@@ -22,7 +22,7 @@ El progreso se guarda en `localStorage` del navegador (clave `farmacologia-v1`).
 | Quiz | Opción múltiple y V/F, opciones mezcladas, puntaje final, repaso de lo fallado |
 | Calculadora | 11 fórmulas con procedimiento **paso a paso** y ejemplo precargado |
 | Datos examen | Los ⭐ reunidos por sesión y fármaco, más el taller y el simulacro resueltos. **Protegido con clave**: ya no está en el menú; se entra desde la slide al final de Sesiones (clave en `js/core/05-acceso.js`, solo guarda su huella SHA-256) |
-| Mi progreso | Temas estudiados, flashcards, preguntas falladas, temas más débiles, historial |
+| Mi progreso | (oculto por ahora: no hay base de datos de estudiantes; el código sigue en `js/modules/progreso.js`) |
 
 ## Cómo agregar una sesión nueva
 
@@ -96,7 +96,7 @@ Sistema de **3 cajas** (se guarda en el navegador, clave `lei` dentro de `farmac
 
 ## Modo oscuro, accesibilidad e impresión
 
-- **Modo oscuro:** botón con luna/sol en el encabezado. Por defecto sigue la preferencia del sistema; si la persona elige a mano, se recuerda (`farmacologia-tema` en localStorage). Un script mínimo del `<head>` pone el tema antes de pintar, así no hay parpadeo.
+- **Modo oscuro:** botón con luna/sol en el encabezado. Por defecto la página se ve en modo claro (no sigue al sistema); el modo oscuro lo activa el estudiante y se recuerda (`farmacologia-tema` en localStorage). Un script mínimo del `<head>` pone el tema antes de pintar, así no hay parpadeo.
   - Los colores semánticos están en `css/01-variables.css` (`--sup`, `--titulo`, `--enlace`, `--sel`, `--amb…`) y el modo oscuro solo los redefine en `css/05-oscuro.css`. En claro valen lo que valían antes.
   - Si agregas un componente nuevo, usa esas variables (superficie = `--sup`, títulos = `--titulo`, enlaces = `--enlace`, botones/seleccionado = `--sel`) y se verá bien en los dos modos. Texto blanco sobre `--azul-profundo` es seguro; texto oscuro sobre amarillo hay que corregirlo en `05-oscuro.css`.
   - Se midió el contraste de todo el texto en ambos modos: 0 casos bajo 4,5:1 (se oscureció el gris tenue del modo claro, que estaba en 3,2:1).
@@ -110,3 +110,11 @@ Muestra un mecanismo, efecto adverso o grupo y hay que elegir el fármaco entre 
 ## Comparar fármacos (`#/comparar`)
 
 Tabla con Fármaco · Grupo · Mecanismo · Efectos adversos · Sesión, generada por `FA.pares.filas()` desde `content/`. Se puede buscar por texto (tolerante a tildes y variantes de escritura), filtrar por sesión y ordenar por columna. Si un tema aún no tiene mecanismo en los apuntes se muestra «—» (no se inventa). Las plantillas vacías (sin quiz) no entran en la tabla ni en los pares.
+
+## Calculadora: unidades y mcg/kg/min
+
+- **Dosis mcg/kg/min (constante K):** el fármaco se puede escribir en mg o en mcg. Ejemplo cargable: adrenalina 1 mg completada a 24 cc, paciente de 2.4 kg, dosis 0.01 mcg/kg/min → 0.0346 cc/hora. Los resultados menores de 1 se muestran con 3 cifras significativas para que no queden en 0.
+- **Peso:** todos los campos de peso aceptan kg o g (2400 g = 2.4 kg) y muestran la equivalencia en kg.
+- **Decimales:** los campos son de texto con teclado decimal y aceptan punto o coma (el `type="number"` rechazaba el punto en algunos teléfonos y navegadores en español).
+- **Flujo metabólico:** las dos fórmulas están como dos modos con su ejemplo: con orden médica (flujo → cc/hora) y con el goteo dado (cc/hora → flujo).
+- **Mi progreso** está oculto del menú por ahora (no hay base de datos de estudiantes); `#/progreso` redirige al inicio.

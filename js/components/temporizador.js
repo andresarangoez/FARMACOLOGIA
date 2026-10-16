@@ -59,7 +59,7 @@ FA.estudio = (function () {
                 '<div class="pila">' +
                 (terminado
                     ? '<div class="tarjeta tarjeta--alt"><h3>Sesión terminada</h3><p class="suave">Buen trabajo. Antes de cerrar, anota en una frase qué aprendiste hoy y qué quedó pendiente. Marca el tema como estudiado si ya lo dominas.</p>' +
-                      '<div class="fila-botones"><button type="button" class="btn" data-t="reiniciar">Otra sesión igual</button><a class="btn btn--sec" href="#/progreso">Ver mi progreso</a></div></div>'
+                      '<div class="fila-botones"><button type="button" class="btn" data-t="reiniciar">Otra sesión igual</button><a class="btn btn--sec" href="#/sesiones">Ir a las sesiones</a></div></div>'
                     : '<div class="tarjeta tarjeta--alt reloj-caja">' +
                       '<span class="eyebrow">Bloque ' + (k + 1) + ' de ' + bl.length + ' · ' + u.esc(bl[k].titulo) + '</span>' +
                       '<div class="reloj" role="timer" aria-live="off">' + mmss(restante) + '</div>' +
