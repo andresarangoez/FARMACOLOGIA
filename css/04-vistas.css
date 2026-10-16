@@ -378,3 +378,48 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .vm__item small { flex-basis: 100%; color: var(--tx-tenue); }
 .vm__tipo { font-size: var(--t-xs); }
 @media (min-width: 720px) { .vm__item small { flex-basis: auto; margin-left: auto; } }
+
+/* ── Dibujos animados de presentaciones (ampolla, pastilla, jarabe) ── */
+.fr-caja { --vidrio: rgba(8, 41, 86, .55); --sombra-fr: rgba(15, 23, 42, .22); margin: 0; display: inline-flex; flex-direction: column; align-items: center; gap: 2px; width: 62px; }
+:root[data-tema="oscuro"] .fr-caja { --vidrio: rgba(255, 255, 255, .7); --sombra-fr: rgba(0, 0, 0, .6); }
+.fr-caja figcaption { font-size: .66rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--tx-tenue); }
+.fr-caja--tenue { opacity: .55; }
+.fr-esc { height: 102px; width: 100%; display: grid; place-items: end center; padding-top: 6px; }
+.fr { height: 96px; width: auto; max-width: 100%; overflow: visible; animation: fr-flota 4s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.fr--pas { width: 62px; height: auto; }
+.fr-c1 { fill: hsl(var(--h) 78% 52%); }
+.fr-c2 { fill: hsl(var(--h) 90% 76%); }
+.fr-c3 { fill: hsl(var(--h) 70% 38%); }
+.fr-vidrio { fill: rgba(255, 255, 255, .22); stroke: var(--vidrio); stroke-width: 3; }
+.fr-brillo { opacity: .5; animation: fr-brilla 4s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.fr-ola { transform-box: fill-box; transform-origin: center; animation: fr-ola 3s ease-in-out infinite; }
+.fr-bur { fill: #fff; opacity: 0; transform-box: fill-box; transform-origin: center; animation: fr-sube 3s linear infinite; }
+.fr-bur.b2 { animation-delay: .8s; animation-duration: 3.4s; }
+.fr-bur.b3 { animation-delay: 1.5s; animation-duration: 2.7s; }
+.fr--bot .fr-bur { animation-name: fr-sube-b; }
+.fr-oscila { transform-box: fill-box; transform-origin: center; animation: fr-oscila 4.5s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.fr-oscila--b { animation-duration: 5.5s; animation-direction: alternate-reverse; }
+.fr-sombra { display: block; width: 70%; height: 9px; margin-top: -4px; border-radius: 50%; background: radial-gradient(ellipse at center, var(--sombra-fr) 0%, transparent 70%); animation: fr-sombra 4s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes fr-flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes fr-sombra { 0%, 100% { transform: scale(1); opacity: .95; } 50% { transform: scale(.8); opacity: .55; } }
+@keyframes fr-ola { 0%, 100% { transform: translateX(-9%); } 50% { transform: translateX(9%); } }
+@keyframes fr-sube { 0% { transform: translateY(0) scale(.8); opacity: 0; } 20%, 80% { opacity: .85; } 100% { transform: translateY(-150px) scale(1.15); opacity: 0; } }
+@keyframes fr-sube-b { 0% { transform: translateY(0) scale(.8); opacity: 0; } 20%, 80% { opacity: .85; } 100% { transform: translateY(-65px) scale(1.15); opacity: 0; } }
+@keyframes fr-brilla { 0%, 100% { opacity: .2; } 50% { opacity: .8; } }
+@keyframes fr-oscila { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-6px) rotate(6deg); } }
+@media (prefers-reduced-motion: reduce) { .fr, .fr *, .fr-sombra { animation: none !important; } .fr-bur { opacity: 0 !important; } }
+
+/* fila del listado con dibujos */
+.vm__item--rico { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-items: start; padding: 12px 10px; border-top: 1px solid var(--linea); content-visibility: auto; contain-intrinsic-size: auto 150px; }
+.vm__item--rico:first-child { border-top: 0; }
+.vm__icos { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; min-width: 62px; }
+.vm__cuerpo { display: grid; gap: 4px; min-width: 0; }
+.vm__linea { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.vm__cuerpo small { flex-basis: auto; margin: 0; color: var(--tx-tenue); }
+.vm__nota { margin: 0; font-size: var(--t-sm); color: var(--tx-suave); }
+.vm__det { font-size: var(--t-sm); }
+.vm__det summary { cursor: pointer; font-weight: 700; color: var(--enlace); width: fit-content; }
+.vm__det ul { margin: 6px 0 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.vm__det .fuente { margin: 6px 0 0; font-size: var(--t-xs); color: var(--tx-tenue); }
+.vm__pie { margin-top: var(--s-5); font-size: var(--t-sm); color: var(--tx-suave); }
+@media (max-width: 560px) { .vm__item--rico { grid-template-columns: 1fr; } }

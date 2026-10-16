@@ -121,6 +121,16 @@ Tabla con Fármaco · Grupo · Mecanismo · Efectos adversos · Sesión, generad
 
 ## Vademécum (`#/vademecum`)
 
-Índice alfabético de fármacos: botones A-Z (los sin entradas aparecen atenuados), filtro por segunda letra y la lista debajo, ordenada y con encabezado por letra. Sin elegir letra se ve todo el índice. También hay un buscador dentro del índice y el estado queda en la URL (`#/vademecum?l=a&p=an&q=…`).
+Índice alfabético de fármacos: botones A-Z (los sin entradas aparecen atenuados), filtro por segunda letra y la lista debajo, ordenada y con encabezado por letra. Sin elegir letra se ve todo el índice. También hay un buscador dentro del índice y el estado queda en la URL (`#/farmacos?l=a&p=an&q=…`; `#/vademecum` sigue funcionando).
 
-Las entradas se generan solas desde los nombres de los temas en `content/` (sesión 4 en adelante con contenido, más Potasio, Calcio y Magnesio): el nombre del grupo, cada fármaco entre paréntesis o separado por «,» «/» «y», y algunos otros nombres (EPO, G-CSF…). Cada una enlaza a su tema. Los temas cuyo nombre no se puede partir solo (hoy los electrolitos) se indican a mano en `MANUAL` dentro de `js/modules/vademecum.js`. Al agregar un tema nuevo con quiz aparece solo.
+Las entradas se generan solas desde los nombres de los temas en `content/` (sesión 4 en adelante con contenido, más Potasio, Calcio y Magnesio): el nombre del grupo, cada fármaco entre paréntesis o separado por «,» «/» «y», y algunos otros nombres (EPO, G-CSF…). Cada una enlaza a su tema. Los temas cuyo nombre no se puede partir solo (hoy los electrolitos) se indican a mano en `MANUAL` dentro de `js/modules/listado.js`. Al agregar un tema nuevo con quiz aparece solo.
+
+### Presentaciones en Colombia y dibujos animados
+
+Cada fármaco muestra dibujos animados (ampolla, pastilla o jarabe, con sombra, flotando y con burbujas) según las presentaciones **colombianas** encontradas, cada fármaco con su propio color. La ampolla parte de `ampolla_animada_de_digoxina.html`. Los dibujos son sólo CSS/SVG (`js/components/frascos.js` + estilos `.fr*` en `css/04-vistas.css`) y se quedan quietos si el sistema pide «reducir movimiento». Si un fármaco sólo viene en combinación con otros, el dibujo sale atenuado. Cada fila tiene un desplegable «Presentaciones en Colombia» con la forma farmacéutica, la vía, el número de registros y ejemplos comerciales.
+
+**De dónde salen los datos** (`data/presentaciones.js`, generado por `tools/presentaciones-invima.ps1`, ejecutar `powershell -File tools\presentaciones-invima.ps1` con internet):
+- Datos abiertos de INVIMA en datos.gov.co (conjunto `i7cb-raxc`): registros sanitarios **vigentes** con presentación comercial **activa**.
+- Complementos a mano, con su fuente en cada línea: etambutol y teicoplanina (Vademécum Colombia) y quinupristina/dalfopristina (normas farmacológicas de INVIMA).
+- Sin presentación colombiana encontrada (se avisa, no se inventa): zafirlukast, raxibacumab y antitrombina III. Talidomida tiene registro vigente pero ninguna presentación activa.
+- La base abierta puede no tener todas las presentaciones (por ejemplo, la digoxina sólo aparece inyectable). Siempre verificar en el registro de INVIMA.
