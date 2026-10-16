@@ -75,8 +75,8 @@ FA.vistas.listado = (function () {
             (rico ? '<div class="vm__icos">' + (iconos || '') + '</div>' : '') +
             (rico ? '<div class="vm__cuerpo">' : '') +
             '<div class="vm__linea"><a href="#/farmaco/' + e.tema + '"><b>' + u.esc(e.nombre) + '</b></a>' +
-            '<span class="chip chip--fijo vm__tipo">' + e.tipo + '</span></div>' +
-            '<small>' + (e.nombre === e.temaNombre ? '' : u.esc(e.temaNombre) + ' · ') + 'Sesión ' + e.sesion + '</small>' +
+            '<span class="chip chip--fijo vm__tipo">Sesión ' + e.sesion + '</span></div>' +
+            (function () { var t = [e.tipo !== 'Fármaco' ? e.tipo : '', e.nombre === e.temaNombre ? '' : u.esc(e.temaNombre)].filter(Boolean).join(' · '); return t ? '<small>' + t + '</small>' : ''; })() +
             (rico ? nota + detalle(p) + '</div>' : '') + '</li>';
     }
 
