@@ -1,11 +1,11 @@
 /* ============================================================
-   VISTA · #/vademecum[?l=a&p=ab&q=texto]  ·  Índice alfabético de fármacos
+   VISTA · #/farmacos[?l=a&p=ab&q=texto]  ·  Listado de fármacos (antes «Vademécum»)
    Letras A-Z, filtro por segunda letra y lista debajo (como un vademécum).
    Las entradas salen de los nombres de los temas (content/): el nombre del
    grupo y cada fármaco que aparece entre paréntesis o separado por «,» «/» «y».
    No se inventa nada: cada entrada enlaza al tema donde está explicada.
    ============================================================ */
-FA.vistas.vademecum = (function () {
+FA.vistas.listado = (function () {
     var u = FA.u;
     var OTROS_NOMBRES = /^(EPO|G-CSF|Fenicoles|Polimixina E)$/i;
     var EXTRA = ['potasio', 'calcio', 'magnesio'];                 // electrolitos de la sesión 1 que sí son "fármacos"
@@ -13,12 +13,67 @@ FA.vistas.vademecum = (function () {
     var MANUAL = {
         potasio: [["Potasio", "Fármaco"], ["K+", "Otro nombre"]],
         calcio: [["Calcio", "Fármaco"], ["Ca2+", "Otro nombre"]],
-        magnesio: [["Magnesio", "Fármaco"], ["Mg2+", "Otro nombre"]]
+        magnesio: [["Magnesio", "Fármaco"], ["Mg2+", "Otro nombre"]],
+        "expectorantes-mucoliticos": [["Expectorantes", "Grupo"], ["Mucolíticos", "Grupo"], ["Guaifenesina", "Fármaco"], ["N-acetilcisteína", "Fármaco"], ["Ambroxol", "Fármaco"], ["Bromhexina", "Fármaco"]],
+        "estreptograminas-linezolid": [["Estreptograminas", "Grupo"], ["Quinupristina", "Fármaco"], ["Dalfopristina", "Fármaco"], ["Linezolid", "Fármaco"]]
     };
 
     function sinTilde(s) { return s.normalize ? s.normalize('NFD').replace(/[̀-ͯ]/g, '') : s; }
     function clave(s) { return sinTilde(s).toLowerCase().replace(/[^a-z0-9]/g, ''); }
     function partir(t) { return t.split(/\s*[,\/]\s*|\s+y\s+/).map(function (x) { return x.trim(); }).filter(Boolean); }
+
+    /* ── presentaciones en Colombia (data/presentaciones.js, generado por tools/presentaciones-invima.ps1) ── */
+    var PRES = (window.FARMA_PRES && window.FARMA_PRES.items) || {};
+    var NOMBRE_CAT = { ampolla: 'Ampolla', pastilla: 'Pastilla', jarabe: 'Jarabe' };
+
+    function presentaciones(e) {
+        var d = PRES[clave(e.nombre)];
+        if (!d || e.tipo === 'Grupo') return { d: null };
+        var formas = d.formas || [], cats = {}, otras = [];
+        formas.forEach(function (f) {
+            if (f.cat === 'otra') { if (f.n + f.comb > 0) otras.push(f.forma + (f.via ? ' (' + f.via.toLowerCase() + ')' : '')); return; }
+            var c = cats[f.cat] || (cats[f.cat] = { solo: 0, comb: 0 });
+            c.solo += f.n; c.comb += f.comb;
+        });
+        return { d: d, cats: cats, otras: otras, formas: formas };
+    }
+
+    function detalle(p) {
+        if (!p.formas.length) return '';
+        var fuente = (window.FARMA_PRES && window.FARMA_PRES.fuente) || '';
+        var lis = p.formas.map(function (f) {
+            var n = f.n ? f.n + (f.n === 1 ? ' registro' : ' registros') : '', c = f.comb ? f.comb + ' en combinación' : '';
+            var cuenta = [n, c].filter(Boolean).join(' · ');
+            return '<li><b>' + u.esc(f.forma) + '</b>' + (f.via ? ' · ' + u.esc(f.via.toLowerCase()) : '') + (cuenta ? ' — ' + cuenta : '') +
+                (f.ej && f.ej.length ? '. Ej.: ' + f.ej.map(u.esc).join('; ') : '') +
+                (f.fuente ? ' <span class="fuente">(' + (f.url ? '<a href="' + u.esc(f.url) + '" target="_blank" rel="noopener">' + u.esc(f.fuente) + '</a>' : u.esc(f.fuente)) + ')</span>' : '') + '</li>';
+        }).join('');
+        var total = p.d.registros;
+        return '<details class="vm__det"><summary>Presentaciones en Colombia' + (total ? ' (' + total + ' ' + (total === 1 ? 'registro' : 'registros') + ')' : '') + '</summary><ul>' + lis + '</ul>' +
+            (p.d.nota ? '<p class="fuente">' + u.esc(p.d.nota) + '</p>' : '') +
+            '<p class="fuente">Fuente: ' + u.esc(fuente) + (window.FARMA_PRES ? ' · consulta del ' + window.FARMA_PRES.fecha : '') + '.</p></details>';
+    }
+
+    function fila(e) {
+        var p = e.tipo === 'Grupo' ? { d: null } : presentaciones(e);
+        var rico = p.d != null;
+        var iconos = '', nota = '';
+        if (rico) {
+            ['ampolla', 'jarabe', 'pastilla'].forEach(function (cat) {
+                var c = p.cats[cat]; if (!c || (c.solo + c.comb) === 0) return;
+                iconos += FA.frascos.html(cat, clave(e.nombre), { tenue: c.solo === 0, titulo: c.solo === 0 ? 'Sólo en combinación con otros principios activos' : '' });
+            });
+            if (!iconos) nota = '<p class="vm__nota">' + u.esc(p.d.nota || 'Sin presentación en ampolla, pastilla o jarabe.') + '</p>';
+            else if (p.otras.length) nota = '<p class="vm__nota">También: ' + u.esc(p.otras.slice(0, 4).join(', ')) + '.</p>';
+        }
+        return '<li class="vm__item' + (rico ? ' vm__item--rico' : '') + '">' +
+            (rico ? '<div class="vm__icos">' + (iconos || '') + '</div>' : '') +
+            (rico ? '<div class="vm__cuerpo">' : '') +
+            '<div class="vm__linea"><a href="#/farmaco/' + e.tema + '"><b>' + u.esc(e.nombre) + '</b></a>' +
+            '<span class="chip chip--fijo vm__tipo">' + e.tipo + '</span></div>' +
+            '<small>' + (e.nombre === e.temaNombre ? '' : u.esc(e.temaNombre) + ' · ') + 'Sesión ' + e.sesion + '</small>' +
+            (rico ? nota + detalle(p) + '</div>' : '') + '</li>';
+    }
 
     var cache = null;
     function entradas() {
@@ -56,10 +111,10 @@ FA.vistas.vademecum = (function () {
     }
 
     return {
-        titulo: 'Vademécum',
+        titulo: 'Listado de fármacos',
         render: function () {
             return '<div class="pagina">' +
-                '<header class="cabecera"><p class="eyebrow">Consulta</p><h1>Vademécum de fármacos</h1>' +
+                '<header class="cabecera"><p class="eyebrow">Consulta</p><h1>Listado de fármacos</h1>' +
                 '<p class="lead">Índice alfabético de los fármacos y grupos que aparecen en los temas. Toca uno para abrir su explicación.</p></header>' +
                 '<div class="panel vm__panel"><h2 class="vm__tit">Índice alfabético</h2><div class="vm__letras" data-letras role="group" aria-label="Letra inicial"></div></div>' +
                 '<div class="panel vm__panel" data-segunda hidden><h2 class="vm__tit">Filtrar por segunda letra</h2><div class="vm__letras vm__letras--chicas" data-pref role="group" aria-label="Dos primeras letras"></div></div>' +
@@ -67,6 +122,7 @@ FA.vistas.vademecum = (function () {
                 '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p><div data-lista></div></div>';
         },
         montar: function (el) {
+            FA.frascos.defs();
             var E = entradas(), st = leerEstado();
             var letrasEl = el.querySelector('[data-letras]'), prefEl = el.querySelector('[data-pref]'), segEl = el.querySelector('[data-segunda]');
             var listaEl = el.querySelector('[data-lista]'), cuenta = el.querySelector('[data-cuenta]'), qEl = el.querySelector('[data-q]');
@@ -76,7 +132,7 @@ FA.vistas.vademecum = (function () {
 
             function guardarUrl() {
                 var p = []; if (st.l) p.push('l=' + st.l); if (st.p) p.push('p=' + st.p); if (st.q) p.push('q=' + encodeURIComponent(st.q));
-                try { history.replaceState(null, '', '#/vademecum' + (p.length ? '?' + p.join('&') : '')); } catch (e) { }
+                try { history.replaceState(null, '', '#/farmacos' + (p.length ? '?' + p.join('&') : '')); } catch (e) { }
             }
 
             function pintarLetras() {
@@ -105,11 +161,10 @@ FA.vistas.vademecum = (function () {
                 v.forEach(function (e) {
                     var L = e.key.charAt(0).toUpperCase();
                     if (L !== ult) { if (ult) html += '</ul></section>'; html += '<section class="vm__grupo"><h2 class="vm__letra-tit" id="vm-' + L + '">' + L + '</h2><ul class="vm__lista">'; ult = L; }
-                    html += '<li class="vm__item"><a href="#/farmaco/' + e.tema + '"><b>' + u.esc(e.nombre) + '</b></a>' +
-                        '<span class="chip chip--fijo vm__tipo">' + e.tipo + '</span>' +
-                        '<small>' + (e.nombre === e.temaNombre ? '' : u.esc(e.temaNombre) + ' · ') + 'Sesión ' + e.sesion + '</small></li>';
+                    html += fila(e);
                 });
                 listaEl.innerHTML = html + '</ul></section>';
+                listaEl.insertAdjacentHTML("beforeend", '<p class="vm__pie">Presentaciones: ' + ((window.FARMA_PRES && window.FARMA_PRES.fuente) ? u.esc(window.FARMA_PRES.fuente) : "sin datos") + '. Sólo presentaciones colombianas; si una no aparece, no se inventa. Verifica siempre en el registro sanitario de INVIMA.</p>');
             }
 
             function todo() { pintarLetras(); pintarLista(); guardarUrl(); }
