@@ -432,3 +432,12 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .fr-vapor.v3 { animation-delay: 1s; }
 @keyframes fr-vapor { 0% { transform: translate(0, 0) scale(.5); opacity: 0; } 20% { opacity: .75; } 100% { transform: translate(34px, -16px) scale(3.2); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .fr-vapor { animation: none !important; opacity: 0 !important; } }
+
+/* interruptor «Mostrar presentaciones farmacológicas» */
+.vm__interruptor { display: flex; align-items: center; gap: 12px; margin: 0 0 var(--s-2); cursor: pointer; font-weight: 700; color: var(--titulo); width: fit-content; }
+.vm__interruptor small { display: block; font-weight: 500; color: var(--tx-suave); font-size: var(--t-xs); }
+.vm__interruptor input { appearance: none; -webkit-appearance: none; flex: none; width: 44px; height: 26px; border-radius: 999px; background: var(--linea); position: relative; cursor: pointer; transition: background .2s; border: 1px solid var(--azul-linea, var(--linea)); }
+.vm__interruptor input::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.35); transition: transform .2s; }
+.vm__interruptor input:checked { background: var(--sel); }
+.vm__interruptor input:checked::after { transform: translateX(18px); }
+.vm__interruptor input:focus-visible { outline: 3px solid var(--enlace); outline-offset: 2px; }

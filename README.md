@@ -135,3 +135,5 @@ Cada fármaco muestra dibujos animados (ampolla, vial, pastilla, jarabe o inhala
 - Complementos a mano, con su fuente en cada línea: etambutol y teicoplanina (Vademécum Colombia) y quinupristina/dalfopristina (normas farmacológicas de INVIMA).
 - Sin presentación colombiana encontrada (se avisa, no se inventa): zafirlukast, raxibacumab y antitrombina III. Talidomida tiene registro vigente pero ninguna presentación activa.
 - La base abierta puede no tener todas las presentaciones (por ejemplo, la digoxina sólo aparece inyectable). Siempre verificar en el registro de INVIMA.
+
+En el listado hay un interruptor **«Mostrar presentaciones farmacológicas»** (activado por defecto): al apagarlo se ocultan los dibujos y el desplegable de presentaciones y queda solo el índice con nombres. La elección se recuerda en el navegador (`farmacologia-presentaciones` en localStorage).

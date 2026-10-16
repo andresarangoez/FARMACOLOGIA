@@ -54,8 +54,13 @@ FA.vistas.listado = (function () {
             '<p class="fuente">Fuente: ' + u.esc(fuente) + (window.FARMA_PRES ? ' · consulta del ' + window.FARMA_PRES.fecha : '') + '.</p></details>';
     }
 
-    function fila(e) {
-        var p = e.tipo === 'Grupo' ? { d: null } : presentaciones(e);
+    /* ¿Mostrar las presentaciones (dibujos y desplegable)? Se recuerda en este navegador; por defecto sí. */
+    var CLAVE_PRES = 'farmacologia-presentaciones';
+    function verPres() { try { return window.localStorage.getItem(CLAVE_PRES) !== '0'; } catch (e) { return true; } }
+    function guardarPres(v) { try { window.localStorage.setItem(CLAVE_PRES, v ? '1' : '0'); } catch (e) { } }
+
+    function fila(e, conPres) {
+        var p = (e.tipo === 'Grupo' || !conPres) ? { d: null } : presentaciones(e);
         var rico = p.d != null;
         var iconos = '', nota = '';
         if (rico) {
@@ -119,6 +124,7 @@ FA.vistas.listado = (function () {
                 '<div class="panel vm__panel"><h2 class="vm__tit">Índice alfabético</h2><div class="vm__letras" data-letras role="group" aria-label="Letra inicial"></div></div>' +
                 '<div class="panel vm__panel" data-segunda hidden><h2 class="vm__tit">Filtrar por segunda letra</h2><div class="vm__letras vm__letras--chicas" data-pref role="group" aria-label="Dos primeras letras"></div></div>' +
                 '<label class="campo vm__buscar"><span>Buscar en el índice</span><input type="search" data-q placeholder="Escribe el nombre del fármaco o del grupo…" autocomplete="off"></label>' +
+                '<label class="vm__interruptor"><input type="checkbox" role="switch" data-pres><span>Mostrar presentaciones farmacológicas<small>Dibujos y presentaciones registradas en Colombia (INVIMA)</small></span></label>' +
                 '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p><div data-lista></div></div>';
         },
         montar: function (el) {
@@ -129,6 +135,8 @@ FA.vistas.listado = (function () {
             var ABC = 'abcdefghijklmnopqrstuvwxyz'.split(''), hay = {};
             E.forEach(function (e) { hay[e.key.charAt(0)] = true; });
             qEl.value = st.q;
+            var presEl = el.querySelector('[data-pres]'); presEl.checked = verPres(); st.pres = presEl.checked;
+            presEl.addEventListener('change', function () { st.pres = presEl.checked; guardarPres(st.pres); pintarLista(); });
 
             function guardarUrl() {
                 var p = []; if (st.l) p.push('l=' + st.l); if (st.p) p.push('p=' + st.p); if (st.q) p.push('q=' + encodeURIComponent(st.q));
@@ -161,10 +169,10 @@ FA.vistas.listado = (function () {
                 v.forEach(function (e) {
                     var L = e.key.charAt(0).toUpperCase();
                     if (L !== ult) { if (ult) html += '</ul></section>'; html += '<section class="vm__grupo"><h2 class="vm__letra-tit" id="vm-' + L + '">' + L + '</h2><ul class="vm__lista">'; ult = L; }
-                    html += fila(e);
+                    html += fila(e, st.pres);
                 });
                 listaEl.innerHTML = html + '</ul></section>';
-                listaEl.insertAdjacentHTML("beforeend", '<p class="vm__pie">Presentaciones: ' + ((window.FARMA_PRES && window.FARMA_PRES.fuente) ? u.esc(window.FARMA_PRES.fuente) : "sin datos") + '. Sólo presentaciones colombianas; si una no aparece, no se inventa. Verifica siempre en el registro sanitario de INVIMA.</p>');
+                if (st.pres) listaEl.insertAdjacentHTML("beforeend", '<p class="vm__pie">Presentaciones: ' + ((window.FARMA_PRES && window.FARMA_PRES.fuente) ? u.esc(window.FARMA_PRES.fuente) : "sin datos") + '. Sólo presentaciones colombianas; si una no aparece, no se inventa. Verifica siempre en el registro sanitario de INVIMA.</p>');
             }
 
             function todo() { pintarLetras(); pintarLista(); guardarUrl(); }
