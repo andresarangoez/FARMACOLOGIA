@@ -43,9 +43,12 @@
 :root[data-tema="oscuro"] tr.fila-examen:nth-child(even) { background: var(--amarillo-tinte); }
 
 /* el botón de tema */
-.btn-tema { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--linea); border-radius: var(--r-sm); background: var(--sup); color: var(--titulo); cursor: pointer; }
-.btn-tema:hover { background: var(--azul-tinte); }
-.btn-tema .icono { width: 20px; height: 20px; }
+.btn-tema, .btn-lupa { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--linea); border-radius: var(--r-sm); background: var(--sup); color: var(--titulo); cursor: pointer; }
+.btn-tema:hover, .btn-lupa:hover { background: var(--azul-tinte); }
+.btn-lupa { text-decoration: none; margin-right: 8px; }
+.btn-lupa[aria-current="page"] { background: var(--sel); border-color: var(--sel); color: var(--blanco); }
+.btn-lupa:focus-visible { outline: 3px solid var(--enlace); outline-offset: 2px; }
+.btn-tema .icono, .btn-lupa .icono { width: 20px; height: 20px; }
 .btn-tema .sol { display: none; }
 :root[data-tema="oscuro"] .btn-tema .luna { display: none; }
 :root[data-tema="oscuro"] .btn-tema .sol { display: inline; }
