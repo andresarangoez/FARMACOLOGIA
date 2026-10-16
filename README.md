@@ -127,9 +127,10 @@ Las entradas se generan solas desde los nombres de los temas en `content/` (sesi
 
 ### Presentaciones en Colombia y dibujos animados
 
-Cada fármaco muestra dibujos animados (ampolla, pastilla o jarabe, con sombra, flotando y con burbujas) según las presentaciones **colombianas** encontradas, cada fármaco con su propio color. La ampolla parte de `ampolla_animada_de_digoxina.html`. Los dibujos son sólo CSS/SVG (`js/components/frascos.js` + estilos `.fr*` en `css/04-vistas.css`) y se quedan quietos si el sistema pide «reducir movimiento». Si un fármaco sólo viene en combinación con otros, el dibujo sale atenuado. Cada fila tiene un desplegable «Presentaciones en Colombia» con la forma farmacéutica, la vía, el número de registros y ejemplos comerciales.
+Cada fármaco muestra dibujos animados (ampolla, vial, pastilla, jarabe o inhalador, con sombra, flotando y con burbujas) según las presentaciones **colombianas** encontradas, cada fármaco con su propio color. La ampolla parte de `ampolla_animada_de_digoxina.html`. Los dibujos son sólo CSS/SVG (`js/components/frascos.js` + estilos `.fr*` en `css/04-vistas.css`) y se quedan quietos si el sistema pide «reducir movimiento». Si un fármaco sólo viene en combinación con otros, el dibujo sale atenuado. Cada fila tiene un desplegable «Presentaciones en Colombia» con la forma farmacéutica, la vía, el número de registros y ejemplos comerciales.
 
 **De dónde salen los datos** (`data/presentaciones.js`, generado por `tools/presentaciones-invima.ps1`, ejecutar `powershell -File tools\presentaciones-invima.ps1` con internet):
+- Los dibujos se eligen por la forma farmacéutica: ampolla (solución inyectable), vial (liofilizado, polvo o suspensión inyectable, intratraqueal), jarabe (líquido oral), pastilla (tableta, cápsula, gragea) e inhalador (inhalación, nebulización). Otras formas (gel, crema, etc.) sólo salen en texto.
 - Datos abiertos de INVIMA en datos.gov.co (conjunto `i7cb-raxc`): registros sanitarios **vigentes** con presentación comercial **activa**.
 - Complementos a mano, con su fuente en cada línea: etambutol y teicoplanina (Vademécum Colombia) y quinupristina/dalfopristina (normas farmacológicas de INVIMA).
 - Sin presentación colombiana encontrada (se avisa, no se inventa): zafirlukast, raxibacumab y antitrombina III. Talidomida tiene registro vigente pero ninguna presentación activa.
