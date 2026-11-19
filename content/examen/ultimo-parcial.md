@@ -1,7 +1,7 @@
 ---
 id: ultimo-parcial
 nombre: Último parcial (preguntas de tutoría)
-descripcion: Preguntas de opción múltiple tipo parcial final, con la respuesta correcta y la justificación de cada opción. Cubre los temas vistos después del segundo parcial: bevacizumab, sunitinib, gemtuzumab ozogamicina, aflibercept, ranibizumab, secukinumab y denosumab.
+descripcion: Preguntas de opción múltiple tipo parcial final, con la respuesta correcta y la justificación de cada opción. Cubre los temas vistos después del segundo parcial: bevacizumab, sunitinib, gemtuzumab ozogamicina, aflibercept, ranibizumab, secukinumab, denosumab, tacrolimus y nimotuzumab.
 orden: 4
 tipo: Quiz
 ---
@@ -75,3 +75,36 @@ Preguntas elaboradas para las tutorías del parcial final. Igual que en el parci
 - d) Inhibición directa de la síntesis de colágeno tipo I por los osteoblastos como mecanismo primario.
 
 **Justificación:** el denosumab es un anticuerpo monoclonal que se une al RANKL e impide que active el receptor RANK de los osteoclastos y sus precursores. Sin esa señal, los osteoclastos no se forman, no se activan y viven menos, por lo que disminuye la resorción ósea. La b y la c describen lo contrario (activación de RANK y más resorción); la d atribuye un efecto sobre los osteoblastos que no es su mecanismo.
+
+## Pregunta 7. Efectos adversos del tacrolimus
+
+**Caso:** un paciente pediátrico tratado con tacrolimus presenta aumento de creatinina, temblor, hiperglucemia, hiperpotasemia e hipomagnesemia. ¿Cuál interpretación farmacológica es la más adecuada?
+
+- a) **Son efectos compatibles con tacrolimus: nefrotoxicidad, neurotoxicidad, alteración de la homeostasis de glucosa y cambios electrolíticos.** ✓
+- b) Indican bloqueo de VEGF y obligan a descartar prioritariamente hemorragia, proteinuria y perforación gastrointestinal.
+- c) Corresponden a una reacción típica de anti-CD25 que se manifiesta principalmente con hipocalcemia y osteonecrosis.
+- d) Son manifestaciones características de inhibición de mTOR y requieren valorar principalmente hiperlipidemia y estomatitis.
+
+**Justificación:** el tacrolimus produce nefrotoxicidad (vasoconstricción de la arteriola aferente: sube la creatinina), neurotoxicidad (atraviesa la barrera hematoencefálica: temblor), diabetes postrasplante (inhibe la secreción de insulina) y trastornos electrolíticos (pérdida de magnesio por el túbulo y retención de potasio). La b describe al bevacizumab (VEGF); la c, un cuadro que no corresponde al basiliximab (anti-CD25); la d, los efectos de sirolimus y everolimus (mTOR).
+
+## Pregunta 8. Reacción a la infusión de nimotuzumab
+
+**Caso:** durante la administración intravenosa de nimotuzumab, un paciente presenta escalofríos, fiebre y malestar. ¿Cuál es la prioridad de enfermería ante la sospecha de reacción relacionada con la infusión?
+
+- a) Aumentar la velocidad para completar la dosis antes de que progrese la reacción.
+- b) **Valorar signos vitales y gravedad de los síntomas, detener o disminuir la infusión según protocolo y notificar al equipo tratante.** ✓
+- c) Continuar sin vigilancia adicional porque las reacciones de infusión no se relacionan con anticuerpos monoclonales.
+- d) Administrar la siguiente dosis de inmediato para evitar pérdida de eficacia terapéutica.
+
+**Justificación:** el nimotuzumab es un anticuerpo monoclonal y puede producir escalofrío y fiebre por liberación de citoquinas e hipotensión si se infunde rápido. Ante la reacción se valoran signos vitales y gravedad, se detiene o disminuye la infusión según el protocolo y se avisa al equipo. Por eso se premedica, se infunde lento y se vigilan los signos vitales cada 15 minutos la primera hora. La a empeora la reacción (acelerar la infusión causa hipotensión); la c es falsa, porque las reacciones a la infusión son típicas de los anticuerpos monoclonales; la d no tiene sentido clínico.
+
+## Pregunta 9. Secukinumab y enfermedad inflamatoria intestinal
+
+**Caso:** un paciente que recibe secukinumab presenta diarrea persistente, dolor abdominal y sangre en las deposiciones. ¿Qué relación farmacológica debe considerarse?
+
+- a) La inhibición de VEGFR causa siempre infección intestinal por microorganismos anaerobios.
+- b) La unión a CD25 provoca una estimulación directa de la secreción intestinal de ácido gástrico.
+- c) **El bloqueo de IL-17A puede asociarse con aparición o exacerbación de enfermedad inflamatoria intestinal.** ✓
+- d) La inhibición de RANKL produce ulceración intestinal por aumento de la actividad osteoclástica.
+
+**Justificación:** en el intestino la IL-17A ayuda a mantener la barrera de la mucosa; al bloquearla con secukinumab puede aparecer o empeorar una enfermedad inflamatoria intestinal (Crohn o colitis ulcerosa), que se manifiesta con diarrea persistente, dolor abdominal y sangre en las heces. La a atribuye a VEGFR un efecto que no tiene; la b inventa una acción del anti-CD25 (basiliximab); la d contradice el efecto del denosumab, que disminuye la actividad osteoclástica.
