@@ -195,10 +195,9 @@ FA.esquemaMecanismo = (function () {
                 '<button type="button" class="es-btn es-btn--play" data-play>▶ Reproducir</button>' +
                 '<button type="button" class="es-btn" data-next aria-label="Paso siguiente">›</button>' +
                 '<span class="es-puntos">' + f.pasos.map(function (_, j) { return '<button type="button" class="es-punto' + (j ? '' : ' es-punto--on') + '" data-ir-paso="' + j + '" aria-label="Paso ' + (j + 1) + '"></button>'; }).join('') + '</span>' +
-                '<button type="button" class="es-btn es-btn--lista" data-lista aria-expanded="false">Ver en lista</button>' +
-                '</div><div class="es-lista" hidden>' + lista + '</div></div>';
+                '</div><div class="es-lista">' + lista + '</div></div>';
         }).join('');
-        return '<figure class="esquema" aria-label="Mecanismo de acción"><figcaption>Mecanismo de acción</figcaption>' + tabs + cuerpos + '</figure>';
+        return '<figure class="esquema" aria-label="Mecanismo de acción"><figcaption class="es-cab"><span>Mecanismo de acción</span><span class="es-modo" role="group" aria-label="Forma de ver el mecanismo"><button type="button" class="es-modo__b es-modo__b--on" data-modo="anim" aria-pressed="true">Animación</button><button type="button" class="es-modo__b" data-modo="esq" aria-pressed="false">Esquema</button></span></figcaption>' + tabs + cuerpos + '</figure>';
     }
 
     /* ---------- interacción ---------- */
@@ -215,10 +214,19 @@ FA.esquemaMecanismo = (function () {
                 ctl[i].ir(0); if (!reducido) ctl[i].play();
             });
         });
+        /* selector Animación | Esquema (por defecto, animación) */
+        fig.querySelectorAll('[data-modo]').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var esq = b.dataset.modo === 'esq';
+                fig.classList.toggle('es--modo-esq', esq);
+                fig.querySelectorAll('[data-modo]').forEach(function (x) { var on = x === b; x.classList.toggle('es-modo__b--on', on); x.setAttribute('aria-pressed', on); });
+                if (esq) ctl.forEach(function (c) { c.parar(); });
+            });
+        });
         /* arranca solo la primera vez que el esquema entra en pantalla */
         if (!reducido && 'IntersectionObserver' in window) {
             var io = new IntersectionObserver(function (ent) {
-                if (ent[0].isIntersecting) { io.disconnect(); var v = flujos.filter(function (f) { return !f.hidden; })[0]; if (v) ctl[flujos.indexOf(v)].play(); }
+                if (ent[0].isIntersecting) { io.disconnect(); if (fig.classList.contains('es--modo-esq')) return; var v = flujos.filter(function (f) { return !f.hidden; })[0]; if (v) ctl[flujos.indexOf(v)].play(); }
             }, { threshold: 0.55 });
             io.observe(fig);
         }
@@ -265,8 +273,6 @@ FA.esquemaMecanismo = (function () {
         fl.querySelector('[data-next]').addEventListener('click', function () { parar(); ir(k + 1); });
         play.addEventListener('click', reproducir);
         puntos.forEach(function (b) { b.addEventListener('click', function () { parar(); ir(+b.dataset.irPaso); }); });
-        var bl = fl.querySelector('[data-lista]'), lista = fl.querySelector('.es-lista');
-        bl.addEventListener('click', function () { lista.hidden = !lista.hidden; bl.setAttribute('aria-expanded', !lista.hidden); bl.textContent = lista.hidden ? 'Ver en lista' : 'Ocultar lista'; });
         ir(0);
         return { ir: ir, parar: parar, play: function () { if (!timer) reproducir(); } };
     }

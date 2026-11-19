@@ -671,15 +671,27 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .es-btn:hover { background: rgba(255,255,255,.2); }
 .es-btn--play { background: var(--amarillo); color: #082956; border-color: var(--amarillo); }
 .es-btn--play:hover { background: #FBD785; }
-.es-btn--lista { margin-left: auto; }
 .es-puntos { display: flex; gap: 6px; padding: 0 4px; }
 .es-punto { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 0; background: rgba(255,255,255,.3); cursor: pointer; }
 .es-punto--hecho { background: rgba(251,215,133,.6); }
 .es-punto--on { background: var(--amarillo); transform: scale(1.3); }
-.es-lista { margin-top: var(--s-3); }
-@media (max-width: 640px) { .es-btn--lista { margin-left: 0; } }
+.es-lista { display: none; margin-top: var(--s-2); }
 @media (prefers-reduced-motion: reduce) { .es-svg *, .es-gusano { animation: none !important; transition: none !important; } }
 @media print { .es-escena, .es-paso, .es-ctrl, .es-tabs { display: none !important; } .es-lista, .esq__flujo[hidden] { display: block !important; } }
 .es-lig-p { transition: offset-distance .9s ease, opacity .5s; }
 .es--farm .es-lig-p { animation: none; offset-distance: 34%; opacity: 1; }
 .es--efecto .es-lig-p { opacity: .85; }
+
+/* selector Animación | Esquema */
+.esquema figcaption.es-cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.es-modo { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); letter-spacing: 0; text-transform: none; }
+.es-modo__b { font: 700 .8rem/1 var(--f-main); color: #E6EEFA; background: transparent; border: 0; border-radius: 999px; padding: 7px 13px; cursor: pointer; }
+.es-modo__b:hover { color: #fff; }
+.es-modo__b--on { background: var(--amarillo); color: #082956; }
+.es--modo-esq .es-escena, .es--modo-esq .es-paso, .es--modo-esq .es-ctrl { display: none; }
+.es--modo-esq .es-lista { display: block; }
+@media print { .es-modo { display: none !important; } }
+.esquema figcaption.es-cab { flex-wrap: nowrap; }
+.es-cab > span:first-child { min-width: 0; }
+.es-modo { flex: 0 0 auto; }
+@media (max-width: 640px) { .esquema figcaption.es-cab { letter-spacing: .08em; } .es-modo__b { font-size: .72rem; padding: 6px 9px; } }
