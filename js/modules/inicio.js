@@ -11,9 +11,9 @@ FA.vistas.inicio = {
 
         return '<section class="hero"><div class="hero__int">' +
             '<div class="hero__fila"><div class="hero__txt">' +
-            '<p class="eyebrow eyebrow--claro">Tutorías y material de estudio</p>' +
+            '<p class="eyebrow eyebrow--claro">Material de estudio de cuidado neopediátrico</p>' +
             '<h1>Farmacología</h1>' +
-            '<p class="hero__lead">Cuidado crítico neo-pediátrico · Sesiones ' + u.esc(lista) + '. Lee, practica con flashcards, pruébate con quizzes y calcula dosis paso a paso.</p>' +
+            '<p class="hero__lead">Lee, practica con flashcards, pruébate con quizzes y calcula dosis paso a paso.</p>' +
             '<div class="fila-botones">' +
             '<a class="btn btn--amarillo" href="#/estudio">' + u.icono('reloj') + ' Modo estudio</a>' +
             '<a class="btn btn--fantasma" href="#/sesiones">Ver sesiones</a>' +
