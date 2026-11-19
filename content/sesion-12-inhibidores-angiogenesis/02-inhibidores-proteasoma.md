@@ -53,7 +53,7 @@ esquema: Bortezomib:: Ubiquitina marca proteínas dañadas → Bortezomib bloque
 4. **Soporte gastrointestinal e hidratación:** hidratación adecuada (oral o IV); antieméticos profilácticos; vigilar el ritmo intestinal (diarrea o estreñimiento).
 5. **Restricciones dietéticas:** no consumir té verde ni suplementos de vitamina C (12 horas antes y después de la dosis).
 
-## Síndrome de lisis tumoral (explicado en clase)
+## Síndrome de lisis tumoral
 
 - Al destruirse masivamente las células tumorales liberan **potasio** (hiperkalemia, arritmias), **fósforo** (hiperfosfatemia) y **ácido úrico** (hiperuricemia). El ácido úrico precipita en el túbulo renal ácido → **nefropatía obstructiva**.
 - **Hiperhidratar 2000 a 3000 cc/m²/24 horas**, garantizando un gasto urinario de **100 a 200 cc/m²/hora**, con **lactato de Ringer** (la solución salina causa acidosis hiperclorémica en pediatría).
