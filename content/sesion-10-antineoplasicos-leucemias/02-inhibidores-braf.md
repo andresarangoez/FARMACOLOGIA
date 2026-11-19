@@ -86,7 +86,7 @@ esquema: Vemurafenib / dabrafenib:: BRAF V600E siempre encendida → El fármaco
 - **Manejo de la piel:** el rash puede infectarse por sobreinfección por *S. aureus*.
 - **Manejo de la temperatura:** el trametinib potencia la fiebre causada por el dabrafenib.
 
-## Lo que explicó la profesora en clase
+## Lo que explicó la docente en clase
 
 - **BRAF normal** se activa solo cuando hace falta: una herida que hay que cicatrizar, una hemorragia (hemostasia), el crecimiento de un feto. Se apaga cuando ya hay suficientes células.
 - **V600E:** la **valina** en la **posición 600** se cambia por **ácido glutámico** (E); BRAF queda encendida todo el tiempo.
