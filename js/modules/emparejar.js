@@ -134,7 +134,7 @@ FA.vistas.emparejar = (function () {
         titulo: 'Emparejar',
         render: function () {
             return '<div class="pagina pagina--estrecha">' +
-                '<header class="cabecera"><p class="eyebrow">Practicar</p><h1>Emparejar</h1>' +
+                '<header class="cabecera"><h1>Emparejar</h1>' +
                 '<p class="lead">Une cada mecanismo, efecto adverso o grupo con su fármaco. Es la mejor forma de no confundir fármacos parecidos.</p></header>' +
                 '<div data-barra></div><div data-zona></div></div>';
         },

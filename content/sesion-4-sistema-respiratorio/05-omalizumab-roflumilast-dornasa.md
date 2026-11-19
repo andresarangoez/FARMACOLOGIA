@@ -3,13 +3,11 @@ id: omalizumab-roflumilast-dornasa
 nombre: Omalizumab, Roflumilast y Dornasa alfa
 sesion: 4
 tema: Medicamentos del sistema respiratorio
-grupo_farmacologico: Anticuerpo monoclonal anti-IgE (omalizumab) y enzima mucolítica recombinante (dornasa alfa)
-mecanismo_resumen: Omalizumab bloquea la IgE libre; dornasa alfa rompe el ADN del moco y reduce su viscosidad
+grupo_farmacologico: Anticuerpo monoclonal anti-IgE (omalizumab), inhibidor de PDE4 (roflumilast) y enzima mucolítica recombinante (dornasa alfa)
+mecanismo_resumen: Omalizumab bloquea la IgE libre; roflumilast inhibe la PDE4; dornasa alfa rompe el ADN del moco y reduce su viscosidad
 tags: [omalizumab, roflumilast, dornasa alfa, asma alergica, fibrosis quistica]
 dificultad_quiz: media
 ---
-
-> ⏳ **Pendiente:** las diapositivas recibidas no incluyen **roflumilast**; completar esa sección con los apuntes de clase.
 
 ## Omalizumab (Xolair)
 
@@ -29,6 +27,18 @@ dificultad_quiz: media
 - Rompe el **ADN del moco** → reduce su viscosidad
 - Uso en **fibrosis quística**
 - Enfermería: evaluar secreciones y función respiratoria
+
+## Roflumilast
+
+> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
+
+- **Inhibidor selectivo de la fosfodiesterasa 4 (PDE4)**, por vía oral.
+- **Mecanismo:** al inhibir la PDE4 aumenta el **AMPc** dentro de las células inflamatorias (neutrófilos, eosinófilos, macrófagos) → disminuye la liberación de mediadores inflamatorios en la vía aérea. Es antiinflamatorio, **no** broncodilatador inmediato.
+- **Uso:** **EPOC severa** con bronquitis crónica y exacerbaciones frecuentes, como terapia de mantenimiento en adultos. **No está aprobado en pediatría.**
+- **Dosis (adultos):** 500 µg una vez al día (se puede iniciar con 250 µg al día durante 4 semanas para mejorar la tolerancia).
+- **Efectos adversos:** diarrea, náuseas, **pérdida de peso**, cefalea, insomnio; trastornos psiquiátricos (ansiedad, depresión, ideación suicida).
+- **Cuidados de enfermería:** controlar el peso, vigilar el estado de ánimo y el sueño, y educar que no sirve para la crisis aguda.
+
 
 ## Preguntas de quiz sugeridas
 
@@ -50,6 +60,15 @@ dificultad_quiz: media
    - c) Estimula el centro respiratorio
    - d) Bloquea la IgE
 
+4. **(Opción múltiple)** ¿Qué enzima inhibe el roflumilast?
+   - a) Fosfodiesterasa 5
+   - b) **Fosfodiesterasa 4** ✓
+   - c) 5-lipooxigenasa
+   - d) Calcineurina
+
+5. **(Verdadero/Falso)** El roflumilast es un broncodilatador de rescate para la crisis aguda. → **Falso** (es antiinflamatorio de mantenimiento en EPOC severa)
+
+
 ## Flashcards sugeridas
 
 - **Q:** Mecanismo del omalizumab → **A:** Anticuerpo monoclonal anti-IgE; bloquea la IgE libre y evita la activación mastocitaria
@@ -57,3 +76,5 @@ dificultad_quiz: media
 - **Q:** ¿Qué se debe tener disponible al aplicar omalizumab? → **A:** Adrenalina (riesgo de anafilaxia)
 - **Q:** Mecanismo de la dornasa alfa → **A:** Enzima recombinante que rompe el ADN del moco y reduce su viscosidad
 - **Q:** ¿Para qué se usa la dornasa alfa? → **A:** Fibrosis quística
+- **Q:** Mecanismo del roflumilast → **A:** Inhibe la PDE4, aumenta el AMPc en células inflamatorias y disminuye la inflamación de la vía aérea
+- **Q:** Efectos adversos del roflumilast → **A:** Diarrea, náuseas, pérdida de peso, cefalea, insomnio y trastornos psiquiátricos

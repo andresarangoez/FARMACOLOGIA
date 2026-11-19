@@ -3,7 +3,6 @@ id: farmacocinetica-pediatrica
 nombre: Farmacocinética pediátrica (de la dosis al efecto)
 sesion: 1
 tema: Farmacocinética, antibióticos y soluciones endovenosas
-grupo_farmacologico: Fundamentos de farmacología pediátrica
 mecanismo_resumen: Absorción, distribución, metabolismo y excreción cambian con la maduración del niño
 tags: [farmacocinetica, absorcion, distribucion, metabolismo, excrecion, pediatria]
 dificultad_quiz: media

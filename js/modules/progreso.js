@@ -24,7 +24,7 @@ FA.vistas.progreso = {
         function fecha(iso) { try { return new Date(iso).toLocaleDateString('es-CO', { day: 'numeric', month: 'short' }); } catch (e) { return ''; } }
 
         return '<div class="pagina">' +
-            '<header class="cabecera"><p class="eyebrow">Seguimiento</p><h1>Mi progreso</h1>' +
+            '<header class="cabecera"><h1>Mi progreso</h1>' +
             '<p class="lead">Se guarda sólo en este navegador. Úsalo para enfocar el repaso en lo más débil.</p></header>' +
             '<dl class="cifras cifras--claro">' +
             '<div><dt>Temas estudiados</dt><dd>' + estudiados + '<small>/' + T.farmacos + '</small></dd></div>' +

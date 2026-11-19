@@ -8,7 +8,7 @@ FA.vistas.calculadora = {
     render: function (p) {
         var u = FA.u;
         return '<div class="pagina">' +
-            '<header class="cabecera"><p class="eyebrow">Herramienta</p><h1>Calculadora de fórmulas</h1>' +
+            '<header class="cabecera"><h1>Calculadora de fórmulas</h1>' +
             '<p class="lead">Elige una fórmula, escribe los datos y revisa el procedimiento paso a paso, como se explica en clase.</p></header>' +
             '<div class="calc">' +
             '<nav class="calc__lista" aria-label="Fórmulas">' +

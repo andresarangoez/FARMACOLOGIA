@@ -9,8 +9,6 @@ tags: [antihistaminicos, loratadina, cetirizina, desloratadina, fexofenadina, se
 dificultad_quiz: media
 ---
 
-> ⏳ **Pendiente:** las diapositivas recibidas no incluyen dosis de **desloratadina ni fexofenadina**; completar con los apuntes de clase.
-
 ## Segunda generación
 
 - Más **selectiva** y **menos sedante** que la primera generación
@@ -30,6 +28,21 @@ dificultad_quiz: media
 
 - Somnolencia, sequedad de mucosas y mareos (menos frecuentes que en la primera generación)
 - Evaluar la respuesta clínica
+
+### Dosis de desloratadina y fexofenadina
+
+> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
+
+| Fármaco | Edad | Dosis |
+|---|---|---|
+| Desloratadina | 1-5 años | 1,25 mg/día |
+| Desloratadina | 6-11 años | 2,5 mg/día |
+| Desloratadina | 12 años o más | 5 mg/día |
+| Fexofenadina | 2-11 años | 30 mg cada 12 horas |
+| Fexofenadina | 12 años o más | 120-180 mg/día |
+
+- La **desloratadina** es el metabolito activo de la loratadina. La **fexofenadina** es el metabolito activo de la terfenadina y prácticamente no atraviesa la barrera hematoencefálica; no se debe tomar con jugos de frutas (disminuyen su absorción).
+
 
 ## Preguntas de quiz sugeridas
 
@@ -51,6 +64,13 @@ dificultad_quiz: media
    - c) 10 mg/día
    - d) 20 mg/día
 
+4. **(Opción múltiple)** ¿De qué fármaco es metabolito activo la desloratadina?
+   - a) Cetirizina
+   - b) **Loratadina** ✓
+   - c) Difenhidramina
+   - d) Fexofenadina
+
+
 ## Flashcards sugeridas
 
 - **Q:** ¿Qué los diferencia de la primera generación? → **A:** Son más selectivos y menos sedantes
@@ -58,3 +78,5 @@ dificultad_quiz: media
 - **Q:** Dosis de loratadina de 2 a 5 años → **A:** 5 mg/día
 - **Q:** Dosis de loratadina en mayores de 6 años → **A:** 10 mg/día
 - **Q:** Dosis de cetirizina de 2 a 5 años → **A:** 2,5-5 mg/día
+- **Q:** Dosis de desloratadina de 6 a 11 años → **A:** 2,5 mg/día
+- **Q:** Dosis de fexofenadina de 2 a 11 años → **A:** 30 mg cada 12 horas

@@ -3,7 +3,6 @@ id: ejercicios-mezclas-hipotonicas
 nombre: Ejercicios de mezclas y soluciones hipotónicas
 sesion: 3
 tema: Ejercicios de soluciones endovenosas y electrolitos
-grupo_farmacologico: Banco de ejercicios (secciones C y F)
 mecanismo_resumen: Preparar soluciones por aligación y diluir con agua estéril
 tags: [ejercicios, mezclas, aligacion, glucosada, hipotonica, agua esteril]
 dificultad_quiz: alta

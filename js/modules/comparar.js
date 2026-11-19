@@ -16,7 +16,7 @@ FA.vistas.comparar = (function () {
         titulo: 'Comparar fármacos',
         render: function () {
             return '<div class="pagina">' +
-                '<header class="cabecera"><p class="eyebrow">Estudio</p><h1>Comparar fármacos</h1>' +
+                '<header class="cabecera"><h1>Comparar fármacos</h1>' +
                 '<p class="lead">Grupo, mecanismo y efectos adversos lado a lado, tomados de los apuntes. Útil para distinguir fármacos que se parecen.</p></header>' +
                 '<div class="panel comp__filtros"><label class="campo"><span>Buscar</span><input type="search" data-q placeholder="Fármaco, grupo, mecanismo…" autocomplete="off"></label>' +
                 '<div class="chips" data-ses role="group" aria-label="Sesión"></div>' +

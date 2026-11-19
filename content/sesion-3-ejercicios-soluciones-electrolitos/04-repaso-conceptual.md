@@ -3,7 +3,6 @@ id: ejercicios-repaso-conceptual
 nombre: Preguntas de repaso conceptual (electrolitos y soluciones)
 sesion: 3
 tema: Ejercicios de soluciones endovenosas y electrolitos
-grupo_farmacologico: Banco de ejercicios (sección G)
 mecanismo_resumen: Conceptos de calcio, potasio y solución salina para el repaso
 tags: [ejercicios, calcio ionico, potasio, citrato, ssn, repaso]
 dificultad_quiz: media

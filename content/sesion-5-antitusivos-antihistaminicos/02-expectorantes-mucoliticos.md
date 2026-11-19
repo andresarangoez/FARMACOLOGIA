@@ -9,8 +9,6 @@ tags: [expectorantes, mucoliticos, guaifenesina, acetilcisteina, ambroxol, bromh
 dificultad_quiz: media
 ---
 
-> ⏳ **Pendiente:** las diapositivas recibidas no incluyen **bromhexina**; completar esa sección con los apuntes de clase.
-
 ## Expectorantes
 
 - Fármaco que **facilita la expulsión de secreciones bronquiales**
@@ -91,6 +89,13 @@ dificultad_quiz: media
    - c) **Células alveolares tipo II** ✓
    - d) Células caliciformes
 
+5. **(Opción múltiple)** ¿En qué metabolito activo se transforma la bromhexina?
+   - a) N-acetilcisteína
+   - b) **Ambroxol** ✓
+   - c) Guaifenesina
+   - d) Dextrometorfano
+
+
 ## Flashcards sugeridas
 
 - **Q:** ¿De qué deriva la guaifenesina? → **A:** Del guayacol
@@ -99,3 +104,5 @@ dificultad_quiz: media
 - **Q:** ¿Qué repone la N-acetilcisteína en la intoxicación por acetaminofén? → **A:** Glutatión (hepatoprotector)
 - **Q:** Mecanismo del ambroxol → **A:** Estimula las células alveolares tipo II, aumenta el surfactante y disminuye la adhesión del moco
 - **Q:** Cuidados de enfermería con expectorantes → **A:** Fomentar líquidos, valorar el esputo y estimular la tos efectiva
+- **Q:** ¿Qué es la bromhexina? → **A:** Mucolítico derivado de la vasicina que se transforma en ambroxol
+- **Q:** ¿Por qué no se combina un mucolítico con un antitusígeno? → **A:** Porque se retienen las secreciones que se quieren expulsar

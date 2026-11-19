@@ -135,7 +135,7 @@ FA.vistas.buscar = (function () {
         render: function () {
             var o = FA.buscar.opcionesFiltro(), st = leer();
             return '<div class="pagina">' +
-                '<header class="cabecera"><p class="eyebrow">Material de estudio</p><h1>Buscar</h1>' +
+                '<header class="cabecera"><h1>Buscar</h1>' +
                 '<p class="lead">Busca en todo el texto de los temas. Escribe una o varias palabras (deben estar todas) y, si quieres, filtra por sesión, grupo o etiqueta.</p></header>' +
                 '<div class="panel buscador-panel">' +
                 '<label class="buscador buscador--grande">' + u.icono('buscar') + '<input type="search" data-q placeholder="Ej. nefrotoxicidad, ácido micólico, clofazimina…" aria-label="Buscar en todo el contenido" autocomplete="off" value="' + u.esc(st.q) + '"></label>' +

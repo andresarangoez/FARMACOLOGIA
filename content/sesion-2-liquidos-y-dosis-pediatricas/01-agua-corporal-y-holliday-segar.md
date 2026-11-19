@@ -3,7 +3,6 @@ id: holliday-segar
 nombre: Agua corporal total y regla de Holliday-Segar
 sesion: 2
 tema: Líquidos y dosis en pediatría
-grupo_farmacologico: Cálculo de líquidos de mantenimiento
 mecanismo_resumen: Requerimiento hídrico basal diario según el peso, por tramos
 tags: [holliday-segar, liquidos, mantenimiento, agua corporal, calculo]
 dificultad_quiz: media

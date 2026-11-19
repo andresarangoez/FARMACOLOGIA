@@ -9,7 +9,7 @@ FA.vistas.examen = {
         if (!FA.acceso.abierto()) return FA.acceso.pantalla();
         var u = FA.u, T = FA.datos.totales();
         return '<div class="pagina pagina--lectura">' +
-            '<header class="cabecera"><p class="eyebrow">Material de estudio</p><h1>⭐ Datos examen</h1>' +
+            '<header class="cabecera"><h1>⭐ Datos examen</h1>' +
             '<p class="lead">' + T.examen + ' puntos que la docente señaló en clase como posibles preguntas. Cada uno lleva al tema donde está explicado.</p>' +
             '<div class="fila-botones"><a class="btn" href="#/examen/practicar">' + u.icono('reloj') + ' Banco de examen: práctica y simulacro</a>' +
             '<a class="btn btn--sec" href="#/quiz">' + u.icono('quiz') + ' Probarme con un quiz</a></div></header>' +

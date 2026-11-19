@@ -3,7 +3,6 @@ id: superficie-corporal
 nombre: Superficie corporal (Mosteller y variantes)
 sesion: 2
 tema: Líquidos y dosis en pediatría
-grupo_farmacologico: Cálculo de superficie corporal
 mecanismo_resumen: SC en m² con peso y talla, o solo con el peso si no hay talla
 tags: [superficie corporal, mosteller, asc, calculo, dosis]
 dificultad_quiz: media

@@ -9,8 +9,6 @@ tags: [mesalazina, sulfasalazina, 5-asa, sulfapiridina, colitis ulcerosa, enferm
 dificultad_quiz: media
 ---
 
-> ⏳ **Pendiente:** las diapositivas recibidas no incluyen dosis, efectos adversos ni cuidados de enfermería; completar con los apuntes de clase.
-
 ## Historia
 
 - La **sulfasalazina** fue el **primer medicamento desarrollado para tratar la colitis ulcerosa**
@@ -28,6 +26,24 @@ Es una molécula que necesita ser metabolizada para liberar el principio activo.
 - **5-ASA:** componente **antiinflamatorio**, responsable del efecto terapéutico en el intestino
 
 Cuando el medicamento llega al **colon**, las bacterias intestinales rompen el enlace azo mediante **azorreductasas**, liberando los dos componentes.
+
+## Dosis, efectos adversos y cuidados
+
+> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
+
+**Dosis en pediatría (vía oral):**
+- **Mesalazina:** 50-80 mg/kg/día, dividida en 2-3 tomas (máximo 4 g/día). Existen formas de liberación prolongada y supositorios o enemas para la afectación rectal.
+- **Sulfasalazina:** 40-70 mg/kg/día en 3-4 tomas (máximo 4 g/día).
+
+**Efectos adversos:**
+- **Sulfasalazina** (sobre todo por la sulfapiridina): náuseas, cefalea, erupción cutánea, **coloración naranja de la orina y la piel**, oligospermia reversible, déficit de **ácido fólico**, anemia hemolítica (en déficit de G6PD) y agranulocitosis.
+- **Mesalazina:** mejor tolerada; diarrea, dolor abdominal, cefalea; rara pero importante: **nefritis intersticial** y pancreatitis.
+
+**Cuidados de enfermería:**
+- Preguntar por alergia a **sulfas** (sulfasalazina) y a **salicilatos** (ambas).
+- Controlar **función renal** (creatinina, uroanálisis) y **hemograma** periódicamente.
+- Con sulfasalazina, administrar con alimentos, asegurar buena hidratación y suplementar **ácido fólico** según indicación; advertir que la orina puede verse naranja.
+
 
 ## Preguntas de quiz sugeridas
 
@@ -51,6 +67,19 @@ Cuando el medicamento llega al **colon**, las bacterias intestinales rompen el e
    - c) Por tener mayor efecto antibacteriano
    - d) Por no necesitar llegar al colon
 
+5. **(Opción múltiple)** ¿Qué efecto adverso renal raro pero importante se vigila con mesalazina?
+   - a) Litiasis por ácido úrico
+   - b) **Nefritis intersticial** ✓
+   - c) Síndrome nefrítico agudo
+   - d) Diabetes insípida
+
+6. **(Opción múltiple)** ¿Qué vitamina puede disminuir con la sulfasalazina?
+   - a) Vitamina C
+   - b) **Ácido fólico** ✓
+   - c) Vitamina K
+   - d) Vitamina D
+
+
 ## Flashcards sugeridas
 
 - **Q:** ¿Cuál fue el primer medicamento para la colitis ulcerosa? → **A:** La sulfasalazina
@@ -58,3 +87,5 @@ Cuando el medicamento llega al **colon**, las bacterias intestinales rompen el e
 - **Q:** ¿Qué hace la sulfapiridina? → **A:** Es el componente antibacteriano tipo sulfonamida, responsable de muchos efectos adversos
 - **Q:** ¿Qué hace el 5-ASA? → **A:** Es el componente antiinflamatorio responsable del efecto terapéutico en el intestino
 - **Q:** ¿Qué rompe el enlace azo de la sulfasalazina? → **A:** Las azorreductasas de las bacterias intestinales en el colon
+- **Q:** Dosis pediátrica de mesalazina → **A:** 50-80 mg/kg/día en 2-3 tomas (máximo 4 g/día)
+- **Q:** Efectos adversos de la sulfasalazina → **A:** Náuseas, cefalea, rash, orina naranja, oligospermia, déficit de ácido fólico, hemólisis en déficit de G6PD
