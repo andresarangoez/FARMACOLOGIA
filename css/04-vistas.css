@@ -539,10 +539,11 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .tarjeta-f .estado--ok { color: #7fe0a8; }
 .calc__op { color: #fff; }
 .calc__op .calc__n { background: rgba(255, 255, 255, .16); color: #fff; }
-.calc__op[aria-current="true"] { background: linear-gradient(130deg, #9A6A12 0%, #c8962e 60%, #FBD785 100%); border-color: #FBD785; color: #092755; box-shadow: 0 0 0 3px rgba(251, 215, 133, .35), 0 14px 30px rgba(7, 29, 67, .3); }
-.calc__op[aria-current="true"] b { color: #092755; }
-.calc__op[aria-current="true"] small { color: #3a2a06; }
-.calc__op[aria-current="true"] .calc__n { background: #092755; color: #FBD785; }
+.calc__op, .calc__op:hover, .calc__op[aria-current="true"] { background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); background-size: 200% 200%; color: #fff; }
+.calc__op:hover { background-position: 100% 50%; }
+.calc__op[aria-current="true"] { border-color: rgba(125, 211, 252, .9); box-shadow: 0 0 0 2px rgba(125, 211, 252, .45), 0 14px 30px rgba(7, 29, 67, .3); }
+.calc__op[aria-current="true"]::before { opacity: 1; transform: scale(1.25); }
+.calc__op[aria-current="true"] .calc__n { background: #fff; color: #092755; }
 @media (prefers-reduced-motion: reduce) { .tarjeta-f, .calc__op, .tarjeta-f::before, .calc__op::before { transition: none; } }
 
 /* antetítulos (eyebrow) en Quicksand en todo el sitio */
