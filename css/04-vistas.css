@@ -560,3 +560,11 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .fc__carta .fc__pista { color: #C9D6EB; opacity: 1; }
 .fc__carta a { color: #7dd3fc; }
 @media (prefers-reduced-motion: reduce) { .fc__carta, .fc__carta::before, .fc__carta::after { animation: none !important; } }
+/* respuesta en blanco (para notar que la tarjeta ya se volteó), con brillos suaves */
+.fc__carta.fc__carta--resp { background: linear-gradient(130deg, #ffffff 0%, #f3f7fd 60%, #eaf1fb 100%) !important; color: var(--tx) !important; border: 2px solid var(--azul) !important; }
+.fc__carta--resp::before { opacity: .22; }
+.fc__carta--resp::after { opacity: .2; }
+.fc__carta--resp .fc__lado { color: var(--enlace); }
+.fc__carta--resp .fc__pista { color: var(--tx-suave); }
+.fc__carta--resp a { color: var(--enlace); }
+:root[data-tema="oscuro"] .fc__carta.fc__carta--resp { background: linear-gradient(130deg, #1a2b45 0%, #1e3352 100%) !important; color: var(--tx) !important; }
