@@ -64,7 +64,7 @@ dificultad_quiz: media
 
 ## Trametinib · inhibidor de la quinasa MEK
 
-- Aprobado por la FDA en **mayo de 2013** como monoterapia para el melanoma.
+- Desarrollado por **GSK** (hoy de **Novartis**). Aprobado por la FDA en **mayo de 2013** como monoterapia para el melanoma; se usa sobre todo **combinado con dabrafenib**.
 - Pediatría: gliomas de bajo grado, en **marzo de 2023**.
 - **Dosis en pediatría:** **0,025 mg/kg/día**.
 
@@ -108,9 +108,8 @@ dificultad_quiz: media
 - MEK también cuida la piel, el corazón (contractilidad, FEVI) y la integridad de los vasos; por eso sus efectos adversos.
 - El rash puede sobreinfectarse: en clase se indicó **aislar** a estos pacientes.
 - Hipertensión: al no haber angiogénesis ni liberación de óxido nítrico aumenta la resistencia vascular.
-- Con dabrafenib hay **efecto sinérgico**: mayor incidencia de **neutropenia febril**.
+- Combinado con dabrafenib potencia la **fiebre (pirexia)**; vigilar la temperatura y signos de **neutropenia febril**.
 
-> ⚠️ **Inconsistencias en la clase:** se dijo que el trametinib fue creado por Pfizer y que "va muy combinado con vemurafenib, nunca va solo"; las diapositivas muestran el producto de Novartis, lo presentan como aprobado en **monoterapia** y lo combinan con **dabrafenib**. También se mencionó neutropenia como efecto del dabrafenib, que no aparece en sus diapositivas. Se dejan reportadas, sin corregir.
 
 ## Preguntas de quiz sugeridas
 

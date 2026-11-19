@@ -444,3 +444,5 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 
 /* grupo farmacológico al lado del fármaco */
 .vm__grupo-tag { font-size: var(--t-xs); font-weight: 700; color: var(--tx-suave); border: 1px solid var(--linea); border-radius: 999px; padding: 3px 10px; background: var(--sup); }
+
+.pie__gracias { border-left: 3px solid var(--amarillo); padding-left: 12px; }

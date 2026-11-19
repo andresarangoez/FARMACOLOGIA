@@ -86,7 +86,6 @@ Medicamentos diseñados para dirigir una sustancia citotóxica directamente a la
 - Al finalizar la infusión, **lavar la vía** con al menos 10 mL de solución salina para asegurar que se administre la dosis completa.
 - Manipular con elementos de **protección radiactiva** (guantes de nitrilo) y desechar en caneca de material radiactivo.
 
-> ⚠️ En la última diapositiva de efectos adversos el título dice "Iritumomab"; se refiere al **ibritumomab**.
 
 ## Preguntas de quiz sugeridas
 

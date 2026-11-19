@@ -29,9 +29,8 @@ dificultad_quiz: media
 - En resumen: el bloqueo del proteasoma impide la degradación de proteínas, lo que desencadena estrés celular y favorece la muerte celular.
 - Muy útil en el **mieloma múltiple**: sus células producen enormes cantidades de proteínas y dependen del proteasoma para mantener el equilibrio interno.
 
-**Presentación (según la diapositiva):** solución inyectable 0,3 mg/90 µL.
+**Presentación:** polvo liofilizado para solución inyectable, **vial de 3,5 mg** (vía intravenosa o subcutánea).
 
-> ⚠️ Esa presentación (0,3 mg/90 µL) es idéntica a la del **pegaptanib** de la misma clase; parece copiada por error en la diapositiva y la profesora la leyó igual. Se deja reportado, sin corregir.
 
 **Dosis pediátrica:** **1,3 mg/m²/día**, generalmente combinado con **doxorubicina**, **2 veces por semana por 3 semanas** (en clase: en un ciclo de 21 días el paciente recibe 6 dosis de bortezomib; la doxorubicina se pone los días 1, 4, 7, 14 y 21; efecto sinérgico).
 
