@@ -9,17 +9,24 @@ FA.vistas.inicio = {
         var nums = FA.datos.sesiones.map(function (s) { return s.n; });
         var lista = nums.length > 1 ? nums.slice(0, -1).join(', ') + ' y ' + nums[nums.length - 1] : String(nums[0] || '');
 
-        return '<section class="hero"><div class="hero__int">' +
+        return '<section class="hero">' +
+            '<div class="hero__fondo" aria-hidden="true"><i class="hero__brillo b1"></i><i class="hero__brillo b2"></i><i class="hero__brillo b3"></i>' +
+            '<svg class="hero__olas" viewBox="0 0 1440 320" preserveAspectRatio="none"><defs>' +
+            '<linearGradient id="ola-a" x1="0" x2="1"><stop offset="0" stop-color="#38bdf8" stop-opacity=".5"/><stop offset=".35" stop-color="#a78bfa" stop-opacity=".45"/><stop offset=".65" stop-color="#FBD785" stop-opacity=".4"/><stop offset="1" stop-color="#38bdf8" stop-opacity=".5"/></linearGradient>' +
+            '<linearGradient id="ola-b" x1="1" x2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity=".35"/><stop offset=".5" stop-color="#818cf8" stop-opacity=".35"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".35"/></linearGradient></defs>' +
+            '<g class="ola o1"><path fill="url(#ola-a)" d="M0 200C240 140 480 140 720 200S1200 260 1440 200V320H0Z"/><path fill="url(#ola-a)" transform="translate(1440 0)" d="M0 200C240 140 480 140 720 200S1200 260 1440 200V320H0Z"/></g>' +
+            '<g class="ola o2"><path fill="url(#ola-b)" d="M0 240C240 200 480 280 720 240S1200 200 1440 240V320H0Z"/><path fill="url(#ola-b)" transform="translate(1440 0)" d="M0 240C240 200 480 280 720 240S1200 200 1440 240V320H0Z"/></g>' +
+            '</svg></div>' +
+            '<div class="hero__int">' +
             '<div class="hero__fila"><div class="hero__txt">' +
             '<p class="eyebrow eyebrow--claro">Material de estudio de cuidado neopediátrico</p>' +
             '<h1>Farmacología</h1>' +
             '<p class="hero__lead">Lee, practica con flashcards, pruébate con quizzes y calcula dosis paso a paso.</p>' +
             '<div class="fila-botones">' +
-            '<a class="btn btn--amarillo" href="#/estudio">' + u.icono('reloj') + ' Modo estudio</a>' +
-            '<a class="btn btn--fantasma" href="#/sesiones">Ver sesiones</a>' +
+            '<a class="btn btn--amarillo" href="#/sesiones">Ver sesiones</a>' +
             '<a class="btn btn--fantasma" href="#/quiz">Hacer un quiz</a>' +
             '</div></div>' +
-            '<img class="hero__logo" src="assets/branding/logo-soy-andres-arango-circulo-blanco.svg" alt="Logo Soy Andrés Arango" width="260" height="260">' +
+            '<span class="hero__halo"><img class="hero__logo" src="assets/branding/logo-soy-andres-arango-circulo-blanco.svg" alt="Logo Soy Andrés Arango" width="260" height="260"></span>' +
             '</div>' +
             '<dl class="cifras">' +
             '<div><dt>Sesiones</dt><dd>' + T.sesiones + '</dd></div>' +
@@ -39,7 +46,6 @@ FA.vistas.inicio = {
             '<p class="ayuda">Aquí se irán sumando nuevas sesiones para complementar el material.</p></section>' +
 
             '<section class="seccion-inicio"><h2>Herramientas</h2><div class="herramientas">' +
-            '<a class="herr" href="#/estudio">' + u.icono('reloj') + '<b>Modo estudio</b><span>¿Cuánto tiempo tienes hoy? Sesión con temporizador (pomodoro).</span></a>' +
             '<a class="herr" href="#/flashcards">' + u.icono('tarjeta') + '<b>Flashcards</b><span>Voltea tarjetas y marca lo que ya sabes.</span></a>' +
             '<a class="herr" href="#/emparejar">' + u.icono('tarjeta') + '<b>Emparejar</b><span>Une cada mecanismo, efecto o grupo con su fármaco.</span></a>' +
             '<a class="herr" href="#/farmacos">' + u.icono('tarjeta') + '<b>Listado de fármacos</b><span>Índice A-Z con dibujos de las presentaciones en Colombia.</span></a>' +
