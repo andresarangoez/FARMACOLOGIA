@@ -43,7 +43,7 @@ FA.vistas.inicio = {
             '<section class="seccion-inicio" data-sesiones><div class="seccion-inicio__cab"><h2>Sesiones</h2>' +
             '<span class="ayuda">' + hechos + ' de ' + T.farmacos + ' temas estudiados</span></div>' +
             '<div class="lista-sesiones">' + FA.datos.sesiones.map(FA.c.tarjetaSesion).join('') + '</div>' +
-            '<p class="ayuda">Aquí se irán sumando nuevas sesiones para complementar el material.</p></section>' +
+            '</section>' +
 
             '<section class="seccion-inicio"><h2>Herramientas</h2><div class="herramientas">' +
             '<a class="herr" href="#/flashcards">' + u.icono('tarjeta') + '<b>Flashcards</b><span>Voltea tarjetas y marca lo que ya sabes.</span></a>' +

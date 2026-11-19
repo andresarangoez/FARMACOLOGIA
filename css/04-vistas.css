@@ -515,3 +515,35 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 
 /* subtítulo del hero en Quicksand */
 .hero .eyebrow { font-family: "Quicksand", var(--f-main); font-weight: 700; letter-spacing: .14em; }
+
+/* ── Tarjetas de fármacos (sesiones) y opciones de la calculadora con el mismo degradado ── */
+.tarjeta-f, .calc__op {
+    position: relative; overflow: hidden; isolation: isolate; border: 1px solid rgba(255, 255, 255, .12);
+    background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); background-size: 200% 200%; background-position: 0% 50%;
+    box-shadow: 0 10px 26px rgba(7, 29, 67, .16); transition: transform .25s, box-shadow .25s, background-position .8s;
+}
+.tarjeta-f::before, .calc__op::before {
+    content: ""; position: absolute; z-index: -1; width: 200px; height: 200px; right: -70px; top: -90px; border-radius: 50%;
+    background: radial-gradient(circle, var(--brillo, #38bdf8), transparent 70%); filter: blur(26px); opacity: .7; transition: opacity .3s, transform .6s;
+}
+.tarjeta-f:nth-child(4n+2), .calc__op:nth-child(4n+2) { --brillo: #a78bfa; }
+.tarjeta-f:nth-child(4n+3), .calc__op:nth-child(4n+3) { --brillo: #FBD785; }
+.tarjeta-f:nth-child(4n+4), .calc__op:nth-child(4n+4) { --brillo: #22d3ee; }
+.tarjeta-f:hover, .calc__op:hover { transform: translateY(-3px); background-position: 100% 50%; box-shadow: 0 16px 34px rgba(7, 29, 67, .3); border-color: rgba(255, 255, 255, .28); }
+.tarjeta-f:hover::before, .calc__op:hover::before { opacity: .9; transform: scale(1.15); }
+.tarjeta-f__nom, .calc__op b { color: #fff; }
+.tarjeta-f__grupo, .calc__op small { color: #C9D6EB; opacity: 1; }
+.tarjeta-f__meta { color: #9FB4D6; border-top-color: rgba(255, 255, 255, .15); }
+.tarjeta-f .chip { background: rgba(255, 255, 255, .14); color: #fff; border-color: transparent; }
+.tarjeta-f .estado { color: #C9D6EB; }
+.tarjeta-f .estado--ok { color: #7fe0a8; }
+.calc__op { color: #fff; }
+.calc__op .calc__n { background: rgba(255, 255, 255, .16); color: #fff; }
+.calc__op[aria-current="true"] { background: linear-gradient(130deg, #9A6A12 0%, #c8962e 60%, #FBD785 100%); border-color: #FBD785; color: #092755; box-shadow: 0 0 0 3px rgba(251, 215, 133, .35), 0 14px 30px rgba(7, 29, 67, .3); }
+.calc__op[aria-current="true"] b { color: #092755; }
+.calc__op[aria-current="true"] small { color: #3a2a06; }
+.calc__op[aria-current="true"] .calc__n { background: #092755; color: #FBD785; }
+@media (prefers-reduced-motion: reduce) { .tarjeta-f, .calc__op, .tarjeta-f::before, .calc__op::before { transition: none; } }
+
+/* antetítulos (eyebrow) en Quicksand en todo el sitio */
+.eyebrow, .tarjeta-s__txt small { font-family: "Quicksand", var(--f-main); font-weight: 700; letter-spacing: .14em; }
