@@ -22,10 +22,6 @@ FA.vistas.farmaco = {
             (f.linea ? '<span><small>Línea celular</small>' + u.esc(f.linea) + '</span>' : '') +
             (f.mecanismo ? '<span><small>Mecanismo en una línea</small>' + u.esc(f.mecanismo) + '</span>' : '') +
             '</div>' +
-            '<div class="etiquetas">' +
-            (f.dificultad ? '<span class="chip chip--fijo">' + u.esc(DIF[f.dificultad] || f.dificultad) + '</span>' : '') +
-            f.tags.map(function (t) { return '<a class="chip" href="#/buscar?t=' + encodeURIComponent(t) + '" title="Ver temas con esta etiqueta">#' + u.esc(t) + '</a>'; }).join('') +
-            '</div>' +
             '<div class="fila-botones">' +
             '<button type="button" class="btn ' + (est ? 'btn--sabe btn--on' : 'btn--sec') + '" data-estudiado aria-pressed="' + est + '">' + u.icono('check') + ' <span>' + (est ? 'Estudiado' : 'Marcar como estudiado') + '</span></button>' +
             (f.cards.length ? '<a class="btn btn--sec" href="#/flashcards/farmaco:' + f.id + '">' + u.icono('tarjeta') + ' Flashcards (' + f.cards.length + ')</a>' : '') +

@@ -133,7 +133,7 @@ hr { border: 0; border-top: 1px solid var(--linea); margin: var(--s-4) 0; }
 .resultados { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--s-3); margin-bottom: var(--s-4); }
 .res { padding: var(--s-3) var(--s-4); background: var(--azul-profundo); color: var(--blanco); border-radius: var(--r-md); }
 .res small { display: block; font-size: var(--t-xs); color: #B9C8E0; font-weight: 600; }
-.res b { font-family: var(--f-display); font-size: 1.9rem; font-weight: 400; color: var(--amarillo); line-height: 1.2; }
+.res b { font-family: var(--f-display); font-size: 1.9rem; font-weight: 800; color: var(--amarillo); line-height: 1.2; }
 .res span { margin-left: 6px; font-size: var(--t-sm); color: #D7E1F0; }
 .pasos { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-3); counter-reset: paso; }
 .pasos li { padding: var(--s-3) var(--s-4); background: var(--bg-alt); border-left: 4px solid var(--azul); border-radius: var(--r-sm); }
@@ -470,3 +470,21 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 @keyframes hero-flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @media (prefers-reduced-motion: reduce) { .hero, .hero__brillo, .hero__olas .ola, .hero__halo::before, .hero__halo .hero__logo { animation: none !important; } }
 @media print { .hero__fondo, .hero__halo::before { display: none; } }
+
+/* tipografía nueva: Montserrat (títulos y cifras) + Nunito Sans (texto) */
+.resultado__big, .cifras dd, .tarjeta-s__n, .sim-reloj { font-weight: 800; }
+h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em; }
+
+/* tarjetas de cifras del hero: por delante de las olas, legibles */
+.cifras { position: relative; z-index: 2; }
+.hero .cifras > div { background: rgba(7, 26, 61, .62); border: 1px solid rgba(255, 255, 255, .14); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(0, 0, 0, .18); }
+.hero__olas { height: 42%; opacity: .9; }
+
+/* pie de página con el mismo degradado animado y brillos del hero */
+.pie { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(120deg, #071d43 0%, #0A3E7C 45%, #1b2f7a 75%, #0b2556 100%); background-size: 220% 220%; animation: hero-fondo 18s ease-in-out infinite; }
+.pie::before, .pie::after { content: ""; position: absolute; border-radius: 50%; filter: blur(70px); opacity: .35; mix-blend-mode: screen; z-index: -1; pointer-events: none; animation: hero-brillo 16s ease-in-out infinite alternate; }
+.pie::before { width: 420px; height: 420px; left: -140px; bottom: -200px; background: radial-gradient(circle, #38bdf8, transparent 70%); }
+.pie::after { width: 380px; height: 380px; right: -100px; top: -180px; background: radial-gradient(circle, #a78bfa, transparent 70%); animation-delay: -7s; }
+:root[data-tema="oscuro"] .pie { background: linear-gradient(120deg, #050f24 0%, #092755 45%, #16205a 75%, #071a3d 100%); background-size: 220% 220%; }
+@media (prefers-reduced-motion: reduce) { .pie, .pie::before, .pie::after { animation: none !important; } }
+@media print { .pie::before, .pie::after { display: none; } }
