@@ -1,21 +1,3 @@
-FA.esquemaMecanismo = (function () {
-    /* Esquema ilustrado del mecanismo: frontmatter «esquema: Fármaco:: paso → paso ;; Otro:: …» */
-    function esquema(txt) { var u = FA.u;
-        if (!txt) return '';
-        var flujos = txt.split(/\s*;;\s*/).map(function (b) {
-            var m = /^(.*?)::\s*(.*)$/.exec(b), nombre = m ? m[1] : '', pasos = (m ? m[2] : b).split(/\s*→\s*/).filter(Boolean);
-            return '<div class="esq__flujo">' + (nombre ? '<b class="esq__nombre">' + u.esc(nombre) + '</b>' : '') + '<ol class="esq__pasos">' +
-                pasos.map(function (p, i) {
-                    var tipo = i === 0 ? 'inicio' : (i === pasos.length - 1 ? 'fin' : (/bloque|inhib|impid|no se|sin |neutraliz|atrapa|compite|rompe|corta/i.test(p) ? 'bloqueo' : 'medio'));
-                    return '<li class="esq__paso esq__paso--' + tipo + '"><span class="esq__n">' + (i + 1) + '</span><span class="esq__t">' + u.esc(p) + '</span></li>';
-                }).join('') + '</ol></div>';
-        }).join('');
-        return '<figure class="esquema" aria-label="Esquema del mecanismo de acción"><figcaption>Mecanismo de acción en esquema</figcaption>' + flujos + '</figure>';
-    }
-
-    return esquema;
-})();
-
 /* ============================================================
    VISTA · #/farmaco/<id>
    Lectura del tema con el dato de examen destacado, atajos a
@@ -65,6 +47,7 @@ FA.vistas.farmaco = {
             var s = el.querySelector('[data-sec="' + p.sec + '"]');
             if (s) { s.scrollIntoView({ block: 'start' }); s.classList.add('seccion--hallazgo'); setTimeout(function () { s.classList.remove('seccion--hallazgo'); }, 2200); }
         }, 30);
+        FA.esquemaMecanismo.montar(el);
         var imp = el.querySelector('[data-imprimir]');
         if (imp) imp.addEventListener('click', function () { window.print(); });
         var btn = el.querySelector('[data-estudiado]');

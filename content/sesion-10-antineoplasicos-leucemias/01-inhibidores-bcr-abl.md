@@ -115,7 +115,7 @@ esquema: Imatinib:: Cromosoma Filadelfia produce BCR-ABL siempre activa → Imat
 - Control estricto de hidratación y función renal para prevenir el síndrome de lisis tumoral.
 - Vigilancia de neutropenia.
 
-## Lo que explicó la docente en clase
+## Puntos clave
 
 **Vías que activa BCR-ABL (fosforilación = agregar un grupo fosfato):** RAS → división y proliferación celular · STAT → transcripción de genes de crecimiento y supervivencia · PI3K → supervivencia celular · AKT → crecimiento y metabolismo. Al no haber apoptosis, salen al torrente células inmaduras (mieloblastos): aparece la leucemia mieloide.
 
