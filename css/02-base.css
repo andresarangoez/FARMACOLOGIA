@@ -71,3 +71,4 @@ main:focus { outline: none; }
 @media (max-width: 760px) { .pie__int { grid-template-columns: 1fr; } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+.pie__copy--izq { margin: var(--s-4) 0 0; font-size: var(--t-sm); line-height: 1.5; }
