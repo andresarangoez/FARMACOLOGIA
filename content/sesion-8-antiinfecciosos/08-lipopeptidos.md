@@ -7,6 +7,7 @@ grupo_farmacologico: Desestabilizadores de membrana (calcio-dependiente)
 mecanismo_resumen: Forma poros dependientes de calcio, causando escape de potasio y lisis
 tags: [daptomicina, sarm, rabdomiolisis, surfactante, pediatria]
 dificultad_quiz: media
+esquema: Daptomicina:: Daptomicina + calcio → Se inserta en la membrana de Gram positivos → Forma poros y sale el potasio → Despolarización y muerte bacteriana
 ---
 
 ## Concepto

@@ -7,6 +7,7 @@ grupo_farmacologico: Anticuerpo monoclonal inhibidor de RANKL (denosumab) e inhi
 mecanismo_resumen: El denosumab se une a RANKL y frena la formación y actividad de los osteoclastos; el eculizumab se une a C5 e impide la formación del complejo de ataque a la membrana
 tags: [denosumab, rankl, osteoclasto, eculizumab, complemento, c5, meningococo]
 dificultad_quiz: media
+esquema: Denosumab:: RANKL activa al osteoclasto → Denosumab se une a RANKL → RANKL no se une a RANK → Menos resorción ósea ;; Eculizumab:: Complemento activado → Eculizumab se une a C5 → No se forma el complejo C5b-9 → Menos hemólisis y daño vascular
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 13).

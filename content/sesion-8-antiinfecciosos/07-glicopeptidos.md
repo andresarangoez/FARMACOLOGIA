@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores de la síntesis de la pared celular
 mecanismo_resumen: Bloquean el precursor D-Ala-D-Ala, impidiendo la transpeptidación del peptidoglicano
 tags: [vancomicina, teicoplanina, sindrome hombre rojo, nefrotoxicidad, pediatria]
 dificultad_quiz: alta
+esquema: Vancomicina:: Bacteria Gram positiva arma su pared → Vancomicina se une a D-Ala-D-Ala → Bloquea la transpeptidación → Pared débil y lisis
 ---
 
 ## Vancomicina

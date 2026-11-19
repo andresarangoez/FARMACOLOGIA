@@ -7,6 +7,7 @@ grupo_farmacologico: Inmunomodulador antiangiogénico
 mecanismo_resumen: Inhibe producción de TNF-alfa y citocinas inflamatorias
 tags: [lepra, talidomida, teratogenicidad, farmacovigilancia, reaccion tipo 2]
 dificultad_quiz: media
+esquema: Talidomida:: Talidomida → Disminuye el TNF-α y modula la inmunidad → Inhibe la angiogénesis → Controla el eritema nudoso leproso
 ---
 
 ## Historia — "la tragedia que originó la farmacovigilancia"

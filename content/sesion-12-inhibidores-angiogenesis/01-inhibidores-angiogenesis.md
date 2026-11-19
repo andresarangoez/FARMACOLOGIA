@@ -7,6 +7,7 @@ grupo_farmacologico: Antiangiogénicos (anti-VEGF e inhibidores multiespecífico
 mecanismo_resumen: Bloquean el factor de crecimiento endotelial vascular (VEGF) o sus receptores e impiden la formación de nuevos vasos que alimentan al tumor o dañan la retina
 tags: [angiogenesis, vegf, bevacizumab, sunitinib, ranibizumab, aflibercept, pegaptanib, retinopatia]
 dificultad_quiz: media
+esquema: Bevacizumab:: Tumor libera VEGF-A → Bevacizumab atrapa el VEGF-A → No se une a VEGFR-1 ni VEGFR-2 → No se forman vasos nuevos ;; Sunitinib:: Receptores VEGFR, PDGFR y c-KIT → Sunitinib bloquea su tirosina quinasa → Menos angiogénesis y proliferación → Control del tumor ;; Aflibercept / ranibizumab:: VEGF en la retina → El fármaco atrapa el VEGF (intravítreo) → Sin neovascularización ni fuga → Se conserva la visión
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 12).

@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidor de la síntesis proteica (subunidad 50S)
 mecanismo_resumen: Bloquea la peptidil transferasa en la subunidad ribosomal 50S
 tags: [cloranfenicol, sindrome nino gris, meningitis, pediatria, neonatologia]
 dificultad_quiz: alta
+esquema: Cloranfenicol:: Entra a la bacteria → Se une a la subunidad 50S → Bloquea la peptidil transferasa → Sin enlace peptídico ni proteínas
 ---
 
 ## Historia

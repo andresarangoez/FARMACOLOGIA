@@ -7,6 +7,7 @@ grupo_farmacologico: Serpina (proteína plasmática anticoagulante)
 linea_celular: Cascada de coagulación
 tags: [coagulacion, trombosis, heparina, CID, pediatria]
 dificultad_quiz: alta
+esquema: Antitrombina III:: Cascada de coagulación activa → Antitrombina III se une a trombina y factor Xa → La heparina acelera esta unión → Inhibe la formación del coágulo
 ---
 
 ## Concepto

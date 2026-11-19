@@ -7,6 +7,7 @@ grupo_farmacologico: Anticuerpos monoclonales conjugados con citotóxicos y radi
 mecanismo_resumen: Un anticuerpo monoclonal reconoce un antígeno tumoral (CD33, CD30 o CD20), se internaliza y libera dentro de la célula un citotóxico o radiación que destruye el ADN o los microtúbulos
 tags: [anticuerpo conjugado, gemtuzumab, brentuximab, ibritumomab, cd33, cd30, cd20, linfoma]
 dificultad_quiz: media
+esquema: Gemtuzumab:: Se une a CD33 de la célula leucémica → El complejo se internaliza → Libera la ozogamicina en el lisosoma → Rompe el ADN: apoptosis ;; Brentuximab vedotin:: Se une a CD30 → Se internaliza → Libera MMAE → Bloquea los microtúbulos: apoptosis ;; Ibritumomab:: Se une a CD20 → Se internaliza → El itrio-90 emite radiación beta → Daño del ADN y efecto cross-fire
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 12). El plan calendario menciona también rituximab, que en esta clase solo se citó junto al ibritumomab.

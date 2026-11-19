@@ -7,6 +7,7 @@ grupo_farmacologico: Antihistamínicos H1 de segunda generación
 mecanismo_resumen: Bloquean selectivamente los receptores H1 de histamina con menos sedación
 tags: [antihistaminicos, loratadina, cetirizina, desloratadina, fexofenadina, segunda generacion]
 dificultad_quiz: media
+esquema: Antihistamínico 2.ª generación:: Histamina liberada → Fármaco bloquea selectivamente el receptor H1 periférico → Menos síntomas alérgicos → Casi no atraviesa la barrera: poca sedación
 ---
 
 ## Segunda generación

@@ -7,6 +7,7 @@ grupo_farmacologico: Hormona inhibidora (somatostatina) y su análogo sintético
 mecanismo_resumen: Activan los receptores de somatostatina e inhiben la secreción gastrointestinal y hormonal, y reducen el flujo sanguíneo esplácnico
 tags: [somatostatina, octreotido, diarrea secretora, sangrado digestivo, fistulas, quilotorax]
 dificultad_quiz: media
+esquema: Octreótido:: Octreótido o somatostatina → Activan los receptores de somatostatina → Inhiben hormonas y secreción digestiva → Menos diarrea, débito de fístulas y flujo esplácnico
 ---
 
 > Complemento de bibliografía de referencia: el material de la clase solo nombra estos fármacos.

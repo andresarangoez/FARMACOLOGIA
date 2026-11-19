@@ -7,6 +7,7 @@ grupo_farmacologico: Sulfona (mismo mecanismo que sulfonamidas)
 mecanismo_resumen: Compite con el PABA, bloquea la dihidropteroato sintasa
 tags: [lepra, dapsona, g6pd, metahemoglobinemia, pneumocystis, pediatria]
 dificultad_quiz: alta
+esquema: Dapsona:: Mycobacterium leprae necesita PABA → Dapsona compite con el PABA → Bloquea la síntesis de ácido fólico → Bacteriostático
 ---
 
 ## Historia

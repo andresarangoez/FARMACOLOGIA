@@ -6,6 +6,7 @@ tema: Antiinfecciosos de amplio espectro
 grupo_farmacologico: Inhibidores de la síntesis proteica (subunidad 50S / complejo 70S)
 tags: [estreptograminas, linezolid, oxazolidinonas, sarm, vre, pediatria]
 dificultad_quiz: alta
+esquema: Linezolid:: Entra a la bacteria → Se une al ARN 23S de la subunidad 50S → Impide formar el complejo 70S → No inicia la síntesis de proteínas
 ---
 
 ## Estreptograminas (Quinupristina/Dalfopristina)

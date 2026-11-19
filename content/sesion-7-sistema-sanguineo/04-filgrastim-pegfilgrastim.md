@@ -7,6 +7,7 @@ grupo_farmacologico: Factor estimulante de colonias de granulocitos (G-CSF)
 linea_celular: Neutrófilos (granulocitos)
 tags: [neutropenia, quimioterapia, trasplante medula, oncologia, pediatria]
 dificultad_quiz: alta
+esquema: Filgrastim:: Filgrastim (G-CSF) → Se une al receptor de G-CSF en la médula ósea → Proliferación y maduración de neutrófilos → Sube el recuento de neutrófilos
 ---
 
 ## Concepto

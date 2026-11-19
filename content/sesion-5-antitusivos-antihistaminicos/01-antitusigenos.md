@@ -7,6 +7,7 @@ grupo_farmacologico: Antitusígenos (opioides y derivado sintético de la morfin
 mecanismo_resumen: Codeína y dihidrocodeína activan receptores opioides en el bulbo; dextrometorfano actúa sobre receptores NMDA y sigma
 tags: [antitusigenos, codeina, dihidrocodeina, dextrometorfano, tos seca]
 dificultad_quiz: media
+esquema: Codeína:: Estímulo de la tos → Codeína activa receptores opioides del bulbo → Disminuye la excitabilidad del centro de la tos → Menos reflejo tusígeno ;; Dextrometorfano:: Estímulo de la tos → Dextrometorfano actúa en receptores NMDA y sigma → Inhibe la transmisión del estímulo → Menos frecuencia de tos
 ---
 
 ## Qué es un antitusígeno

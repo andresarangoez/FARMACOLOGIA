@@ -101,7 +101,7 @@ FA.datos = (function () {
             var fa = {
                 id: meta.id, nombre: meta.nombre || meta.id, sesion: parseInt(meta.sesion, 10),
                 tema: meta.tema || ('Sesión ' + meta.sesion), grupo: meta.grupo_farmacologico || '',
-                mecanismo: meta.mecanismo_resumen || '', linea: meta.linea_celular || '',
+                mecanismo: meta.mecanismo_resumen || '', linea: meta.linea_celular || '', esquema: meta.esquema || '',
                 tags: meta.tags || [], dificultad: meta.dificultad_quiz || '',
                 ruta: r.ruta, secciones: contenido, quiz: quiz, cards: cards
             };

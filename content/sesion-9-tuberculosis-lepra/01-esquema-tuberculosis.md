@@ -6,6 +6,7 @@ tema: Tuberculosis y lepra
 grupo_farmacologico: Antituberculosos (esquema combinado)
 tags: [tuberculosis, isoniazida, rifampicina, pirazinamida, etambutol, pediatria]
 dificultad_quiz: alta
+esquema: Isoniazida:: Bacilo tuberculoso → Isoniazida inhibe los ácidos micólicos → Pared débil → Muerte del bacilo ;; Rifampicina:: Bacilo tuberculoso → Rifampicina inhibe la ARN polimerasa → Sin ARN ni proteínas → Muerte del bacilo ;; Etambutol:: Bacilo tuberculoso → Etambutol inhibe la síntesis de la pared → Pared defectuosa → Bacteriostático
 ---
 
 ## Fisiopatología

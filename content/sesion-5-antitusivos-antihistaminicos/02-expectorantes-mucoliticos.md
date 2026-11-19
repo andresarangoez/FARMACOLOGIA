@@ -7,6 +7,7 @@ grupo_farmacologico: Expectorantes y mucolíticos
 mecanismo_resumen: Guaifenesina aumenta el contenido acuoso del moco; N-acetilcisteína rompe enlaces disulfuro de las mucoproteínas; ambroxol estimula las células alveolares tipo II
 tags: [expectorantes, mucoliticos, guaifenesina, acetilcisteina, ambroxol, bromhexina]
 dificultad_quiz: media
+esquema: Guaifenesina:: Moco espeso y adherente → Guaifenesina estimula las glándulas respiratorias → Aumenta el agua del moco → Tos productiva y expulsión ;; N-acetilcisteína:: Mucoproteínas con enlaces disulfuro → NAC rompe los enlaces disulfuro → Moco fluido → Eliminación de secreciones ;; Ambroxol:: Neumocito tipo II → Ambroxol lo estimula → Más surfactante y menos adhesión del moco → Mejor transporte mucociliar
 ---
 
 ## Expectorantes

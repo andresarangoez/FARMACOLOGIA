@@ -7,6 +7,7 @@ grupo_farmacologico: Surfactantes pulmonares
 mecanismo_resumen: Reducen la tensión superficial alveolar y evitan el colapso pulmonar
 tags: [surfactantes, survanta, curosurf, sdr neonatal, prematuros]
 dificultad_quiz: media
+esquema: Surfactante:: Prematuro sin surfactante: alvéolos colapsan → Surfactante administrado por vía intratraqueal → Disminuye la tensión superficial alveolar → Alvéolos abiertos y mejor oxigenación
 ---
 
 ## Historia

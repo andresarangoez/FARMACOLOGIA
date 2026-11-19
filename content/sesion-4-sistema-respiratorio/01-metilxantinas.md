@@ -7,6 +7,7 @@ grupo_farmacologico: Metilxantinas (derivadas de alcaloides del café y el té)
 mecanismo_resumen: Inhiben la fosfodiesterasa (aumenta AMPc) y bloquean los receptores de adenosina
 tags: [metilxantinas, teofilina, cafeina, asma, apnea del prematuro]
 dificultad_quiz: media
+esquema: Teofilina:: Teofilina entra al músculo liso bronquial → Inhibe la fosfodiesterasa y bloquea los receptores de adenosina → Aumenta el AMPc → Broncodilatación y estimulación respiratoria
 ---
 
 ## Historia

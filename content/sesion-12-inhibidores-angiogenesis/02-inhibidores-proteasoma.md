@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores del proteasoma (modificadores de la respuesta b
 mecanismo_resumen: El bortezomib bloquea de forma reversible el proteasoma 26S; las proteínas dañadas marcadas con ubiquitina se acumulan y la célula tumoral entra en estrés y apoptosis
 tags: [proteasoma, bortezomib, ubiquitina, mieloma multiple, lisis tumoral]
 dificultad_quiz: media
+esquema: Bortezomib:: Ubiquitina marca proteínas dañadas → Bortezomib bloquea el proteasoma 26S → Se acumulan proteínas tóxicas → Estrés celular y apoptosis
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 12).

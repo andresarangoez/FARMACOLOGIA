@@ -7,6 +7,7 @@ grupo_farmacologico: Hormona glicoproteica estimulante de eritropoyesis
 linea_celular: Eritrocitos (glóbulos rojos)
 tags: [anemia, insuficiencia renal, quimioterapia, VIH, pediatria]
 dificultad_quiz: media
+esquema: Eritropoyetina:: Riñón detecta hipoxia → EPO se une a su receptor en precursores eritroides → Proliferación y maduración (menos apoptosis) → Más glóbulos rojos y hemoglobina
 ---
 
 ## Concepto

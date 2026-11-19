@@ -7,6 +7,7 @@ grupo_farmacologico: Inmunomoduladores biológicos (anti-IL-12/IL-23 y anti-IL-1
 mecanismo_resumen: El ustekinumab bloquea la subunidad p40 de IL-12 e IL-23; ixekizumab y secukinumab neutralizan la IL-17A; todos reducen la inflamación de la piel
 tags: [psoriasis, ustekinumab, ixekizumab, secukinumab, il-12, il-23, il-17a]
 dificultad_quiz: media
+esquema: Ustekinumab:: IL-12 e IL-23 activan Th1 y Th17 → Ustekinumab se une a la subunidad p40 → No se activan sus receptores → Menos inflamación de la piel ;; Ixekizumab / secukinumab:: IL-17A estimula los queratinocitos → El fármaco neutraliza la IL-17A → Su receptor no se activa → Menos placas y descamación
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 13).

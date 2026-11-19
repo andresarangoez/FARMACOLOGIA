@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores de la cinasa BRAF (vemurafenib, dabrafenib) e i
 mecanismo_resumen: Bloquean la cinasa BRAF mutada (V600E) o la MEK de la vía RAS-RAF-MEK-ERK y frenan las señales de crecimiento sin parar
 tags: [braf, v600e, mek, vemurafenib, dabrafenib, trametinib, melanoma, glioma]
 dificultad_quiz: media
+esquema: Vemurafenib / dabrafenib:: BRAF V600E siempre encendida → El fármaco bloquea la cinasa BRAF → MEK y ERK quedan apagadas → Se detiene el crecimiento del tumor ;; Trametinib:: Señal de BRAF hacia MEK → Trametinib se une alostéricamente a MEK 1/2 → ERK no se activa → Apoptosis y parada del ciclo celular
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 10).

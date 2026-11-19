@@ -7,6 +7,7 @@ grupo_farmacologico: Antiprotozoarios (nitroimidazoles, tiazolidas, nitrofuranos
 mecanismo_resumen: Los nitroimidazoles se activan por reducción en anaerobios y dañan el ADN; la nitazoxanida bloquea la enzima PFOR; la paromomicina inhibe la subunidad 30S
 tags: [antiprotozoarios, metronidazol, tinidazol, nitazoxanida, furazolidona, paromomicina, amebiasis, giardiasis]
 dificultad_quiz: media
+esquema: Metronidazol / tinidazol:: Entra al anaerobio o protozoo → Se reduce y activa (ambiente anaerobio) → Radicales libres dañan el ADN → Muerte celular ;; Nitazoxanida:: Se convierte en tizoxanida → Inhibe la enzima PFOR → Cae la producción de ATP → Muerte del parásito ;; Paromomicina:: Paromomicina → Se une a la subunidad 30S → Errores de lectura del ARNm → Sin proteínas: muerte del microorganismo
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 14).
