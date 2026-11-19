@@ -586,3 +586,8 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .esq__paso--inicio .esq__n { background: var(--amarillo); }
 @media (max-width: 640px) { .esq__pasos { grid-template-columns: 1fr; gap: 22px; } .esq__paso:not(:last-child)::after { content: "⬇"; right: auto; left: 50%; top: auto; bottom: -21px; transform: translateX(-50%); } }
 @media print { .esquema { background: #fff !important; color: #000; box-shadow: none; border: 1px solid #999; } .esq__paso { color: #000; border-color: #999; } }
+
+/* la luz del logo queda detrás del texto y los botones del hero */
+.hero__txt { position: relative; z-index: 3; }
+.hero__halo { z-index: 1; }
+@media (max-width: 760px) { .hero__halo::before { inset: -10px; filter: blur(10px); } }
