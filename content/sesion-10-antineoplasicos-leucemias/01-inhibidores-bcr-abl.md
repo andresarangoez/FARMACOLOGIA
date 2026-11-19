@@ -72,9 +72,8 @@ dificultad_quiz: media
 - Niños con LMC recién diagnosticada: **300 mg/m² una vez al día**.
 - Niños con resistencia o intolerancia: **400 mg/m² una vez al día**.
 
-**Mecanismo:** ante la resistencia a los ITQ de 1.ª/2.ª generación (la mutación **T315I** crea un bloqueo estérico), el bosutinib actúa con **doble inhibición**: inhibe BCR-ABL y la **familia SRC** (SRC activado por BCR-ABL); se acopla al sitio del ATP y esquiva otros BCR-ABL variantes. Diferencia clave: imatinib bloquea solo ABL; bosutinib bloquea **ABL + SRC**.
+**Mecanismo:** el bosutinib actúa con **doble inhibición**: inhibe la cinasa BCR-ABL (se acopla al sitio del ATP) y la **familia SRC** (SRC activado por BCR-ABL). Es eficaz frente a muchas de las mutaciones que generan resistencia al imatinib, **pero no frente a la mutación T315I**: para esa mutación se usa el ponatinib. Diferencia clave: imatinib bloquea solo ABL; bosutinib bloquea **ABL + SRC**.
 
-> ⚠️ **Inconsistencia en la diapositiva:** la infografía del mecanismo rotula al bosutinib como "3.ª gen. ITQ" y afirma que esquiva la T315I, mientras la diapositiva anterior lo presenta como de **segunda generación**. Se deja tal cual; verificar con la profesora.
 
 **Efectos adversos:**
 - **Diarrea:** inhibición de quinasas en las células epiteliales del intestino y efecto procinético del fármaco.
@@ -91,7 +90,6 @@ dificultad_quiz: media
 
 ## Ponatinib · ITQ de tercera generación
 
-> En la diapositiva del título aparece escrito "Posatinib"; el nombre correcto, que figura en las cajas (Ponaxen, Ponazic, Ponatib), es **ponatinib**.
 
 - Inhibidor de la tirosina quinasa de **tercera generación**.
 - Indicado ante **resistencia a los inhibidores de primera y segunda generación** como imatinib o dasatinib.
@@ -100,7 +98,7 @@ dificultad_quiz: media
 
 **Dosis:** en adultos la dosis estándar empieza en **45 mg/día**. En pediatría, **15 mg a 30 mg por m² de superficie corporal una vez al día**: en niños se busca la dosis mínima efectiva para minimizar el impacto en el crecimiento y el riesgo vascular.
 
-**Mecanismo:** la mutación **T315I** (isoleucina en el sitio de unión) crea un bloqueo estérico en el que fallan los ITQ de 1.ª generación. El ponatinib, por **diseño racional** con un **enlace triple de "etidronato"** (así aparece en la diapositiva y en la clase; conexión crítica), esquiva el bloqueo T315I y se une al bolsillo del ATP; es **pancromosómico** (actúa sobre BCR-ABL normal, T315I y otras mutaciones) y bloquea la señalización → apoptosis de la célula leucémica.
+**Mecanismo:** la mutación **T315I** (isoleucina en el sitio de unión) crea un bloqueo estérico en el que fallan los ITQ de 1.ª generación. El ponatinib, por **diseño racional** con un **triple enlace carbono-carbono (enlace etinilo)** (conexión crítica), esquiva el bloqueo T315I y se une al bolsillo del ATP; es **pancromosómico** (actúa sobre BCR-ABL normal, T315I y otras mutaciones) y bloquea la señalización → apoptosis de la célula leucémica.
 
 **Efectos adversos:**
 - **Eventos trombóticos arteriales:** el bloqueo de los receptores **VEGFR y FGFR** afecta la salud del endotelio.
@@ -137,7 +135,6 @@ dificultad_quiz: media
 - Forma farmacéutica: **tabletas de 100 mg y 500 mg**.
 - La neutropenia puede dar **neutropenia febril**. Ejemplo de inhibidor de bomba que se evita: **omeprazol**.
 
-> ⚠️ En la clase el bosutinib se presenta como de **segunda generación**, pero al explicar su mecanismo también se le atribuye el "enlace triple de etidronato" y el efecto pancromosómico, que en las diapositivas son del **ponatinib**. Se deja como se dijo; conviene confirmarlo con la profesora.
 
 **Ponatinib**
 - "Multinodal": afecta múltiples nodos o vías de señalización (RAS, MEK, ERK).
