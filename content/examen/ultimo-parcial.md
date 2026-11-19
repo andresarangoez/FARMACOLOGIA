@@ -1,9 +1,10 @@
 ---
 id: ultimo-parcial
 nombre: Último parcial (preguntas de tutoría)
-descripcion: Preguntas de opción múltiple tipo parcial final, con la respuesta correcta y la justificación de cada opción. Cubre los temas vistos después del segundo parcial: bevacizumab, sunitinib, gemtuzumab ozogamicina, aflibercept, ranibizumab, secukinumab, denosumab, tacrolimus y nimotuzumab.
+descripcion: Preguntas de opción múltiple tipo parcial final, con la respuesta correcta y la justificación de cada opción. Cubre los temas vistos después del segundo parcial: bevacizumab, sunitinib, gemtuzumab ozogamicina, aflibercept, ranibizumab, secukinumab, denosumab, tacrolimus y nimotuzumab. Va aparte: no se mezcla con el banco de examen general.
 orden: 4
 tipo: Quiz
+aparte: si
 ---
 
 ## Cómo usar este quiz
@@ -108,3 +109,14 @@ Preguntas elaboradas para las tutorías del parcial final. Igual que en el parci
 - d) La inhibición de RANKL produce ulceración intestinal por aumento de la actividad osteoclástica.
 
 **Justificación:** en el intestino la IL-17A ayuda a mantener la barrera de la mucosa; al bloquearla con secukinumab puede aparecer o empeorar una enfermedad inflamatoria intestinal (Crohn o colitis ulcerosa), que se manifiesta con diarrea persistente, dolor abdominal y sangre en las heces. La a atribuye a VEGFR un efecto que no tiene; la b inventa una acción del anti-CD25 (basiliximab); la d contradice el efecto del denosumab, que disminuye la actividad osteoclástica.
+
+## Pregunta 10. Tacrolimus intravenoso y el material del equipo
+
+**Caso:** durante la preparación de tacrolimus intravenoso, el equipo identifica que el medicamento puede adsorberse al material de ciertos sistemas de administración. ¿Cuál es la implicación clínica de esta propiedad?
+
+- a) **La adsorción al sistema puede reducir la cantidad de medicamento que llega al paciente y comprometer la exposición terapéutica.** ✓
+- b) El contacto con el sistema elimina la necesidad de monitorizar concentraciones sanguíneas.
+- c) El fármaco se transforma en un metabolito tóxico al entrar en contacto con cualquier material plástico.
+- d) La unión al material aumenta de forma predecible la concentración libre y produce una sobredosis inmediata.
+
+**Justificación:** el tacrolimus se adhiere al PVC de los equipos de infusión, de modo que parte de la dosis queda en el sistema y no llega al paciente; por eso se usa el equipo indicado y se controlan los niveles valle (5 a 15 ng/mL). La b es falsa: justamente por esta pérdida hay que seguir midiendo niveles; la c inventa una transformación química que no ocurre; la d dice lo contrario, porque la adsorción disminuye la dosis que recibe el paciente.

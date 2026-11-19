@@ -24,7 +24,8 @@ FA.vistas.bancoExamen = (function () {
         montar: function (el, p) {
             if (!FA.acceso.abierto()) { FA.acceso.montar(el); return; }
             var zona = el.querySelector('[data-zona]'), barra = el.querySelector('[data-barra]');
-            var fuentes = FA.datos.extras.filter(function (e) { return e.preguntas.length; });
+            /* las fuentes marcadas «aparte» solo entran si se abren directamente (#/examen/practicar/<id>) */
+            var fuentes = FA.datos.extras.filter(function (e) { return e.preguntas.length && (!e.aparte || p.id === e.id); });
             var sel = {};
             fuentes.forEach(function (e) { sel[e.id] = !p.id || p.id === e.id; });
 

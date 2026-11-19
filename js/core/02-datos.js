@@ -134,7 +134,7 @@ FA.datos = (function () {
         cerrar();
         extras.push({
             id: meta.id, nombre: meta.nombre || meta.id, descripcion: meta.descripcion || '',
-            tipo: meta.tipo || 'Taller', orden: parseInt(meta.orden, 10) || 99,
+            tipo: meta.tipo || 'Taller', orden: parseInt(meta.orden, 10) || 99, aparte: /^(si|sí|true)$/i.test(meta.aparte || ''),   // aparte: no se mezcla en el banco general
             preguntas: parsearPreguntasExamen(secs, meta.id),
             secciones: secs.map(function (s) {
                 return { titulo: s.titulo, id: u.slug(s.titulo), html: FA.md.html('## ' + s.titulo + '\n' + s.lineas.join('\n')) };
@@ -174,7 +174,7 @@ FA.datos = (function () {
         farmacos: farmacos, sesiones: sesiones, advertencias: advertencias,
         extras: extras,
         bancoExamen: function (fuentes) {
-            return [].concat.apply([], extras.filter(function (e) { return !fuentes || fuentes.indexOf(e.id) >= 0; }).map(function (e) { return e.preguntas; }));
+            return [].concat.apply([], extras.filter(function (e) { return fuentes ? fuentes.indexOf(e.id) >= 0 : !e.aparte; }).map(function (e) { return e.preguntas; }));
         },
         extra: function (id) { return extras.filter(function (x) { return x.id === id; })[0]; },
         farmaco: function (id) { return porId[id]; },
