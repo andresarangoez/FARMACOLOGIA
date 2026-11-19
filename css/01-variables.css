@@ -48,8 +48,8 @@
     --err-fondo: #FAE9E6;
 
     /* Tipografía */
-    --f-main:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-    --f-display: 'Archivo Black', 'Inter', 'Segoe UI', sans-serif;
+    --f-main:    'Nunito Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --f-display: 'Montserrat', 'Nunito Sans', 'Segoe UI', sans-serif;
 
     --t-xs:  .78rem;
     --t-sm:  .875rem;
