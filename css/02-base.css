@@ -71,4 +71,9 @@ main:focus { outline: none; }
 @media (max-width: 760px) { .pie__int { grid-template-columns: 1fr; } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
-.pie__copy--izq { margin: var(--s-4) 0 0; font-size: var(--t-sm); line-height: 1.5; }
+/* derechos de autor: mismo estilo que el texto de la nota, al final de la columna izquierda (alineado con el último renglón de la derecha) */
+.pie__int > div:first-child { display: flex; flex-direction: column; }
+.pie__copy--izq { margin: auto 0 0 !important; padding-top: var(--s-3); border-top: 0; font-size: var(--t-xs); line-height: 1.55; font-weight: 400; color: #B9C8E0 !important; text-align: justify; hyphens: auto; }
+.pie__nota p { text-align: justify; hyphens: auto; }
+.pie__nota { display: flex; flex-direction: column; justify-content: flex-end; }
+.pie__nota p:last-child { margin-bottom: 0; }

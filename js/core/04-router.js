@@ -21,7 +21,7 @@ FA.router = (function () {
         { re: /^\/flashcards(?:\/([^/]+))?$/,   vista: 'flashcards',  params: ['alcance'] },
         { re: /^\/quiz(?:\/([^/]+))?$/,         vista: 'quiz',        params: ['alcance'] },
         { re: /^\/calculadora(?:\/([\w-]+))?$/, vista: 'calculadora', params: ['id'] },
-        { re: /^\/estudio$/,                    vista: 'estudio' },
+        { re: /^\/estudio$/,                    vista: 'inicio' },   // «Modo estudio» (pomodoro) retirado
         { re: /^\/examen$/,                     vista: 'examen' },
         { re: /^\/examen\/practicar(?:\/([\w-]+))?$/, vista: 'bancoExamen', params: ['id'] },
         { re: /^\/examen\/([\w-]+)$/,           vista: 'recurso',     params: ['id'] },

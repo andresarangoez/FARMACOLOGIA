@@ -446,3 +446,27 @@ mark { background: var(--amarillo); color: var(--titulo); border-radius: 3px; pa
 .vm__grupo-tag { font-size: var(--t-xs); font-weight: 700; color: var(--tx-suave); border: 1px solid var(--linea); border-radius: 999px; padding: 3px 10px; background: var(--sup); }
 
 .pie__gracias { border-left: 3px solid var(--amarillo); padding-left: 12px; }
+
+/* ── Hero: olas en degradado animadas y logo luminoso ── */
+.hero { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(120deg, #071d43 0%, #0A3E7C 45%, #1b2f7a 75%, #0b2556 100%); background-size: 220% 220%; animation: hero-fondo 18s ease-in-out infinite; }
+.hero__int { position: relative; z-index: 1; }
+.hero__fondo { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero__brillo { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .45; mix-blend-mode: screen; animation: hero-brillo 14s ease-in-out infinite alternate; }
+.hero__brillo.b1 { width: 420px; height: 420px; left: -120px; top: -140px; background: radial-gradient(circle, #38bdf8, transparent 70%); }
+.hero__brillo.b2 { width: 380px; height: 380px; right: -80px; top: 10%; background: radial-gradient(circle, #a78bfa, transparent 70%); animation-delay: -5s; }
+.hero__brillo.b3 { width: 360px; height: 360px; left: 40%; bottom: -200px; background: radial-gradient(circle, #FBD785, transparent 70%); opacity: .3; animation-delay: -9s; }
+.hero__olas { position: absolute; left: 0; bottom: 0; width: 100%; height: 55%; }
+.hero__olas .ola { animation: hero-ola 16s linear infinite; }
+.hero__olas .o2 { animation-duration: 24s; animation-direction: reverse; }
+.hero__halo { position: relative; display: inline-grid; place-items: center; border-radius: 50%; isolation: isolate; }
+.hero__halo::before { content: ""; position: absolute; inset: -22px; border-radius: 50%; background: conic-gradient(from 0deg, #38bdf8, #a78bfa, #f472b6, #FBD785, #22d3ee, #38bdf8); filter: blur(14px); opacity: .9; animation: hero-giro 9s linear infinite, hero-titila 3.2s ease-in-out infinite; z-index: -1; }
+.hero__halo .hero__logo { animation: hero-flota 6s ease-in-out infinite, hero-luz 3.2s ease-in-out infinite; }
+@keyframes hero-luz { 0%, 100% { box-shadow: 0 0 24px rgba(56,189,248,.45), 0 14px 40px rgba(0,0,0,.28); } 50% { box-shadow: 0 0 60px rgba(167,139,250,.75), 0 0 100px rgba(251,215,133,.35), 0 14px 40px rgba(0,0,0,.28); } }
+@keyframes hero-fondo { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes hero-brillo { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(60px, 40px) scale(1.15); } }
+@keyframes hero-ola { from { transform: translateX(0); } to { transform: translateX(-1440px); } }
+@keyframes hero-giro { to { transform: rotate(360deg); } }
+@keyframes hero-titila { 0%, 100% { opacity: .55; } 50% { opacity: .95; } }
+@keyframes hero-flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .hero, .hero__brillo, .hero__olas .ola, .hero__halo::before, .hero__halo .hero__logo { animation: none !important; } }
+@media print { .hero__fondo, .hero__halo::before { display: none; } }

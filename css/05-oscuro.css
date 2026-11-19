@@ -60,4 +60,4 @@
 :root[data-tema="oscuro"] .calc__op[aria-current="true"] .calc__n { color: #092755; }
 
 /* la portada conserva su degradado original (el azul de interacción es más claro en oscuro) */
-:root[data-tema="oscuro"] .hero { background: linear-gradient(135deg, #092755 0%, #0A3E7C 100%); }
+:root[data-tema="oscuro"] .hero { background: linear-gradient(120deg, #050f24 0%, #092755 45%, #16205a 75%, #071a3d 100%); background-size: 220% 220%; }
