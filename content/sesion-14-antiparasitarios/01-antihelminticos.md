@@ -7,6 +7,7 @@ grupo_farmacologico: Antihelmínticos (benzimidazoles, lactonas macrocíclicas, 
 mecanismo_resumen: Los benzimidazoles inhiben la polimerización de la tubulina del parásito; la ivermectina abre canales de cloro y lo paraliza; el pirantel produce parálisis espástica y la piperazina parálisis flácida
 tags: [antihelminticos, albendazol, mebendazol, ivermectina, pirantel, piperazina, helmintos]
 dificultad_quiz: media
+esquema: Albendazol / mebendazol:: Helminto necesita microtúbulos → El fármaco inhibe la polimerización de la tubulina → No absorbe glucosa y agota su energía → Muerte del parásito ;; Ivermectina:: Ivermectina → Abre canales de cloro dependientes de glutamato → Hiperpolarización → Parálisis del parásito ;; Pirantel:: Pirantel → Activa receptores nicotínicos del helminto → Despolarización sostenida: parálisis espástica → Expulsión por peristaltismo ;; Piperazina:: Piperazina → Activa receptores GABA del nematodo → Hiperpolarización: parálisis flácida → Eliminación por heces
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 14).

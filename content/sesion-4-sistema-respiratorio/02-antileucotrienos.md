@@ -7,6 +7,7 @@ grupo_farmacologico: Antileucotrienos (antiinflamatorios respiratorios)
 mecanismo_resumen: Bloquean los receptores de leucotrienos o su síntesis
 tags: [antileucotrienos, montelukast, zafirlukast, zileuton, asma, rinitis alergica]
 dificultad_quiz: media
+esquema: Montelukast:: Leucotrienos liberados en la vía aérea → Montelukast bloquea su receptor (CysLT1) → Sin señal inflamatoria → Menos edema, broncoconstricción y moco
 ---
 
 ## Historia

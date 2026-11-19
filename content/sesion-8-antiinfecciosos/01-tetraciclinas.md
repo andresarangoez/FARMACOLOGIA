@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores de la síntesis proteica (subunidad 30S)
 mecanismo_resumen: Bloquea el ARN de transferencia en la subunidad ribosomal 30S
 tags: [tetraciclina, doxiciclina, tigeciclina, bacteriostatico, pediatria]
 dificultad_quiz: media
+esquema: Doxiciclina:: Entra a la bacteria por porinas → Se une a la subunidad 30S → Bloquea la entrada del ARNt → Sin síntesis de proteínas: bacteriostático
 ---
 
 ## Historia y generaciones

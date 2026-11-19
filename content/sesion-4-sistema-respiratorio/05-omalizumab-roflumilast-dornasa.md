@@ -7,6 +7,7 @@ grupo_farmacologico: Anticuerpo monoclonal anti-IgE (omalizumab), inhibidor de P
 mecanismo_resumen: Omalizumab bloquea la IgE libre; roflumilast inhibe la PDE4; dornasa alfa rompe el ADN del moco y reduce su viscosidad
 tags: [omalizumab, roflumilast, dornasa alfa, asma alergica, fibrosis quistica]
 dificultad_quiz: media
+esquema: Omalizumab:: IgE libre circulante → Omalizumab se une a la IgE → La IgE no se une al mastocito → Sin activación mastocitaria ni crisis alérgica ;; Roflumilast:: Célula inflamatoria de la vía aérea → Roflumilast inhibe la PDE4 → Aumenta el AMPc → Menos inflamación ;; Dornasa alfa:: Moco espeso con ADN de neutrófilos → Dornasa alfa corta el ADN → Moco menos viscoso → Mejor eliminación de secreciones
 ---
 
 ## Omalizumab (Xolair)

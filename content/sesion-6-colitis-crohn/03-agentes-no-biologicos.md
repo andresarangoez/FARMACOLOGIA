@@ -7,6 +7,7 @@ grupo_farmacologico: Antimetabolitos e inmunosupresores no biológicos
 mecanismo_resumen: Metotrexato inhibe la dihidrofolato reductasa (DHFR) y bloquea la síntesis de purinas, timidina y ADN
 tags: [metotrexato, antimetabolito, dhfr, acido folinico, azatioprina, ciclofosfamida, ciclosporina]
 dificultad_quiz: media
+esquema: Metotrexato:: Metotrexato se parece al ácido fólico → Bloquea la dihidrofolato reductasa → Sin tetrahidrofolato ni purinas → Se detiene la proliferación celular ;; Azatioprina:: Azatioprina → Se convierte en 6-mercaptopurina → Bloquea la síntesis de purinas → Menos linfocitos activados ;; Ciclosporina:: Ciclosporina se une a la ciclofilina → Bloquea la calcineurina → Sin IL-2 → Linfocitos T no se activan
 ---
 
 ## Metotrexato

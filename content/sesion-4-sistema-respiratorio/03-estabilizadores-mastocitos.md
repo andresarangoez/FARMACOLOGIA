@@ -7,6 +7,7 @@ grupo_farmacologico: Estabilizadores de la membrana de los mastocitos (cromonas)
 mecanismo_resumen: Estabiliza la membrana del mastocito e impide su degranulación, evitando la liberación de histamina y leucotrienos
 tags: [cromoglicato, mastocitos, asma, rinitis alergica, preventivo]
 dificultad_quiz: media
+esquema: Cromoglicato:: Alérgeno llega al mastocito → Cromoglicato estabiliza su membrana → No hay degranulación → No se libera histamina ni leucotrienos
 ---
 
 > Complemento de bibliografía de referencia: el material de la clase solo nombra este grupo.

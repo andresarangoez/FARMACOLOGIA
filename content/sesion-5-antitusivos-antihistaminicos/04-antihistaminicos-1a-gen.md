@@ -7,6 +7,7 @@ grupo_farmacologico: Antihistamínicos H1 de primera generación
 mecanismo_resumen: Bloquean competitivamente los receptores H1 de histamina y atraviesan la barrera hematoencefálica (sedación)
 tags: [antihistaminicos, difenhidramina, clorfeniramina, hidroxicina, primera generacion, sedacion]
 dificultad_quiz: media
+esquema: Antihistamínico 1.ª generación:: Histamina liberada → Fármaco bloquea el receptor H1 → Menos vasodilatación, permeabilidad y prurito → Atraviesa la barrera hematoencefálica: sedación
 ---
 
 ## Antihistamínicos H1

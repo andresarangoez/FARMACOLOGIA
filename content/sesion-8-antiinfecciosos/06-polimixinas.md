@@ -7,6 +7,7 @@ grupo_farmacologico: Desestabilizadores de membrana bacteriana
 mecanismo_resumen: Desplazan calcio y magnesio de la membrana bacteriana, causando lisis
 tags: [polimixina, colistina, pseudomona, acinetobacter, nefrotoxicidad, pediatria]
 dificultad_quiz: media
+esquema: Polimixina:: Se une al lipopolisacárido de Gram negativos → Desplaza calcio y magnesio de la membrana → Membrana se rompe → Lisis bacteriana
 ---
 
 ## Concepto

@@ -7,6 +7,7 @@ grupo_farmacologico: Bloqueador de la coestimulación de las células T (proteí
 mecanismo_resumen: El belatacept se une a CD80/CD86 de la célula presentadora de antígeno e impide la segunda señal (CD28) que necesita el linfocito T para activarse
 tags: [belatacept, coestimulacion, cd80, cd86, cd28, trasplante renal]
 dificultad_quiz: media
+esquema: Belatacept:: Célula presentadora muestra el antígeno del injerto → Belatacept se une a CD80/CD86 → Se impide la segunda señal (CD28) → Linfocito T no se activa
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 13).

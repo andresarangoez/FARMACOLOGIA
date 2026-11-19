@@ -7,6 +7,7 @@ grupo_farmacologico: Anticuerpo monoclonal quimérico antagonista del receptor d
 mecanismo_resumen: El basiliximab se une a CD25 (subunidad α del receptor de IL-2) del linfocito T activado; la IL-2 no puede actuar y disminuye la proliferación de linfocitos T contra el injerto
 tags: [basiliximab, cd25, il-2, trasplante renal, rechazo agudo, induccion]
 dificultad_quiz: media
+esquema: Basiliximab:: Linfocito T reconoce el injerto y produce IL-2 → Basiliximab se une a CD25 (receptor de IL-2) → La IL-2 no actúa → Menos linfocitos T y menos rechazo
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 13). El plan calendario menciona también daclizumab, que no se vio en esta clase.

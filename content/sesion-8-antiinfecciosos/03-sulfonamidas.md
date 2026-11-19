@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores de la síntesis de ácido fólico
 mecanismo_resumen: Compiten con el PABA, bloquean la dihidropteroato sintasa
 tags: [sulfonamidas, tmp-smx, toxoplasmosis, malaria, kernicterus, pediatria]
 dificultad_quiz: alta
+esquema: Sulfonamida:: Bacteria necesita PABA → Sulfonamida compite con el PABA → Bloquea la dihidropteroato sintasa → Sin ácido fólico ni ADN bacteriano ;; Trimetoprim:: Dihidrofolato bacteriano → Trimetoprim bloquea la dihidrofolato reductasa → Sin tetrahidrofolato → Doble bloqueo con la sulfonamida
 ---
 
 ## Historia

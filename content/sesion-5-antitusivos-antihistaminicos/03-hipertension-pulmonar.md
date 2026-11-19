@@ -7,6 +7,7 @@ grupo_farmacologico: Antagonista de receptores de endotelina (bosentán) e inhib
 mecanismo_resumen: Bosentán bloquea receptores ETA y ETB de endotelina; sildenafil inhibe la fosfodiesterasa tipo 5 y aumenta el GMPc
 tags: [hipertension pulmonar, bosentan, sildenafil, tadalafil, endotelina, pde5]
 dificultad_quiz: media
+esquema: Bosentán:: Endotelina contrae la arteria pulmonar → Bosentán bloquea receptores ETA y ETB → Sin vasoconstricción ni proliferación → Baja la resistencia vascular pulmonar ;; Sildenafil / tadalafil:: PDE5 degrada el GMPc → Sildenafil o tadalafil inhiben la PDE5 → Aumenta el GMPc → Vasodilatación pulmonar
 ---
 
 ## Hipertensión pulmonar

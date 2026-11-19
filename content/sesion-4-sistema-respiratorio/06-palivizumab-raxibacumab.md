@@ -7,6 +7,7 @@ grupo_farmacologico: Anticuerpos monoclonales: antiviral (palivizumab) y antitox
 mecanismo_resumen: Palivizumab se une a la proteína F del VRS e impide la entrada del virus a la célula
 tags: [palivizumab, raxibacumab, vrs, prematuros, cardiopatias]
 dificultad_quiz: media
+esquema: Palivizumab:: Virus sincitial respiratorio → Palivizumab se une a la proteína F → El virus no se fusiona con la célula → Se previene la infección grave ;; Raxibacumab:: Toxina del ántrax → Raxibacumab se une al antígeno protector → La toxina no entra a la célula → Toxina neutralizada
 ---
 
 ## Palivizumab

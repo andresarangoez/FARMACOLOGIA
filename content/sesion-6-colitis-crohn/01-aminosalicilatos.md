@@ -7,6 +7,7 @@ grupo_farmacologico: Aminosalicilatos (antiinflamatorios intestinales)
 mecanismo_resumen: La sulfasalazina es un profármaco; en el colon libera 5-ASA (antiinflamatorio) y sulfapiridina
 tags: [mesalazina, sulfasalazina, 5-asa, sulfapiridina, colitis ulcerosa, enfermedad inflamatoria intestinal]
 dificultad_quiz: media
+esquema: Sulfasalazina:: Sulfasalazina oral llega intacta al colon → Bacterias rompen el enlace azo (azorreductasas) → Se liberan 5-ASA y sulfapiridina → El 5-ASA desinflama la mucosa del colon
 ---
 
 ## Historia

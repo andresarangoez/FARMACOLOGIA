@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores de la tirosina quinasa (ITQ) BCR-ABL
 mecanismo_resumen: Bloquean la cinasa BCR-ABL (siempre encendida) en su sitio de unión al ATP y detienen la proliferación de células leucémicas
 tags: [bcr-abl, cromosoma filadelfia, leucemia mieloide cronica, imatinib, bosutinib, ponatinib, tirosina quinasa]
 dificultad_quiz: media
+esquema: Imatinib:: Cromosoma Filadelfia produce BCR-ABL siempre activa → Imatinib ocupa el bolsillo del ATP → Sin señal RAS, STAT ni PI3K/AKT → Apoptosis de la célula leucémica ;; Bosutinib:: BCR-ABL resistente a imatinib → Bosutinib inhibe ABL y SRC → Bloquea la señal de proliferación → Apoptosis (no actúa sobre T315I) ;; Ponatinib:: Mutación T315I bloquea a los ITQ previos → Ponatinib, con su triple enlace etinilo, entra al bolsillo del ATP → Inhibe BCR-ABL mutada → Apoptosis
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 10).

@@ -7,6 +7,7 @@ grupo_farmacologico: Agentes biológicos: anti-TNF-alfa (adalimumab, certolizuma
 mecanismo_resumen: Los anti-TNF neutralizan el TNF-alfa y frenan la inflamación; el rituximab se une a CD20 y destruye los linfocitos B
 tags: [anti-tnf, adalimumab, certolizumab, etanercept, rituximab, crohn, colitis ulcerosa]
 dificultad_quiz: media
+esquema: Anti-TNF:: TNF-α elevado en la mucosa → Adalimumab o certolizumab neutralizan el TNF-α → Se apaga la cascada inflamatoria → Mucosa cicatriza ;; Rituximab:: Linfocito B con CD20 → Rituximab se une a CD20 → Destrucción del linfocito B → Menos autoanticuerpos
 ---
 
 > Complemento de bibliografía de referencia: el material de la clase solo nombra estos fármacos.

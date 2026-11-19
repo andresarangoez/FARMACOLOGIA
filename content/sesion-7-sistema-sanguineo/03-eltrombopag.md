@@ -7,6 +7,7 @@ grupo_farmacologico: Agonista del receptor de trombopoyetina (c-MPL)
 linea_celular: Plaquetas (megacariocitos)
 tags: [PTI, purpura trombocitopenica, anemia aplasica, hepatitis C, pediatria]
 dificultad_quiz: alta
+esquema: Eltrombopag:: Eltrombopag oral → Activa el receptor de trombopoyetina (c-MPL) en megacariocitos → Proliferación y maduración de megacariocitos → Más plaquetas
 ---
 
 ## Concepto

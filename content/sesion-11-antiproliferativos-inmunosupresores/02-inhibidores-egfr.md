@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores del receptor del factor de crecimiento epidérm
 mecanismo_resumen: Bloquean el receptor del factor de crecimiento epidérmico (EGFR) y su tirosina quinasa, apagando las vías AKT, ERK y PI3K
 tags: [egfr, gefitinib, erlotinib, afatinib, nimotuzumab, tirosina quinasa, glioma, cancer de pulmon]
 dificultad_quiz: media
+esquema: Gefitinib / erlotinib / afatinib:: Receptor EGFR activado → El fármaco bloquea su dominio tirosina quinasa → Sin señal AKT, ERK ni PI3K → Apoptosis del tumor ;; Nimotuzumab:: Célula tumoral con muchos EGFR → Nimotuzumab se une de forma bivalente → El EGF no se une y las células NK atacan → Muerte de la célula tumoral
 ---
 
 > Fuente: diapositivas y transcripción de la clase grabada (sesión 11). El plan calendario menciona también cetuximab, osimertinib y panitumumab, que no se vieron en esta clase.

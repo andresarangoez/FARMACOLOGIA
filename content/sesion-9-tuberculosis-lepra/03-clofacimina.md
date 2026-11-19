@@ -7,6 +7,7 @@ grupo_farmacologico: Fenazina
 mecanismo_resumen: Genera especies reactivas de oxígeno, daña membrana bacteriana
 tags: [lepra, clofazimina, poliquimioterapia, pigmentacion, pediatria]
 dificultad_quiz: media
+esquema: Clofazimina:: Se une al ADN micobacteriano → Genera especies reactivas de oxígeno → Daña la membrana bacteriana → Efecto antibacteriano y antiinflamatorio
 ---
 
 ## Concepto

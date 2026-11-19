@@ -7,6 +7,7 @@ grupo_farmacologico: Inhibidores de topoisomerasas
 mecanismo_resumen: Inhiben ADN girasa (topoisomerasa II) y topoisomerasa IV
 tags: [quinolonas, ciprofloxacino, levofloxacino, moxifloxacino, artropatia, qt largo, pediatria]
 dificultad_quiz: alta
+esquema: Fluoroquinolona:: Entra a la bacteria → Inhibe la ADN girasa (Gram negativos) y la topoisomerasa IV (Gram positivos) → El ADN no se desenrolla ni se separa → Muerte bacteriana: bactericida
 ---
 
 ## Clasificación por generación
