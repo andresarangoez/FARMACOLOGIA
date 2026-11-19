@@ -3,7 +3,6 @@ id: uso-racional-antibioticos
 nombre: Uso racional de antibióticos en pediatría
 sesion: 1
 tema: Farmacocinética, antibióticos y soluciones endovenosas
-grupo_farmacologico: Uso racional de antimicrobianos
 mecanismo_resumen: Prescribir antibióticos solo cuando están indicados, en dosis, tiempo y espectro adecuados
 tags: [antibioticos, uso racional, resistencia bacteriana, pediatria]
 dificultad_quiz: baja

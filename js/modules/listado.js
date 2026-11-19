@@ -61,7 +61,7 @@ FA.vistas.listado = (function () {
 
     /* grupo farmacológico al lado del fármaco: nombre del tema sin la lista entre paréntesis; si el tema es el propio fármaco, el grupo del frontmatter */
     // Fármacos cuyo tema agrupa varios: grupo propio según los apuntes (vacío = los apuntes no lo indican)
-    var GRUPO_PROPIO = { omalizumab: "Anticuerpo monoclonal anti-IgE", dornasaalfa: "Enzima mucolítica recombinante", palivizumab: "Anticuerpo monoclonal antiviral", roflumilast: "", raxibacumab: "" };
+    var GRUPO_PROPIO = { omalizumab: "Anticuerpo monoclonal anti-IgE", dornasaalfa: "Enzima mucolítica recombinante", palivizumab: "Anticuerpo monoclonal antiviral", roflumilast: "Inhibidor de la fosfodiesterasa 4 (PDE4)", raxibacumab: "Anticuerpo monoclonal antitoxina del ántrax" };
     function grupoDe(e) {
         var k = clave(e.nombre); if (GRUPO_PROPIO.hasOwnProperty(k)) return GRUPO_PROPIO[k];
         var base = e.temaNombre.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
@@ -133,7 +133,7 @@ FA.vistas.listado = (function () {
         titulo: 'Listado de fármacos',
         render: function () {
             return '<div class="pagina">' +
-                '<header class="cabecera"><p class="eyebrow">Consulta</p><h1>Listado de fármacos</h1>' +
+                '<header class="cabecera"><h1>Listado de fármacos</h1>' +
                 '<p class="lead">Índice alfabético de los fármacos y grupos que aparecen en los temas. Toca uno para abrir su explicación.</p></header>' +
                 '<div class="panel vm__panel"><h2 class="vm__tit">Índice alfabético</h2><div class="vm__letras" data-letras role="group" aria-label="Letra inicial"></div></div>' +
                 '<div class="panel vm__panel" data-segunda hidden><h2 class="vm__tit">Filtrar por segunda letra</h2><div class="vm__letras vm__letras--chicas" data-pref role="group" aria-label="Dos primeras letras"></div></div>' +

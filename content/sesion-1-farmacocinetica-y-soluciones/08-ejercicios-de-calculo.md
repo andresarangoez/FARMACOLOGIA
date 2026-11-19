@@ -3,7 +3,6 @@ id: ejercicios-calculo-sesion-1
 nombre: Ejercicios de cálculo (goteo, mezclas y flujo metabólico)
 sesion: 1
 tema: Farmacocinética, antibióticos y soluciones endovenosas
-grupo_farmacologico: Práctica de cálculo
 mecanismo_resumen: Ocho casos resueltos paso a paso con las fórmulas de la calculadora
 tags: [calculo, goteo, constante k, mezclas, flujo metabolico, holliday-segar, hipertonica]
 dificultad_quiz: alta

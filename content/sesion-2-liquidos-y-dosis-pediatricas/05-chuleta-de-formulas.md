@@ -3,7 +3,6 @@ id: chuleta-formulas-sesion-2
 nombre: Resumen rápido de fórmulas (para el parcial)
 sesion: 2
 tema: Líquidos y dosis en pediatría
-grupo_farmacologico: Resumen de fórmulas
 mecanismo_resumen: Todas las fórmulas de líquidos, superficie corporal, dosis e infusiones en una tabla
 tags: [formulas, resumen, chuleta, calculo]
 dificultad_quiz: media

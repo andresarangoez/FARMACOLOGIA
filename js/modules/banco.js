@@ -17,7 +17,7 @@ FA.vistas.bancoExamen = (function () {
             var total = FA.datos.bancoExamen().length;
             return '<div class="pagina pagina--estrecha">' +
                 '<nav class="migas" aria-label="Ruta"><a href="#/examen">Datos examen</a><span>/</span><b>Banco de examen</b></nav>' +
-                '<header class="cabecera"><p class="eyebrow">Datos examen</p><h1>Banco de examen</h1>' +
+                '<header class="cabecera"><h1>Banco de examen</h1>' +
                 '<p class="lead">' + total + ' preguntas tipo caso clínico con las 4 opciones casi idénticas, como en el parcial. En la práctica ves la justificación al responder; en el simulacro, al terminar.</p></header>' +
                 '<div data-barra></div><div data-zona></div></div>';
         },

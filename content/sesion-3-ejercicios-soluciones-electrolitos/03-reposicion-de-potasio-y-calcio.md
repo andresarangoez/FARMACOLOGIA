@@ -3,7 +3,6 @@ id: ejercicios-potasio-calcio
 nombre: Ejercicios de reposición de potasio y calcio
 sesion: 3
 tema: Ejercicios de soluciones endovenosas y electrolitos
-grupo_farmacologico: Banco de ejercicios (secciones D y E)
 mecanismo_resumen: Dosis de potasio por mEq/kg y de calcio por mg/kg, con límites de seguridad
 tags: [ejercicios, potasio, calcio, hipokalemia, hipocalcemia, reposicion]
 dificultad_quiz: alta

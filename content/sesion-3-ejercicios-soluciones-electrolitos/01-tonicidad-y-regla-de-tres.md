@@ -3,7 +3,6 @@ id: ejercicios-tonicidad-regla-tres
 nombre: Ejercicios de tonicidad y regla de tres
 sesion: 3
 tema: Ejercicios de soluciones endovenosas y electrolitos
-grupo_farmacologico: Banco de ejercicios (secciones A y B)
 mecanismo_resumen: Clasificar soluciones por tonicidad y calcular mEq con regla de tres
 tags: [ejercicios, tonicidad, regla de tres, ssn, mEq, ampollas]
 dificultad_quiz: media

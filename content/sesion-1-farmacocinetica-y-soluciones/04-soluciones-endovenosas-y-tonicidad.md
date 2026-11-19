@@ -3,7 +3,6 @@ id: soluciones-endovenosas-tonicidad
 nombre: Soluciones endovenosas y tonicidad
 sesion: 1
 tema: Farmacocinética, antibióticos y soluciones endovenosas
-grupo_farmacologico: Soluciones endovenosas
 mecanismo_resumen: La tonicidad define hacia dónde se mueve el agua entre la solución y la célula
 tags: [soluciones, tonicidad, ssn, hipotonica, hipertonica, isotonica, mezcla, aligacion]
 dificultad_quiz: media

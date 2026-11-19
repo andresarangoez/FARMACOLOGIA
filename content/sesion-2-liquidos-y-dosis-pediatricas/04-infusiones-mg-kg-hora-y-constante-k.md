@@ -3,7 +3,6 @@ id: infusiones-constante-k
 nombre: Infusiones: mg/kg/hora y constante K (mcg/kg/min)
 sesion: 2
 tema: Líquidos y dosis en pediatría
-grupo_farmacologico: Cálculo de infusiones continuas
 mecanismo_resumen: De la dosis ordenada al goteo de la bomba en cc/hora
 tags: [infusion, mg/kg/hora, constante k, furosemida, vecuronio, midazolam, noradrenalina, vasoactivos]
 dificultad_quiz: alta

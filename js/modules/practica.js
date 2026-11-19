@@ -7,7 +7,7 @@
     var u = FA.u;
 
     function cabecera(titulo, lead) {
-        return '<header class="cabecera"><p class="eyebrow">Practicar</p><h1>' + titulo + '</h1><p class="lead">' + lead + '</p></header>';
+        return '<header class="cabecera"><h1>' + titulo + '</h1><p class="lead">' + lead + '</p></header>';
     }
 
     function barraAlcance(a, ruta) {

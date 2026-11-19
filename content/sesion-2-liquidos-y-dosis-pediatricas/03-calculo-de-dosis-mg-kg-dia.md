@@ -3,7 +3,6 @@ id: dosis-mg-kg-dia
 nombre: Cálculo de dosis mg/kg/día
 sesion: 2
 tema: Líquidos y dosis en pediatría
-grupo_farmacologico: Cálculo de dosis
 mecanismo_resumen: Dosis total = mg/kg/día × peso, dividida entre el número de dosis al día
 tags: [dosis, mg/kg/dia, vancomicina, piperacilina, linezolid, amikacina, acetaminofen]
 dificultad_quiz: media

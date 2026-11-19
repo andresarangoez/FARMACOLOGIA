@@ -3,7 +3,6 @@ id: antibioticos-empiricos
 nombre: Elección de antibióticos empíricos (protocolo en la primera hora)
 sesion: 1
 tema: Farmacocinética, antibióticos y soluciones endovenosas
-grupo_farmacologico: Antibioticoterapia empírica
 mecanismo_resumen: La elección depende del escenario clínico: estabilidad, riesgo mucocutáneo/GI o choque
 tags: [antibioticos, empirico, cefepime, piperacilina, tazobactam, meropenem, vancomicina, sepsis]
 dificultad_quiz: alta

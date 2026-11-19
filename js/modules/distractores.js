@@ -100,7 +100,7 @@ FA.vistas.distractores = (function () {
         titulo: '¿A qué fármaco pertenece?',
         render: function () {
             return '<div class="pagina pagina--estrecha">' +
-                '<header class="cabecera"><p class="eyebrow">Practicar</p><h1>¿A qué fármaco pertenece?</h1>' +
+                '<header class="cabecera"><h1>¿A qué fármaco pertenece?</h1>' +
                 '<p class="lead">El parcial reutiliza el mecanismo de un fármaco como opción incorrecta de otro. Aquí practicas justo eso: reconocer a quién pertenece cada descripción entre 4 fármacos parecidos.</p></header>' +
                 '<div data-barra></div><div data-zona></div></div>';
         },

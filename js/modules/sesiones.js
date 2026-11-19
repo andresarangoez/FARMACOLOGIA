@@ -20,7 +20,7 @@ FA.c = (function () {
             '<span class="tarjeta-f__top"><span class="chip chip--fijo">Sesión ' + f.sesion + '</span>' +
             (est ? '<span class="estado estado--ok">' + u.icono('check') + ' Estudiado</span>' : '<span class="estado">Pendiente</span>') + '</span>' +
             '<b class="tarjeta-f__nom">' + u.esc(f.nombre) + '</b>' +
-            '<span class="tarjeta-f__grupo">' + u.esc(f.grupo) + '</span>' +
+            (f.grupo ? '<span class="tarjeta-f__grupo">' + u.esc(f.grupo) + '</span>' : '<span class="tarjeta-f__grupo"></span>') +
             '<span class="tarjeta-f__meta">' +
             '<span>' + f.cards.length + ' flashcards</span><span>' + f.quiz.length + ' preguntas</span></span>' +
             '</a>';
@@ -30,7 +30,7 @@ FA.c = (function () {
         var p = progresoSesion(s);
         return '<a class="tarjeta-s" href="#/sesion/' + s.n + '">' +
             '<span class="tarjeta-s__n">' + s.n + '</span>' +
-            '<span class="tarjeta-s__txt"><small>Sesión</small><b>' + u.esc(s.tema) + '</b>' +
+            '<span class="tarjeta-s__txt"><b>' + u.esc(s.tema) + '</b>' +
             '<span class="tarjeta-s__lista">' + s.farmacos.map(function (f) { return u.esc(f.nombre.replace(/\s*\(.*$/, '')); }).join(' · ') + '</span></span>' +
             '<span class="tarjeta-s__prog">' + barra(p.pct, 'Progreso de la sesión ' + s.n) + '<small>' + p.hechos + ' de ' + p.total + ' temas estudiados</small></span>' +
             '</a>';
@@ -43,7 +43,7 @@ FA.vistas.sesiones = {
     titulo: 'Sesiones',
     render: function () {
         return '<div class="pagina">' +
-            '<header class="cabecera"><p class="eyebrow">Material de estudio</p><h1>Sesiones</h1>' +
+            '<header class="cabecera"><h1>Sesiones</h1>' +
             '<p class="lead">Cada sesión reúne sus fármacos y temas. Entra a uno para leerlo, practicar con flashcards y probarte con un quiz.</p></header>' +
             FA.datos.sesiones.map(function (s) {
                 var p = FA.c.progresoSesion(s);
