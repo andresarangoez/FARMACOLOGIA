@@ -488,3 +488,27 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 :root[data-tema="oscuro"] .pie { background: linear-gradient(120deg, #050f24 0%, #092755 45%, #16205a 75%, #071a3d 100%); background-size: 220% 220%; }
 @media (prefers-reduced-motion: reduce) { .pie, .pie::before, .pie::after { animation: none !important; } }
 @media print { .pie::before, .pie::after { display: none; } }
+
+/* ── Tarjetas de herramientas y de sesiones con el degradado del hero ── */
+.herr, .tarjeta-s {
+    position: relative; overflow: hidden; isolation: isolate; border: 1px solid rgba(255, 255, 255, .12);
+    background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); background-size: 200% 200%; background-position: 0% 50%;
+    box-shadow: 0 10px 26px rgba(7, 29, 67, .18); transition: transform .25s, box-shadow .25s, background-position .8s;
+}
+.herr::before, .tarjeta-s::before {
+    content: ""; position: absolute; z-index: -1; width: 220px; height: 220px; right: -70px; top: -90px; border-radius: 50%;
+    background: radial-gradient(circle, var(--brillo, #38bdf8), transparent 70%); filter: blur(26px); opacity: .7; transition: opacity .3s, transform .6s;
+}
+.herr:nth-child(4n+2), .tarjeta-s:nth-child(4n+2) { --brillo: #a78bfa; }
+.herr:nth-child(4n+3), .tarjeta-s:nth-child(4n+3) { --brillo: #FBD785; }
+.herr:nth-child(4n+4), .tarjeta-s:nth-child(4n+4) { --brillo: #22d3ee; }
+.herr:hover, .tarjeta-s:hover { transform: translateY(-3px); background-position: 100% 50%; box-shadow: 0 16px 34px rgba(7, 29, 67, .3); border-color: rgba(255, 255, 255, .28); }
+.herr:hover::before, .tarjeta-s:hover::before { opacity: .75; transform: scale(1.15); }
+.herr b, .tarjeta-s__txt b { color: #fff; }
+.herr span, .tarjeta-s__lista, .tarjeta-s__prog small { color: #C9D6EB; }
+.herr .icono { color: var(--amarillo); }
+.tarjeta-s__n { color: var(--amarillo); }
+.tarjeta-s__txt small { color: #9FB4D6; }
+.tarjeta-s .barra-prog { background: rgba(255, 255, 255, .18); }
+.herr--ex { background: linear-gradient(130deg, #5a3d06 0%, #9A6A12 60%, #b8862a 100%); }
+@media (prefers-reduced-motion: reduce) { .herr, .tarjeta-s, .herr::before, .tarjeta-s::before { transition: none; } }
