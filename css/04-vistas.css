@@ -512,3 +512,6 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .tarjeta-s .barra-prog { background: rgba(255, 255, 255, .18); }
 .herr--ex { background: linear-gradient(130deg, #5a3d06 0%, #9A6A12 60%, #b8862a 100%); }
 @media (prefers-reduced-motion: reduce) { .herr, .tarjeta-s, .herr::before, .tarjeta-s::before { transition: none; } }
+
+/* subtítulo del hero en Quicksand */
+.hero .eyebrow { font-family: "Quicksand", var(--f-main); font-weight: 700; letter-spacing: .14em; }
