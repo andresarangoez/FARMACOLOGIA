@@ -289,24 +289,138 @@ window.DIAPOS = [
     tipo: 'quiz',
     titulo: 'Preguntas tipo parcial',
     preguntas: [
-      { ses: 10, q: '¿Qué mutación esquiva el ponatinib?', ops: ['V600E', 'T315I', 'TSC1', 'C5b-9'], ok: 1,
-        exp: 'El ponatinib tiene un enlace triple de etinilo que le permite unirse a BCR-ABL con la mutación T315I. V600E es la mutación de BRAF.' },
-      { ses: 12, q: '¿Cómo actúa el bevacizumab?', ops: ['Bloquea por dentro la tirosina quinasa de VEGFR', 'Se une al VEGF-A y le impide unirse a sus receptores', 'Inhibe el proteasoma 26S', 'Se une a CD25 del linfocito T'], ok: 1,
-        exp: 'Es un anticuerpo que atrapa el VEGF-A fuera de la célula. Bloquear por dentro la quinasa de VEGFR es lo que hace el sunitinib.' },
-      { ses: 11, q: '¿Qué bloquea el complejo tacrolimus–FKBP-12?', ops: ['mTORC1', 'La IMPDH', 'La calcineurina', 'El receptor de IL-2'], ok: 2,
-        exp: 'Tacrolimus + FKBP-12 bloquea la calcineurina: NF-AT no entra al núcleo y no hay IL-2. El complejo de sirolimus con FKBP-12 es el que bloquea mTORC1.' },
-      { ses: 12, q: 'En el síndrome de lisis tumoral se eleva:', ops: ['Sodio, calcio y glucosa', 'Potasio, fósforo y ácido úrico', 'Magnesio, cloro y albúmina', 'Bicarbonato, calcio y urea'], ok: 1,
-        exp: 'Al destruirse las células tumorales liberan potasio, fósforo y ácido úrico; el ácido úrico precipita en el túbulo renal.' },
-      { ses: 13, q: '¿Qué vacuna es obligatoria antes del eculizumab?', ops: ['BCG', 'Fiebre amarilla', 'Meningococo ACWY y B', 'Varicela'], ok: 2,
-        exp: 'Al bloquear C5 no se forma el complejo de ataque a la membrana, que defiende contra el meningococo. También se vacuna contra neumococo y Hib.' },
-      { ses: 13, q: '¿Qué se confirma antes de iniciar belatacept?', ops: ['Serología para virus de Epstein-Barr', 'Densitometría ósea', 'Niveles de IL-17A', 'Prueba de G6PD'], ok: 0,
-        exp: 'Hay mayor riesgo de trastorno linfoproliferativo postrasplante, por eso se confirma la serología para EBV.' },
-      { ses: 14, q: '¿Cuál produce parálisis flácida del helminto?', ops: ['Pirantel', 'Ivermectina', 'Albendazol', 'Piperazina'], ok: 3,
-        exp: 'La piperazina es agonista GABA: hiperpolariza y deja al nematodo en parálisis flácida. El pirantel produce parálisis espástica.' },
-      { ses: 10, q: '¿Qué vigilancia exige el vemurafenib?', ops: ['Calcio por hipocalcemia', 'ECG por prolongación del QT', 'Serología para EBV', 'Niveles valle de 5-15 ng/mL'], ok: 1,
-        exp: 'El vemurafenib prolonga el QT: ECG a los 15 días y luego mensual. Hipocalcemia es del denosumab, EBV del belatacept y niveles valle de sirolimus y everolimus.' }
+      {
+        "ses": 12,
+        "tema": "Cuidados de enfermería con bevacizumab",
+        "q": "Antes de administrar bevacizumab, enfermería verifica la preparación y los parámetros clínicos. ¿Cuál conjunto de acciones es coherente con el perfil del medicamento?",
+        "ops": [
+          "No agitar el vial, diluir según ficha técnica en cloruro de sodio al 0,9 % y vigilar presión arterial y proteinuria.",
+          "Mezclar con otros medicamentos en la misma bolsa y controlar únicamente la glucemia capilar.",
+          "Agitar vigorosamente el vial, diluir en dextrosa y omitir la medición de presión arterial.",
+          "Administrar por vía intramuscular y vigilar principalmente hipoglucemia e hipomagnesemia."
+        ],
+        "ok": 0,
+        "exp": "El bevacizumab es un anticuerpo monoclonal: si se agita, sus proteínas se rompen y se forma espuma. Se diluye solo en cloruro de sodio al 0,9 % (es incompatible con dextrosa y no se mezcla con otros fármacos) y se administra por vía intravenosa. Al bloquear el VEGF disminuye el óxido nítrico (hipertensión) y se altera la filtración glomerular (proteinuria), por eso se vigilan presión arterial y proteinuria antes de cada ciclo. La b mezcla fármacos y vigila un parámetro que no corresponde; la c agita el vial, usa dextrosa y omite la presión arterial; la d usa una vía incorrecta (no es intramuscular) y vigila efectos que no son los del fármaco."
+      },
+      {
+        "ses": 12,
+        "tema": "Mecanismos de bevacizumab y sunitinib",
+        "q": "¿Cuál opción diferencia correctamente los mecanismos de bevacizumab y sunitinib en el tratamiento antiangiogénico?",
+        "ops": [
+          "Bevacizumab inhibe el proteasoma 26S; sunitinib neutraliza directamente VEGF-A circulante.",
+          "Bevacizumab se une a RANKL; sunitinib activa receptores nicotínicos en células endoteliales.",
+          "Bevacizumab neutraliza VEGF-A extracelular; sunitinib inhibe la actividad tirosina quinasa de receptores como VEGFR y PDGFR.",
+          "Bevacizumab bloquea CD25 en linfocitos T; sunitinib inhibe la síntesis de purinas."
+        ],
+        "ok": 2,
+        "exp": "El bevacizumab es un anticuerpo monoclonal que se une al VEGF-A fuera de la célula y le impide unirse a VEGFR-1 y VEGFR-2. El sunitinib es una molécula pequeña oral que bloquea, dentro de la célula, la actividad tirosina quinasa de varios receptores (VEGFR, PDGFR y c-KIT). La a describe al bortezomib (proteasoma 26S) e invierte el papel del bevacizumab; la b describe al denosumab (RANKL) y un mecanismo inexistente; la d describe a basiliximab (CD25) y al micofenolato (síntesis de purinas)."
+      },
+      {
+        "ses": 12,
+        "tema": "Mecanismo del gemtuzumab ozogamicina",
+        "q": "Gemtuzumab ozogamicina se utiliza como terapia dirigida en determinadas leucemias mieloides. ¿Cómo consigue liberar su compuesto citotóxico dentro de la célula diana?",
+        "ops": [
+          "Se une a CD30, activa receptores nicotínicos y libera un aminoglucósido en el espacio extracelular.",
+          "Se une a CD33 en la célula mieloide, el complejo se internaliza y libera calicheamicina dentro de la célula.",
+          "Se une a CD25, bloquea IL-2 y libera un inhibidor de calcineurina en el núcleo.",
+          "Se une a VEGF-A, bloquea la angiogénesis y libera un antagonista de RANKL en el citoplasma."
+        ],
+        "ok": 1,
+        "exp": "El gemtuzumab es un anticuerpo anti-CD33 (antígeno de la célula de leucemia mieloide) conjugado con ozogamicina, un derivado de la calicheamicina. Tras unirse a CD33 el complejo se internaliza, el citotóxico se libera en el lisosoma y rompe la doble cadena de ADN, lo que lleva a la apoptosis. La a confunde el blanco con el del brentuximab (CD30) y libera el fármaco fuera de la célula; la c mezcla el mecanismo de basiliximab (CD25) con el de los inhibidores de la calcineurina; la d describe al bevacizumab (VEGF-A) y al denosumab (RANKL)."
+      },
+      {
+        "ses": 12,
+        "tema": "Aflibercept frente a ranibizumab",
+        "q": "¿Qué diferencia de reconocimiento molecular distingue a aflibercept de ranibizumab?",
+        "ops": [
+          "Aflibercept actúa como receptor señuelo que captura VEGF-A, VEGF-B y PlGF; ranibizumab se une a VEGF-A.",
+          "Ambos neutralizan exclusivamente VEGF-B y bloquean directamente el receptor RANK de los osteoclastos.",
+          "Ranibizumab captura VEGF-A, VEGF-B y PlGF, mientras aflibercept se une exclusivamente a VEGF-A.",
+          "Aflibercept inhibe CD25, mientras ranibizumab bloquea la coestimulación CD80/CD86."
+        ],
+        "ok": 0,
+        "exp": "El aflibercept es una proteína de fusión que se comporta como un receptor falso (\"trampa molecular\") y atrapa VEGF-A, VEGF-B y el factor de crecimiento placentario (PlGF). El ranibizumab es un fragmento Fab de anticuerpo que se une con alta afinidad solo al VEGF-A. La b inventa un blanco común y mezcla el receptor RANK (vía del denosumab); la c invierte los dos fármacos; la d describe a basiliximab (CD25) y a belatacept (CD80/CD86)."
+      },
+      {
+        "ses": 13,
+        "tema": "Secukinumab y candidiasis oral",
+        "q": "Un paciente tratado con secukinumab desarrolla candidiasis oral recurrente. ¿Qué mecanismo explica esta susceptibilidad?",
+        "ops": [
+          "Bloqueo de CD33, que disminuye la fagocitosis de levaduras por los hepatocitos.",
+          "Neutralización de IL-17A, una citocina importante en la defensa de las superficies mucocutáneas frente a hongos.",
+          "Inhibición de TNF-alfa, que aumenta directamente la síntesis de ergosterol en *Candida*.",
+          "Bloqueo de IL-2, que impide la maduración de osteoclastos y reduce la producción de eritrocitos."
+        ],
+        "ok": 1,
+        "exp": "El secukinumab es un anticuerpo monoclonal anti-IL-17A usado en psoriasis. La IL-17 recluta neutrófilos y estimula la producción de péptidos antimicrobianos en la piel y las mucosas, la principal defensa frente a Candida; al neutralizarla aparecen candidiasis oral y mucocutánea. La a confunde el blanco con el del gemtuzumab (CD33), y los hepatocitos no son la defensa frente a levaduras; la c atribuye a la inhibición del TNF un efecto sobre el ergosterol del hongo que no existe; la d describe la vía de la IL-2 (basiliximab) con funciones que no le corresponden."
+      },
+      {
+        "ses": 13,
+        "tema": "Efecto del denosumab",
+        "q": "¿Cuál de los siguientes efectos celulares se espera tras el bloqueo de RANKL por denosumab?",
+        "ops": [
+          "Disminución de la diferenciación y actividad osteoclástica, con reducción de la resorción ósea.",
+          "Estimulación de la señal RANK en osteoclastos maduros y aumento de su actividad.",
+          "Aumento de la diferenciación de precursores osteoclásticos y mayor resorción ósea.",
+          "Inhibición directa de la síntesis de colágeno tipo I por los osteoblastos como mecanismo primario."
+        ],
+        "ok": 0,
+        "exp": "El denosumab es un anticuerpo monoclonal que se une al RANKL e impide que active el receptor RANK de los osteoclastos y sus precursores. Sin esa señal, los osteoclastos no se forman, no se activan y viven menos, por lo que disminuye la resorción ósea. La b y la c describen lo contrario (activación de RANK y más resorción); la d atribuye un efecto sobre los osteoblastos que no es su mecanismo."
+      },
+      {
+        "ses": 11,
+        "tema": "Efectos adversos del tacrolimus",
+        "q": "Un paciente pediátrico tratado con tacrolimus presenta aumento de creatinina, temblor, hiperglucemia, hiperpotasemia e hipomagnesemia. ¿Cuál interpretación farmacológica es la más adecuada?",
+        "ops": [
+          "Son efectos compatibles con tacrolimus: nefrotoxicidad, neurotoxicidad, alteración de la homeostasis de glucosa y cambios electrolíticos.",
+          "Indican bloqueo de VEGF y obligan a descartar prioritariamente hemorragia, proteinuria y perforación gastrointestinal.",
+          "Corresponden a una reacción típica de anti-CD25 que se manifiesta principalmente con hipocalcemia y osteonecrosis.",
+          "Son manifestaciones características de inhibición de mTOR y requieren valorar principalmente hiperlipidemia y estomatitis."
+        ],
+        "ok": 0,
+        "exp": "El tacrolimus produce nefrotoxicidad (vasoconstricción de la arteriola aferente: sube la creatinina), neurotoxicidad (atraviesa la barrera hematoencefálica: temblor), diabetes postrasplante (inhibe la secreción de insulina) y trastornos electrolíticos (pérdida de magnesio por el túbulo y retención de potasio). La b describe al bevacizumab (VEGF); la c, un cuadro que no corresponde al basiliximab (anti-CD25); la d, los efectos de sirolimus y everolimus (mTOR)."
+      },
+      {
+        "ses": 11,
+        "tema": "Reacción a la infusión de nimotuzumab",
+        "q": "Durante la administración intravenosa de nimotuzumab, un paciente presenta escalofríos, fiebre y malestar. ¿Cuál es la prioridad de enfermería ante la sospecha de reacción relacionada con la infusión?",
+        "ops": [
+          "Aumentar la velocidad para completar la dosis antes de que progrese la reacción.",
+          "Valorar signos vitales y gravedad de los síntomas, detener o disminuir la infusión según protocolo y notificar al equipo tratante.",
+          "Continuar sin vigilancia adicional porque las reacciones de infusión no se relacionan con anticuerpos monoclonales.",
+          "Administrar la siguiente dosis de inmediato para evitar pérdida de eficacia terapéutica."
+        ],
+        "ok": 1,
+        "exp": "El nimotuzumab es un anticuerpo monoclonal y puede producir escalofrío y fiebre por liberación de citoquinas e hipotensión si se infunde rápido. Ante la reacción se valoran signos vitales y gravedad, se detiene o disminuye la infusión según el protocolo y se avisa al equipo. Por eso se premedica, se infunde lento y se vigilan los signos vitales cada 15 minutos la primera hora. La a empeora la reacción (acelerar la infusión causa hipotensión); la c es falsa, porque las reacciones a la infusión son típicas de los anticuerpos monoclonales; la d no tiene sentido clínico."
+      },
+      {
+        "ses": 13,
+        "tema": "Secukinumab y enfermedad inflamatoria intestinal",
+        "q": "Un paciente que recibe secukinumab presenta diarrea persistente, dolor abdominal y sangre en las deposiciones. ¿Qué relación farmacológica debe considerarse?",
+        "ops": [
+          "La inhibición de VEGFR causa siempre infección intestinal por microorganismos anaerobios.",
+          "La unión a CD25 provoca una estimulación directa de la secreción intestinal de ácido gástrico.",
+          "El bloqueo de IL-17A puede asociarse con aparición o exacerbación de enfermedad inflamatoria intestinal.",
+          "La inhibición de RANKL produce ulceración intestinal por aumento de la actividad osteoclástica."
+        ],
+        "ok": 2,
+        "exp": "En el intestino la IL-17A ayuda a mantener la barrera de la mucosa; al bloquearla con secukinumab puede aparecer o empeorar una enfermedad inflamatoria intestinal (Crohn o colitis ulcerosa), que se manifiesta con diarrea persistente, dolor abdominal y sangre en las heces. La a atribuye a VEGFR un efecto que no tiene; la b inventa una acción del anti-CD25 (basiliximab); la d contradice el efecto del denosumab, que disminuye la actividad osteoclástica."
+      },
+      {
+        "ses": 11,
+        "tema": "Tacrolimus intravenoso y el material del equipo",
+        "q": "Durante la preparación de tacrolimus intravenoso, el equipo identifica que el medicamento puede adsorberse al material de ciertos sistemas de administración. ¿Cuál es la implicación clínica de esta propiedad?",
+        "ops": [
+          "La adsorción al sistema puede reducir la cantidad de medicamento que llega al paciente y comprometer la exposición terapéutica.",
+          "El contacto con el sistema elimina la necesidad de monitorizar concentraciones sanguíneas.",
+          "El fármaco se transforma en un metabolito tóxico al entrar en contacto con cualquier material plástico.",
+          "La unión al material aumenta de forma predecible la concentración libre y produce una sobredosis inmediata."
+        ],
+        "ok": 0,
+        "exp": "El tacrolimus se adhiere al PVC de los equipos de infusión, de modo que parte de la dosis queda en el sistema y no llega al paciente; por eso se usa el equipo indicado y se controlan los niveles valle (5 a 15 ng/mL). La b es falsa: justamente por esta pérdida hay que seguir midiendo niveles; la c inventa una transformación química que no ocurre; la d dice lo contrario, porque la adsorción disminuye la dosis que recibe el paciente."
+      }
     ],
-    notas: 'Bueno muchachos, llegó la hora de medirse. Esta diapositiva va pasando las preguntas una por una; yo leo la pregunta, les doy unos segundos, ustedes responden en el chat y luego toco la opción para ver si acertaron. No le tengan miedo a equivocarse, que es mejor equivocarse hoy que el sábado. Les dejo las respuestas para que yo no me enrede: la primera, T315I, y ojo que V600E es de BRAF. La segunda, el bevacizumab atrapa el VEGF-A afuera; la trampa es el sunitinib, que bloquea por dentro. La tercera, el tacrolimus con FKBP-12 bloquea la calcineurina; el que bloquea mTOR es el sirolimus. La cuarta, en lisis tumoral suben potasio, fósforo y ácido úrico. La quinta, meningococo antes del eculizumab. La sexta, serología para Epstein-Barr antes del belatacept. La séptima, parálisis flácida es la piperazina; espástica es el pirantel. Y la octava, el vemurafenib exige electrocardiograma por el QT. Si alguno falló varias, que repase las tablas de los -tinib y de los anticuerpos.'
+    notas: 'Bueno muchachos, llegó la hora de medirse con preguntas tipo parcial. Estas diez están armadas igualito a como pregunta la docente: las cuatro opciones se parecen y lo que cambia es el fármaco, el blanco o el cuidado, entonces hay que leer con calma. Yo leo el caso, les doy unos segunditos, ustedes responden en el chat y luego toco la opción para ver la justificación. Les dejo las respuestas para no enredarme. Uno, bevacizumab: A, no agitar el vial, diluir en salina al 0,9 y vigilar presión y proteinuria. Dos: C, el bevacizumab atrapa el VEGF-A afuera y el sunitinib bloquea la tirosina quinasa adentro. Tres: B, el gemtuzumab se une a CD33, se internaliza y suelta la calicheamicina. Cuatro: A, el aflibercept es el receptor señuelo que atrapa VEGF-A, VEGF-B y PlGF; el ranibizumab solo VEGF-A. Cinco: B, el secukinumab neutraliza la IL-17A, que defiende las mucosas de la Candida. Seis: A, con el denosumab baja la diferenciación y la actividad del osteoclasto. Siete: A, creatinina alta, temblor, hiperglucemia, potasio alto y magnesio bajo son del tacrolimus. Ocho: B, ante una reacción a la infusión de nimotuzumab se valoran signos vitales, se detiene o se baja la infusión y se avisa. Nueve: C, el bloqueo de IL-17A puede hacer aparecer o empeorar una enfermedad inflamatoria intestinal. Y diez: A, el tacrolimus se pega al equipo y le llega menos dosis al paciente. Pelados, fíjense en el truco: casi siempre las opciones malas describen otro fármaco del parcial, entonces si saben a qué se une cada uno, descartan rapidito.'
   },
   {
     tipo: 'cierre',
