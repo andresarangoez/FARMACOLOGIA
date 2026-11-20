@@ -120,7 +120,7 @@ window.DIAPOS = [
     notas: 'Ahora el bortezomib, que es bien bonito de entender. Sucede que la célula todo el tiempo produce proteínas que se dañan, y para no llenarse de basura las marca con una etiqueta que se llama ubiquitina y las manda al proteasoma 26S, que las tritura. ¿Qué hace el bortezomib, pelados? Bloquea ese proteasoma de forma reversible. Entonces las proteínas dañadas se empiezan a acumular, la célula tumoral entra en estrés y termina en apoptosis; eso es justo lo que ven en la animación. El efecto adverso que más preguntan es la neuropatía periférica, con hormigueo y dolor, y también puede dar PRES, que es un síndrome neurológico. Y aquí les dejo el puente para la siguiente diapositiva: cuando un fármaco como este destruye muchas células tumorales al mismo tiempo, todo lo que tenían adentro sale a la sangre, y eso es el síndrome de lisis tumoral.'
   },
   {
-    tipo: 'tarjetas', ses: 12, ceja: 'Sesión 12 · urgencia oncológica',
+    tipo: 'lisis', ses: 12,
     titulo: 'Síndrome de lisis tumoral',
     items: [
       ['¿Qué pasa?', 'Se destruyen muchas células tumorales a la vez y su contenido sale a la sangre.'],
