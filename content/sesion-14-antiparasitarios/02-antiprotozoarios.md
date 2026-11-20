@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Metronidazol / tinidazol:: Entra al anaerobio o protozoo → Se reduce y activa (ambiente anaerobio) → Radicales libres dañan el ADN → Muerte celular ;; Nitazoxanida:: Se convierte en tizoxanida → Inhibe la enzima PFOR → Cae la producción de ATP → Muerte del parásito ;; Paromomicina:: Paromomicina → Se une a la subunidad 30S → Errores de lectura del ARNm → Sin proteínas: muerte del microorganismo
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 14).
-
 ## Nitroimidazoles
 
 - Descubiertos en la **década de 1950**; el químico **K. Maeda**, en Japón, fue uno de los pioneros en su desarrollo.

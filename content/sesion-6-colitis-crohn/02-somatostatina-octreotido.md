@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Octreótido:: Octreótido o somatostatina → Activan los receptores de somatostatina → Inhiben hormonas y secreción digestiva → Menos diarrea, débito de fístulas y flujo esplácnico
 ---
 
-> Complemento de bibliografía de referencia: el material de la clase solo nombra estos fármacos.
-
 ## Qué son
 
 - La **somatostatina** es una hormona natural (hipotálamo, páncreas y tubo digestivo) que **frena la secreción** de muchas hormonas y jugos digestivos. Su vida media es muy corta (**1-3 minutos**), por eso se da en infusión continua.

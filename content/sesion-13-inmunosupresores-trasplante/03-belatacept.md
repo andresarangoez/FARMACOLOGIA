@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Belatacept:: Célula presentadora muestra el antígeno del injerto → Belatacept se une a CD80/CD86 → Se impide la segunda señal (CD28) → Linfocito T no se activa
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 13).
-
 ## Bloqueadores de la estimulación de las células T
 
 Cómo se produce el rechazo:

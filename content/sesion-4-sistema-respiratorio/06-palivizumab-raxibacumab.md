@@ -24,8 +24,6 @@ esquema: Palivizumab:: Virus sincitial respiratorio → Palivizumab se une a la 
 
 ## Raxibacumab
 
-> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
-
 - **Anticuerpo monoclonal humano IgG1** dirigido contra el **antígeno protector (PA)** de la toxina de ***Bacillus anthracis***.
 - **Mecanismo:** al unirse al antígeno protector impide que la toxina del ántrax se una a las células y entre en ellas; así **neutraliza la toxina** (no mata la bacteria).
 - **Uso:** **ántrax por inhalación**, junto con antibióticos, y profilaxis cuando no hay otras opciones. Aprobado por la FDA en **2012**; incluye uso en niños.

@@ -35,8 +35,6 @@ esquema: Metotrexato:: Metotrexato se parece al ácido fólico → Bloquea la di
 
 ## Otros agentes no biológicos
 
-> Complemento de bibliografía de referencia (no estaba en el PDF recibido de la clase).
-
 ### Azatioprina
 
 - **Profármaco** que se convierte en **6-mercaptopurina**; inhibe la síntesis de purinas y la proliferación de linfocitos (tiopurina).

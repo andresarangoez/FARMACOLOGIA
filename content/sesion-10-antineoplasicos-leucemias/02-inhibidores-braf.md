@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Vemurafenib / dabrafenib:: BRAF V600E siempre encendida → El fármaco bloquea la cinasa BRAF → MEK y ERK quedan apagadas → Se detiene el crecimiento del tumor ;; Trametinib:: Señal de BRAF hacia MEK → Trametinib se une alostéricamente a MEK 1/2 → ERK no se activa → Apoptosis y parada del ciclo celular
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 10).
-
 ## La vía BRAF y la mutación V600E
 
 - **Vía de señalización sana (cascada regulada):** el factor de crecimiento se une al receptor de membrana → BRAF (normalmente inactiva) se activa **solo cuando es necesario** → MEK → ERK → en el núcleo, ERK ordena la división celular → crecimiento celular controlado.

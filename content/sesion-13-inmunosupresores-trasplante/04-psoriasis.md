@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Ustekinumab:: IL-12 e IL-23 activan Th1 y Th17 → Ustekinumab se une a la subunidad p40 → No se activan sus receptores → Menos inflamación de la piel ;; Ixekizumab / secukinumab:: IL-17A estimula los queratinocitos → El fármaco neutraliza la IL-17A → Su receptor no se activa → Menos placas y descamación
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 13).
-
 ## Psoriasis
 
 - **¿Qué es?** Enfermedad **inflamatoria crónica de la piel**.

@@ -32,8 +32,6 @@ esquema: Antihistamínico 2.ª generación:: Histamina liberada → Fármaco blo
 
 ### Dosis de desloratadina y fexofenadina
 
-> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
-
 | Fármaco | Edad | Dosis |
 |---|---|---|
 | Desloratadina | 1-5 años | 1,25 mg/día |
