@@ -153,7 +153,7 @@
   escala();
   ancho.addEventListener ? ancho.addEventListener('change', function () { ver(i, true); escala(); }) : null;
 
-  function recibir(m) { if (!m || m.de !== 'pc' || typeof m.n !== 'number') return; var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; if (m.n !== i) ver(m.n, true); }
+  function recibir(m) { if (!m || (m.de !== 'pc' && m.de !== 'cel') || typeof m.n !== 'number' || m.o === YO) return; var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; if (m.n !== i) ver(m.n, true); }
   if (canal) { canal.onmessage = function (ev) { estado.classList.add('ok'); recibir(ev.data); }; canal.postMessage({ de: 'cel-hola' }); }
   if (SALA && window.EventSource) {
     var fuente = new EventSource('https://ntfy.sh/' + SALA + '/sse');
