@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repaso último parcial</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mecanismo.css">
+<style>
+  :root {
+    --azul: #082956; --azul-2: #0A3E7C; --oro: #EDBE7B; --oro-2: #FBD785; --tinta: #0f2342; --suave: #5b6b85; --fondo: #f4f7fc; --linea: #e1e8f3;
+    --amarillo: #EDBE7B; --s-2: 8px; --s-3: 12px; --s-4: 18px; --s-5: 24px; --t-xs: .74rem; --t-sm: .88rem; --r-lg: 22px;
+    --f-main: "Nunito Sans", system-ui, sans-serif; --f-display: "Montserrat", var(--f-main);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0b1730; overflow: hidden; font-family: var(--f-main); color: var(--tinta); }
+  #escenario { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; transform: translate(-50%, -50%) scale(var(--k, 1)); }
+  .diapo { position: absolute; inset: 0; background: #fff; border-radius: 6px; overflow: hidden; display: none; padding: 46px 60px 40px; }
+  .diapo.activa { display: block; }
+  .diapo::before { content: ""; position: absolute; width: 520px; height: 520px; right: -260px; top: -300px; border-radius: 50%; background: radial-gradient(circle, rgba(237,190,123,.16), transparent 70%); pointer-events: none; }
+
+  .an { opacity: 0; }
+  .activa .an { animation: sube .6s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--d, 0) * 90ms + 80ms); }
+  @keyframes sube { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  h1, h2 { font-family: var(--f-display); font-weight: 800; color: var(--azul); letter-spacing: -.02em; margin: 0; }
+  h2 { font-size: 40px; line-height: 1.1; }
+  .cab { text-align: center; margin-bottom: 26px; }
+  .cab h2 { margin-top: 12px; }
+  .etq { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: #eaf1fb; border: 1px solid #d3e1f5; color: var(--azul-2); font: 700 14px/1 "Quicksand", var(--f-main); letter-spacing: .02em; }
+  .etq b { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px; border-radius: 999px; background: var(--azul); color: var(--oro-2); font: 800 13px/1 var(--f-display); }
+
+  .oscura { background: radial-gradient(120% 120% at 50% 0%, #0d3a7a 0%, #082956 45%, #051634 100%); color: #fff; }
+  .oscura::before { display: none; }
+  .burbujas span { position: absolute; border-radius: 50%; border: 2px solid rgba(125,211,252,.35); background: radial-gradient(circle at 35% 35%, rgba(56,189,248,.25), rgba(8,41,86,0) 70%); animation: flota 14s ease-in-out infinite; }
+  .burbujas span::after { content: ""; position: absolute; width: 34%; height: 34%; left: 40%; top: 38%; border-radius: 50%; background: rgba(167,139,250,.35); }
+  @keyframes flota { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(var(--x, 20px), var(--y, -30px)) scale(1.06); } }
+  .puntos-oro span { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--oro-2); box-shadow: 0 0 14px var(--oro-2); animation: titila 3.2s ease-in-out infinite; }
+  @keyframes titila { 0%, 100% { opacity: .2; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
+  .port { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .halo { position: relative; width: 120px; height: 120px; margin-bottom: 28px; display: grid; place-items: center; }
+  .halo::before, .halo::after { content: ""; position: absolute; inset: -14px; border-radius: 50%; border: 2px solid rgba(251,215,133,.55); animation: onda 2.8s ease-out infinite; }
+  .halo::after { animation-delay: 1.4s; }
+  @keyframes onda { from { transform: scale(.85); opacity: .9; } to { transform: scale(1.45); opacity: 0; } }
+  .halo img { width: 120px; height: 120px; border-radius: 50%; box-shadow: 0 0 40px rgba(251,215,133,.35); }
+  .oscura .etq { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.25); color: var(--oro-2); }
+  .oscura h1 { color: #fff; font-size: 82px; line-height: 1.02; margin-top: 18px; }
+  .oscura h1 em { font-style: normal; background: linear-gradient(90deg, var(--oro-2), #fff 50%, var(--oro-2)); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: brillo 5s linear infinite; }
+  @keyframes brillo { to { background-position: -200% 0; } }
+  .port p { font-size: 24px; color: #d5e0f2; margin: 22px 0 0; }
+  .linea-oro { width: 0; height: 4px; border-radius: 4px; background: var(--oro); margin-top: 26px; }
+  .activa .linea-oro { animation: crece 1.2s .8s ease forwards; }
+  @keyframes crece { to { width: 220px; } }
+
+  .temas { display: grid; gap: 14px; max-width: 900px; margin: 10px auto 0; }
+  .tema { display: flex; align-items: center; gap: 22px; padding: 16px 22px; border-radius: 20px; background: var(--fondo); border: 1px solid var(--linea); font-size: 23px; font-weight: 700; transition: transform .25s, box-shadow .25s; }
+  .tema:hover { transform: translateX(6px); box-shadow: 0 10px 24px rgba(8,41,86,.1); }
+  .num { flex: 0 0 60px; height: 60px; border-radius: 18px; display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 24px; color: var(--azul); background: linear-gradient(160deg, var(--oro-2), var(--oro)); }
+
+  .claves { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+  .clave { border-radius: 24px; padding: 34px 28px; background: linear-gradient(150deg, #0b2f63, #082956); color: #e6eefa; transition: transform .25s; }
+  .clave:hover { transform: translateY(-6px); }
+  .clave b { display: block; font-family: var(--f-display); font-size: 50px; color: var(--oro-2); margin-bottom: 8px; }
+  .clave i { display: block; font-style: normal; font-weight: 800; color: #fff; font-size: 21px; margin-bottom: 12px; }
+  .clave p { margin: 0; font-size: 18px; line-height: 1.45; }
+
+  .cadena { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 30px; align-items: start; }
+  .eslabon { position: relative; text-align: center; padding: 0 10px; }
+  .eslabon .caja { border-radius: 20px; padding: 22px 14px; min-height: 132px; background: linear-gradient(160deg, #0d356f, #082956); color: #fff; display: flex; flex-direction: column; justify-content: center; }
+  .eslabon .caja b { font-family: var(--f-display); font-size: 19px; color: var(--oro-2); }
+  .eslabon .caja span { font-size: 15px; color: #d5e0f2; margin-top: 8px; line-height: 1.35; }
+  .eslabon:not(:last-child)::after { content: "➜"; position: absolute; right: -12px; top: 52px; color: var(--oro); font-size: 22px; z-index: 2; }
+  .eslabon .farm { display: inline-block; margin-top: 16px; padding: 8px 14px; border-radius: 999px; background: #fff6e3; border: 1px dashed var(--oro); color: #8a5a12; font-weight: 800; font-size: 15px; }
+  .pie-nota { text-align: center; margin-top: 36px; font-size: 20px; font-weight: 700; color: var(--azul-2); }
+
+  .mec { display: grid; grid-template-columns: 0.95fr 1.15fr; gap: 38px; height: 100%; }
+  .mec__txt { display: flex; flex-direction: column; align-items: flex-start; padding-top: 4px; }
+  .mec__txt h2 { margin-top: 14px; }
+  .linea { margin: 20px 0 16px; padding: 16px 20px; border-left: 5px solid var(--oro); background: var(--fondo); border-radius: 0 16px 16px 0; font-size: 19px; line-height: 1.45; font-weight: 600; }
+  .rot { font: 800 13px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); margin: 6px 0 10px; }
+  .lista { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+  .lista li { position: relative; padding-left: 22px; font-size: 16.5px; line-height: 1.42; color: #2a3b57; }
+  .lista li::before { content: ""; position: absolute; left: 2px; top: 8px; width: 9px; height: 9px; border-radius: 3px; background: var(--oro); transform: rotate(45deg); }
+  .mec .esquema { margin: 0; height: 100%; padding: 18px 20px; }
+  .mec .esq__nombre { display: none; }
+  .mec .es-svg { max-height: 360px; }
+  .mec .es-paso p { font-size: 17px; }
+
+  .cards { display: grid; gap: 18px; }
+  .cards.n3 { grid-template-columns: repeat(3, 1fr); }
+  .cards.n2 { grid-template-columns: repeat(2, 1fr); max-width: 980px; margin: 0 auto; }
+  .card { border-radius: 22px; background: #fff; border: 1px solid var(--linea); box-shadow: 0 10px 26px rgba(8,41,86,.08); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 18px 34px rgba(8,41,86,.14); }
+  .card header { padding: 16px 20px; background: linear-gradient(135deg, #0d3a7a, #082956); color: #fff; }
+  .card header b { display: block; font-family: var(--f-display); font-size: 23px; color: #fff; }
+  .card header span { display: block; font-size: 13.5px; color: var(--oro-2); margin-top: 4px; font-weight: 700; }
+  .card dl { margin: 0; padding: 16px 20px 18px; display: grid; gap: 14px; }
+  .card dt { display: inline-block; font: 800 12.5px/1 var(--f-display); letter-spacing: .08em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; background: #eaf1fb; color: var(--azul-2); }
+  .card dt.e { background: #fdecec; color: #b42318; }
+  .card dt.c { background: #e8f8ef; color: #12733d; }
+  .card dt.d { background: #fff4dd; color: #8a5a12; }
+  .card dd { margin: 7px 0 0; font-size: 17.5px; line-height: 1.42; color: #24354f; }
+
+  .tabla { width: 100%; border-collapse: separate; border-spacing: 0 8px; font-size: 18px; }
+  .tabla th { text-align: left; font: 800 14px/1 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--suave); padding: 0 18px 4px; }
+  .tabla td { padding: 13px 18px; background: var(--fondo); }
+  .tabla td:first-child { border-radius: 14px 0 0 14px; font-weight: 800; color: var(--azul); }
+  .tabla td:last-child { border-radius: 0 14px 14px 0; }
+  .tabla tr:hover td { background: #fff6e3; }
+
+  .tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .tarjetas div { border-radius: 20px; padding: 18px 20px; background: var(--fondo); border: 1px solid var(--linea); transition: transform .25s; }
+  .tarjetas div:hover { transform: translateY(-5px); }
+  .tarjetas b { display: block; font-family: var(--f-display); color: var(--azul); font-size: 21px; margin-bottom: 10px; }
+  .tarjetas p { margin: 0; font-size: 16px; line-height: 1.45; color: #2a3b57; }
+
+  .flips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .flip { height: 118px; perspective: 900px; cursor: pointer; border: 0; background: none; padding: 0; font: inherit; }
+  .flip i { position: relative; display: block; width: 100%; height: 100%; transition: transform .6s; transform-style: preserve-3d; font-style: normal; }
+  .flip.vuelta i { transform: rotateY(180deg); }
+  .flip span { position: absolute; inset: 0; display: grid; place-items: center; padding: 12px 16px; border-radius: 18px; backface-visibility: hidden; text-align: center; }
+  .flip .fr { background: linear-gradient(150deg, #0d3a7a, #082956); color: #fff; font: 800 20px/1.2 var(--f-display); }
+  .flip .at { background: #fff6e3; border: 2px solid var(--oro); color: #5c3a06; font-size: 16.5px; font-weight: 700; line-height: 1.35; transform: rotateY(180deg); }
+
+  .quiz { max-width: 1080px; margin: 0 auto; text-align: center; }
+  .quiz h2 { font-size: 40px; margin-top: 14px; min-height: 96px; display: flex; align-items: center; justify-content: center; }
+  .ops { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; text-align: left; }
+  .op { display: flex; align-items: center; gap: 16px; font: 700 21px/1.3 var(--f-main); color: var(--tinta); background: #fff; border: 2px solid var(--linea); border-radius: 20px; padding: 17px 20px; cursor: pointer; transition: all .25s; }
+  .op span { flex: 0 0 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--fondo); font-family: var(--f-display); color: var(--azul); }
+  .op:hover { border-color: var(--azul-2); transform: translateY(-2px); }
+  .op.bien { border-color: #16a34a; background: #ecfdf3; }
+  .op.bien span { background: #16a34a; color: #fff; }
+  .op.mal { border-color: #ef4444; background: #fef2f2; }
+  .op.mal span { background: #ef4444; color: #fff; }
+  .exp { margin: 20px 0 0; padding: 16px 20px; border-radius: 16px; background: #082956; color: #e6eefa; font-size: 18.5px; line-height: 1.45; text-align: left; opacity: 0; transform: translateY(8px); transition: all .35s; min-height: 84px; }
+  .exp.ver { opacity: 1; transform: none; }
+  .exp b { color: var(--oro-2); }
+  .sig { font-weight: 600; font-size: .86em; color: #6b7a93; }
+  .caja .sig, .clave .sig, .flip .fr .sig { color: #b8c7e0; }
+  .tabla .sig { font-size: 12.5px; line-height: 1.25; }
+  .tabla.densa { font-size: 15.5px; border-spacing: 0 5px; }
+  .tabla.densa td { padding: 7px 16px; }
+  .q-nav { position: absolute; top: 40px; left: 60px; display: flex; gap: 10px; z-index: 3; }
+  body.mini #ctrl, body.mini #punto, body.mini #barra, body.mini #guion { display: none !important; }
+  body.mini .an { opacity: 1 !important; animation: none !important; }
+  body.mini .linea-oro { width: 220px; }
+  .q-nav button { font: 800 16px var(--f-main); padding: 11px 22px; border-radius: 999px; border: 2px solid var(--linea); background: #fff; color: var(--azul); cursor: pointer; }
+  .q-nav button.sig { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .q-cambia { animation: sube .45s ease; }
+
+  .cierre { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; height: 100%; }
+  .cierre h1 { font-size: 62px; color: #fff; margin-top: 18px; }
+  .url { margin: 18px 0 26px; font-family: var(--f-display); font-weight: 800; font-size: 26px; color: var(--oro-2); }
+  .qr-caja { background: #fff; padding: 16px; border-radius: 22px; }
+
+  #barra { position: fixed; left: 0; bottom: 0; height: 3px; background: var(--oro); transition: width .3s; z-index: 5; opacity: .7; }
+  /* navegación: solo botones abajo al centro */
+  #nav-inf { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; gap: 14px; z-index: 7; }
+  #nav-inf button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); background: rgba(8,41,86,.55); color: #fff; font: 800 26px/1 var(--f-main); cursor: pointer; opacity: .45; transition: opacity .2s, background .2s, transform .15s; backdrop-filter: blur(4px); }
+  #nav-inf button:hover { opacity: 1; background: rgba(8,41,86,.92); }
+  #nav-inf button:active { transform: scale(.94); }
+
+  /* herramientas: abajo a la derecha */
+  #herr { position: fixed; right: 14px; bottom: 74px; display: flex; flex-direction: column; gap: 8px; z-index: 7; padding: 8px; border-radius: 18px; background: rgba(8,41,86,.55); border: 1px solid rgba(255,255,255,.2); opacity: .5; transition: opacity .2s, background .2s; backdrop-filter: blur(4px); }
+  #herr:hover, #herr.activo { opacity: 1; background: rgba(8,41,86,.92); }
+  #herr button { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; border: 0; background: transparent; color: #fff; cursor: pointer; padding: 0; }
+  #herr button:hover { background: rgba(255,255,255,.12); }
+  #herr button.on { background: var(--oro-2); color: var(--azul); }
+  #herr svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  #herr hr { width: 70%; border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 2px auto; }
+  #colores { position: fixed; right: 76px; bottom: 74px; display: none; flex-direction: column; gap: 8px; z-index: 7; padding: 10px 8px; border-radius: 16px; background: rgba(8,41,86,.92); }
+  #colores.ver { display: flex; }
+  #colores button { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); cursor: pointer; padding: 0; }
+  #colores button.on { outline: 3px solid var(--oro-2); outline-offset: 2px; }
+
+  /* lienzo de dibujo y pizarra (dentro del escenario: escala con la diapositiva) */
+  #lienzo { position: absolute; inset: 0; width: 1280px; height: 720px; z-index: 20; pointer-events: none; }
+  #lienzo.dibuja { pointer-events: auto; cursor: crosshair; }
+  #lienzo.laser { pointer-events: auto; cursor: none; }
+  #pizarra { position: absolute; inset: 0; z-index: 15; display: none; border-radius: 6px; background-color: #fff; background-image: linear-gradient(#eef2f8 1px, transparent 1px), linear-gradient(90deg, #eef2f8 1px, transparent 1px); background-size: 32px 32px; }
+  #pizarra.ver { display: block; }
+  body.mini #nav-inf, body.mini #herr, body.mini #colores, body.mini #lienzo { display: none !important; }
+  #punto { position: fixed; left: 10px; bottom: 10px; width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgba(150,165,190,.35); cursor: pointer; z-index: 6; }
+  #punto:hover { background: rgba(237,190,123,.8); }
+  #guion { position: fixed; inset: 0; background: rgba(4,14,32,.86); display: none; place-items: center; z-index: 10; }
+  #guion.ver { display: grid; }
+  #guion > div { background: #fff; border-radius: 20px; padding: 18px; }
+  #qr-guion { display: none; place-items: center; }
+  #guion.abierto #qr-guion { display: grid; }
+  #guion.abierto #llave { display: none; }
+  #llave { display: flex; align-items: center; gap: 10px; }
+  #llave span { font-size: 24px; color: #b07d2e; }
+  #pin { width: 140px; font: 800 24px sans-serif; letter-spacing: .4em; text-align: center; color: var(--azul); background: var(--fondo); border: 2px solid var(--linea); border-radius: 14px; padding: 10px; outline: none; }
+  #pin:focus { border-color: var(--oro); }
+  #pin.mal { border-color: #ef4444; animation: tiembla .3s; }
+  @keyframes tiembla { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  #llave button { font: 800 22px sans-serif; width: 50px; height: 50px; border-radius: 14px; border: 0; background: var(--oro-2); color: var(--azul); cursor: pointer; }
+  @media (prefers-reduced-motion: reduce) { .an { opacity: 1 !important; animation: none !important; } .burbujas span, .puntos-oro span, .halo::before, .halo::after { animation: none !important; } }
+</style>
+</head>
+<body>
+<div id="escenario"></div>
+<div id="barra"></div>
+<div id="nav-inf">
+  <button type="button" data-ant aria-label="Anterior">‹</button>
+  <button type="button" data-sig aria-label="Siguiente">›</button>
+</div>
+<div id="herr" role="toolbar" aria-label="Herramientas">
+  <button type="button" data-h="laser" title="Puntero láser (L)" aria-label="Puntero láser"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="#ef4444" stroke="#ef4444"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+  <button type="button" data-h="lapiz" title="Lápiz (P)" aria-label="Lápiz"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></button>
+  <button type="button" data-h="resaltador" title="Resaltador (H)" aria-label="Resaltador"><svg viewBox="0 0 24 24"><path d="M9 15l-3 3h5l1-1"/><path d="M8 13l7-7 4 4-7 7z"/><path d="M4 21h16" stroke="#FBD785" stroke-width="3"/></svg></button>
+  <button type="button" data-h="borrador" title="Borrador (E)" aria-label="Borrador"><svg viewBox="0 0 24 24"><path d="M16 4l5 5-9 9H7l-3-3z"/><path d="M11 9l5 5M7 20h13"/></svg></button>
+  <button type="button" data-limpiar title="Limpiar la diapositiva (C)" aria-label="Limpiar"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>
+  <hr>
+  <button type="button" data-pizarra title="Pizarra (B)" aria-label="Pizarra"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l4-4 4 4"/></svg></button>
+  <button type="button" data-full title="Pantalla completa (F)" aria-label="Pantalla completa"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</div>
+<div id="colores" aria-label="Colores"></div>
+<button type="button" id="punto" data-guion aria-label="·"></button>
+<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div></div></div>
+
+<script>window.FA = { u: { esc: function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); } } };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="esquema.js"></script>
+<script src="esquemas.js"></script>
+<script src="diapos.js"></script>
+<script src="fichas.js"></script>
+<script>
+(function () {
+  var D = window.armarDiapos(), esc = FA.u.esc, E = window.ESQ;
+  var MINI = /[?&]mini=1/.test(location.search);
+  if (MINI) document.body.classList.add('mini');
+  /* sala de sincronización con el celular (ntfy.sh: solo viaja el número de diapositiva) */
+  var SALA = null;
+  if (!MINI) {
+    try { SALA = localStorage.getItem('fa-sala'); } catch (e) {}
+    if (!SALA) {
+      var a = new Uint8Array(10); (window.crypto || window.msCrypto).getRandomValues(a);
+      SALA = 'fa' + [].map.call(a, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      try { localStorage.setItem('fa-sala', SALA); } catch (e) {}
+    }
+  }
+  function publicar(n) {
+    if (!SALA) return;
+    try { fetch('https://ntfy.sh/' + SALA, { method: 'POST', body: JSON.stringify({ de: 'pc', n: n }) }).catch(function () {}); } catch (e) {}
+  }
+  var escenario = document.getElementById('escenario');
+  var WEB = 'https://andresarangoez.github.io/FARMACOLOGIA/';
+  var SES = { 10: 'BCR-ABL y BRAF', 11: 'Inmunosupresores y EGFR', 12: 'Angiogénesis, proteasoma y conjugados', 13: 'Trasplante, hueso, complemento y psoriasis', 14: 'Antiparasitarios' };
+
+  function etq(ses) { return ses ? '<span class="etq an"><b>' + ses + '</b>' + esc(SES[ses]) + '</span>' : ''; }
+  function cab(d, extra) { return '<div class="cab">' + (extra != null ? extra : etq(d.ses)) + '<h2 class="an" style="--d:1">' + esc(d.titulo) + '</h2></div>'; }
+  function fondoVivo() {
+    var b = [[90, 120, 130, 30, -40], [1080, 90, 180, -40, 30], [1010, 520, 120, 30, -30], [140, 520, 160, 40, 20], [620, 610, 90, -30, -20], [560, 40, 70, 20, 30]];
+    var p = [[300, 200], [980, 300], [420, 560], [860, 140], [200, 380], [1120, 420], [700, 90]];
+    return '<div class="burbujas">' + b.map(function (x, i) { return '<span style="left:' + x[0] + 'px;top:' + x[1] + 'px;width:' + x[2] + 'px;height:' + x[2] + 'px;--x:' + x[3] + 'px;--y:' + x[4] + 'px;animation-delay:-' + (i * 2.3) + 's"></span>'; }).join('') + '</div>' +
+      '<div class="puntos-oro">' + p.map(function (x, i) { return '<span style="left:' + x[0] + 'px;top:' + x[1] + 'px;animation-delay:-' + (i * 0.45) + 's"></span>'; }).join('') + '</div>';
+  }
+  function dt(lbl) { var c = /efecto/i.test(lbl) ? 'e' : /cuidad|antes|vigilar|dieta|neuropat|recuerda|laborat/i.test(lbl) ? 'c' : /dosis|ciclo|infusi|kg/i.test(lbl) ? 'd' : ''; return '<dt class="' + c + '">' + esc(lbl) + '</dt>'; }
+
+  function html(d) {
+    switch (d.tipo) {
+      case 'portada':
+        return fondoVivo() + '<div class="port"><div class="halo an"><img src="logo.png" alt=""></div><span class="etq an" style="--d:1">Tutoría · Farmacología</span>' +
+          '<h1 class="an" style="--d:2">Repaso del <em>último parcial</em></h1>' +
+          '<p class="an" style="--d:3">Sesiones 10 a 14 · mecanismos de acción, indicaciones y cuidados de enfermería</p><div class="linea-oro"></div></div>';
+      case 'temario':
+        return cab(d, '') + '<div class="temas">' +
+          [[10, 'Inhibidores de BCR-ABL y BRAF'], [11, 'Inmunosupresores e inhibidores de EGFR'], [12, 'Angiogénesis, proteasoma y anticuerpos conjugados'], [13, 'Trasplante, denosumab, eculizumab y psoriasis'], [14, 'Antihelmínticos y antiprotozoarios']]
+            .map(function (t, i) { return '<div class="tema an" style="--d:' + (i + 2) + '"><span class="num">' + t[0] + '</span>' + t[1] + '</div>'; }).join('') + '</div>';
+      case 'claves':
+        return cab(d, '') + '<div class="claves">' +
+          [['-tinib', 'Inhibidor de tirosina quinasa', 'Molécula pequeña, casi siempre oral. Entra a la célula y ocupa el sitio del ATP de la enzima.'],
+           ['-mab', 'Anticuerpo monoclonal', 'Proteína grande, IV o SC. Actúa afuera o en la superficie: se une a un receptor o atrapa una molécula.'],
+           ['-cept', 'Proteína de fusión', 'Receptor señuelo que atrapa su blanco, como el aflibercept o el belatacept.']]
+            .map(function (c, i) { return '<div class="clave an" style="--d:' + (i + 2) + '"><b>' + c[0] + '</b><i>' + c[1] + '</i><p>' + c[2] + '</p></div>'; }).join('') + '</div>';
+      case 'cadena':
+        return cab(d) + '<div class="cadena">' + d.pasos.map(function (p, i) {
+          return '<div class="eslabon an" style="--d:' + (i + 2) + '"><div class="caja"><b>' + esc(p.t) + '</b><span>' + esc(p.s) + '</span></div>' + (p.f ? '<span class="farm">' + esc(p.f) + '</span>' : '') + '</div>';
+        }).join('') + '</div>' + (d.nota ? '<p class="pie-nota an" style="--d:8">' + esc(d.nota) + '</p>' : '');
+      case 'mecanismo':
+        var txt = d.esq ? d.esq.map(function (k) { return E[k]; }).join(' ;; ') : E[d.id];
+        return '<div class="mec"><div class="mec__txt">' + etq(d.ses) + '<h2 class="an" style="--d:1">' + esc(d.titulo) + '</h2>' +
+          '<p class="linea an" style="--d:2">' + esc(d.linea) + '</p>' +
+          (d.ind ? '<p class="rot an" style="--d:3">Indicaciones</p><ul class="lista">' + d.ind.map(function (x, i) { return '<li class="an" style="--d:' + (i + 4) + '">' + esc(x) + '</li>'; }).join('') + '</ul>' : '') +
+          '</div><div class="an" style="--d:2">' + FA.esquemaMecanismo(txt) + '</div></div>';
+      case 'farmacos':
+        return cab(d) + '<div class="cards n' + d.cards.length + '">' + d.cards.map(function (c, i) {
+          return '<article class="card an" style="--d:' + (i + 2) + '"><header><b>' + esc(c.t) + '</b>' + (c.s ? '<span>' + esc(c.s) + '</span>' : '') + '</header><dl>' +
+            c.filas.map(function (f) { return '<div>' + dt(f[0]) + '<dd>' + esc(f[1]) + '</dd></div>'; }).join('') + '</dl></article>';
+        }).join('') + '</div>';
+      case 'tabla':
+        return cab(d) + '<table class="tabla"><thead><tr class="an" style="--d:2">' + d.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          d.filas.map(function (f, i) { return '<tr class="an" style="--d:' + (i + 3) + '">' + f.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>';
+      case 'tarjetas':
+        return cab(d) + '<div class="tarjetas">' + d.items.map(function (t, i) { return '<div class="an" style="--d:' + (i + 2) + '"><b>' + esc(t[0]) + '</b><p>' + t[1] + '</p></div>'; }).join('') + '</div>';
+      case 'flip':
+        return cab(d, '') + '<div class="flips">' + d.items.map(function (t, i) {
+          return '<button type="button" class="flip an" style="--d:' + (i + 2) + '"><i><span class="fr">' + esc(t[0]) + '</span><span class="at">' + esc(t[1]) + '</span></i></button>';
+        }).join('') + '</div>';
+      case 'quiz':
+        return '<div class="quiz"><span class="etq an" data-q-etq></span><h2 class="an" style="--d:1" data-q-tit></h2><div class="ops an" style="--d:2" data-q-ops></div><p class="exp" data-q-exp></p>' +
+          '<div class="q-nav an" style="--d:3"><button type="button" data-q-ant>‹ Anterior</button><button type="button" class="sig" data-q-sig>Siguiente pregunta ›</button></div></div>';
+      case 'cierre':
+        return fondoVivo() + '<div class="cierre"><span class="etq an">Para seguir repasando</span><h1 class="an" style="--d:1">' + esc(d.titulo) + '</h1><p class="url an" style="--d:2">andresarangoez.github.io/FARMACOLOGIA</p><div class="qr-caja an" style="--d:3" id="qr-web"></div></div>';
+    }
+    return '';
+  }
+
+  function montarQuiz(el, d) {
+    var i = 0, P = d.preguntas;
+    var etqEl = el.querySelector('[data-q-etq]'), tit = el.querySelector('[data-q-tit]'), ops = el.querySelector('[data-q-ops]'), exp = el.querySelector('[data-q-exp]');
+    function ver(j) {
+      i = (j + P.length) % P.length; var p = P[i];
+      etqEl.innerHTML = '<b>' + (i + 1) + '/' + P.length + '</b>Sesión ' + p.ses;
+      tit.textContent = p.q;
+      ops.innerHTML = p.ops.map(function (o, k) { return '<button type="button" class="op" data-op="' + k + '"><span>' + 'ABCD'[k] + '</span>' + esc(o) + '</button>'; }).join('');
+      exp.classList.remove('ver'); exp.innerHTML = '<b>Respuesta ' + 'ABCD'[p.ok] + '.</b> ' + esc(p.exp);
+      [tit, ops].forEach(function (x) { x.classList.remove('q-cambia'); void x.offsetWidth; x.classList.add('q-cambia'); });
+      ops.querySelectorAll('[data-op]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var k = +b.dataset.op; b.classList.add(k === p.ok ? 'bien' : 'mal');
+          ops.querySelector('[data-op="' + p.ok + '"]').classList.add('bien'); exp.classList.add('ver');
+        });
+      });
+    }
+    el.querySelector('[data-q-sig]').addEventListener('click', function () { ver(i + 1); });
+    el.querySelector('[data-q-ant]').addEventListener('click', function () { ver(i - 1); });
+    ver(0);
+  }
+
+  /* significado de cada sigla, la primera vez que aparece en la diapositiva */
+  var SIGLAS = [
+    ['BCR-ABL', 'cinasa híbrida de los genes BCR y ABL'], ['BCR', 'región de agrupamiento de puntos de ruptura'], ['ABL', 'oncogén Abelson'],
+    ['BRAF', 'cinasa de la familia RAF, de la vía de crecimiento'], ['MEK', 'cinasa que activa a ERK'], ['ERK', 'cinasa regulada por señales extracelulares'],
+    ['RAS', 'proteína interruptor que enciende la cascada'], ['STAT', 'transductor de señal y activador de la transcripción'], ['PI3K', 'fosfatidilinositol 3-cinasa'], ['AKT', 'proteína cinasa B'],
+    ['SRC', 'familia de cinasas SRC'], ['c-KIT', 'receptor del factor de células madre'], ['PDGFR', 'receptor del factor de crecimiento derivado de plaquetas'],
+    ['VEGFR', 'receptor del VEGF'], ['VEGF-A', 'factor de crecimiento endotelial vascular A'], ['VEGF', 'factor de crecimiento endotelial vascular'], ['EGFR', 'receptor del factor de crecimiento epidérmico'], ['EGF', 'factor de crecimiento epidérmico'],
+    ['mTORC1', 'complejo 1 de mTOR'], ['mTOR', 'diana de la rapamicina en mamíferos'], ['FKBP-12', 'proteína de unión a FK506'], ['IMPDH', 'inosina monofosfato deshidrogenasa'], ['NF-AT', 'factor nuclear de células T activadas'],
+    ['IL-2', 'interleucina 2'], ['IL-17A', 'interleucina 17A'], ['IL-12/23', 'interleucinas 12 y 23'], ['CD25', 'subunidad α del receptor de IL-2'], ['CD80/CD86', 'moléculas coestimuladoras de la célula presentadora'], ['CD28', 'receptor coestimulador del linfocito T'],
+    ['CTLA-4', 'antígeno 4 del linfocito T citotóxico'], ['RANKL', 'ligando del receptor activador del factor nuclear κB'], ['RANK', 'receptor del osteoclasto'], ['C5', 'componente 5 del complemento'], ['C5b-9', 'complejo de ataque a la membrana'],
+    ['CD33', 'marcador de la célula mieloide'], ['CD30', 'marcador del linfoma de Hodgkin'], ['CD20', 'marcador del linfocito B'], ['MMAE', 'monometil auristatina E'], ['PFOR', 'piruvato:ferredoxina oxidorreductasa'],
+    ['G6PD', 'glucosa-6-fosfato deshidrogenasa'], ['EBV', 'virus de Epstein-Barr'], ['GABA', 'ácido gamma-aminobutírico'], ['ATP', 'adenosín trifosfato'], ['LMC', 'leucemia mieloide crónica'], ['LLA', 'leucemia linfoblástica aguda'], ['LMA', 'leucemia mieloide aguda'],
+    ['EII', 'enfermedad inflamatoria intestinal'], ['PRES', 'encefalopatía posterior reversible'], ['HPN', 'hemoglobinuria paroxística nocturna'], ['SHUa', 'síndrome hemolítico urémico atípico'], ['NMOSD', 'trastorno del espectro de neuromielitis óptica'],
+    ['FEVI', 'fracción de eyección del ventrículo izquierdo'], ['CYP3A4', 'enzima hepática que metaboliza fármacos'], ['hERG', 'canales de potasio del corazón'], ['Th1', 'linfocitos T colaboradores tipo 1'], ['Th17', 'linfocitos T colaboradores tipo 17'], ['Hib', 'Haemophilus influenzae tipo b'], ['SSN', 'solución salina normal']
+  ];
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&'); }
+  var RE_SIG = new RegExp('(^|[^A-Za-z0-9])(' + SIGLAS.map(function (s) { return escRe(s[0]); }).join('|') + ')(?![A-Za-z0-9]|-[0-9])', 'g');
+  var MAPA = {}; SIGLAS.forEach(function (s) { MAPA[s[0]] = s[1]; });
+  function anotarSiglas(raiz) {
+    var usadas = {}, w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return n.parentNode.closest('h1,h2,.etq,.esquema,script,.sig,.q-nav,.card header') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
+    }), nodos = [];
+    while (w.nextNode()) nodos.push(w.currentNode);
+    nodos.forEach(function (n) {
+      var t = n.nodeValue, partes = [], ult = 0, m, cambio = false;
+      RE_SIG.lastIndex = 0;
+      while ((m = RE_SIG.exec(t))) {
+        var s = m[2]; if (usadas[s]) continue;
+        usadas[s] = 1; cambio = true;
+        var fin = m.index + m[0].length;
+        partes.push(document.createTextNode(t.slice(ult, fin)));
+        var sp = document.createElement('span'); sp.className = 'sig'; sp.textContent = ' (' + MAPA[s] + ')'; partes.push(sp);
+        ult = fin;
+      }
+      if (!cambio) return;
+      partes.push(document.createTextNode(t.slice(ult)));
+      var p = n.parentNode; partes.forEach(function (x) { p.insertBefore(x, n); }); p.removeChild(n);
+    });
+  }
+
+  D.forEach(function (d) {
+    var el = document.createElement('section');
+    el.className = 'diapo' + (d.tipo === 'portada' || d.tipo === 'cierre' ? ' oscura' : '');
+    el.innerHTML = html(d);
+    if (d.tipo !== 'quiz') anotarSiglas(el);
+
+    escenario.appendChild(el);
+    if (d.tipo === 'mecanismo') FA.esquemaMecanismo.montar(el);
+    if (d.tipo === 'quiz') montarQuiz(el, d);
+    if (d.tipo === 'flip') el.querySelectorAll('.flip').forEach(function (b) { b.addEventListener('click', function () { b.classList.toggle('vuelta'); }); });
+  });
+  var diapos = [].slice.call(escenario.children), actual = -1;
+
+  function ir(i, remoto) {
+    i = Math.max(0, Math.min(D.length - 1, i));
+    if (i === actual) return;
+    if (actual >= 0) diapos[actual].classList.remove('activa');
+    actual = i; diapos[i].classList.add('activa');
+    document.getElementById('barra').style.width = ((i + 1) / D.length * 100) + '%';
+    if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+    if (!remoto && !MINI) publicar(i);
+    document.dispatchEvent(new CustomEvent('cambio-diapo', { detail: i }));
+  }
+  if (SALA && window.EventSource) {
+    var fuente = new EventSource('https://ntfy.sh/' + SALA + '/sse');
+    fuente.onmessage = function (ev) {
+      try {
+        var m = JSON.parse(JSON.parse(ev.data).message || '{}');
+        if (m.de === 'cel' && typeof m.n === 'number') ir(m.n, true);
+        else if (m.de === 'cel-hola') publicar(actual);
+      } catch (e) {}
+    };
+  }
+  function escala() { var k = Math.min(innerWidth / 1280, innerHeight / 720); escenario.style.setProperty('--k', k); }
+  addEventListener('resize', escala); escala();
+
+  function qr(el, txt, t) { if (!el || el.dataset.ok) return; el.dataset.ok = 1; if (window.QRCode) new QRCode(el, { text: txt, width: t, height: t, colorDark: '#082956', colorLight: '#ffffff' }); else el.textContent = txt; }
+  var urlNotas = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/') + 'n.html?s=' + SALA;
+  qr(document.getElementById('qr-web'), WEB, 200);
+  var guion = document.getElementById('guion');
+  var pin = document.getElementById('pin');
+  function verGuion(v) {
+    guion.classList.toggle('ver', v);
+    if (v) { guion.classList.remove('abierto'); pin.value = ''; pin.classList.remove('mal'); setTimeout(function () { pin.focus(); }, 30); }
+  }
+  document.getElementById('llave').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (pin.value === '1234') { guion.classList.add('abierto'); qr(document.getElementById('qr-guion'), urlNotas, 260); }
+    else { pin.classList.remove('mal'); void pin.offsetWidth; pin.classList.add('mal'); pin.value = ''; }
+  });
+  guion.addEventListener('click', function (e) { if (e.target === guion) verGuion(false); });
+  guion.querySelector('#qr-guion').addEventListener('click', function () { verGuion(false); });
+
+  document.querySelector('[data-ant]').addEventListener('click', function () { ir(actual - 1); });
+  document.querySelector('[data-sig]').addEventListener('click', function () { ir(actual + 1); });
+  document.querySelector('[data-guion]').addEventListener('click', function () { verGuion(true); });
+  document.querySelector('[data-full]').addEventListener('click', function () { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); });
+  addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (e.target === pin) { if (k === 'Escape') verGuion(false); return; }
+    if (k === 'Escape' && guion.classList.contains('ver')) { verGuion(false); return; }
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); ir(actual + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); ir(actual - 1); }
+    else if (k === 'Home') ir(0); else if (k === 'End') ir(D.length - 1);
+    else if (k === 'g' || k === 'G') verGuion(!guion.classList.contains('ver'));
+    else if (k === 'f' || k === 'F') document.querySelector('[data-full]').click();
+    else if (k === 'l' || k === 'L') modo(estado === 'laser' ? null : 'laser');
+    else if (k === 'p' || k === 'P') modo(estado === 'lapiz' ? null : 'lapiz');
+    else if (k === 'h' || k === 'H') modo(estado === 'resaltador' ? null : 'resaltador');
+    else if (k === 'e' || k === 'E') modo(estado === 'borrador' ? null : 'borrador');
+    else if (k === 'c' || k === 'C') limpiar();
+    else if (k === 'b' || k === 'B') pizarra(!enPizarra);
+    else if (k === 'Escape') { if (enPizarra) pizarra(false); else modo(null); }
+  });
+
+  /* ---------- puntero láser, lápiz, resaltador, borrador y pizarra ---------- */
+  var lienzo = document.createElement('canvas'); lienzo.id = 'lienzo'; lienzo.width = 1280 * 2; lienzo.height = 720 * 2;
+  var piz = document.createElement('div'); piz.id = 'pizarra';
+  escenario.appendChild(piz); escenario.appendChild(lienzo);
+  var ctx = lienzo.getContext('2d'); ctx.scale(2, 2);
+  var estado = null, enPizarra = false, color = '#ef4444', trazos = {}, actualTrazo = null, rastro = [], rafLaser = null;
+  var COLORES = ['#ef4444', '#2563eb', '#16a34a', '#0f2342', '#f59e0b'];
+  var herr = document.getElementById('herr'), cajaColores = document.getElementById('colores');
+  cajaColores.innerHTML = COLORES.map(function (c) { return '<button type="button" style="background:' + c + '" data-color="' + c + '" aria-label="Color"></button>'; }).join('');
+  function clave() { return enPizarra ? 'pizarra' : String(actual); }
+  function lista() { var k = clave(); return trazos[k] || (trazos[k] = []); }
+  function punto(e) { var r = lienzo.getBoundingClientRect(); return { x: (e.clientX - r.left) * 1280 / r.width, y: (e.clientY - r.top) * 720 / r.height }; }
+  function dibujarTrazo(t) {
+    if (t.p.length < 1) return;
+    ctx.save();
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    if (t.tipo === 'resaltador') { ctx.globalAlpha = .35; ctx.strokeStyle = '#fde047'; ctx.lineWidth = 22; ctx.lineCap = 'butt'; }
+    else { ctx.strokeStyle = t.c; ctx.lineWidth = 4; }
+    ctx.beginPath(); ctx.moveTo(t.p[0].x, t.p[0].y);
+    for (var i = 1; i < t.p.length; i++) { var a = t.p[i - 1], b = t.p[i]; ctx.quadraticCurveTo(a.x, a.y, (a.x + b.x) / 2, (a.y + b.y) / 2); }
+    if (t.p.length === 1) ctx.lineTo(t.p[0].x + .1, t.p[0].y);
+    ctx.stroke(); ctx.restore();
+  }
+  function redibujar() {
+    ctx.clearRect(0, 0, 1280, 720);
+    lista().forEach(dibujarTrazo);
+    if (estado === 'laser' && rastro.length) {
+      var ahora = performance.now();
+      rastro = rastro.filter(function (p) { return ahora - p.t < 420; });
+      for (var i = 1; i < rastro.length; i++) {
+        var a = rastro[i - 1], b = rastro[i], v = 1 - (ahora - b.t) / 420;
+        ctx.save(); ctx.strokeStyle = 'rgba(239,68,68,' + (v * .55) + ')'; ctx.lineWidth = 6 * v + 1; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); ctx.restore();
+      }
+      var u = rastro[rastro.length - 1];
+      if (u) {
+        ctx.save(); var g = ctx.createRadialGradient(u.x, u.y, 0, u.x, u.y, 18);
+        g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.25, 'rgba(255,40,40,1)'); g.addColorStop(1, 'rgba(255,0,0,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(u.x, u.y, 18, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      }
+    }
+  }
+  function bucleLaser() { redibujar(); rafLaser = estado === 'laser' ? requestAnimationFrame(bucleLaser) : null; }
+  function modo(m) {
+    estado = m;
+    herr.querySelectorAll('[data-h]').forEach(function (b) { b.classList.toggle('on', b.dataset.h === m); });
+    herr.classList.toggle('activo', !!m);
+    lienzo.className = m === 'laser' ? 'laser' : (m ? 'dibuja' : '');
+    cajaColores.classList.toggle('ver', m === 'lapiz');
+    rastro = [];
+    if (m === 'laser' && !rafLaser) bucleLaser(); else redibujar();
+  }
+  function borrarCerca(p) {
+    var l = lista(), antes = l.length;
+    for (var i = l.length - 1; i >= 0; i--) {
+      if (l[i].p.some(function (q) { var dx = q.x - p.x, dy = q.y - p.y; return dx * dx + dy * dy < 22 * 22; })) l.splice(i, 1);
+    }
+    if (l.length !== antes) redibujar();
+  }
+  function limpiar() { trazos[clave()] = []; redibujar(); }
+  function pizarra(v) { enPizarra = v; piz.classList.toggle('ver', v); herr.querySelector('[data-pizarra]').classList.toggle('on', v); if (v && estado !== 'lapiz' && estado !== 'borrador') modo('lapiz'); redibujar(); }
+  lienzo.addEventListener('pointerdown', function (e) {
+    if (!estado || estado === 'laser') return;
+    lienzo.setPointerCapture(e.pointerId);
+    var p = punto(e);
+    if (estado === 'borrador') { actualTrazo = { borrar: true }; borrarCerca(p); return; }
+    actualTrazo = { tipo: estado, c: color, p: [p] }; lista().push(actualTrazo); redibujar();
+  });
+  lienzo.addEventListener('pointermove', function (e) {
+    var p = punto(e);
+    if (estado === 'laser') { p.t = performance.now(); rastro.push(p); redibujar(); return; }
+    if (!actualTrazo) return;
+    if (actualTrazo.borrar) { borrarCerca(p); return; }
+    if (actualTrazo.tipo === 'resaltador') { p.y = actualTrazo.p[0].y; }
+    actualTrazo.p.push(p); redibujar();
+  });
+  ['pointerup', 'pointercancel'].forEach(function (ev) { lienzo.addEventListener(ev, function () { actualTrazo = null; }); });
+  lienzo.addEventListener('pointerleave', function () { if (estado === 'laser') rastro = []; });
+  herr.querySelectorAll('[data-h]').forEach(function (b) { b.addEventListener('click', function () { modo(estado === b.dataset.h ? null : b.dataset.h); }); });
+  herr.querySelector('[data-limpiar]').addEventListener('click', limpiar);
+  herr.querySelector('[data-pizarra]').addEventListener('click', function () { pizarra(!enPizarra); });
+  cajaColores.querySelectorAll('[data-color]').forEach(function (b) {
+    b.addEventListener('click', function () { color = b.dataset.color; cajaColores.querySelectorAll('[data-color]').forEach(function (x) { x.classList.toggle('on', x === b); }); });
+  });
+  cajaColores.querySelector('[data-color]').classList.add('on');
+  document.addEventListener('cambio-diapo', function () { if (enPizarra) pizarra(false); redibujar(); });
+  addEventListener('hashchange', function () { ir((parseInt(location.hash.slice(1), 10) || 1) - 1); });
+  ir((parseInt(location.hash.slice(1), 10) || 1) - 1);
+})();
+</script>
+</body>
+</html>
