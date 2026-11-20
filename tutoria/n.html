@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>·</title>
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --azul: #082956; --oro: #EDBE7B; --oro-2: #FBD785; --tx: #e8eef8; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #061a3a; color: var(--tx); font-family: "Nunito Sans", system-ui, sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; background: rgba(6,26,58,.96); border-bottom: 1px solid rgba(255,255,255,.1); }
+  header b { font-family: Montserrat, sans-serif; font-size: 15px; color: var(--oro-2); }
+  select { font: 700 14px "Nunito Sans", sans-serif; color: #fff; background: #0c2b5c; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; padding: 6px 8px; max-width: 48vw; }
+  main { padding: 16px 18px 60px; max-width: 720px; margin: 0 auto; }
+  .n { font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--oro); }
+  h1 { font-family: Montserrat, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.15; margin: 6px 0 18px; color: #fff; }
+  .txt { font-size: 21px; line-height: 1.6; }
+  .tamano { display: flex; gap: 6px; }
+  .tamano button { width: 36px; height: 34px; font: 800 15px sans-serif; color: #fff; background: #0c2b5c; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; }
+  #arriba { position: sticky; top: 0; z-index: 3; }
+  header { position: static; }
+  nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 14px 12px; background: rgba(6,26,58,.97); border-bottom: 1px solid rgba(255,255,255,.1); }
+  nav button { font: 800 18px "Nunito Sans", sans-serif; padding: 14px; border-radius: 16px; border: 0; }
+  #ant { background: #0c2b5c; color: #fff; }
+  #sig { background: var(--oro-2); color: var(--azul); }
+  #llave { position: fixed; inset: 0; z-index: 9; display: grid; place-items: center; background: #061a3a; }
+  #llave.fuera { display: none; }
+  #f { display: flex; align-items: center; gap: 10px; }
+  #f span { font-size: 26px; color: var(--oro-2); }
+  #pin { width: 150px; font: 800 26px sans-serif; letter-spacing: .4em; text-align: center; color: #fff; background: #0c2b5c; border: 1px solid rgba(255,255,255,.25); border-radius: 14px; padding: 10px; }
+  #pin.mal { border-color: #ef4444; }
+  #f button { font: 800 24px sans-serif; width: 52px; height: 52px; border-radius: 14px; border: 0; background: var(--oro-2); color: var(--azul); }
+  .mini { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #0b1730; border: 1px solid rgba(255,255,255,.18); margin-bottom: 16px; }
+  .mini iframe { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; border: 0; transform-origin: 0 0; pointer-events: none; }
+  #estado { width: 9px; height: 9px; border-radius: 50%; background: #64748b; display: inline-block; margin-left: 6px; vertical-align: middle; }
+  #estado.ok { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+  .sig-tit { margin-top: 26px; padding-top: 16px; border-top: 1px dashed rgba(255,255,255,.2); font-size: 15px; color: #9fb0cc; }
+</style>
+</head>
+<body>
+<div id="arriba"><header><b>✦<i id="estado"></i></b><select id="sel" aria-label="Ir a la diapositiva"></select><span class="tamano"><button type="button" id="menos" aria-label="−">−</button><button type="button" id="mas" aria-label="+">+</button></span></header>
+<nav><button type="button" id="ant">‹ Anterior</button><button type="button" id="sig">Siguiente ›</button></nav></div>
+<main><div class="mini" id="mini"><iframe id="marco" title="·" tabindex="-1"></iframe></div><p class="n" id="n"></p><h1 id="t"></h1><div class="txt" id="txt"></div><p class="sig-tit" id="prox"></p></main>
+<div id="llave"><form id="f"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="Código"><button type="submit">›</button></form></div>
+<script src="diapos.js"></script>
+<script src="fichas.js"></script>
+<script>
+(function () {
+  var llave = document.getElementById('llave'), pin = document.getElementById('pin');
+  function abrir() { llave.classList.add('fuera'); try { sessionStorage.setItem('k', '1'); } catch (e) {} }
+  try { if (sessionStorage.getItem('k') === '1') abrir(); } catch (e) {}
+  document.getElementById('f').addEventListener('submit', function (e) { e.preventDefault(); if (pin.value === '1234') abrir(); else { pin.classList.add('mal'); pin.value = ''; } });
+  if (!llave.classList.contains('fuera')) pin.focus();
+  var D = window.armarDiapos(), i = 0, fs = 21;
+  try { fs = +localStorage.getItem('guion-fs') || 21; } catch (e) {}
+  var sel = document.getElementById('sel');
+  D.forEach(function (d, j) { var o = document.createElement('option'); o.value = j; o.textContent = (j + 1) + '. ' + d.titulo; sel.appendChild(o); });
+  /* sincronización con la presentación (ntfy.sh: solo viaja el número de diapositiva) */
+  var SALA = (/[?&]s=([a-z0-9]+)/i.exec(location.search) || [])[1] || null;
+  var marco = document.getElementById('marco'), mini = document.getElementById('mini'), estado = document.getElementById('estado');
+  function escalaMini() { marco.style.transform = 'scale(' + (mini.clientWidth / 1280) + ')'; }
+  addEventListener('resize', escalaMini);
+  function publicar(obj) { if (!SALA) return; try { fetch('https://ntfy.sh/' + SALA, { method: 'POST', body: JSON.stringify(obj) }).catch(function () {}); } catch (e) {} }
+  var marcoListo = false;
+  function verMini(k) {
+    if (!marcoListo) { marco.src = 'index.html?mini=1#' + (k + 1); marcoListo = true; setTimeout(escalaMini, 30); return; }
+    try { marco.contentWindow.location.hash = '#' + (k + 1); } catch (e) { marco.src = 'index.html?mini=1#' + (k + 1); }
+  }
+  function ver(j, remoto) {
+    i = Math.max(0, Math.min(D.length - 1, j));
+    var d = D[i];
+    verMini(i);
+    if (!remoto) publicar({ de: 'cel', n: i });
+    document.getElementById('n').textContent = 'Diapositiva ' + (i + 1) + ' de ' + D.length + (d.ses ? ' · Sesión ' + d.ses : '');
+    document.getElementById('t').textContent = d.titulo;
+    document.getElementById('txt').textContent = d.notas;
+    document.getElementById('prox').textContent = D[i + 1] ? 'Sigue: ' + D[i + 1].titulo : 'Fin de la tutoría';
+    document.getElementById('txt').style.fontSize = fs + 'px';
+    sel.value = i; history.replaceState(null, '', '#' + (i + 1)); scrollTo(0, 0);
+  }
+  document.getElementById('ant').onclick = function () { ver(i - 1); };
+  document.getElementById('sig').onclick = function () { ver(i + 1); };
+  sel.onchange = function () { ver(+sel.value); };
+  function tam(dx) { fs = Math.max(15, Math.min(32, fs + dx)); try { localStorage.setItem('guion-fs', fs); } catch (e) {} document.getElementById('txt').style.fontSize = fs + 'px'; }
+  document.getElementById('menos').onclick = function () { tam(-2); };
+  document.getElementById('mas').onclick = function () { tam(2); };
+  ver((parseInt(location.hash.slice(1), 10) || 1) - 1, true);
+  escalaMini();
+  if (SALA && window.EventSource) {
+    var fuente = new EventSource('https://ntfy.sh/' + SALA + '/sse');
+    fuente.onopen = function () { estado.classList.add('ok'); publicar({ de: 'cel-hola' }); };
+    fuente.onerror = function () { estado.classList.remove('ok'); };
+    fuente.onmessage = function (ev) {
+      try {
+        var m = JSON.parse(JSON.parse(ev.data).message || '{}');
+        if (m.de === 'pc' && typeof m.n === 'number' && m.n !== i) ver(m.n, true);
+      } catch (e) {}
+    };
+  }
+})();
+</script>
+</body>
+</html>
