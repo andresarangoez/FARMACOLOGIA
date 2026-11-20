@@ -197,6 +197,37 @@
   #qr-guion { display: none; place-items: center; }
   #guion.abierto #qr-guion { display: grid; }
   #guion.abierto #llave { display: none; }
+  #abrir-pres { display: none; margin: 12px auto 0; width: 44px; height: 36px; border-radius: 10px; border: 0; background: var(--azul); color: var(--oro-2); cursor: pointer; place-items: center; }
+  #guion.abierto #abrir-pres { display: grid; }
+  #abrir-pres svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* lisis tumoral */
+  .lisis { display: grid; grid-template-columns: 1.05fr 1fr; gap: 34px; align-items: stretch; }
+  .lis-izq { position: relative; border-radius: 26px; padding: 22px 24px; background: radial-gradient(120% 100% at 30% 20%, #123f7d, #082956 60%, #061c3f); color: #fff; overflow: hidden; }
+  .lis-izq svg { display: block; width: 100%; height: 190px; }
+  .lis-cel { fill: url(#lis-g); stroke: #f87171; stroke-width: 3; stroke-dasharray: 10 7; }
+  .activa .lis-cel { animation: lis-late 1.8s ease-in-out infinite; transform-origin: 160px 95px; }
+  @keyframes lis-late { 50% { transform: scale(.94); } }
+  .lis-frag { fill: rgba(248,113,113,.55); }
+  .activa .lis-sale { animation: lis-sale 2.4s ease-out infinite; }
+  @keyframes lis-sale { 0% { transform: translate(0,0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)); opacity: 0; } }
+  .lis-sale text { font: 800 15px var(--f-display); fill: #fff; }
+  .lis-libera { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+  .lis-ion { border-radius: 18px; padding: 14px 12px; text-align: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); }
+  .lis-ion b { display: grid; place-items: center; width: 54px; height: 54px; margin: 0 auto 8px; border-radius: 50%; font: 800 20px var(--f-display); color: #082956; }
+  .lis-ion.k b { background: #fbd785; } .lis-ion.p b { background: #93c5fd; } .lis-ion.u b { background: #fca5a5; font-size: 15px; }
+  .lis-ion strong { display: block; font: 800 15.5px var(--f-display); color: #fff; }
+  .lis-ion span { display: block; margin-top: 4px; font-size: 14px; line-height: 1.35; color: #cfdcf1; }
+  .lis-alerta { margin-top: 14px; padding: 10px 14px; border-radius: 14px; background: rgba(248,113,113,.16); border: 1px solid rgba(248,113,113,.45); font-size: 15px; line-height: 1.4; color: #ffe1e1; }
+  .lis-der { display: flex; flex-direction: column; }
+  .lis-rot { font: 800 13px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); margin: 4px 0 14px; }
+  .lis-pasos { position: relative; margin: 0; padding: 0 0 0 4px; list-style: none; display: grid; gap: 14px; }
+  .lis-pasos::before { content: ""; position: absolute; left: 21px; top: 10px; bottom: 10px; width: 3px; border-radius: 3px; background: linear-gradient(var(--oro), #93c5fd); }
+  .lis-pasos li { position: relative; display: flex; gap: 16px; align-items: flex-start; }
+  .lis-pasos i { flex: 0 0 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font: 800 16px var(--f-display); font-style: normal; color: #082956; background: var(--oro-2); box-shadow: 0 0 0 5px #fff; z-index: 1; }
+  .lis-pasos b { display: block; font: 800 18px var(--f-display); color: var(--azul); }
+  .lis-pasos p { margin: 3px 0 0; font-size: 15.5px; line-height: 1.42; color: #2a3b57; }
+  .lis-enf { margin-top: 16px; padding: 12px 16px; border-radius: 16px; background: #e8f8ef; color: #12733d; font-size: 15.5px; line-height: 1.4; font-weight: 600; }
   #llave { display: flex; align-items: center; gap: 10px; }
   #llave span { font-size: 24px; color: #b07d2e; }
   #pin { width: 140px; font: 800 24px sans-serif; letter-spacing: .4em; text-align: center; color: var(--azul); background: var(--fondo); border: 2px solid var(--linea); border-radius: 14px; padding: 10px; outline: none; }
@@ -227,7 +258,7 @@
 </div>
 <div id="colores" aria-label="Colores"></div>
 <button type="button" id="punto" data-guion aria-label="·"></button>
-<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div></div></div>
+<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div><button type="button" id="abrir-pres" title="Vista de presentador en este computador" aria-label="Vista de presentador"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="11" height="9" rx="1.5"/><path d="M16.5 6h5M16.5 9.5h5M16.5 13h5M5 19h14"/></svg></button></div></div>
 
 <script>window.FA = { u: { esc: function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); } } };</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -235,6 +266,7 @@
 <script src="esquemas.js"></script>
 <script src="diapos.js"></script>
 <script src="fichas.js"></script>
+<script src="glosario.js"></script>
 <script>
 (function () {
   var D = window.armarDiapos(), esc = FA.u.esc, E = window.ESQ;
@@ -250,9 +282,13 @@
       try { localStorage.setItem('fa-sala', SALA); } catch (e) {}
     }
   }
+  /* mismo computador: canal instantáneo entre pestañas (vista de presentador) */
+  var ultT = {};
+  var canal = (SALA && window.BroadcastChannel) ? new BroadcastChannel('fa-' + SALA) : null;
   function publicar(n) {
     if (!SALA) return;
-    try { fetch('https://ntfy.sh/' + SALA, { method: 'POST', body: JSON.stringify({ de: 'pc', n: n }) }).catch(function () {}); } catch (e) {}
+    if (canal) try { canal.postMessage({ de: 'pc', n: n, t: Date.now() }); } catch (e) {}
+    try { fetch('https://ntfy.sh/' + SALA, { method: 'POST', body: JSON.stringify({ de: 'pc', n: n, t: Date.now() }) }).catch(function () {}); } catch (e) {}
   }
   var escenario = document.getElementById('escenario');
   var WEB = 'https://andresarangoez.github.io/FARMACOLOGIA/';
@@ -271,7 +307,7 @@
   function html(d) {
     switch (d.tipo) {
       case 'portada':
-        return fondoVivo() + '<div class="port"><div class="halo an"><img src="logo.png" alt=""></div><span class="etq an" style="--d:1">Tutoría · Farmacología</span>' +
+        return fondoVivo() + '<div class="port"><div class="halo an"><img src="logo.png" alt=""></div><span class="etq an" style="--d:1">Elaborado por Soy Andrés Arango</span>' +
           '<h1 class="an" style="--d:2">Repaso del <em>último parcial</em></h1>' +
           '<p class="an" style="--d:3">Sesiones 10 a 14 · mecanismos de acción, indicaciones y cuidados de enfermería</p><div class="linea-oro"></div></div>';
       case 'temario':
@@ -302,6 +338,25 @@
       case 'tabla':
         return cab(d) + '<table class="tabla"><thead><tr class="an" style="--d:2">' + d.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
           d.filas.map(function (f, i) { return '<tr class="an" style="--d:' + (i + 3) + '">' + f.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>';
+      case 'lisis':
+        return cab(d) + '<div class="lisis"><div class="lis-izq an" style="--d:2">' +
+          '<svg viewBox="0 0 320 190" aria-hidden="true"><defs><radialGradient id="lis-g" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#1e4f95"/><stop offset="1" stop-color="#0b2a5c"/></radialGradient></defs>' +
+          '<ellipse class="lis-cel" cx="160" cy="95" rx="78" ry="58"/><circle cx="175" cy="100" r="20" fill="rgba(248,113,113,.3)" stroke="#f87171" stroke-width="2"/>' +
+          '<circle class="lis-frag" cx="70" cy="40" r="7"/><circle class="lis-frag" cx="262" cy="52" r="6"/><circle class="lis-frag" cx="250" cy="160" r="8"/><circle class="lis-frag" cx="60" cy="150" r="5"/>' +
+          '<g class="lis-sale" style="--dx:-110px;--dy:-30px"><circle cx="150" cy="80" r="15" fill="#fbd785"/><text x="150" y="85" text-anchor="middle" fill="#082956">K⁺</text></g>' +
+          '<g class="lis-sale" style="--dx:115px;--dy:-25px;animation-delay:.8s"><circle cx="165" cy="85" r="15" fill="#93c5fd"/><text x="165" y="90" text-anchor="middle" fill="#082956">P</text></g>' +
+          '<g class="lis-sale" style="--dx:20px;--dy:70px;animation-delay:1.6s"><circle cx="160" cy="100" r="15" fill="#fca5a5"/><text x="160" y="104" text-anchor="middle" fill="#082956" style="font-size:10px">Úrico</text></g></svg>' +
+          '<div class="lis-libera">' +
+          '<div class="lis-ion k an" style="--d:3"><b>K⁺</b><strong>Potasio</strong><span>Hiperkalemia → arritmias</span></div>' +
+          '<div class="lis-ion p an" style="--d:4"><b>P</b><strong>Fósforo</strong><span>Hiperfosfatemia</span></div>' +
+          '<div class="lis-ion u an" style="--d:5"><b>Úrico</b><strong>Ácido úrico</strong><span>Precipita en el túbulo → nefropatía obstructiva</span></div></div>' +
+          '<p class="lis-alerta an" style="--d:6"><b>UCI</b> si hay leucocitos &gt; 50.000 o sube el ácido úrico o el fósforo.</p></div>' +
+          '<div class="lis-der"><p class="lis-rot an" style="--d:3">Manejo paso a paso</p><ol class="lis-pasos">' +
+          '<li class="an" style="--d:4"><i>1</i><div><b>Hiperhidratar</b><p>2000-3000 cc/m²/día con lactato de Ringer (la salina da acidosis hiperclorémica en pediatría).</p></div></li>' +
+          '<li class="an" style="--d:5"><i>2</i><div><b>Garantizar diuresis</b><p>Gasto urinario de 100-200 cc/m²/hora: arrastra el potasio y evita cristales.</p></div></li>' +
+          '<li class="an" style="--d:6"><i>3</i><div><b>Bajar el ácido úrico</b><p>Rasburicasa al inicio y luego alopurinol, que baja su producción.</p></div></li>' +
+          '<li class="an" style="--d:7"><i>4</i><div><b>Quelar el fósforo</b><p>Sevelamer.</p></div></li></ol>' +
+          '<p class="lis-enf an" style="--d:8">Enfermería: balance de líquidos, gasto urinario, monitoreo cardíaco y electrolitos.</p></div></div>';
       case 'tarjetas':
         return cab(d) + '<div class="tarjetas">' + d.items.map(function (t, i) { return '<div class="an" style="--d:' + (i + 2) + '"><b>' + esc(t[0]) + '</b><p>' + t[1] + '</p></div>'; }).join('') + '</div>';
       case 'flip':
@@ -342,20 +397,7 @@
   }
 
   /* significado de cada sigla, la primera vez que aparece en la diapositiva */
-  var SIGLAS = [
-    ['BCR-ABL', 'cinasa híbrida de los genes BCR y ABL'], ['BCR', 'región de agrupamiento de puntos de ruptura'], ['ABL', 'oncogén Abelson'],
-    ['BRAF', 'cinasa de la familia RAF, de la vía de crecimiento'], ['MEK', 'cinasa que activa a ERK'], ['ERK', 'cinasa regulada por señales extracelulares'],
-    ['RAS', 'proteína interruptor que enciende la cascada'], ['STAT', 'transductor de señal y activador de la transcripción'], ['PI3K', 'fosfatidilinositol 3-cinasa'], ['AKT', 'proteína cinasa B'],
-    ['SRC', 'familia de cinasas SRC'], ['c-KIT', 'receptor del factor de células madre'], ['PDGFR', 'receptor del factor de crecimiento derivado de plaquetas'],
-    ['VEGFR', 'receptor del VEGF'], ['VEGF-A', 'factor de crecimiento endotelial vascular A'], ['VEGF', 'factor de crecimiento endotelial vascular'], ['EGFR', 'receptor del factor de crecimiento epidérmico'], ['EGF', 'factor de crecimiento epidérmico'],
-    ['mTORC1', 'complejo 1 de mTOR'], ['mTOR', 'diana de la rapamicina en mamíferos'], ['FKBP-12', 'proteína de unión a FK506'], ['IMPDH', 'inosina monofosfato deshidrogenasa'], ['NF-AT', 'factor nuclear de células T activadas'],
-    ['IL-2', 'interleucina 2'], ['IL-17A', 'interleucina 17A'], ['IL-12/23', 'interleucinas 12 y 23'], ['CD25', 'subunidad α del receptor de IL-2'], ['CD80/CD86', 'moléculas coestimuladoras de la célula presentadora'], ['CD28', 'receptor coestimulador del linfocito T'],
-    ['CTLA-4', 'antígeno 4 del linfocito T citotóxico'], ['RANKL', 'ligando del receptor activador del factor nuclear κB'], ['RANK', 'receptor del osteoclasto'], ['C5', 'componente 5 del complemento'], ['C5b-9', 'complejo de ataque a la membrana'],
-    ['CD33', 'marcador de la célula mieloide'], ['CD30', 'marcador del linfoma de Hodgkin'], ['CD20', 'marcador del linfocito B'], ['MMAE', 'monometil auristatina E'], ['PFOR', 'piruvato:ferredoxina oxidorreductasa'],
-    ['G6PD', 'glucosa-6-fosfato deshidrogenasa'], ['EBV', 'virus de Epstein-Barr'], ['GABA', 'ácido gamma-aminobutírico'], ['ATP', 'adenosín trifosfato'], ['LMC', 'leucemia mieloide crónica'], ['LLA', 'leucemia linfoblástica aguda'], ['LMA', 'leucemia mieloide aguda'],
-    ['EII', 'enfermedad inflamatoria intestinal'], ['PRES', 'encefalopatía posterior reversible'], ['HPN', 'hemoglobinuria paroxística nocturna'], ['SHUa', 'síndrome hemolítico urémico atípico'], ['NMOSD', 'trastorno del espectro de neuromielitis óptica'],
-    ['FEVI', 'fracción de eyección del ventrículo izquierdo'], ['CYP3A4', 'enzima hepática que metaboliza fármacos'], ['hERG', 'canales de potasio del corazón'], ['Th1', 'linfocitos T colaboradores tipo 1'], ['Th17', 'linfocitos T colaboradores tipo 17'], ['Hib', 'Haemophilus influenzae tipo b'], ['SSN', 'solución salina normal']
-  ];
+  var SIGLAS = window.SIGLAS;
   function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&'); }
   var RE_SIG = new RegExp('(^|[^A-Za-z0-9])(' + SIGLAS.map(function (s) { return escRe(s[0]); }).join('|') + ')(?![A-Za-z0-9]|-[0-9])', 'g');
   var MAPA = {}; SIGLAS.forEach(function (s) { MAPA[s[0]] = s[1]; });
@@ -404,12 +446,17 @@
     if (!remoto && !MINI) publicar(i);
     document.dispatchEvent(new CustomEvent('cambio-diapo', { detail: i }));
   }
+  if (canal) canal.onmessage = function (ev) {
+    var m = ev.data || {};
+    if (m.de === 'cel' && typeof m.n === 'number') { var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; ir(m.n, true); }
+    else if (m.de === 'cel-hola') canal.postMessage({ de: 'pc', n: actual, t: Date.now() });
+  };
   if (SALA && window.EventSource) {
     var fuente = new EventSource('https://ntfy.sh/' + SALA + '/sse');
     fuente.onmessage = function (ev) {
       try {
         var m = JSON.parse(JSON.parse(ev.data).message || '{}');
-        if (m.de === 'cel' && typeof m.n === 'number') ir(m.n, true);
+        if (m.de === 'cel' && typeof m.n === 'number') { var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; ir(m.n, true); }
         else if (m.de === 'cel-hola') publicar(actual);
       } catch (e) {}
     };
@@ -428,11 +475,15 @@
   }
   document.getElementById('llave').addEventListener('submit', function (e) {
     e.preventDefault();
-    if (pin.value === '1234') { guion.classList.add('abierto'); qr(document.getElementById('qr-guion'), urlNotas, 260); }
+    if (pin.value === '1234') { guion.classList.add('abierto'); qr(document.getElementById('qr-guion'), urlNotas, 260); try { sessionStorage.setItem('k', '1'); } catch (e) {} }
     else { pin.classList.remove('mal'); void pin.offsetWidth; pin.classList.add('mal'); pin.value = ''; }
   });
   guion.addEventListener('click', function (e) { if (e.target === guion) verGuion(false); });
   guion.querySelector('#qr-guion').addEventListener('click', function () { verGuion(false); });
+  document.getElementById('abrir-pres').addEventListener('click', function () {
+    window.open(urlNotas + '#' + (actual + 1), 'fa-presentador', 'width=1280,height=760');
+    verGuion(false);
+  });
 
   document.querySelector('[data-ant]').addEventListener('click', function () { ir(actual - 1); });
   document.querySelector('[data-sig]').addEventListener('click', function () { ir(actual + 1); });
