@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Bevacizumab:: Tumor libera VEGF-A → Bevacizumab atrapa el VEGF-A → No se une a VEGFR-1 ni VEGFR-2 → No se forman vasos nuevos ;; Sunitinib:: Receptores VEGFR, PDGFR y c-KIT → Sunitinib bloquea su tirosina quinasa → Menos angiogénesis y proliferación → Control del tumor ;; Aflibercept / ranibizumab:: VEGF en la retina → El fármaco atrapa el VEGF (intravítreo) → Sin neovascularización ni fuga → Se conserva la visión
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 12).
-
 ## Angiogénesis
 
 - **Definición:** proceso biológico mediante el cual se forman **nuevos vasos sanguíneos a partir de los ya existentes**.

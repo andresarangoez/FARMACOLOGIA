@@ -30,8 +30,6 @@ Cuando el medicamento llega al **colon**, las bacterias intestinales rompen el e
 
 ## Dosis, efectos adversos y cuidados
 
-> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
-
 **Dosis en pediatría (vía oral):**
 - **Mesalazina:** 50-80 mg/kg/día, dividida en 2-3 tomas (máximo 4 g/día). Existen formas de liberación prolongada y supositorios o enemas para la afectación rectal.
 - **Sulfasalazina:** 40-70 mg/kg/día en 3-4 tomas (máximo 4 g/día).

@@ -31,8 +31,6 @@ esquema: Omalizumab:: IgE libre circulante → Omalizumab se une a la IgE → La
 
 ## Roflumilast
 
-> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
-
 - **Inhibidor selectivo de la fosfodiesterasa 4 (PDE4)**, por vía oral.
 - **Mecanismo:** al inhibir la PDE4 aumenta el **AMPc** dentro de las células inflamatorias (neutrófilos, eosinófilos, macrófagos) → disminuye la liberación de mediadores inflamatorios en la vía aérea. Es antiinflamatorio, **no** broncodilatador inmediato.
 - **Uso:** **EPOC severa** con bronquitis crónica y exacerbaciones frecuentes, como terapia de mantenimiento en adultos. **No está aprobado en pediatría.**

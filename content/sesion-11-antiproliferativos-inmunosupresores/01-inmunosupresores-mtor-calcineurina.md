@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Sirolimus / everolimus:: Fármaco se une a FKBP-12 → El complejo bloquea mTORC1 → S6K1 y 4E-BP1 no traducen proteínas → Parada del ciclo celular y autofagia ;; Tacrolimus:: Tacrolimus se une a FKBP-12 → Bloquea la calcineurina → NF-AT no entra al núcleo y no hay IL-2 → Linfocitos T no proliferan ;; Micofenolato:: Se convierte en ácido micofenólico → Inhibe la IMPDH → Sin purinas (guanosina) → Linfocitos T y B detenidos
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 11). El plan calendario menciona también fingolimod, que no se vio en esta clase.
-
 ## La proteína mTOR
 
 - **mTOR** = *mammalian Target of Rapamycin*: la diana de la rapamicina en mamíferos. Es una proteína dentro de las células que regula el crecimiento celular, la síntesis de proteínas y lípidos, el metabolismo y la supervivencia.

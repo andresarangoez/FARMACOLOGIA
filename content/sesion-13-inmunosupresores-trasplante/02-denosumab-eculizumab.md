@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Denosumab:: RANKL activa al osteoclasto → Denosumab se une a RANKL → RANKL no se une a RANK → Menos resorción ósea ;; Eculizumab:: Complemento activado → Eculizumab se une a C5 → No se forma el complejo C5b-9 → Menos hemólisis y daño vascular
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 13).
-
 ## Agentes modificadores óseos: denosumab
 
 - **Grupo:** agentes modificadores óseos; anticuerpos monoclonales inhibidores de la resorción ósea; **inhibidores de RANKL**.

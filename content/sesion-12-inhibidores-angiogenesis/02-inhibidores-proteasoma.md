@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Bortezomib:: Ubiquitina marca proteínas dañadas → Bortezomib bloquea el proteasoma 26S → Se acumulan proteínas tóxicas → Estrés celular y apoptosis
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 12).
-
 ## El proteasoma 26S
 
 - El **proteasoma 26S** es el sistema de eliminación de proteínas que ya no sirven: la **ubiquitina** marca las proteínas dañadas o mal plegadas y el proteasoma las "tritura" (degrada).

@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Gefitinib / erlotinib / afatinib:: Receptor EGFR activado → El fármaco bloquea su dominio tirosina quinasa → Sin señal AKT, ERK ni PI3K → Apoptosis del tumor ;; Nimotuzumab:: Célula tumoral con muchos EGFR → Nimotuzumab se une de forma bivalente → El EGF no se une y las células NK atacan → Muerte de la célula tumoral
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 11). El plan calendario menciona también cetuximab, osimertinib y panitumumab, que no se vieron en esta clase.
-
 ## El factor de crecimiento epidérmico (EGF)
 
 - **Factor de crecimiento epidérmico (EGF):** proteína pequeña, señal química para que las células se dividan y crezcan.

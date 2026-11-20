@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Basiliximab:: Linfocito T reconoce el injerto y produce IL-2 → Basiliximab se une a CD25 (receptor de IL-2) → La IL-2 no actúa → Menos linfocitos T y menos rechazo
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 13). El plan calendario menciona también daclizumab, que no se vio en esta clase.
-
 ## Basiliximab
 
 - **Grupo:** anticuerpos monoclonales; **anticuerpo monoclonal quimérico** biotecnológico de tipo **antagonista del receptor de IL-2**; **inmunosupresor selectivo**.

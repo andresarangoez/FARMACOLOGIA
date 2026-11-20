@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Cromoglicato:: Alérgeno llega al mastocito → Cromoglicato estabiliza su membrana → No hay degranulación → No se libera histamina ni leucotrienos
 ---
 
-> Complemento de bibliografía de referencia: el material de la clase solo nombra este grupo.
-
 ## Historia
 
 - Derivado de la **kelina**, un compuesto de la planta *Ammi visnaga*. Lo desarrolló en la década de 1960 el médico **Roger Altounyan**, que padecía asma y probaba los compuestos en sí mismo.

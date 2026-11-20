@@ -43,8 +43,6 @@ esquema: Bosentán:: Endotelina contrae la arteria pulmonar → Bosentán bloque
 
 ## Tadalafil
 
-> Complemento de bibliografía de referencia (no estaba en las diapositivas de la clase).
-
 - **Inhibidor de la fosfodiesterasa tipo 5 (PDE5)**, igual que el sildenafil, pero con **vida media más larga (~17 horas)**: se toma **una vez al día**.
 - **Mecanismo:** aumenta el GMPc en el músculo liso de las arterias pulmonares → vasodilatación pulmonar y menor resistencia vascular pulmonar.
 - **Dosis en hipertensión pulmonar:** adultos 40 mg una vez al día · en pediatría (desde 2 años, según la agencia regulatoria): < 40 kg: 20 mg/día; ≥ 40 kg: 40 mg/día.

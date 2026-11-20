@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Gemtuzumab:: Se une a CD33 de la célula leucémica → El complejo se internaliza → Libera la ozogamicina en el lisosoma → Rompe el ADN: apoptosis ;; Brentuximab vedotin:: Se une a CD30 → Se internaliza → Libera MMAE → Bloquea los microtúbulos: apoptosis ;; Ibritumomab:: Se une a CD20 → Se internaliza → El itrio-90 emite radiación beta → Daño del ADN y efecto cross-fire
 ---
 
-> Fuente: diapositivas y transcripción de la clase grabada (sesión 12). El plan calendario menciona también rituximab, que en esta clase solo se citó junto al ibritumomab.
-
 ## Anticuerpos monoclonales conjugados con compuestos citotóxicos
 
 Medicamentos diseñados para dirigir una sustancia citotóxica directamente a la célula tumoral. Tienen dos componentes:

@@ -10,8 +10,6 @@ dificultad_quiz: media
 esquema: Anti-TNF:: TNF-α elevado en la mucosa → Adalimumab o certolizumab neutralizan el TNF-α → Se apaga la cascada inflamatoria → Mucosa cicatriza ;; Rituximab:: Linfocito B con CD20 → Rituximab se une a CD20 → Destrucción del linfocito B → Menos autoanticuerpos
 ---
 
-> Complemento de bibliografía de referencia: el material de la clase solo nombra estos fármacos.
-
 ## El TNF-alfa en la enfermedad inflamatoria intestinal
 
 - El **factor de necrosis tumoral alfa (TNF-α)** es una citocina que activa y mantiene la inflamación. En la enfermedad de Crohn y la colitis ulcerosa está elevado en la mucosa intestinal.
