@@ -163,16 +163,20 @@
   #nav-inf button:active { transform: scale(.94); }
 
   /* herramientas: abajo a la derecha */
-  #herr { position: fixed; right: 14px; bottom: 74px; display: flex; flex-direction: column; gap: 8px; z-index: 7; padding: 8px; border-radius: 18px; background: rgba(8,41,86,.55); border: 1px solid rgba(255,255,255,.2); opacity: .5; transition: opacity .2s, background .2s; backdrop-filter: blur(4px); }
-  #herr:hover, #herr.activo { opacity: 1; background: rgba(8,41,86,.92); }
-  #herr button { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; border: 0; background: transparent; color: #fff; cursor: pointer; padding: 0; }
-  #herr button:hover { background: rgba(255,255,255,.12); }
+  #herr-tg { position: fixed; right: 14px; bottom: 74px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(8,41,86,.5); color: #fff; cursor: pointer; padding: 0; z-index: 8; opacity: .45; transition: opacity .2s, background .2s, transform .25s; }
+  #herr-tg:hover, #herr-tg.on { opacity: 1; background: rgba(8,41,86,.92); }
+  #herr-tg.on { transform: rotate(45deg); }
+  #herr-tg svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+  #herr { position: fixed; right: 13px; bottom: 110px; display: none; flex-direction: column; gap: 3px; z-index: 7; padding: 4px; border-radius: 14px; background: rgba(8,41,86,.9); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(4px); }
+  #herr.abierta { display: flex; }
+  #herr button { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px; border: 0; background: transparent; color: #fff; cursor: pointer; padding: 0; }
+  #herr button:hover { background: rgba(255,255,255,.14); }
   #herr button.on { background: var(--oro-2); color: var(--azul); }
-  #herr svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  #herr svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   #herr hr { width: 70%; border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 2px auto; }
-  #colores { position: fixed; right: 76px; bottom: 74px; display: none; flex-direction: column; gap: 8px; z-index: 7; padding: 10px 8px; border-radius: 16px; background: rgba(8,41,86,.92); }
+  #colores { position: fixed; right: 52px; bottom: 110px; display: none; flex-direction: column; gap: 6px; z-index: 7; padding: 7px 6px; border-radius: 12px; background: rgba(8,41,86,.92); }
   #colores.ver { display: flex; }
-  #colores button { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); cursor: pointer; padding: 0; }
+  #colores button { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); cursor: pointer; padding: 0; }
   #colores button.on { outline: 3px solid var(--oro-2); outline-offset: 2px; }
 
   /* lienzo de dibujo y pizarra (dentro del escenario: escala con la diapositiva) */
@@ -181,7 +185,7 @@
   #lienzo.laser { pointer-events: auto; cursor: none; }
   #pizarra { position: absolute; inset: 0; z-index: 15; display: none; border-radius: 6px; background-color: #fff; background-image: linear-gradient(#eef2f8 1px, transparent 1px), linear-gradient(90deg, #eef2f8 1px, transparent 1px); background-size: 32px 32px; }
   #pizarra.ver { display: block; }
-  body.mini #nav-inf, body.mini #herr, body.mini #colores, body.mini #lienzo { display: none !important; }
+  body.mini #nav-inf, body.mini #herr, body.mini #herr-tg, body.mini #colores, body.mini #lienzo { display: none !important; }
   #punto { position: fixed; left: 10px; bottom: 10px; width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgba(150,165,190,.35); cursor: pointer; z-index: 6; }
   #punto:hover { background: rgba(237,190,123,.8); }
   #guion { position: fixed; inset: 0; background: rgba(4,14,32,.86); display: none; place-items: center; z-index: 10; }
@@ -207,6 +211,7 @@
   <button type="button" data-ant aria-label="Anterior">‹</button>
   <button type="button" data-sig aria-label="Siguiente">›</button>
 </div>
+<button type="button" id="herr-tg" aria-label="Herramientas" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
 <div id="herr" role="toolbar" aria-label="Herramientas">
   <button type="button" data-h="laser" title="Puntero láser (L)" aria-label="Puntero láser"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="#ef4444" stroke="#ef4444"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
   <button type="button" data-h="lapiz" title="Lápiz (P)" aria-label="Lápiz"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></button>
@@ -491,6 +496,7 @@
   function bucleLaser() { redibujar(); rafLaser = estado === 'laser' ? requestAnimationFrame(bucleLaser) : null; }
   function modo(m) {
     estado = m;
+    if (m && tg) { herr.classList.add('abierta'); tg.classList.add('on'); tg.setAttribute('aria-expanded', true); }
     herr.querySelectorAll('[data-h]').forEach(function (b) { b.classList.toggle('on', b.dataset.h === m); });
     herr.classList.toggle('activo', !!m);
     lienzo.className = m === 'laser' ? 'laser' : (m ? 'dibuja' : '');
@@ -524,6 +530,12 @@
   });
   ['pointerup', 'pointercancel'].forEach(function (ev) { lienzo.addEventListener(ev, function () { actualTrazo = null; }); });
   lienzo.addEventListener('pointerleave', function () { if (estado === 'laser') rastro = []; });
+  var tg = document.getElementById('herr-tg');
+  function desplegar(v) {
+    herr.classList.toggle('abierta', v); tg.classList.toggle('on', v); tg.setAttribute('aria-expanded', v);
+    if (!v) { modo(null); if (enPizarra) pizarra(false); }
+  }
+  tg.addEventListener('click', function () { desplegar(!herr.classList.contains('abierta')); });
   herr.querySelectorAll('[data-h]').forEach(function (b) { b.addEventListener('click', function () { modo(estado === b.dataset.h ? null : b.dataset.h); }); });
   herr.querySelector('[data-limpiar]').addEventListener('click', limpiar);
   herr.querySelector('[data-pizarra]').addEventListener('click', function () { pizarra(!enPizarra); });
