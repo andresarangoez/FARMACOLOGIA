@@ -251,15 +251,19 @@ window.FICHAS = {
   }
 };
 
+/* RECORTE TEMPORAL (tutoría en curso): sin detalle de fármacos desde psoriasis y sin «¿Quién da qué?». Poner en false para revertir. */
+window.RECORTE = true;
+var SIN_DETALLE = { 'psoriasis-biologicos': 1, 'antihelminticos': 1, 'antiprotozoarios': 1 };
 window.armarDiapos = function () {
   var out = [];
   (window.DIAPOS || []).forEach(function (d) {
     if (d.tipo === 'cuidados') return;
+    if (window.RECORTE && d.tipo === 'flip') return;
     var k = d.id || (d.esq && d.esq.join('+'));
     var f = k && window.FICHAS[k];
     if (d.tipo === 'mecanismo' && f) d.ind = f.ind;
     out.push(d);
-    if (d.tipo === 'mecanismo' && f) f.slides.forEach(function (s) { out.push({ tipo: 'farmacos', ses: d.ses, titulo: s.titulo, cards: s.cards, notas: s.notas }); });
+    if (d.tipo === 'mecanismo' && f && !(window.RECORTE && SIN_DETALLE[k])) f.slides.forEach(function (s) { out.push({ tipo: 'farmacos', ses: d.ses, titulo: s.titulo, cards: s.cards, notas: s.notas }); });
   });
   return out;
 };
