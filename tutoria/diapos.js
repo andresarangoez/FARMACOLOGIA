@@ -426,5 +426,33 @@ window.DIAPOS = [
     tipo: 'cierre',
     titulo: 'Sigue estudiando en la web',
     notas: 'Bueno chicos, eso es todo por hoy. Muchas gracias por quedarse hasta el final. Les recuerdo que en la página tienen todas las sesiones con la animación de cada mecanismo, igualita a la que vimos hoy, y además flashcards, quiz por tema y el listado de fármacos, para que sigan repasando estos días. Pueden escanear el código o entrar a la dirección que está en pantalla. Mi consejo para estos días: no se pongan a leer todo de corrido; repasen las tablas, vuelvan a ver las animaciones y hagan los quiz. Mucha suerte el sábado, ya verán que les va muy bien, y si les queda alguna duda me escriben por el grupo sin problema. Un abrazo, nos vemos.'
+  },
+  {
+    tipo: 'tabla', parte2: 'sufijos',
+    titulo: 'Palabra, prefijo y sufijo: el nombre te ayuda',
+    cols: ['Parte del nombre', 'Qué te dice', 'Ejemplos'],
+    filas: [
+      ['-mab', 'Anticuerpo monoclonal: actúa afuera de la célula', 'Ustekinumab · ixekizumab · secukinumab'],
+      ['-umab', 'Anticuerpo humano', 'Ustekinumab · secukinumab'],
+      ['-zumab', 'Anticuerpo humanizado', 'Ixekizumab'],
+      ['-bendazol', 'Benzimidazol: bloquea la tubulina del gusano', 'Albendazol · mebendazol'],
+      ['-nidazol', 'Nitroimidazol: se activa por reducción y daña el ADN', 'Metronidazol · tinidazol'],
+      ['Nitro-', 'Grupo nitro que se reduce dentro del parásito', 'Nitazoxanida · furazolidona'],
+      ['-micina', 'Antibiótico obtenido de Streptomyces', 'Paromomicina (aminoglucósido)']
+    ],
+    notas: 'Bueno muchachos, para esta última parte les dejo un truquito que les va a ahorrar mucho estudio: el nombre del fármaco ya les dice bastante. Todo lo que termina en -mab es un anticuerpo monoclonal, o sea, una proteína grande que actúa afuera de la célula, atrapando una molécula o tapando un receptor. Y si se fijan en lo que va antes del -mab: -umab quiere decir que es humano, como el ustekinumab y el secukinumab, y -zumab que es humanizado, como el ixekizumab. Ahora, en los antiparasitarios, pelados: si termina en -bendazol, como el albendazol y el mebendazol, ya saben que bloquea la tubulina del gusano. Si termina en -nidazol, como el metronidazol y el tinidazol, es un nitroimidazol, que se activa adentro del microorganismo y le daña el ADN. Los que llevan nitro, como la nitazoxanida o la furazolidona, tienen un grupo nitro que se reduce dentro del parásito. Y la paromomicina, con su -micina, viene de una bacteria del suelo, el Streptomyces, y es un aminoglucósido. Con esto, si en el parcial les sale un nombre que no recuerdan, ya pueden deducir de qué grupo es.'
+  },
+  {
+    tipo: 'tarjetas', parte2: 'cuidados', ses: 14,
+    titulo: 'Cuidados clave de psoriasis y antiparasitarios',
+    items: [
+      ['Anti-IL-17A', 'Vigilar <b>candidiasis</b> oral, genital o esofágica: la IL-17A defiende las mucosas.'],
+      ['Intestino', 'Preguntar por diarrea o sangre: pueden <b>aparecer o empeorar</b> Crohn y colitis.'],
+      ['Antes de un biológico', '<b>Tamizaje de tuberculosis</b> y no iniciar con una infección activa.'],
+      ['Benzimidazoles', 'Darlos <b>con alimentos</b>; raro pero grave: mielosupresión.'],
+      ['Ivermectina', 'Vigilar el <b>síndrome de Mazzotti</b> por la muerte masiva de parásitos.'],
+      ['Metronidazol', '<b>Cero alcohol</b> (efecto disulfiram) · sabor metálico · ojo con déficit de G6PD.']
+    ],
+    notas: 'Y para terminar, chicos, los cuidados que de verdad importan de esta parte. Con los anti-IL-17A, el ixekizumab y el secukinumab, lo primero es la candidiasis, porque la IL-17A es la que defiende las mucosas de la Candida; entonces revisamos la boca. Lo segundo, el intestino: pueden hacer aparecer o empeorar una enfermedad inflamatoria intestinal, así que preguntamos por diarrea, dolor abdominal o sangre. Y antes de cualquier biológico, tamizaje de tuberculosis y nada de iniciar si hay una infección activa. En los antiparasitarios: el albendazol y el mebendazol se dan con comida, y aunque es raro, vigilamos mielosupresión. Con la ivermectina, ojo con el síndrome de Mazzotti, que es la reacción inflamatoria cuando se mueren muchos parásitos de una. Y el metronidazol, pelados, cero alcohol, porque da efecto disulfiram; además el paciente va a sentir sabor metálico y en pacientes con déficit de G6PD puede dar hemólisis. Con eso cerramos el repaso. Mucha suerte en el parcial.'
   }
 ];
