@@ -114,6 +114,7 @@
   .tarjetas div { border-radius: 20px; padding: 18px 20px; background: var(--fondo); border: 1px solid var(--linea); transition: transform .25s; }
   .tarjetas div:hover { transform: translateY(-5px); }
   .tarjetas b { display: block; font-family: var(--f-display); color: var(--azul); font-size: 21px; margin-bottom: 10px; }
+  .tarjetas p b { display: inline; font: inherit; font-weight: 800; font-size: inherit; color: var(--azul); margin: 0; }
   .tarjetas p { margin: 0; font-size: 16px; line-height: 1.45; color: #2a3b57; }
 
   .flips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -261,8 +262,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="esquema.js"></script>
 <script src="esquemas.js"></script>
-<script src="diapos.js?v=r1"></script>
-<script src="fichas.js?v=r1"></script>
+<script src="diapos.js?v=r2"></script>
+<script src="fichas.js?v=r2"></script>
 <script src="glosario.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
 <script src="sinc.js"></script>
@@ -281,6 +282,7 @@
       try { localStorage.setItem('fa-sala', SALA); } catch (e) {}
     }
   }
+  if (SALA && window.PARTE === '2') SALA += 'p2';
   var sinc = null;
   function publicar(n) { if (sinc) sinc.enviar({ de: 'pc', n: n }); }
   var escenario = document.getElementById('escenario');
@@ -444,7 +446,7 @@
   addEventListener('resize', escala); escala();
 
   function qr(el, txt, t) { if (!el || el.dataset.ok) return; el.dataset.ok = 1; if (window.QRCode) new QRCode(el, { text: txt, width: t, height: t, colorDark: '#082956', colorLight: '#ffffff' }); else el.textContent = txt; }
-  var urlNotas = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/') + 'n.html?s=' + SALA;
+  var urlNotas = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/') + 'n.html?s=' + SALA + (window.PARTE === '2' ? '&parte=2' : '');
   qr(document.getElementById('qr-web'), WEB, 200);
   var guion = document.getElementById('guion');
   var pin = document.getElementById('pin');

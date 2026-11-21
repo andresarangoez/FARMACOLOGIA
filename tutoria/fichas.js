@@ -254,10 +254,22 @@ window.FICHAS = {
 /* RECORTE TEMPORAL (tutoría en curso): sin detalle de fármacos desde psoriasis y sin «¿Quién da qué?». Poner en false para revertir. */
 window.RECORTE = true;
 var SIN_DETALLE = { 'psoriasis-biologicos': 1, 'antihelminticos': 1, 'antiprotozoarios': 1 };
+window.PARTE = (typeof location !== 'undefined' && /[?&]parte=2/.test(location.search)) ? '2' : '';
 window.armarDiapos = function () {
+  var D = window.DIAPOS || [];
+  if (window.PARTE === '2') {
+    var por = function (f) { for (var i = 0; i < D.length; i++) if (f(D[i])) return D[i]; return null; };
+    var mec = function (id) { var d = por(function (x) { return x.id === id; }); var f = window.FICHAS[id]; if (d && f) d.ind = f.ind; return d; };
+    return [
+      por(function (x) { return x.parte2 === 'sufijos'; }),
+      mec('psoriasis-biologicos'), mec('antihelminticos'), mec('antiprotozoarios'),
+      por(function (x) { return x.tipo === 'tabla' && x.ses === 14; }),
+      por(function (x) { return x.parte2 === 'cuidados'; })
+    ].filter(Boolean);
+  }
   var out = [];
   (window.DIAPOS || []).forEach(function (d) {
-    if (d.tipo === 'cuidados') return;
+    if (d.tipo === 'cuidados' || d.parte2) return;
     if (window.RECORTE && d.tipo === 'flip') return;
     var k = d.id || (d.esq && d.esq.join('+'));
     var f = k && window.FICHAS[k];
