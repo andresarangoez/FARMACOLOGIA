@@ -114,7 +114,6 @@
   .tarjetas div { border-radius: 20px; padding: 18px 20px; background: var(--fondo); border: 1px solid var(--linea); transition: transform .25s; }
   .tarjetas div:hover { transform: translateY(-5px); }
   .tarjetas b { display: block; font-family: var(--f-display); color: var(--azul); font-size: 21px; margin-bottom: 10px; }
-  .tarjetas p b { display: inline; font: inherit; font-weight: 800; font-size: inherit; color: var(--azul); margin: 0; }
   .tarjetas p { margin: 0; font-size: 16px; line-height: 1.45; color: #2a3b57; }
 
   .flips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -198,6 +197,9 @@
   #qr-guion { display: none; place-items: center; }
   #guion.abierto #qr-guion { display: grid; }
   #guion.abierto #llave { display: none; }
+  #abrir-pres { display: none; margin: 14px auto 0; padding: 0 16px; height: 40px; border-radius: 12px; border: 0; background: var(--azul); color: var(--oro-2); cursor: pointer; place-items: center; }
+  #guion.abierto #abrir-pres { display: grid; }
+  #abrir-pres svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
   /* lisis tumoral */
   .lisis { display: grid; grid-template-columns: 1.05fr 1fr; gap: 34px; align-items: stretch; }
@@ -256,14 +258,14 @@
 </div>
 <div id="colores" aria-label="Colores"></div>
 <button type="button" id="punto" data-guion aria-label="·"></button>
-<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div></div></div>
+<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div><button type="button" id="abrir-pres" title="Vista de presentador" aria-label="Vista de presentador"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="11" height="9" rx="1.5"/><path d="M16.5 6h5M16.5 9.5h5M16.5 13h5M5 19h14"/></svg></button></div></div>
 
 <script>window.FA = { u: { esc: function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); } } };</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="esquema.js"></script>
 <script src="esquemas.js"></script>
-<script src="diapos.js?v=r2"></script>
-<script src="fichas.js?v=r2"></script>
+<script src="diapos.js?v=r3"></script>
+<script src="fichas.js?v=r3"></script>
 <script src="glosario.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
 <script src="sinc.js"></script>
@@ -282,7 +284,6 @@
       try { localStorage.setItem('fa-sala', SALA); } catch (e) {}
     }
   }
-  if (SALA && window.PARTE === '2') SALA += 'p2';
   var sinc = null;
   function publicar(n) { if (sinc) sinc.enviar({ de: 'pc', n: n }); }
   var escenario = document.getElementById('escenario');
@@ -446,7 +447,7 @@
   addEventListener('resize', escala); escala();
 
   function qr(el, txt, t) { if (!el || el.dataset.ok) return; el.dataset.ok = 1; if (window.QRCode) new QRCode(el, { text: txt, width: t, height: t, colorDark: '#082956', colorLight: '#ffffff' }); else el.textContent = txt; }
-  var urlNotas = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/') + 'n.html?s=' + SALA + (window.PARTE === '2' ? '&parte=2' : '');
+  var urlNotas = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/') + 'n.html?s=' + SALA;
   qr(document.getElementById('qr-web'), WEB, 200);
   var guion = document.getElementById('guion');
   var pin = document.getElementById('pin');
@@ -461,6 +462,10 @@
   });
   guion.addEventListener('click', function (e) { if (e.target === guion) verGuion(false); });
   guion.querySelector('#qr-guion').addEventListener('click', function () { verGuion(false); });
+  document.getElementById('abrir-pres').addEventListener('click', function () {
+    window.open(urlNotas + '#' + (actual + 1), 'fa-presentador', 'width=1280,height=760');
+    verGuion(false);
+  });
 
   document.querySelector('[data-ant]').addEventListener('click', function () { ir(actual - 1); });
   document.querySelector('[data-sig]').addEventListener('click', function () { ir(actual + 1); });
