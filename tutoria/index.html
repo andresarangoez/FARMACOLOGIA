@@ -197,9 +197,6 @@
   #qr-guion { display: none; place-items: center; }
   #guion.abierto #qr-guion { display: grid; }
   #guion.abierto #llave { display: none; }
-  #abrir-pres { display: none; margin: 12px auto 0; width: 44px; height: 36px; border-radius: 10px; border: 0; background: var(--azul); color: var(--oro-2); cursor: pointer; place-items: center; }
-  #guion.abierto #abrir-pres { display: grid; }
-  #abrir-pres svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
   /* lisis tumoral */
   .lisis { display: grid; grid-template-columns: 1.05fr 1fr; gap: 34px; align-items: stretch; }
@@ -258,7 +255,7 @@
 </div>
 <div id="colores" aria-label="Colores"></div>
 <button type="button" id="punto" data-guion aria-label="·"></button>
-<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div><button type="button" id="abrir-pres" title="Vista de presentador en este computador" aria-label="Vista de presentador"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="11" height="9" rx="1.5"/><path d="M16.5 6h5M16.5 9.5h5M16.5 13h5M5 19h14"/></svg></button></div></div>
+<div id="guion" role="dialog" aria-label="·"><div><form id="llave"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit" aria-label="›">›</button></form><div id="qr-guion"></div></div></div>
 
 <script>window.FA = { u: { esc: function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); } } };</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -267,12 +264,14 @@
 <script src="diapos.js"></script>
 <script src="fichas.js"></script>
 <script src="glosario.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
+<script src="sinc.js"></script>
 <script>
 (function () {
   var D = window.armarDiapos(), esc = FA.u.esc, E = window.ESQ;
   var MINI = /[?&]mini=1/.test(location.search);
   if (MINI) document.body.classList.add('mini');
-  /* sala de sincronización con el celular (ntfy.sh: solo viaja el número de diapositiva) */
+  /* sala de sincronización con el celular (MQTT: solo viaja el número de diapositiva) */
   var SALA = null;
   if (!MINI) {
     try { SALA = localStorage.getItem('fa-sala'); } catch (e) {}
@@ -282,14 +281,8 @@
       try { localStorage.setItem('fa-sala', SALA); } catch (e) {}
     }
   }
-  /* mismo computador: canal instantáneo entre pestañas (vista de presentador) */
-  var ultT = {};
-  var canal = (SALA && window.BroadcastChannel) ? new BroadcastChannel('fa-' + SALA) : null;
-  function publicar(n) {
-    if (!SALA) return;
-    if (canal) try { canal.postMessage({ de: 'pc', n: n, t: Date.now() }); } catch (e) {}
-    try { fetch('https://ntfy.sh/' + SALA, { method: 'POST', body: JSON.stringify({ de: 'pc', n: n, t: Date.now() }) }).catch(function () {}); } catch (e) {}
-  }
+  var sinc = null;
+  function publicar(n) { if (sinc) sinc.enviar({ de: 'pc', n: n }); }
   var escenario = document.getElementById('escenario');
   var WEB = 'https://andresarangoez.github.io/FARMACOLOGIA/';
   var SES = { 10: 'BCR-ABL y BRAF', 11: 'Inmunosupresores y EGFR', 12: 'Angiogénesis, proteasoma y conjugados', 13: 'Trasplante, hueso, complemento y psoriasis', 14: 'Antiparasitarios' };
@@ -446,21 +439,7 @@
     if (!remoto && !MINI) publicar(i);
     document.dispatchEvent(new CustomEvent('cambio-diapo', { detail: i }));
   }
-  if (canal) canal.onmessage = function (ev) {
-    var m = ev.data || {};
-    if (m.de === 'cel' && typeof m.n === 'number') { var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; ir(m.n, true); }
-    else if (m.de === 'cel-hola') canal.postMessage({ de: 'pc', n: actual, t: Date.now() });
-  };
-  if (SALA && window.EventSource) {
-    var fuente = new EventSource('https://ntfy.sh/' + SALA + '/sse');
-    fuente.onmessage = function (ev) {
-      try {
-        var m = JSON.parse(JSON.parse(ev.data).message || '{}');
-        if (m.de === 'cel' && typeof m.n === 'number') { var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; ir(m.n, true); }
-        else if (m.de === 'cel-hola') publicar(actual);
-      } catch (e) {}
-    };
-  }
+  if (SALA) sinc = window.Sinc(SALA, function (m) { if (m.de === 'cel') ir(m.n, true); }, null, { ignorarRetenido: true, alConectar: function () { publicar(actual); } });
   function escala() { var k = Math.min(innerWidth / 1280, innerHeight / 720); escenario.style.setProperty('--k', k); }
   addEventListener('resize', escala); escala();
 
@@ -480,10 +459,6 @@
   });
   guion.addEventListener('click', function (e) { if (e.target === guion) verGuion(false); });
   guion.querySelector('#qr-guion').addEventListener('click', function () { verGuion(false); });
-  document.getElementById('abrir-pres').addEventListener('click', function () {
-    window.open(urlNotas + '#' + (actual + 1), 'fa-presentador', 'width=1280,height=760');
-    verGuion(false);
-  });
 
   document.querySelector('[data-ant]').addEventListener('click', function () { ir(actual - 1); });
   document.querySelector('[data-sig]').addEventListener('click', function () { ir(actual + 1); });

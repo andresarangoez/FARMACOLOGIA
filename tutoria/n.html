@@ -79,6 +79,8 @@
 <script src="diapos.js"></script>
 <script src="fichas.js"></script>
 <script src="glosario.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
+<script src="sinc.js"></script>
 <script>
 (function () {
   var llave = document.getElementById('llave'), pin = document.getElementById('pin');
@@ -105,17 +107,11 @@
     try { m.contentWindow.location.hash = '#' + (k + 1); } catch (e) { m.src = 'index.html?mini=1#' + (k + 1); }
   }
 
-  /* sincronización: mismo computador (BroadcastChannel) y celular (ntfy.sh); solo viaja el número de diapositiva */
+  /* sincronización con la presentación por MQTT; solo viaja el número de diapositiva */
   var SALA = (/[?&]s=([a-z0-9]+)/i.exec(location.search) || [])[1] || null;
-  var canal = (SALA && window.BroadcastChannel) ? new BroadcastChannel('fa-' + SALA) : null;
   var estado = document.getElementById('estado');
-  var ultT = {}, YO = Math.random().toString(36).slice(2, 9);
-  function publicar(obj) {
-    if (!SALA) return;
-    obj.t = Date.now(); obj.o = YO;
-    if (canal) try { canal.postMessage(obj); } catch (e) {}
-    try { fetch('https://ntfy.sh/' + SALA, { method: 'POST', body: JSON.stringify(obj) }).catch(function () {}); } catch (e) {}
-  }
+  var sinc = null;
+  function publicar(obj) { if (sinc) sinc.enviar(obj); }
 
   function ver(j, remoto) {
     i = Math.max(0, Math.min(D.length - 1, j));
@@ -153,14 +149,9 @@
   escala();
   ancho.addEventListener ? ancho.addEventListener('change', function () { ver(i, true); escala(); }) : null;
 
-  function recibir(m) { if (!m || (m.de !== 'pc' && m.de !== 'cel') || typeof m.n !== 'number' || m.o === YO) return; var o = m.o || '?'; if (m.t && m.t <= (ultT[o] || 0)) return; ultT[o] = m.t || 0; if (m.n !== i) ver(m.n, true); }
-  if (canal) { canal.onmessage = function (ev) { estado.classList.add('ok'); recibir(ev.data); }; canal.postMessage({ de: 'cel-hola' }); }
-  if (SALA && window.EventSource) {
-    var fuente = new EventSource('https://ntfy.sh/' + SALA + '/sse');
-    fuente.onopen = function () { estado.classList.add('ok'); publicar({ de: 'cel-hola' }); };
-    fuente.onerror = function () { if (!canal) estado.classList.remove('ok'); };
-    fuente.onmessage = function (ev) { try { recibir(JSON.parse(JSON.parse(ev.data).message || '{}')); } catch (e) {} };
-  }
+  if (SALA) sinc = window.Sinc(SALA,
+    function (m) { if ((m.de === 'pc' || m.de === 'cel') && m.n !== i) ver(m.n, true); },
+    function (ok) { estado.classList.toggle('ok', ok); });
 })();
 </script>
 </body>
