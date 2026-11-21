@@ -76,8 +76,8 @@
   <div id="col-der"><p class="n" id="n"></p><h1 id="t"></h1><div class="txt" id="txt"></div><p class="sig-tit" id="prox"></p></div>
 </main>
 <div id="llave"><form id="f"><span>✦</span><input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="·"><button type="submit">›</button></form></div>
-<script src="diapos.js?v=r2"></script>
-<script src="fichas.js?v=r2"></script>
+<script src="diapos.js?v=r3"></script>
+<script src="fichas.js?v=r3"></script>
 <script src="glosario.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js"></script>
 <script src="sinc.js"></script>
@@ -103,8 +103,8 @@
   }
   addEventListener('resize', escala);
   function irMarco(m, k) {
-    if (!m.dataset.ok) { m.src = 'index.html?mini=1' + (window.PARTE === '2' ? '&parte=2' : '') + '#' + (k + 1); m.dataset.ok = 1; setTimeout(escala, 30); return; }
-    try { m.contentWindow.location.hash = '#' + (k + 1); } catch (e) { m.src = 'index.html?mini=1' + (window.PARTE === '2' ? '&parte=2' : '') + '#' + (k + 1); }
+    if (!m.dataset.ok) { m.src = 'index.html?mini=1#' + (k + 1); m.dataset.ok = 1; setTimeout(escala, 30); return; }
+    try { m.contentWindow.location.hash = '#' + (k + 1); } catch (e) { m.src = 'index.html?mini=1#' + (k + 1); }
   }
 
   /* sincronización con la presentación por MQTT; solo viaja el número de diapositiva */
