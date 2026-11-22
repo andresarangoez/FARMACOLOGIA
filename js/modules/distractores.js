@@ -10,10 +10,10 @@
 FA.vistas.distractores = (function () {
     var u = FA.u, L = ['a', 'b', 'c', 'd'];
     var TIPOS = [
-        { id: 'mecanismo', txt: 'Mecanismo de acción', q: '¿A qué fármaco pertenece este mecanismo de acción?' },
-        { id: 'efecto', txt: 'Efecto adverso', q: '¿A qué fármaco corresponde este efecto adverso?' },
-        { id: 'grupo', txt: 'Grupo farmacológico', q: '¿A qué fármaco corresponde este grupo farmacológico?' },
-        { id: 'mezcla', txt: 'Mezclado', q: null }
+        { id: 'mecanismo', txt: 'Mecanismo de acción', d: 'Cómo actúa cada fármaco', q: '¿A qué fármaco pertenece este mecanismo de acción?' },
+        { id: 'efecto', txt: 'Efecto adverso', d: 'Qué reacción puede producir', q: '¿A qué fármaco corresponde este efecto adverso?' },
+        { id: 'grupo', txt: 'Grupo farmacológico', d: 'A qué familia pertenece', q: '¿A qué fármaco corresponde este grupo farmacológico?' },
+        { id: 'mezcla', txt: 'Mezclado', d: 'Un poco de todo', q: null }
     ];
     var ETIQ = { mecanismo: 'Mecanismo de acción', efecto: 'Efecto adverso', grupo: 'Grupo farmacológico' };
     var PREG = { mecanismo: TIPOS[0].q, efecto: TIPOS[1].q, grupo: TIPOS[2].q };
@@ -101,7 +101,7 @@ FA.vistas.distractores = (function () {
         render: function () {
             return '<div class="pagina pagina--estrecha">' +
                 '<header class="cabecera"><h1>¿A qué fármaco pertenece?</h1>' +
-                '<p class="lead">El parcial reutiliza el mecanismo de un fármaco como opción incorrecta de otro. Aquí practicas justo eso: reconocer a quién pertenece cada descripción entre 4 fármacos parecidos.</p></header>' +
+                '<p class="lead">Es fácil confundir el mecanismo de un fármaco con el de otro. Aquí practicas justo eso: reconocer a quién pertenece cada descripción entre 4 fármacos parecidos.</p></header>' +
                 '<div data-barra></div><div data-zona></div></div>';
         },
         montar: function (el) {
@@ -126,9 +126,9 @@ FA.vistas.distractores = (function () {
                 barra.innerHTML = '';
                 zona.innerHTML =
                     '<div class="panel alcance"><h2 class="panel__tit">¿Qué quieres practicar?</h2>' +
-                    '<div class="chips" data-tipos role="group" aria-label="Tipo">' + TIPOS.map(function (t) { return '<button type="button" class="chip" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '">' + t.txt + '</button>'; }).join('') + '</div>' +
+                    '<div class="ses-grid" data-tipos role="group" aria-label="Tipo">' + TIPOS.map(function (t) { return '<button type="button" class="ses-card" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '"><span class="ses-card__n">' + t.txt + '<i class="ses-card__ok" aria-hidden="true">✓</i></span><span class="ses-card__tema">' + t.d + '</span></button>'; }).join('') + '</div>' +
                     '<p class="ayuda">Sesiones (si no eliges ninguna, entran todas)</p>' +
-                    '<div class="chips chips--lista" data-ses>' + ses.map(function (s) { return '<button type="button" class="chip" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '">Sesión ' + s.n + ' · ' + u.esc(s.tema) + '</button>'; }).join('') + '</div>' +
+                    '<div class="ses-grid" data-ses>' + ses.map(function (s) { return '<button type="button" class="ses-card" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '"><span class="ses-card__n">Sesión ' + s.n + '<i class="ses-card__ok" aria-hidden="true">✓</i></span><span class="ses-card__tema">' + u.esc(s.tema) + '</span></button>'; }).join('') + '</div>' +
                     '<label class="campo"><span>Número de preguntas</span><select data-n>' + [5, 10, 15, 20].map(function (n) { return '<option' + (n === st.n ? ' selected' : '') + '>' + n + '</option>'; }).join('') + '</select></label>' +
                     '<label class="check"><input type="checkbox" data-solo' + (st.solo ? ' checked' : '') + '> Sólo las que fallé la última vez</label>' +
                     '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p>' +
@@ -136,11 +136,11 @@ FA.vistas.distractores = (function () {
                 var cuenta = zona.querySelector('[data-cuenta]'), btn = zona.querySelector('[data-empezar]');
                 function act() { var n = pool(st.tipo, st.ses, st.solo).length; cuenta.textContent = n + (n === 1 ? ' pregunta disponible' : ' preguntas disponibles'); btn.disabled = n < 1; }
                 zona.querySelector('[data-tipos]').addEventListener('click', function (e) {
-                    var b = e.target.closest('.chip'); if (!b) return; st.tipo = b.dataset.t;
-                    zona.querySelectorAll('[data-tipos] .chip').forEach(function (x) { x.setAttribute('aria-pressed', x === b); }); act();
+                    var b = e.target.closest('.ses-card'); if (!b) return; st.tipo = b.dataset.t;
+                    zona.querySelectorAll('[data-tipos] .ses-card').forEach(function (x) { x.setAttribute('aria-pressed', x === b); }); act();
                 });
                 zona.querySelector('[data-ses]').addEventListener('click', function (e) {
-                    var b = e.target.closest('.chip'); if (!b) return; var n = +b.dataset.s, i = st.ses.indexOf(n);
+                    var b = e.target.closest('.ses-card'); if (!b) return; var n = +b.dataset.s, i = st.ses.indexOf(n);
                     if (i >= 0) st.ses.splice(i, 1); else st.ses.push(n); b.setAttribute('aria-pressed', i < 0); act();
                 });
                 zona.querySelector('[data-n]').addEventListener('change', function (e) { st.n = +e.target.value; act(); });
