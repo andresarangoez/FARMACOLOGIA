@@ -41,7 +41,7 @@ Surgen de la bacteria del suelo *Streptomyces aureofaciens*, que producía una s
 
 **Dosis:** 2-4 mg/kg/día dividido c/12h (dosis máxima 100 mg c/12h)
 
-> ⭐ **DATO DE EXAMEN — Restricción pediátrica:** se liga al calcio y se deposita en dientes/huesos (complejo calcio-tetraciclina) → **tinción dental IRREVERSIBLE**, hipoplasia del esmalte, y retraso del crecimiento óseo. Por eso solo se usa en **mayores de 8 años**.
+> **Restricción pediátrica:** se liga al calcio y se deposita en dientes/huesos (complejo calcio-tetraciclina) → **tinción dental IRREVERSIBLE**, hipoplasia del esmalte, y retraso del crecimiento óseo. Por eso solo se usa en **mayores de 8 años**.
 
 Otros efectos: fotosensibilidad (usar protector solar), irritación GI.
 

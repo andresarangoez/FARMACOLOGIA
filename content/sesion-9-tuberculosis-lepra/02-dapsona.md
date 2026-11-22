@@ -32,8 +32,7 @@ Igual que las sulfonamidas: compite con el **PABA**, bloquea la **dihidropteroat
 
 **1-2 mg/kg/día** — SIEMPRE en combinación (nunca sola, riesgo de resistencia). Se combina típicamente con clofazimina.
 
-## Efectos secundarios ⭐ DATOS DE EXAMEN
-
+## Efectos secundarios
 1. **Déficit de G6PD → anemia hemolítica:** el G6PD protege contra el daño por estrés oxidativo en los glóbulos rojos; su déficit por la dapsona genera destrucción de glóbulos rojos.
 
 2. **Metahemoglobinemia:** exceso de hierro oxidado en el glóbulo rojo, incapaz de transportar oxígeno. Signo clínico: piel marmórea/desaturada. **Antídoto: azul de metileno.**

@@ -27,8 +27,7 @@ Se conoce como un **"bactericida lento"**. La dapsona SIEMPRE va combinada con c
 
 **1 mg/kg/día** vía oral, máximo 6 mg/kg al mes.
 
-## Efectos secundarios ⭐ 3 DATOS DE EXAMEN
-
+## Efectos secundarios
 1. **Pigmentación cutánea** marrón/rojiza (acumulación en macrófagos dérmicos)
 2. **Trastornos gastrointestinales** (dolor abdominal, diarrea)
 3. **Enteropatía por cristales** (poco soluble en agua, se cristaliza en tubo gástrico — demora 2-3 semanas en eliminarse)

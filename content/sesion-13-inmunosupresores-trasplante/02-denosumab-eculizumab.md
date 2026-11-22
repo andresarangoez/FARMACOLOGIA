@@ -92,7 +92,7 @@ Vía intravenosa · infusión controlada de **2 a 6 horas** · **no administrar 
 - **E. Otros:** diarrea, dolor abdominal, dolor de espalda, hipertensión, eritema periférico, fatiga, infecciones virales.
 
 **Cuidados de enfermería:**
-- **Verificar el esquema de vacunación antes de iniciar:** vacunas contra **meningococo ACWY**, **meningococo B**, **neumococo** y ***Haemophilus influenzae* tipo b**, según edad y esquema. Las vacunas son fundamentales: evitan infecciones y reducen el riesgo de complicaciones. (En clase: "esto puede ser pregunta de parcial".)
+- **Verificar el esquema de vacunación antes de iniciar:** vacunas contra **meningococo ACWY**, **meningococo B**, **neumococo** y ***Haemophilus influenzae* tipo b**, según edad y esquema. Las vacunas son fundamentales: evitan infecciones y reducen el riesgo de complicaciones.
 - **Vigilar signos de meningitis y sepsis:** fiebre, dolor de cabeza, rigidez de nuca, alteración del estado general; ante estos signos, actuar de inmediato.
 - **Vigilar reacciones durante la infusión IV:** presión arterial, frecuencia cardíaca y respiratoria, saturación de oxígeno, temperatura, estado general (urticaria, prurito, edema facial, broncoespasmo, hipotensión, dificultad respiratoria).
 - **Vigilar parámetros hematológicos:** hemoglobina, hematocrito, reticulocitos, LDH, bilirrubina (la hemólisis disminuye la hemoglobina y aumenta la LDH).

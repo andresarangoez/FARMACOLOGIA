@@ -57,7 +57,7 @@ Mecanismo sinérgico doble:
 
 **Dosis:** SIEMPRE se calcula por el componente **trimetoprim** — 8-12 mg/kg/día (equivale a 40-60 mg/kg/día de sulfametoxazol) cada 12h
 
-> ⭐ **DATO DE EXAMEN — Contraindicado <2 meses:** el TMP-SMX desplaza la bilirrubina de la albúmina → aumenta bilirrubina libre en sangre → puede migrar al SNC → **Kernícterus** (daño neurológico irreversible). Riesgo mayor en <2 meses por barrera hematoencefálica más permeable.
+> **Contraindicado <2 meses:** el TMP-SMX desplaza la bilirrubina de la albúmina → aumenta bilirrubina libre en sangre → puede migrar al SNC → **Kernícterus** (daño neurológico irreversible). Riesgo mayor en <2 meses por barrera hematoencefálica más permeable.
 
 ## Cuidados de enfermería (TMP-SMX)
 

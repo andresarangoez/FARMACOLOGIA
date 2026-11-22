@@ -39,7 +39,7 @@ Ajustar en insuficiencia renal.
 
 ## Efectos secundarios
 
-> ⭐ **DATO DE EXAMEN — Nefrotoxicidad tipo "detergente":** se acumulan en túbulo proximal, aumentan la permeabilidad, entra calcio en exceso → **necrosis tubular aguda**.
+> **Nefrotoxicidad tipo "detergente":** se acumulan en túbulo proximal, aumentan la permeabilidad, entra calcio en exceso → **necrosis tubular aguda**.
 
 **Neurotoxicidad:** inhiben la acetilcolina (evitan entrada de calcio en terminal nerviosa) → debilidad muscular, parestesias, broncoespasmo (calcio migra al músculo liso bronquial).
 

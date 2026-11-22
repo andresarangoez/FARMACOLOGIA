@@ -28,7 +28,7 @@ Si estas células no maduran y se liberan de forma inmadura en sangre → leucem
 
 ## Indicaciones y dosis — Filgrastim
 
-> ⭐ **DATO DE EXAMEN — ¿cuándo se pone?** Paciente con quimioterapia y recuento de neutrófilos **< 500/mm³**, o neutropenia febril (hasta ~1000 neutrófilos).
+> **¿Cuándo se pone?** Paciente con quimioterapia y recuento de neutrófilos **< 500/mm³**, o neutropenia febril (hasta ~1000 neutrófilos).
 
 - Neutropenias congénitas (raro)
 - Neutropenias secundarias a quimioterapia (lo más habitual)
@@ -52,7 +52,7 @@ Los neutrófilos liberados tienen:
 - Educar sobre adherencia (evitar suspensión por molestia del pinchazo — error grave)
 - Signos de reacción alérgica (es proteína recombinante)
 
-> ⭐ **DATO DE EXAMEN:** manejo y escala del dolor — el paciente sufre **dolor en huesos planos grandes** (cresta ilíaca, coxis, columna, omóplatos) porque la médula se expande para producir más neutrófilos. Hay que creerle al niño.
+> **Manejo y escala del dolor:** el paciente sufre **dolor en huesos planos grandes** (cresta ilíaca, coxis, columna, omóplatos) porque la médula se expande para producir más neutrófilos. Hay que creerle al niño.
 
 Vigilar temperatura: el filgrastim actúa ~24h después, el paciente pudo haberse colonizado antes de que haga efecto.
 
@@ -70,7 +70,7 @@ Vigilar temperatura: el filgrastim actúa ~24h después, el paciente pudo habers
 - Reacciones locales — eritema o dolor en sitio de inyección
 - **Esplenomegalia / riesgo de ruptura esplénica** — por hiperplasia de tejido hematopoyético (el bazo intenta capturar y destruir el exceso de células, se agranda mucho)
 
-> ⭐ **Síndrome de fuga capilar:** muy raro pero potencialmente MORTAL. Aumenta la permeabilidad capilar por activación de neutrófilos y otras células inmunitarias. Vigilar hipotensión, edema, hemoconcentración.
+> **Síndrome de fuga capilar:** muy raro pero potencialmente MORTAL. Aumenta la permeabilidad capilar por activación de neutrófilos y otras células inmunitarias. Vigilar hipotensión, edema, hemoconcentración.
 
 ## Preguntas de quiz sugeridas
 

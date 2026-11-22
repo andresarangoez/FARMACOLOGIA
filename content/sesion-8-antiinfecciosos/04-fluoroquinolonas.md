@@ -21,9 +21,9 @@ esquema: Fluoroquinolona:: Entra a la bacteria → Inhibe la ADN girasa (Gram ne
 
 Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabilidad y espectro antibacteriano.
 
-> ⭐ **DATO DE EXAMEN (pregunta de parcial):** el efecto secundario de las quinolonas en los niños es la **rotura del tendón** (tendón de Aquiles). El ácido nalidíxico se limitó en niños por esto: los tendones están en desarrollo en esta etapa.
+> El efecto secundario de las quinolonas en los niños es la **rotura del tendón** (tendón de Aquiles). El ácido nalidíxico se limitó en niños por esto: los tendones están en desarrollo en esta etapa.
 
-> ⭐ **DATO DE EXAMEN — Origen antipalúdico:** la primera quinolona, el ácido nalidíxico, se descubrió a partir de la síntesis de la **cloroquina**, un antipalúdico. La rotura del tendón es el efecto de las quinolonas en niños, no de la cloroquina.
+> **Origen antipalúdico:** la primera quinolona, el ácido nalidíxico, se descubrió a partir de la síntesis de la **cloroquina**, un antipalúdico. La rotura del tendón es el efecto de las quinolonas en niños, no de la cloroquina.
 
 ## Mecanismo de acción (común a todas)
 
@@ -52,7 +52,7 @@ Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabil
 
 ## Efectos secundarios de clase (toda la familia)
 
-> ⭐ **DATO DE EXAMEN — Daño del cartílago (artropatía):** las quinolonas se acumulan en condrocitos, generan estrés oxidativo, interfieren con síntesis de colágeno y quelan magnesio. Vigilar dolor articular, dificultad para caminar. Uso limitado en menores de 2 años.
+> **Daño del cartílago (artropatía):** las quinolonas se acumulan en condrocitos, generan estrés oxidativo, interfieren con síntesis de colágeno y quelan magnesio. Vigilar dolor articular, dificultad para caminar. Uso limitado en menores de 2 años.
 
 **Neurotoxicidad:** atraviesan la BHE, inhiben el GABA (inhibitorio) → libera glutamato sin control → hiperestimulación neuronal → cefalea, mareo, confusión, convulsiones (↓umbral convulsivo).
 
@@ -93,7 +93,7 @@ Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabil
    - c) Ácido nalidíxico
    - d) Norfloxacino
 
-6. **(Opción múltiple)** ¿Cuál es el efecto secundario de las quinolonas en los niños que se pregunta en el parcial?
+6. **(Opción múltiple)** ¿Cuál es el efecto secundario de las quinolonas en los niños?
    - a) Retinopatía
    - b) **Rotura del tendón (tendón de Aquiles)** ✓
    - c) Coloración rojiza de la orina
@@ -108,5 +108,5 @@ Fluoroquinolonas (desde 1980) = quinolonas + átomo de flúor, mejorando estabil
 - **Q:** ¿Qué complicación musculoesquelética causan las quinolonas en niños? → **A:** Artropatía/daño del cartílago (acumulación en condrocitos)
 - **Q:** ¿Qué canal cardíaco bloquean las quinolonas? → **A:** Canales de potasio tipo hERG → prolongación del QT
 - **Q:** ¿Cuál es la quinolona de 4ª generación con cobertura de anaerobios? → **A:** Moxifloxacino
-- **Q:** Efecto secundario de las quinolonas en niños (pregunta de parcial) → **A:** Rotura del tendón (tendón de Aquiles)
+- **Q:** Efecto secundario de las quinolonas en niños → **A:** Rotura del tendón (tendón de Aquiles)
 - **Q:** ¿De qué antipalúdico se originó la primera quinolona (ácido nalidíxico)? → **A:** De la síntesis de la cloroquina

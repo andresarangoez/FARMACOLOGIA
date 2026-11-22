@@ -10,7 +10,7 @@ FA.vistas.examen = {
         var u = FA.u, T = FA.datos.totales();
         return '<div class="pagina pagina--lectura">' +
             '<header class="cabecera"><h1>⭐ Datos examen</h1>' +
-            '<p class="lead">' + T.examen + ' puntos que la docente señaló en clase como posibles preguntas. Cada uno lleva al tema donde está explicado.</p>' +
+            '<p class="lead">Talleres, simulacros y banco de práctica.</p>' +
             '<div class="fila-botones"><a class="btn" href="#/examen/practicar">' + u.icono('reloj') + ' Banco de examen: práctica y simulacro</a>' +
             '<a class="btn btn--sec" href="#/quiz">' + u.icono('quiz') + ' Probarme con un quiz</a></div></header>' +
             (FA.datos.extras.length ? '<section class="bloque-sesion"><div class="bloque-sesion__cab"><div><p class="eyebrow">Con página propia</p><h2>Talleres y simulacros</h2></div></div>' +
@@ -22,7 +22,7 @@ FA.vistas.examen = {
                         '<span class="tarjeta-f__grupo">' + u.esc(r.descripcion) + '</span>' +
                         '<span class="tarjeta-f__meta">' + (nP ? '<span>' + nP + ' preguntas</span>' : '') + '<span>Abrir página</span></span></a>';
                 }).join('') + '</div></section>' : '') +
-            FA.datos.sesiones.map(function (s) {
+            FA.datos.sesiones.filter(function (s) { return s.farmacos.some(function (f) { return f.examen.length; }); }).map(function (s) {
                 return '<section class="bloque-sesion"><div class="bloque-sesion__cab"><div><p class="eyebrow">Sesión ' + s.n + '</p><h2>' + u.esc(s.tema) + '</h2></div></div>' +
                     s.farmacos.filter(function (f) { return f.examen.length; }).map(function (f) {
                         return '<div class="ex-grupo"><h3><a href="#/farmaco/' + f.id + '">' + u.esc(f.nombre) + '</a></h3><ul class="ex-lista">' +

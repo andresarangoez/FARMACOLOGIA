@@ -28,11 +28,11 @@ Estructura mixta: base lipídica + cadena de aminoácidos (facilita ingreso a la
 - Excelente contra *S. aureus* resistente a meticilina (SARM) — endocarditis, infecciones de piel y tejidos blandos
 - **Dosis:** 5-10 mg/kg/día c/24h. Vida media ~17 horas
 
-## Efectos secundarios — DOS DATOS CLAVE DE EXAMEN
+## Efectos secundarios
 
-> ⭐ **1) Miopatía/rabdomiólisis:** se liga también a membranas musculares, forma poros, se pierde calcio/potasio del músculo → liberación de mioglobina, CPK elevada, orina rojiza.
+> **1) Miopatía/rabdomiólisis:** se liga también a membranas musculares, forma poros, se pierde calcio/potasio del músculo → liberación de mioglobina, CPK elevada, orina rojiza.
 
-> ⭐ **2) NO sirve en infecciones respiratorias:** el surfactante pulmonar (lipídico) secuestra/atrapa el fármaco, inactivándolo.
+> **2) NO sirve en infecciones respiratorias:** el surfactante pulmonar (lipídico) secuestra/atrapa el fármaco, inactivándolo.
 
 ## Preguntas de quiz sugeridas
 

@@ -21,7 +21,7 @@ esquema: Vancomicina:: Bacteria Gram positiva arma su pared → Vancomicina se u
 2. Bloquea la **transpeptidación**
 3. No se forma la pared celular
 
-> ⭐ **DATO DE EXAMEN — Solo Gram positivos:** la vancomicina es una molécula muy grande y NO atraviesa la membrana externa de los Gram negativos. Por eso solo es útil en **GRAM POSITIVOS**.
+> **Solo Gram positivos:** la vancomicina es una molécula muy grande y NO atraviesa la membrana externa de los Gram negativos. Por eso solo es útil en **GRAM POSITIVOS**.
 
 ### Indicaciones
 
@@ -33,9 +33,9 @@ esquema: Vancomicina:: Bacteria Gram positiva arma su pared → Vancomicina se u
 - **Administración:** únicamente como perfusión IV lenta, **no más de 10 mg/min y durante al menos 60 minutos** (en clase: 60-90 minutos), suficientemente diluida: al menos 100 mL por cada 500 mg o al menos 200 mL por cada 1.000 mg.
 - **Referencia en adultos (no es la dosis pediátrica):** habitualmente 15-20 mg/kg cada 8 a 12 horas o, de forma clásica, 1 g cada 12 horas o 500 mg cada 6 horas, según la pauta médica y la gravedad de la infección.
 
-> ⭐ **Síndrome del hombre rojo:** liberación de histamina si se infunde rápido (vasodilatación, prurito, hipotensión). Por eso la infusión nunca es en bolo.
+> **Síndrome del hombre rojo:** liberación de histamina si se infunde rápido (vasodilatación, prurito, hipotensión). Por eso la infusión nunca es en bolo.
 
-> ⭐ **Niveles SIEMPRE en VALLE** (concentración más baja, a las 24h, control c/72h) — meta **12-14**; **>20 es tóxico** (ototoxicidad, nefrotoxicidad).
+> **Niveles SIEMPRE en VALLE** (concentración más baja, a las 24h, control c/72h) — meta **12-14**; **>20 es tóxico** (ototoxicidad, nefrotoxicidad).
 
 ## Teicoplanina
 

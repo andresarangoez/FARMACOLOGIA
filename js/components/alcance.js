@@ -48,7 +48,9 @@ FA.alcance = (function () {
         var tipo = opc.tipo, a = { sesiones: [], farmaco: null, solo: false, hoy: false };
         var esQuiz = tipo === 'quiz';
         var chips = FA.datos.sesiones.map(function (s) {
-            return '<button type="button" class="chip" data-s="' + s.n + '" aria-pressed="false">Sesión ' + s.n + ' · ' + u.esc(s.tema) + '</button>';
+            return '<button type="button" class="ses-card" data-s="' + s.n + '" aria-pressed="false">' +
+                '<span class="ses-card__n">Sesión ' + s.n + '<i class="ses-card__ok" aria-hidden="true">✓</i></span>' +
+                '<span class="ses-card__tema">' + u.esc(s.tema) + '</span></button>';
         }).join('');
         var opts = FA.datos.sesiones.map(function (s) {
             return '<optgroup label="Sesión ' + s.n + ' · ' + u.esc(s.tema) + '">' +
@@ -59,7 +61,7 @@ FA.alcance = (function () {
             '<div class="panel alcance">' +
             '<h2 class="panel__tit">¿Qué quieres repasar?</h2>' +
             '<p class="ayuda">Elige una o varias sesiones para mezclarlas, o un solo fármaco. Si no eliges nada, entran todas.</p>' +
-            '<div class="chips chips--lista" data-chips>' + chips + '</div>' +
+            '<div class="ses-grid" data-chips>' + chips + '</div>' +
             '<label class="campo"><span>O un solo fármaco / tema</span><select data-farmaco><option value="">Todos</option>' + opts + '</select></label>' +
             '<label class="check"><input type="checkbox" data-solo> ' +
             (esQuiz ? 'Sólo las preguntas que fallé la última vez' : 'Sólo las que aún no sé') + '</label>' +
@@ -93,7 +95,7 @@ FA.alcance = (function () {
             btn.disabled = n === 0;
         }
         chipsEl.addEventListener('click', function (e) {
-            var b = e.target.closest('.chip'); if (!b) return;
+            var b = e.target.closest('.ses-card'); if (!b) return;
             var n = +b.dataset.s, i = a.sesiones.indexOf(n);
             if (i >= 0) a.sesiones.splice(i, 1); else a.sesiones.push(n);
             a.sesiones.sort(function (x, y) { return x - y; });
