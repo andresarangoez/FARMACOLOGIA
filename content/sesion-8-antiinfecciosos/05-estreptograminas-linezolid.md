@@ -55,7 +55,7 @@ Derivadas de *Streptomyces pristinaespiralis* (origen francés, década de 1950)
 - **Dosis:** 10 mg/kg c/8h IV, máx 30 mg/kg/día
 - Infusión lenta (hasta 4h), **fotosensible**
 
-> ⭐ **DATO DE EXAMEN — Máximo 14 días:** inhibe la síntesis proteica también en **mitocondrias** (similares a ribosomas bacterianos) → **mielosupresión** → trombocitopenia.
+> **Máximo 14 días:** inhibe la síntesis proteica también en **mitocondrias** (similares a ribosomas bacterianos) → **mielosupresión** → trombocitopenia.
 
 También: **neuropatía óptica** (vigilar agudeza visual) y **síndrome serotoninérgico** (inhibe la MAO — cuidado con ISRS como sertralina/fluoxetina, riesgo de acumulación de serotonina).
 

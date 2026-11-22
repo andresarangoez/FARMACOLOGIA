@@ -37,8 +37,8 @@ La micobacteria ingresa por vía respiratoria (aerosoles/microgotas). Los macró
 | Fármaco | Efecto secundario clave | Cuidado de enfermería |
 |---|---|---|
 | Isoniazida, Rifampicina, Pirazinamida | Hepatotoxicidad (metabolismo hepático) — ictericia | Vigilar función hepática en los tres |
-| **Isoniazida** | ⭐ Neuropatía periférica (no permite reabsorber vitamina B6) | Administrar **PIRIDOXINA (B6)** junto con isoniazida; vigilar parestesias; dar en ayunas |
-| **Etambutol** | ⭐ Neuritis óptica — pierde capacidad de diferenciar **ROJO y VERDE**, altera agudeza visual | Ajustar dosis en insuficiencia renal; vigilar ácido úrico |
+| **Isoniazida** | Neuropatía periférica (no permite reabsorber vitamina B6) | Administrar **PIRIDOXINA (B6)** junto con isoniazida; vigilar parestesias; dar en ayunas |
+| **Etambutol** | Neuritis óptica — pierde capacidad de diferenciar **ROJO y VERDE**, altera agudeza visual | Ajustar dosis en insuficiencia renal; vigilar ácido úrico |
 | **Rifampicina** | Coloración **ROJIZA** de orina/secreciones (normal, transitorio) | Vigilar función hepática; dar en ayunas; revisar interacciones (↓niveles de fenitoína, carbamazepina, ácido valproico); riesgo de sangrado (↓vitamina K) — máximo 2 meses |
 | **Pirazinamida** | Hiperuricemia (↓excreción renal de ácido úrico) → dolor gotoso/articular | Administrar con alimentos (intolerancia gástrica); monitorear adherencia |
 

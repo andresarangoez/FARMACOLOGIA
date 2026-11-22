@@ -695,3 +695,17 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .es-cab > span:first-child { min-width: 0; }
 .es-modo { flex: 0 0 auto; }
 @media (max-width: 640px) { .esquema figcaption.es-cab { letter-spacing: .08em; } .es-modo__b { font-size: .72rem; padding: 6px 9px; } }
+
+/* ── Selector de sesiones (flashcards y quiz) ── */
+.ses-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); margin: var(--s-3) 0 var(--s-4); }
+.ses-grid.chips--off { opacity: .4; pointer-events: none; }
+.ses-card { display: flex; flex-direction: column; text-align: left; padding: 0; overflow: hidden; cursor: pointer; font: inherit; background: var(--sup); border: 1.5px solid var(--azul-linea); border-radius: var(--r-md); box-shadow: var(--sombra-sm); transition: transform var(--t-anim), box-shadow var(--t-anim), border-color var(--t-anim); }
+.ses-card:hover { transform: translateY(-2px); box-shadow: var(--sombra); border-color: var(--azul); }
+.ses-card:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+.ses-card__n { display: flex; align-items: center; justify-content: space-between; padding: 6px 14px; background: var(--amarillo); color: var(--azul-profundo); font-family: var(--f-display); font-weight: 800; font-size: var(--t-sm); letter-spacing: .02em; }
+.ses-card__ok { font-style: normal; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; background: var(--azul-profundo); color: var(--amarillo); opacity: 0; transform: scale(.6); transition: opacity var(--t-anim), transform var(--t-anim); }
+.ses-card__tema { flex: 1; display: flex; align-items: center; min-height: 56px; padding: 10px 14px 12px; color: var(--titulo); font-weight: 700; font-size: var(--t-sm); line-height: 1.35; transition: background var(--t-anim), color var(--t-anim); }
+.ses-card[aria-pressed="true"] { border-color: var(--azul-profundo); box-shadow: var(--sombra); }
+.ses-card[aria-pressed="true"] .ses-card__tema { background: var(--azul-profundo); color: var(--blanco); }
+.ses-card[aria-pressed="true"] .ses-card__ok { opacity: 1; transform: none; }
+@media (max-width: 560px) { .ses-grid { grid-template-columns: 1fr; } }

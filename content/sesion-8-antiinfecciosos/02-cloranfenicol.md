@@ -33,8 +33,7 @@ esquema: Cloranfenicol:: Entra a la bacteria → Se une a la subunidad 50S → B
 
 **Dosis:** 50 mg/kg/día c/6h; infecciones graves 75-100 mg/kg/día c/6h
 
-## Síndrome del niño gris ⭐ DATO DE EXAMEN
-
+## Síndrome del niño gris
 Ocurre en recién nacidos **menores de 37 semanas**, por inmadurez de la enzima hepática **glucuronil transferasa** (no metaboliza el fármaco adecuadamente, se acumula en sangre).
 
 **Manifestaciones (día 2-9 de tratamiento):**

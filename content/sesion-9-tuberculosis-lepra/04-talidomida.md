@@ -18,7 +18,7 @@ Desarrollada 1950-60 por empresa alemana (Chemie), inicialmente para **hiperéme
 
 Reintroducida en los 90 con control **muy estricto** — buena afinidad frente a la lepra en **reacción tipo 2** (resistente a tratamiento) y enfermedades autoinmunes.
 
-> ⭐ **DATO DE EXAMEN — Uso solo con control riguroso:** programa de acceso controlado, anticoncepción rigurosa, prueba de embarazo negativa obligatoria, NO embarazarse durante el tratamiento. Es **ALTAMENTE TERATOGÉNICA**.
+> **Uso solo con control riguroso:** programa de acceso controlado, anticoncepción rigurosa, prueba de embarazo negativa obligatoria, NO embarazarse durante el tratamiento. Es **ALTAMENTE TERATOGÉNICA**.
 
 ## Indicación — Reacción tipo 2 de la lepra
 

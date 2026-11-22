@@ -23,7 +23,7 @@ dificultad_quiz: media
 1. 300 mg × 17 kg = **5100 mg en 24 horas**.
 2. 5100 mg ÷ 3 dosis = **1700 mg por dosis cada 8 horas**.
 
-> En el apunte original este resultado decía 1100 mg; matemáticamente 5100 ÷ 3 = 1700 mg por dosis. Revisa este dato con tu docente antes del parcial.
+> En el apunte original este resultado decía 1100 mg; matemáticamente 5100 ÷ 3 = 1700 mg por dosis. Revisa este dato con tu docente antes de usarlo.
 
 ## Ejemplo: linezolid 10 mg/kg cada 8 horas (máximo 30 mg/kg/día), paciente de 37 kg
 

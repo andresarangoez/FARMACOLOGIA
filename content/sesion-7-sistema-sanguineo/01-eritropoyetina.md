@@ -47,7 +47,7 @@ Las **células intersticiales peritubulares** (rodean los túbulos renales) prod
 - **Vía:** subcutánea (preferida — libera más prolongado, menos efectos secundarios) o intravenosa
 - **Pediatría:** 50 UI/kg, 3 veces/semana, ajustando según Hb
 
-> ⭐ **DATO DE EXAMEN:** Se inicia EPO con Hb < 10 g/dL y se SUSPENDE cuando Hb > 12 g/dL (riesgo de efectos secundarios importantes).
+> Se inicia EPO con Hb < 10 g/dL y se SUSPENDE cuando Hb > 12 g/dL (riesgo de efectos secundarios importantes).
 
 Efecto terapéutico inicia ~24 horas post-administración. Control de hemograma generalmente semanal.
 

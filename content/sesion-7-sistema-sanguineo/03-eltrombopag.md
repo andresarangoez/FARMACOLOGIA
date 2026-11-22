@@ -24,7 +24,7 @@ Surge del estudio de la **trombopoyetina** (potente regulador fisiológico de la
 - Trombocitopenia asociada a hepatitis C (el tratamiento antiviral también consume plaquetas)
 - Anemia aplásica severa (médula produce muy poco de todas las líneas celulares)
 
-> ⭐ **Clave:** SIEMPRE se usa junto con corticoide (que no se suspende); el eltrombopag es solo para controlar sangrado agudo, **máximo 24 horas**, NO es tratamiento crónico.
+> **Clave:** SIEMPRE se usa junto con corticoide (que no se suspende); el eltrombopag es solo para controlar sangrado agudo, **máximo 24 horas**, NO es tratamiento crónico.
 
 ## Dosis
 
@@ -48,7 +48,7 @@ Surge del estudio de la **trombopoyetina** (potente regulador fisiológico de la
 - Cefalea
 - Náuseas
 
-> ⭐ **No usar a largo plazo:** la activación crónica de la vía JAK/MAPK/PI3K genera **CATARATAS** (documentado en 7-9% de pacientes con uso prolongado), porque esta vía de señalización también promueve el crecimiento de tejido en constante replicación, incluido el cristalino.
+> **No usar a largo plazo:** la activación crónica de la vía JAK/MAPK/PI3K genera **CATARATAS** (documentado en 7-9% de pacientes con uso prolongado), porque esta vía de señalización también promueve el crecimiento de tejido en constante replicación, incluido el cristalino.
 
 ## Cuidados de enfermería
 
