@@ -709,3 +709,16 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .ses-card[aria-pressed="true"] .ses-card__tema { background: var(--azul-profundo); color: var(--blanco); }
 .ses-card[aria-pressed="true"] .ses-card__ok { opacity: 1; transform: none; }
 @media (max-width: 560px) { .ses-grid { grid-template-columns: 1fr; } }
+
+/* ── Tipo de práctica (distinto de las tarjetas de sesión) ── */
+.tipo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-2); margin: var(--s-3) 0 var(--s-5); padding: 6px; background: var(--azul-tinte); border-radius: var(--r-md); }
+.tipo-card { display: flex; align-items: flex-start; gap: 10px; text-align: left; padding: 12px; border: 0; border-radius: var(--r-sm); background: transparent; color: var(--titulo); font: inherit; cursor: pointer; transition: background var(--t-anim), color var(--t-anim), box-shadow var(--t-anim); }
+.tipo-card:hover { background: var(--sup); }
+.tipo-card:focus-visible { outline: 3px solid var(--azul); outline-offset: 1px; }
+.tipo-card b { display: block; font-family: var(--f-display); font-size: var(--t-sm); line-height: 1.25; }
+.tipo-card small { display: block; margin-top: 3px; font-size: var(--t-xs); color: var(--tx-suave); line-height: 1.3; }
+.tipo-card__radio { flex: none; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; border: 2px solid var(--azul); background: var(--sup); }
+.tipo-card[aria-pressed="true"] { background: var(--sup); box-shadow: var(--sombra-sm), inset 0 0 0 2px var(--azul); }
+.tipo-card[aria-pressed="true"] .tipo-card__radio { border-width: 5px; border-color: var(--azul); }
+.alcance__sub { margin: 0 0 2px; font-family: var(--f-display); font-size: var(--t-lg); color: var(--titulo); }
+@media (max-width: 760px) { .tipo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

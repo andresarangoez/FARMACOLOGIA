@@ -126,8 +126,8 @@ FA.vistas.distractores = (function () {
                 barra.innerHTML = '';
                 zona.innerHTML =
                     '<div class="panel alcance"><h2 class="panel__tit">¿Qué quieres practicar?</h2>' +
-                    '<div class="ses-grid" data-tipos role="group" aria-label="Tipo">' + TIPOS.map(function (t) { return '<button type="button" class="ses-card" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '"><span class="ses-card__n">' + t.txt + '<i class="ses-card__ok" aria-hidden="true">✓</i></span><span class="ses-card__tema">' + t.d + '</span></button>'; }).join('') + '</div>' +
-                    '<p class="ayuda">Sesiones (si no eliges ninguna, entran todas)</p>' +
+                    '<div class="tipo-grid" data-tipos role="radiogroup" aria-label="Tipo de práctica">' + TIPOS.map(function (t) { return '<button type="button" class="tipo-card" role="radio" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '" aria-checked="' + (st.tipo === t.id) + '"><span class="tipo-card__radio" aria-hidden="true"></span><span><b>' + t.txt + '</b><small>' + t.d + '</small></span></button>'; }).join('') + '</div>' +
+                    '<h3 class="alcance__sub">¿De qué sesiones?</h3><p class="ayuda">Si no eliges ninguna, entran todas.</p>' +
                     '<div class="ses-grid" data-ses>' + ses.map(function (s) { return '<button type="button" class="ses-card" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '"><span class="ses-card__n">Sesión ' + s.n + '<i class="ses-card__ok" aria-hidden="true">✓</i></span><span class="ses-card__tema">' + u.esc(s.tema) + '</span></button>'; }).join('') + '</div>' +
                     '<label class="campo"><span>Número de preguntas</span><select data-n>' + [5, 10, 15, 20].map(function (n) { return '<option' + (n === st.n ? ' selected' : '') + '>' + n + '</option>'; }).join('') + '</select></label>' +
                     '<label class="check"><input type="checkbox" data-solo' + (st.solo ? ' checked' : '') + '> Sólo las que fallé la última vez</label>' +
@@ -136,8 +136,8 @@ FA.vistas.distractores = (function () {
                 var cuenta = zona.querySelector('[data-cuenta]'), btn = zona.querySelector('[data-empezar]');
                 function act() { var n = pool(st.tipo, st.ses, st.solo).length; cuenta.textContent = n + (n === 1 ? ' pregunta disponible' : ' preguntas disponibles'); btn.disabled = n < 1; }
                 zona.querySelector('[data-tipos]').addEventListener('click', function (e) {
-                    var b = e.target.closest('.ses-card'); if (!b) return; st.tipo = b.dataset.t;
-                    zona.querySelectorAll('[data-tipos] .ses-card').forEach(function (x) { x.setAttribute('aria-pressed', x === b); }); act();
+                    var b = e.target.closest('.tipo-card'); if (!b) return; st.tipo = b.dataset.t;
+                    zona.querySelectorAll('[data-tipos] .tipo-card').forEach(function (x) { x.setAttribute('aria-pressed', x === b); x.setAttribute('aria-checked', x === b); }); act();
                 });
                 zona.querySelector('[data-ses]').addEventListener('click', function (e) {
                     var b = e.target.closest('.ses-card'); if (!b) return; var n = +b.dataset.s, i = st.ses.indexOf(n);
