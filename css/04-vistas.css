@@ -982,3 +982,12 @@ body.con-pizarra .pie { display: none; }
 @media (max-width: 480px) {
     .barra__int { gap: 8px; }
 }
+/* Datos del tema (grupo, línea celular, mecanismo) sobre la banda azul: caja translúcida, etiqueta amarilla y texto blanco */
+.pagina > .cabecera.banda .meta span { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-left: 4px solid var(--amarillo); box-shadow: none; color: #fff; font-size: 1.02rem; line-height: 1.5; backdrop-filter: blur(2px); }
+.pagina > .cabecera.banda .meta small { color: var(--amarillo); margin-bottom: 2px; }
+.pagina > .cabecera.banda .meta a:not(.btn) { color: #fff; text-decoration: underline dotted rgba(255,255,255,.6); text-underline-offset: 3px; }
+.pagina > .cabecera.banda .meta a:not(.btn):hover { color: var(--amarillo); text-decoration-color: currentColor; }
+.pz-relleno { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; margin-top: 6px; padding: 8px 10px; border: 1px solid #cfd9e8; border-radius: 10px; background: #fff; color: var(--azul-profundo); font: inherit; font-size: var(--t-sm); font-weight: 600; cursor: pointer; }
+.pz-relleno svg { width: 18px; height: 18px; }
+.pz-relleno:hover { background: #eef3fa; }
+.pz-relleno[aria-pressed="true"] { background: #dbe7f7; border-color: var(--azul); }
