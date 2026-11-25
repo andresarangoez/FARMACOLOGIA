@@ -67,7 +67,7 @@ FA.alcance = (function () {
             (esQuiz ? 'Sólo las preguntas que fallé la última vez' : 'Sólo las que aún no sé') + '</label>' +
             (esQuiz ? '' : '<label class="check"><input type="checkbox" data-hoy> Repaso espaciado: sólo las que me tocan hoy</label>' +
                 '<p class="cajas" data-cajas></p>') +
-            (esQuiz ? '<label class="campo"><span>Número de preguntas</span><select data-n><option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="0">Todas</option></select></label>' : '') +
+            (esQuiz ? numeros([[5, '5'], [10, '10'], [20, '20'], [0, 'Todas']], 10) : '') +
             '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p>' +
             '<button type="button" class="btn" data-empezar>' + (esQuiz ? 'Empezar quiz' : 'Empezar flashcards') + ' ' + u.icono('flecha') + '</button>' +
             '</div>';
@@ -109,8 +109,25 @@ FA.alcance = (function () {
             var nSel = el.querySelector('[data-n]');
             opc.alEmpezar(a, nSel ? +nSel.value : 0);
         });
+        montarNumeros(el);
         actualizar();
     }
 
-    return { desdeTexto: desdeTexto, farmacos: farmacos, etiqueta: etiqueta, conjunto: conjunto, render: render };
+    /* «Número de preguntas» en recuadros; un <select data-n> oculto guarda el valor */
+    function numeros(ops, sel) {
+        return '<div class="campo"><span>Número de preguntas</span><div class="num-grid" role="radiogroup" aria-label="Número de preguntas">' +
+            ops.map(function (o) { return '<button type="button" class="num-card" role="radio" data-v="' + o[0] + '" aria-checked="' + (o[0] === sel) + '"><b>' + o[1] + '</b><small>' + (o[0] ? 'preguntas' : 'las disponibles') + '</small></button>'; }).join('') +
+            '</div><select data-n hidden>' + ops.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === sel ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select></div>';
+    }
+    function montarNumeros(el) {
+        var g = el.querySelector('.num-grid'), s = el.querySelector('[data-n]');
+        if (!g || !s) return;
+        g.addEventListener('click', function (e) {
+            var b = e.target.closest('.num-card'); if (!b) return;
+            g.querySelectorAll('.num-card').forEach(function (x) { x.setAttribute('aria-checked', x === b); });
+            s.value = b.dataset.v; s.dispatchEvent(new Event('change'));
+        });
+    }
+
+    return { desdeTexto: desdeTexto, farmacos: farmacos, etiqueta: etiqueta, conjunto: conjunto, render: render, numeros: numeros, montarNumeros: montarNumeros };
 })();

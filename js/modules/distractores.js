@@ -129,7 +129,7 @@ FA.vistas.distractores = (function () {
                     '<div class="tipo-grid" data-tipos role="radiogroup" aria-label="Tipo de práctica">' + TIPOS.map(function (t) { return '<button type="button" class="tipo-card" role="radio" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '" aria-checked="' + (st.tipo === t.id) + '"><span class="tipo-card__radio" aria-hidden="true"></span><span><b>' + t.txt + '</b><small>' + t.d + '</small></span></button>'; }).join('') + '</div>' +
                     '<h3 class="alcance__sub">¿De qué sesiones?</h3><p class="ayuda">Si no eliges ninguna, entran todas.</p>' +
                     '<div class="ses-grid" data-ses>' + ses.map(function (s) { return '<button type="button" class="ses-card" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '"><span class="ses-card__n">Sesión ' + s.n + '<i class="ses-card__ok" aria-hidden="true">✓</i></span><span class="ses-card__tema">' + u.esc(s.tema) + '</span></button>'; }).join('') + '</div>' +
-                    '<label class="campo"><span>Número de preguntas</span><select data-n>' + [5, 10, 15, 20].map(function (n) { return '<option' + (n === st.n ? ' selected' : '') + '>' + n + '</option>'; }).join('') + '</select></label>' +
+                    FA.alcance.numeros([5, 10, 15, 20].map(function (n) { return [n, String(n)]; }), st.n) +
                     '<label class="check"><input type="checkbox" data-solo' + (st.solo ? ' checked' : '') + '> Sólo las que fallé la última vez</label>' +
                     '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p>' +
                     '<button type="button" class="btn" data-empezar>Empezar ' + u.icono('flecha') + '</button></div>';
@@ -143,6 +143,7 @@ FA.vistas.distractores = (function () {
                     var b = e.target.closest('.ses-card'); if (!b) return; var n = +b.dataset.s, i = st.ses.indexOf(n);
                     if (i >= 0) st.ses.splice(i, 1); else st.ses.push(n); b.setAttribute('aria-pressed', i < 0); act();
                 });
+                FA.alcance.montarNumeros(zona);
                 zona.querySelector('[data-n]').addEventListener('change', function (e) { st.n = +e.target.value; act(); });
                 zona.querySelector('[data-solo]').addEventListener('change', function (e) { st.solo = e.target.checked; act(); });
                 btn.addEventListener('click', function () { ronda(); });
