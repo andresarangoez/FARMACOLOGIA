@@ -37,7 +37,7 @@ FA.vistas.pizarra = (function () {
         imagen: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
         completa: '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>'
     };
-    var PLUMAS = [['lapiz', 'Bolígrafo (P)'], ['marcador', 'Marcador'], ['resaltador', 'Resaltador (H)'], ['borrador', 'Borrador (E)']];
+    var PLUMAS = [['lapiz', 'Bolígrafo (P)'], ['marcador', 'Marcador'], ['resaltador', 'Resaltador (H)']];
     var FIGS = [
         ['rect', 'Rectángulo', '<rect x="4" y="5" width="16" height="14" rx="1.5"/>'],
         ['elipse', 'Círculo', '<ellipse cx="12" cy="12" rx="8.5" ry="7.5"/>'],
@@ -91,7 +91,6 @@ FA.vistas.pizarra = (function () {
         var mas = '<span class="pz-lista">' +
             '<span class="pz-lista__tit">Fondo</span><span class="pz-fondos">' + FONDOS.map(function (f) { return '<button type="button" class="pz-fondo" data-fondo="' + f[0] + '" aria-pressed="false">' + f[1] + '</button>'; }).join('') + '</span>' +
             '<button type="button" class="pz-item" data-png>' + ico('imagen') + 'Guardar como imagen</button>' +
-            '<button type="button" class="pz-item" data-full>' + ico('completa') + 'Pantalla completa (F)</button>' +
             '<button type="button" class="pz-item pz-item--peligro" data-limpiar>' + ico('limpiar') + 'Borrar todo (se puede deshacer)</button></span>';
 
         return '<div class="pz" data-pz>' +
@@ -101,7 +100,6 @@ FA.vistas.pizarra = (function () {
             '<div class="pz-grupo" data-plumas>' + PLUMAS.map(function (p) { return modoB(p[0], p[1], ico(p[0])); }).join('') +
             b('data-regla', 'Regla (R): arrastra para moverla, gira con la manija; dibuja junto a su borde para trazar recto', ico('regla'), ' aria-pressed="false"') + '</div>' +
             '<div class="pz-grupo">' + menu('colores', abre('colores', 'Color, grosor y difuminado', '<i class="pz-color pz-color--actual" data-color-actual></i>'), colores, 'pz-pop--col') + '</div>' +
-            '<div class="pz-grupo" data-con-relleno>' + b('data-relleno', 'Relleno de las figuras', ico('relleno'), ' aria-pressed="false"') + '</div>' +
             '</div>' +
             '<div class="pz-barra" role="toolbar" aria-label="Herramientas de la pizarra">' +
             '<div class="pz-grupo"><a class="pz-b pz-salir" href="#/inicio" title="Salir de la pizarra" aria-label="Salir de la pizarra">' + ico('salir') + '</a>' +
@@ -111,12 +109,14 @@ FA.vistas.pizarra = (function () {
             menu('notas', abre('notas', 'Nota adhesiva (N)', ico('nota'), ' aria-pressed="false" data-btn-nota'), notas, 'pz-pop--notas') +
             modoB('texto', 'Texto (T)', ico('texto')) +
             menu('figuras', abre('figuras', 'Figuras y conectores', '<svg ' + S + ' data-fig-ico>' + I.figuras + '</svg>', ' aria-pressed="false" data-btn-fig'), figs, 'pz-pop--fig') +
+            b('data-relleno', 'Relleno de las figuras', ico('relleno'), ' aria-pressed="false"') +
+            modoB('borrador', 'Borrador (E)', ico('borrador')) +
             modoB('laser', 'Puntero láser (L)', ico('laser')) + '</div>' +
             '<div class="pz-grupo">' + menu('mas', abre('mas', 'Más opciones', ico('mas')), mas, 'pz-pop--mas') + '</div>' +
             '</div></div>' +
             '<div class="pz-zoom" role="group" aria-label="Zoom">' + b('data-zmenos', 'Alejar (−)', ico('menos')) +
             '<button type="button" class="pz-zval" data-z100 title="Volver al 100 % (0)">100 %</button>' + b('data-zmas', 'Acercar (+)', ico('mas2')) +
-            b('data-ajustar', 'Ajustar a la pantalla (1)', ico('ajustar')) + '</div>' +
+            b('data-ajustar', 'Ajustar a la pantalla (1)', ico('ajustar')) + b('data-full', 'Pantalla completa (F)', ico('completa')) + '</div>' +
             '</div>';
     }
 
@@ -641,15 +641,14 @@ FA.vistas.pizarra = (function () {
             modo = m; rastro = []; sel = []; hoja.dataset.cursor = ''; cerrarPops();
             if (ES_PLUMA[m] && m !== 'borrador') pluma = m;
             raiz.querySelectorAll('[data-h]').forEach(function (x) { x.setAttribute('aria-pressed', x.dataset.h === m); });
-            raiz.querySelector('[data-dibujar]').setAttribute('aria-pressed', !!ES_PLUMA[m]);
+            raiz.querySelector('[data-dibujar]').setAttribute('aria-pressed', !!ES_PLUMA[m] && m !== 'borrador');
             raiz.querySelector('[data-btn-nota]').setAttribute('aria-pressed', m === 'nota');
             var bf = raiz.querySelector('[data-btn-fig]');
             bf.setAttribute('aria-pressed', !!ES_FIG[m]);
             if (ES_FIG[m]) bf.querySelector('[data-fig-ico]').innerHTML = ES_FIG[m][2];
-            var conSub = !!(ES_PLUMA[m] || ES_FIG[m] || m === 'texto');
+            var conSub = !!((ES_PLUMA[m] && m !== 'borrador') || ES_FIG[m] || m === 'texto');
             raiz.querySelector('[data-sub]').classList.toggle('ver', conSub);
             raiz.querySelector('[data-plumas]').hidden = !ES_PLUMA[m];
-            raiz.querySelector('[data-con-relleno]').hidden = !ES_FIG[m];
             hoja.dataset.modo = m;
             raiz.querySelector('[data-arcoiris]').setAttribute('aria-pressed', m === 'arcoiris');
             raiz.querySelector('[data-color-actual]').classList.toggle('pz-color--arcoiris', m === 'arcoiris');
