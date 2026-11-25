@@ -89,8 +89,11 @@ FA.vistas.pizarra = (function () {
         var figs = '<span class="pz-figs">' + FIGS.map(function (f) { return modoB(f[0], f[1], '<svg ' + S + '>' + f[2] + '</svg>'); }).join('') + '</span>' +
             '<span class="pz-figs pz-figs--con">' + CONS.map(function (f) { return modoB(f[0], f[1], '<svg ' + S + '>' + f[2] + '</svg>'); }).join('') + '</span>';
         var mas = '<span class="pz-lista">' +
+            '<span class="pz-lista__tit">Notas adhesivas</span><span class="pz-notas">' + notas + '</span>' +
             '<span class="pz-lista__tit">Fondo</span><span class="pz-fondos">' + FONDOS.map(function (f) { return '<button type="button" class="pz-fondo" data-fondo="' + f[0] + '" aria-pressed="false">' + f[1] + '</button>'; }).join('') + '</span>' +
-            '<button type="button" class="pz-item" data-png>' + ico('imagen') + 'Guardar como imagen</button>' +
+            '<button type="button" class="pz-item" data-png>' + ico('imagen') + 'Guardar como imagen</button></span>';
+        var borrar = '<span class="pz-lista">' +
+            '<button type="button" class="pz-item" data-h="borrador" aria-pressed="false">' + ico('borrador') + 'Borrador (E)</button>' +
             '<button type="button" class="pz-item pz-item--peligro" data-limpiar>' + ico('limpiar') + 'Borrar todo (se puede deshacer)</button></span>';
 
         return '<div class="pz" data-pz>' +
@@ -106,11 +109,10 @@ FA.vistas.pizarra = (function () {
             b('data-deshacer', 'Deshacer (Ctrl+Z)', ico('deshacer')) + b('data-rehacer', 'Rehacer (Ctrl+Y)', ico('rehacer')) + '</div>' +
             '<div class="pz-grupo">' + modoB('sel', 'Seleccionar, mover y cambiar tamaño (V)', ico('sel')) + modoB('mano', 'Mover la hoja (barra espaciadora)', ico('mano')) +
             b('data-dibujar', 'Dibujar (P)', ico('dibujar'), ' aria-pressed="false"') +
-            menu('notas', abre('notas', 'Nota adhesiva (N)', ico('nota'), ' aria-pressed="false" data-btn-nota'), notas, 'pz-pop--notas') +
             modoB('texto', 'Texto (T)', ico('texto')) +
             menu('figuras', abre('figuras', 'Figuras y conectores', '<svg ' + S + ' data-fig-ico>' + I.figuras + '</svg>', ' aria-pressed="false" data-btn-fig'), figs, 'pz-pop--fig') +
             b('data-relleno', 'Relleno de las figuras', ico('relleno'), ' aria-pressed="false"') +
-            modoB('borrador', 'Borrador (E)', ico('borrador')) +
+            menu('borrar', abre('borrar', 'Borrar', ico('borrador'), ' aria-pressed="false" data-btn-borrar'), borrar, 'pz-pop--borrar') +
             modoB('laser', 'Puntero láser (L)', ico('laser')) + '</div>' +
             '<div class="pz-grupo">' + menu('mas', abre('mas', 'Más opciones', ico('mas')), mas, 'pz-pop--mas') + '</div>' +
             '</div></div>' +
@@ -223,7 +225,15 @@ FA.vistas.pizarra = (function () {
                 var l = '';
                 par.split(' ').forEach(function (pal) {
                     var prueba = l ? l + ' ' + pal : pal;
-                    if (cx.measureText(prueba).width > ancho && l) { out.push(l); l = pal; } else l = prueba;
+                    if (cx.measureText(prueba).width <= ancho) { l = prueba; return; }
+                    if (l) { out.push(l); l = ''; }
+                    /* palabra más larga que la nota: se parte letra por letra */
+                    while (cx.measureText(pal).width > ancho && pal.length > 1) {
+                        var n = pal.length - 1;
+                        while (n > 1 && cx.measureText(pal.slice(0, n)).width > ancho) n--;
+                        out.push(pal.slice(0, n)); pal = pal.slice(n);
+                    }
+                    l = pal;
                 });
                 out.push(l);
             });
@@ -246,8 +256,12 @@ FA.vistas.pizarra = (function () {
                 cx.fillStyle = t.c; cx.fillRect(t.x, t.y, t.w, t.h);
                 cx.shadowColor = 'transparent';
                 cx.fillStyle = '#1f2937'; cx.textBaseline = 'top';
-                var ls = lineasNota(t), maxL = Math.floor((t.h - t.s * 1.2) / (t.s * 1.3));
-                ls.slice(0, maxL).forEach(function (l, i) { cx.fillText(l, t.x + t.s * .7, t.y + t.s * .7 + i * t.s * 1.3); });
+                /* si el texto no cabe, la letra se achica hasta que quede dentro de la nota */
+                var tn = { w: t.w, h: t.h, s: t.s, txt: t.txt }, ls = lineasNota(tn);
+                while (tn.s > 7 && ls.length * tn.s * 1.3 > tn.h - tn.s * 1.2) { tn.s -= 1; ls = lineasNota(tn); }
+                cx.font = fuenteNota(tn);
+                var maxL = Math.floor((tn.h - tn.s * 1.2) / (tn.s * 1.3));
+                ls.slice(0, maxL).forEach(function (l, i) { cx.fillText(l, t.x + tn.s * .7, t.y + tn.s * .7 + i * tn.s * 1.3); });
             } else if (t.tipo === 'arcoiris') {
                 var largo = 0;
                 for (var i = 1; i < t.p.length; i++) {
@@ -642,7 +656,7 @@ FA.vistas.pizarra = (function () {
             if (ES_PLUMA[m] && m !== 'borrador') pluma = m;
             raiz.querySelectorAll('[data-h]').forEach(function (x) { x.setAttribute('aria-pressed', x.dataset.h === m); });
             raiz.querySelector('[data-dibujar]').setAttribute('aria-pressed', !!ES_PLUMA[m] && m !== 'borrador');
-            raiz.querySelector('[data-btn-nota]').setAttribute('aria-pressed', m === 'nota');
+            raiz.querySelector('[data-btn-borrar]').setAttribute('aria-pressed', m === 'borrador');
             var bf = raiz.querySelector('[data-btn-fig]');
             bf.setAttribute('aria-pressed', !!ES_FIG[m]);
             if (ES_FIG[m]) bf.querySelector('[data-fig-ico]').innerHTML = ES_FIG[m][2];
@@ -715,7 +729,7 @@ FA.vistas.pizarra = (function () {
             var m = 40, esc = 2, w = Math.min(8000, (c.x1 - c.x0 + m * 2) * esc), h = Math.min(8000, (c.y1 - c.y0 + m * 2) * esc);
             var tela = document.createElement('canvas'); tela.width = w; tela.height = h;
             var x = tela.getContext('2d');
-            x.fillStyle = doc.fondo === 'oscuro' ? '#0f2a24' : '#ffffff'; x.fillRect(0, 0, w, h);
+            x.fillStyle = doc.fondo === 'oscuro' ? '#000000' : '#ffffff'; x.fillRect(0, 0, w, h);
             x.setTransform(esc, 0, 0, esc, (m - c.x0) * esc, (m - c.y0) * esc);
             cx = x; doc.items.forEach(dibujar); cx = ctx;
             var a = document.createElement('a'); a.download = 'pizarra-farmacologia.png'; a.href = tela.toDataURL('image/png'); a.click();
