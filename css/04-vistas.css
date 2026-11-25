@@ -864,3 +864,10 @@ html, body { overflow-x: clip; }
 .seccion ul:not([class]) > li::marker { color: var(--azul); }
 .seccion ol:not([class]) > li::marker { color: var(--azul); font-weight: 800; }
 @media print { .puntos-md li { box-shadow: none !important; border: 1px solid #999 !important; break-inside: avoid; } }
+
+/* ── Puntos en tarjeta: barrita azul; el ✓ solo en secciones de acciones ── */
+.puntos-md li { padding-left: 20px; border-left: 4px solid var(--azul); }
+.puntos-md li::before, .puntos-md li::after { content: none; }
+.puntos-md--check li { padding-left: 46px; border-left: 1px solid var(--azul-linea); }
+.puntos-md--check li::before { content: ""; }
+.puntos-md--check li::after { content: ""; }
