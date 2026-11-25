@@ -821,3 +821,46 @@ html, body { overflow-x: clip; }
 
 /* ── Páginas de lectura (cada tema, recursos): más anchas, sin laterales sobrantes ── */
 .pagina--lectura { max-width: 1180px; }
+
+/* ── Contenido de los temas más visual: tarjetas, fichas, pasos y datos destacados ── */
+.h-sec { display: flex; align-items: center; gap: 12px; }
+.h-ico { flex: none; width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; color: #fff; background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); box-shadow: var(--sombra-sm); }
+.h-ico svg { width: 21px; height: 21px; }
+
+.tiles-md, .fichas-md, .pasos-md { list-style: none; padding: 0; margin: var(--s-3) 0 var(--s-4); display: grid; gap: var(--s-3); }
+.tiles-md { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+.tiles-md li { position: relative; margin: 0; padding: 14px 16px 14px 44px; background: var(--sup); border: 1px solid var(--azul-linea); border-radius: var(--r-md); box-shadow: var(--sombra-sm); font-weight: 600; color: var(--titulo); line-height: 1.4; display: flex; align-items: center; transition: transform var(--t-anim), box-shadow var(--t-anim); }
+.tiles-md li::before { content: ""; position: absolute; left: 16px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: linear-gradient(130deg, #0A3E7C, #38bdf8); box-shadow: 0 0 0 4px var(--azul-tinte); }
+.tiles-md li:hover, .fichas-md li:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
+
+.fichas-md { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); counter-reset: ficha; }
+.fichas-md li { margin: 0; display: flex; flex-direction: column; overflow: hidden; background: var(--sup); border: 1px solid var(--azul-linea); border-radius: var(--r-md); box-shadow: var(--sombra-sm); transition: transform var(--t-anim), box-shadow var(--t-anim); }
+.fichas-md__t { display: block; padding: 10px 16px; color: #fff; font-family: var(--f-display); font-size: var(--t-sm); line-height: 1.3; background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); }
+.fichas-md li > span { display: block; padding: 12px 16px 14px; color: var(--tx); line-height: 1.5; }
+.fichas-md--num li { counter-increment: ficha; }
+.fichas-md--num .fichas-md__t::before { content: counter(ficha); display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 50%; background: #fff; color: var(--azul-profundo); font-size: .78rem; }
+
+.pasos-md { counter-reset: paso; }
+.pasos-md li { counter-increment: paso; position: relative; margin: 0; padding: 12px 16px 12px 58px; background: var(--sup); border: 1px solid var(--azul-linea); border-radius: var(--r-md); box-shadow: var(--sombra-sm); line-height: 1.5; min-height: 52px; display: flex; align-items: center; }
+.pasos-md li::before { content: counter(paso); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: .9rem; color: #fff; background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); }
+
+.dato-md { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: var(--s-3) 0; padding: 12px 16px; background: var(--azul-tinte); border: 1px solid var(--azul-linea); border-left: 5px solid var(--azul); border-radius: var(--r-sm); line-height: 1.5; }
+.dato-md__t { flex: none; padding: 3px 10px; border-radius: var(--r-pill); background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); color: #fff; font-family: var(--f-display); font-size: var(--t-xs); letter-spacing: .02em; }
+.dato-md > span { flex: 1 1 240px; }
+.sub-md { margin: var(--s-4) 0 var(--s-2); font-family: var(--f-display); font-weight: 800; color: var(--titulo); }
+.sub-md strong { font-weight: inherit; }
+
+:root[data-tema="oscuro"] .dato-md { background: var(--azul-tinte); }
+@media print {
+    .h-ico { display: none; }
+    .tiles-md li, .fichas-md li, .pasos-md li, .dato-md { box-shadow: none !important; border: 1px solid #999 !important; break-inside: avoid; }
+    .fichas-md__t, .dato-md__t, .pasos-md li::before { background: #fff !important; color: #000 !important; border-bottom: 1px solid #999; }
+}
+.puntos-md { list-style: none; padding: 0; margin: var(--s-3) 0 var(--s-4); display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.puntos-md li { position: relative; margin: 0; padding: 14px 16px 14px 46px; background: var(--sup); border: 1px solid var(--azul-linea); border-radius: var(--r-md); box-shadow: var(--sombra-sm); line-height: 1.5; transition: transform var(--t-anim), box-shadow var(--t-anim); }
+.puntos-md li::before { content: ""; position: absolute; left: 16px; top: 16px; width: 18px; height: 18px; border-radius: 6px; background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); }
+.puntos-md li::after { content: ""; position: absolute; left: 21px; top: 20px; width: 7px; height: 4px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg); }
+.puntos-md li:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
+.seccion ul:not([class]) > li::marker { color: var(--azul); }
+.seccion ol:not([class]) > li::marker { color: var(--azul); font-weight: 800; }
+@media print { .puntos-md li { box-shadow: none !important; border: 1px solid #999 !important; break-inside: avoid; } }
