@@ -56,6 +56,7 @@ FA.u = (function () {
             libro: '<path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h10"/>',
             candado: '<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/>',
             reloj: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 3h6"/>',
+            pizarra: '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l4-4 4 4M7 12l3-3 2 2 4-4"/>',
             buscar:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>'
         };
         return '<svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (P[nombre] || '') + '</svg>';
