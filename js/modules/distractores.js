@@ -129,8 +129,7 @@ FA.vistas.distractores = (function () {
                     '<div class="tipo-grid" data-tipos role="radiogroup" aria-label="Tipo de práctica">' + TIPOS.map(function (t) { return '<button type="button" class="tipo-card" role="radio" data-t="' + t.id + '" aria-pressed="' + (st.tipo === t.id) + '" aria-checked="' + (st.tipo === t.id) + '"><span class="tipo-card__radio" aria-hidden="true"></span><span><b>' + t.txt + '</b><small>' + t.d + '</small></span></button>'; }).join('') + '</div>' +
                     '<h3 class="alcance__sub">¿De qué sesiones?</h3><p class="ayuda">Si no eliges ninguna, entran todas.</p>' +
                     '<div class="ses-grid" data-ses>' + ses.map(function (s) { return '<button type="button" class="ses-card" data-s="' + s.n + '" aria-pressed="' + (st.ses.indexOf(s.n) >= 0) + '"><span class="ses-card__n">Sesión ' + s.n + '<i class="ses-card__ok" aria-hidden="true">✓</i></span><span class="ses-card__tema">' + u.esc(s.tema) + '</span></button>'; }).join('') + '</div>' +
-                    FA.alcance.numeros([5, 10, 15, 20].map(function (n) { return [n, String(n)]; }), st.n) +
-                    '<label class="check"><input type="checkbox" data-solo' + (st.solo ? ' checked' : '') + '> Sólo las que fallé la última vez</label>' +
+                    FA.alcance.numeros([5, 10, 15, 20].map(function (n) { return [n, String(n)]; }), st.n, FA.alcance.casilla('data-solo', 'Sólo las que fallé', 'la última vez', st.solo)) +
                     '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p>' +
                     '<button type="button" class="btn" data-empezar>Empezar ' + u.icono('flecha') + '</button></div>';
                 var cuenta = zona.querySelector('[data-cuenta]'), btn = zona.querySelector('[data-empezar]');
