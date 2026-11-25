@@ -87,7 +87,8 @@ FA.vistas.pizarra = (function () {
             '<button type="button" class="pz-color pz-color--arcoiris" data-arcoiris title="Arcoíris" aria-label="Arcoíris"></button></span></span>';
         var notas = NOTAS.map(function (c) { return '<button type="button" class="pz-nota" data-nota="' + c + '" style="--c:' + c + '" aria-label="Nota de color ' + c + '"></button>'; }).join('');
         var figs = '<span class="pz-figs">' + FIGS.map(function (f) { return modoB(f[0], f[1], '<svg ' + S + '>' + f[2] + '</svg>'); }).join('') + '</span>' +
-            '<span class="pz-figs pz-figs--con">' + CONS.map(function (f) { return modoB(f[0], f[1], '<svg ' + S + '>' + f[2] + '</svg>'); }).join('') + '</span>';
+            '<span class="pz-figs pz-figs--con">' + CONS.map(function (f) { return modoB(f[0], f[1], '<svg ' + S + '>' + f[2] + '</svg>'); }).join('') + '</span>' +
+            '<button type="button" class="pz-relleno" data-relleno aria-pressed="false"><svg ' + S + '>' + I.relleno + '</svg>Rellenar las figuras</button>';
         var mas = '<span class="pz-lista">' +
             '<span class="pz-lista__tit">Notas adhesivas</span><span class="pz-notas">' + notas + '</span>' +
             '<span class="pz-lista__tit">Fondo</span><span class="pz-fondos">' + FONDOS.map(function (f) { return '<button type="button" class="pz-fondo" data-fondo="' + f[0] + '" aria-pressed="false">' + f[1] + '</button>'; }).join('') + '</span>' +
@@ -111,7 +112,6 @@ FA.vistas.pizarra = (function () {
             b('data-dibujar', 'Dibujar (P)', ico('dibujar'), ' aria-pressed="false"') +
             modoB('texto', 'Texto (T)', ico('texto')) +
             menu('figuras', abre('figuras', 'Figuras y conectores', '<svg ' + S + ' data-fig-ico>' + I.figuras + '</svg>', ' aria-pressed="false" data-btn-fig'), figs, 'pz-pop--fig') +
-            b('data-relleno', 'Relleno de las figuras', ico('relleno'), ' aria-pressed="false"') +
             menu('borrar', abre('borrar', 'Borrar', ico('borrador'), ' aria-pressed="false" data-btn-borrar'), borrar, 'pz-pop--borrar') +
             modoB('laser', 'Puntero láser (L)', ico('laser')) + '</div>' +
             '<div class="pz-grupo">' + menu('mas', abre('mas', 'Más opciones', ico('mas')), mas, 'pz-pop--mas') + '</div>' +
