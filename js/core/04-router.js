@@ -56,6 +56,23 @@ FA.router = (function () {
         if (btn) btn.setAttribute('aria-expanded', 'false');
     }
 
+    /* Encabezado de cada página como banda azul con brillos y olas (igual que la página de articulación) */
+    var nOla = 0;
+    function bandaOlas(cont) {
+        var h = cont.querySelector('.pagina > .cabecera');
+        if (!h || h.classList.contains('banda')) return;
+        var k = ++nOla, ola = 'M0 200C240 140 480 140 720 200S1200 260 1440 200V320H0Z', olb = 'M0 240C240 200 480 280 720 240S1200 200 1440 240V320H0Z';
+        h.classList.add('banda');
+        var migas = h.previousElementSibling;
+        if (migas && migas.classList.contains('migas')) h.insertBefore(migas, h.firstChild);
+        h.insertAdjacentHTML('afterbegin', '<div class="fx" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i>' +
+            '<svg viewBox="0 0 1440 320" preserveAspectRatio="none"><defs>' +
+            '<linearGradient id="ola-a' + k + '" x1="0" x2="1"><stop offset="0" stop-color="#38bdf8" stop-opacity=".5"/><stop offset=".35" stop-color="#a78bfa" stop-opacity=".45"/><stop offset=".65" stop-color="#FBD785" stop-opacity=".4"/><stop offset="1" stop-color="#38bdf8" stop-opacity=".5"/></linearGradient>' +
+            '<linearGradient id="ola-b' + k + '" x1="1" x2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity=".35"/><stop offset=".5" stop-color="#818cf8" stop-opacity=".35"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".35"/></linearGradient></defs>' +
+            '<g class="ola o1"><path fill="url(#ola-a' + k + ')" d="' + ola + '"/><path fill="url(#ola-a' + k + ')" transform="translate(1440 0)" d="' + ola + '"/></g>' +
+            '<g class="ola o2"><path fill="url(#ola-b' + k + ')" d="' + olb + '"/><path fill="url(#ola-b' + k + ')" transform="translate(1440 0)" d="' + olb + '"/></g></svg></div>');
+    }
+
     var primeraVista = true;
     function render() {
         var r = resolver();
@@ -70,6 +87,7 @@ FA.router = (function () {
         }
         main.innerHTML = '';
         main.appendChild(cont);
+        bandaOlas(cont);
         if (vista.montar) {
             try { vista.montar(cont, r.params); } catch (e) { console.error(e); }
         }
