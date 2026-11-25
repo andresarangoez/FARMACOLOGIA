@@ -818,3 +818,6 @@ html, body { overflow-x: clip; }
 /* ── Pie: menos espacio antes de los derechos y sin palabras cortadas con guion ── */
 .pie__int { row-gap: var(--s-3); }
 .pie p, .pie__nota p, .pie__copy--izq { hyphens: manual; -webkit-hyphens: manual; }
+
+/* ── Páginas de lectura (cada tema, recursos): más anchas, sin laterales sobrantes ── */
+.pagina--lectura { max-width: 1180px; }
