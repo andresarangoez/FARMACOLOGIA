@@ -8,7 +8,7 @@
 .cabecera { margin-bottom: var(--s-5); }
 .eyebrow { font-size: var(--t-xs); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--enlace); margin-bottom: var(--s-2); }
 .eyebrow--claro { color: var(--amarillo); }
-.lead { font-size: var(--t-lg); color: var(--tx-suave); max-width: 62ch; }
+.lead { font-size: var(--t-lg); color: var(--tx-suave); max-width: none; }
 .migas { display: flex; flex-wrap: wrap; gap: var(--s-2); font-size: var(--t-sm); color: var(--tx-suave); margin-bottom: var(--s-4); }
 .migas a { text-decoration: none; }
 .migas b { color: var(--titulo); font-weight: 600; }
