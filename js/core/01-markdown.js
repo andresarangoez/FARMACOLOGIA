@@ -9,12 +9,37 @@ FA.md = (function () {
     var u = FA.u;
     var ESTRELLA = '⭐';
 
+    /* Íconos de sección según el título (solo h2) */
+    var ICO = {
+        diana: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8" fill="currentColor"/>',
+        engranaje: '<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>',
+        alerta: '<path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5M12 17.2v.1"/>',
+        corazon: '<path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/>',
+        jeringa: '<path d="m14.5 4.5 5 5M17 7l-9.5 9.5-3 .5.5-3L14.5 4.5M11 8l1.5 1.5M8.5 10.5 10 12M3.5 20.5l2-2"/>',
+        reloj: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+        libro: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 1 6.5 18H20"/>',
+        estrella: '<path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+        lista: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"/>'
+    };
+    function icoSeccion(t) {
+        var x = t.toLowerCase(), k =
+            /indicaci|usos|cu[aá]ndo se|elecci[oó]n/.test(x) ? 'diana' :
+            /mecanismo|ladme|farmacocin|c[oó]mo act|v[ií]a/.test(x) ? 'engranaje' :
+            /efecto|adverso|toxic|reacci|contraindic|precauci|interacci|s[ií]ndrome|riesgo/.test(x) ? 'alerta' :
+            /cuidado|enfermer|vigil|monitor|educaci/.test(x) ? 'corazon' :
+            /dosis|administraci|preparaci|dilu|presentaci/.test(x) ? 'jeringa' :
+            /historia|origen/.test(x) ? 'reloj' :
+            /concepto|qu[eé] es|definici|clasificaci/.test(x) ? 'libro' :
+            /clave|resumen|recuerda/.test(x) ? 'estrella' : 'lista';
+        return '<span class="h-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + ICO[k] + '</svg></span>';
+    }
+
     function encabezado(nivel, texto) {
         var m = new RegExp(ESTRELLA + '\\s*(.*)$').exec(texto);
         var titulo = texto.replace(new RegExp('\\s*' + ESTRELLA + '.*$'), '').trim();
         var badge = m ? ' <span class="badge-examen">' + ESTRELLA + ' ' + u.esc(m[1] || 'Dato de examen') + '</span>' : '';
         var n = Math.min(nivel, 4);
-        return '<h' + n + ' id="' + u.slug(titulo) + '">' + u.inline(titulo) + badge + '</h' + n + '>';
+        return '<h' + n + ' id="' + u.slug(titulo) + '"' + (n === 2 ? ' class="h-sec"' : '') + '>' + (n === 2 ? icoSeccion(titulo) : '') + u.inline(titulo) + badge + '</h' + n + '>';
     }
 
     function celdas(l) {
@@ -34,8 +59,31 @@ FA.md = (function () {
             parrafos.map(function (p) { return '<p>' + u.inline(p) + '</p>'; }).join('') + '</blockquote>';
     }
 
+    /* Listas de primer nivel sin subniveles → tarjetas, fichas o pasos */
+    /* «**Título:** texto» o «**Título** — texto»; sin dos puntos ni guion no es título */
+    var reEtiq = /^\*\*([^*]{1,60}?):\*\*\s*(.+)$|^\*\*([^*]{1,60}?)\*\*\s*[:—–]\s*(.+)$/;
+    function etiqueta(t) { var m = reEtiq.exec(t); return m ? [null, m[1] || m[3], m[2] || m[4]] : null; }
+    function plano(t) { return t.replace(/[*_`]/g, '').trim(); }
+    function listaVisual(nodo) {
+        var hs = nodo.hijos;
+        if (hs.length < 2 || hs.length > 14 || hs.some(function (h) { return h.hijos.length; })) return null;
+        if (hs.some(function (h) { return /→\s*\*\*A:|^\*\*Q:/.test(h.txt); })) return null;
+        var ord = hs[0].ord;
+        var etiq = hs.map(function (h) { return etiqueta(h.txt); });
+        if (etiq.every(Boolean)) {
+            return '<' + (ord ? 'ol' : 'ul') + ' class="fichas-md' + (ord ? ' fichas-md--num' : '') + '">' + etiq.map(function (m) {
+                return '<li><b class="fichas-md__t">' + u.inline(m[1].replace(/:$/, '')) + '</b><span>' + u.inline(m[2]) + '</span></li>';
+            }).join('') + '</' + (ord ? 'ol' : 'ul') + '>';
+        }
+        if (ord) return '<ol class="pasos-md">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ol>';
+        if (hs.every(function (h) { return plano(h.txt).length <= 75; }))
+            return '<ul class="tiles-md">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ul>';
+        return '<ul class="puntos-md">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ul>';
+    }
+
     function listaHtml(nodo) {
         if (!nodo.hijos.length) return '';
+        if (nodo.ind === -1) { var v = listaVisual(nodo); if (v) return v; }
         var tag = nodo.hijos[0].ord ? 'ol' : 'ul';
         return '<' + tag + '>' + nodo.hijos.map(function (h) {
             var ex = h.txt.indexOf(ESTRELLA) >= 0 ? ' class="item-examen"' : '';
@@ -112,7 +160,11 @@ FA.md = (function () {
             var p = [];
             while (i < L.length && !especial(i)) { p.push(L[i].trim()); i++; }
             if (!p.length) { p.push(L[i].trim()); i++; }
-            out.push('<p>' + u.inline(p.join(' ')) + '</p>');
+            var txt = p.join(' '), pe;
+            if (/^\*\*[^*]{2,80}\*\*:?$/.test(txt)) out.push('<p class="sub-md">' + u.inline(txt.replace(/:?\*\*:?$/, '**')) + '</p>');
+            else if ((pe = etiqueta(txt)) && pe[1].length <= 40 && txt.length < 320)
+                out.push('<p class="dato-md"><b class="dato-md__t">' + u.inline(pe[1]) + '</b><span>' + u.inline(pe[2]) + '</span></p>');
+            else out.push('<p>' + u.inline(txt) + '</p>');
         }
         return out.join('\n');
     }
