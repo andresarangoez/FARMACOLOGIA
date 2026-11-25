@@ -737,3 +737,18 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .pagina--estrecha:has(.alcance) { max-width: var(--ancho); }
 .pagina--estrecha:has(.alcance) .ses-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
 .pagina--estrecha:has(.alcance) .campo select { max-width: 520px; }
+
+/* ── Selector en azul de la página (franja con el mismo degradado de sesiones y calculadora) ── */
+.ses-card__n { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); background-size: 200% 200%; background-position: 0% 50%; color: #fff; padding: 8px 14px; transition: background-position .6s; }
+.ses-card__n::before { content: ""; position: absolute; z-index: -1; width: 120px; height: 120px; right: -40px; top: -60px; border-radius: 50%; background: radial-gradient(circle, #38bdf8, transparent 70%); filter: blur(18px); opacity: .55; }
+.ses-card:hover .ses-card__n { background-position: 100% 50%; }
+.ses-card__ok { background: #fff; color: var(--azul-profundo); }
+.ses-card[aria-pressed="true"] { border-color: var(--azul); box-shadow: 0 0 0 2px var(--azul), var(--sombra); }
+.ses-card[aria-pressed="true"] .ses-card__tema { background: var(--azul-tinte); color: var(--titulo); }
+.ses-card:focus-visible { outline-color: var(--azul); }
+
+.num-card { border: 2px solid var(--azul-linea); }
+.num-card:hover { background: var(--azul-tinte); border-color: var(--azul); }
+.num-card[aria-checked="true"] { background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); border-color: transparent; color: #fff; box-shadow: var(--sombra); }
+.num-card[aria-checked="true"] small { color: rgba(255, 255, 255, .8); }
+.ses-card[aria-pressed="true"] .ses-card__tema { background: linear-gradient(130deg, #0A3E7C 0%, #1b2f7a 100%); color: #fff; }
