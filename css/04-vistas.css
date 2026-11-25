@@ -814,3 +814,7 @@ html, body { overflow-x: clip; }
 .num-card--check:has(input:checked) small { color: rgba(255, 255, 255, .8); }
 .num-card--check:has(input:checked) .num-card__caja { background: #fff; border-color: #fff; color: var(--azul-profundo); }
 .num-grid--pocas { grid-template-columns: repeat(auto-fill, minmax(240px, 300px)); }
+
+/* ── Pie: menos espacio antes de los derechos y sin palabras cortadas con guion ── */
+.pie__int { row-gap: var(--s-3); }
+.pie p, .pie__nota p, .pie__copy--izq { hyphens: manual; -webkit-hyphens: manual; }
