@@ -63,11 +63,11 @@ FA.alcance = (function () {
             '<p class="ayuda">Elige una o varias sesiones para mezclarlas, o un solo fármaco. Si no eliges nada, entran todas.</p>' +
             '<div class="ses-grid" data-chips>' + chips + '</div>' +
             '<label class="campo"><span>O un solo fármaco / tema</span><select data-farmaco><option value="">Todos</option>' + opts + '</select></label>' +
-            '<label class="check"><input type="checkbox" data-solo> ' +
-            (esQuiz ? 'Sólo las preguntas que fallé la última vez' : 'Sólo las que aún no sé') + '</label>' +
-            (esQuiz ? '' : '<label class="check"><input type="checkbox" data-hoy> Repaso espaciado: sólo las que me tocan hoy</label>' +
-                '<p class="cajas" data-cajas></p>') +
-            (esQuiz ? numeros([[5, '5'], [10, '10'], [20, '20'], [0, 'Todas']], 10) : '') +
+            (esQuiz ? numeros([[5, '5'], [10, '10'], [20, '20'], [0, 'Todas']], 10, casilla('data-solo', 'Sólo las que fallé', 'la última vez'))
+                : '<div class="campo"><span>Opciones</span><div class="num-grid num-grid--pocas">' +
+                    casilla('data-solo', 'Sólo las que aún no sé', 'deja fuera las que ya sabes') +
+                    casilla('data-hoy', 'Repaso espaciado', 'sólo las que me tocan hoy') + '</div></div>' +
+                  '<p class="cajas" data-cajas></p>') +
             '<p class="alcance__cuenta" data-cuenta aria-live="polite"></p>' +
             '<button type="button" class="btn" data-empezar>' + (esQuiz ? 'Empezar quiz' : 'Empezar flashcards') + ' ' + u.icono('flecha') + '</button>' +
             '</div>';
@@ -114,20 +114,24 @@ FA.alcance = (function () {
     }
 
     /* «Número de preguntas» en recuadros; un <select data-n> oculto guarda el valor */
-    function numeros(ops, sel) {
-        return '<div class="campo"><span>Número de preguntas</span><div class="num-grid" role="radiogroup" aria-label="Número de preguntas">' +
-            ops.map(function (o) { return '<button type="button" class="num-card" role="radio" data-v="' + o[0] + '" aria-checked="' + (o[0] === sel) + '"><b>' + o[1] + '</b><small>' + (o[0] ? 'preguntas' : 'las disponibles') + '</small></button>'; }).join('') +
+    /* Casilla de verificación con forma de recuadro, para la misma hilera de opciones */
+    function casilla(attr, tit, sub, on) {
+        return '<label class="num-card num-card--check"><input type="checkbox" ' + attr + (on ? ' checked' : '') + '><span class="num-card__caja" aria-hidden="true">✓</span><span class="num-card__txt"><b>' + tit + '</b><small>' + sub + '</small></span></label>';
+    }
+    function numeros(ops, sel, extra) {
+        return '<div class="campo"><span>Número de preguntas</span><div class="num-grid">' +
+            ops.map(function (o) { return '<button type="button" class="num-card" role="radio" data-v="' + o[0] + '" aria-checked="' + (o[0] === sel) + '"><b>' + o[1] + '</b><small>' + (o[0] ? 'preguntas' : 'las disponibles') + '</small></button>'; }).join('') + (extra || '') +
             '</div><select data-n hidden>' + ops.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === sel ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select></div>';
     }
     function montarNumeros(el) {
         var g = el.querySelector('.num-grid'), s = el.querySelector('[data-n]');
         if (!g || !s) return;
         g.addEventListener('click', function (e) {
-            var b = e.target.closest('.num-card'); if (!b) return;
-            g.querySelectorAll('.num-card').forEach(function (x) { x.setAttribute('aria-checked', x === b); });
+            var b = e.target.closest('.num-card[data-v]'); if (!b) return;
+            g.querySelectorAll('.num-card[data-v]').forEach(function (x) { x.setAttribute('aria-checked', x === b); });
             s.value = b.dataset.v; s.dispatchEvent(new Event('change'));
         });
     }
 
-    return { desdeTexto: desdeTexto, farmacos: farmacos, etiqueta: etiqueta, conjunto: conjunto, render: render, numeros: numeros, montarNumeros: montarNumeros };
+    return { desdeTexto: desdeTexto, farmacos: farmacos, etiqueta: etiqueta, conjunto: conjunto, render: render, numeros: numeros, casilla: casilla, montarNumeros: montarNumeros };
 })();

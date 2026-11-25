@@ -801,3 +801,16 @@ html, body { overflow-x: clip; }
 .cabecera.banda .migas { margin-bottom: var(--s-3); color: #B9C8E0; }
 .cabecera.banda .migas a { color: #D7E1F0; }
 .cabecera.banda .migas b { color: #fff; }
+
+/* ── Opciones en una sola hilera: número de preguntas + casillas en recuadro ── */
+.num-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); max-width: none; }
+.num-card--check { position: relative; justify-content: flex-start; align-items: center; gap: 10px; text-align: left; user-select: none; }
+.num-card--check input { position: absolute; opacity: 0; pointer-events: none; }
+.num-card__caja { flex: none; width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--azul); display: grid; place-items: center; font-size: 13px; font-weight: 800; color: transparent; background: var(--sup); transition: background var(--t-anim), color var(--t-anim); }
+.num-card__txt b { display: block; font-family: var(--f-display); font-size: var(--t-sm); line-height: 1.2; }
+.num-card__txt small { display: block; margin-top: 2px; }
+.num-card--check:has(input:focus-visible) { outline: 3px solid var(--azul); outline-offset: 2px; }
+.num-card--check:has(input:checked) { background: linear-gradient(130deg, #071d43 0%, #0A3E7C 55%, #1b2f7a 100%); border-color: transparent; color: #fff; box-shadow: var(--sombra); }
+.num-card--check:has(input:checked) small { color: rgba(255, 255, 255, .8); }
+.num-card--check:has(input:checked) .num-card__caja { background: #fff; border-color: #fff; color: var(--azul-profundo); }
+.num-grid--pocas { grid-template-columns: repeat(auto-fill, minmax(240px, 300px)); }
