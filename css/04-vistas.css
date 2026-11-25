@@ -732,3 +732,8 @@ h2, h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em
 .num-card small { font-size: var(--t-xs); color: var(--tx-suave); font-weight: 700; }
 .num-card[aria-checked="true"] { background: var(--amarillo); color: var(--azul-profundo); box-shadow: var(--sombra-sm); }
 .num-card[aria-checked="true"] small { color: var(--azul-profundo); }
+
+/* ── Flashcards, quiz y práctica: mientras se elige el alcance la página usa todo el ancho ── */
+.pagina--estrecha:has(.alcance) { max-width: var(--ancho); }
+.pagina--estrecha:has(.alcance) .ses-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.pagina--estrecha:has(.alcance) .campo select { max-width: 520px; }
