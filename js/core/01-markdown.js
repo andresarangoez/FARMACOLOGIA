@@ -34,11 +34,13 @@ FA.md = (function () {
         return '<span class="h-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + ICO[k] + '</svg></span>';
     }
 
+    var seccionAccion = false; /* el ✓ solo en secciones de acciones (cuidados, vigilancia…) */
     function encabezado(nivel, texto) {
         var m = new RegExp(ESTRELLA + '\\s*(.*)$').exec(texto);
         var titulo = texto.replace(new RegExp('\\s*' + ESTRELLA + '.*$'), '').trim();
         var badge = m ? ' <span class="badge-examen">' + ESTRELLA + ' ' + u.esc(m[1] || 'Dato de examen') + '</span>' : '';
         var n = Math.min(nivel, 4);
+        if (n === 2) seccionAccion = /cuidado|enfermer|vigil|monitor|educaci|recomendaci|precauci/i.test(titulo);
         return '<h' + n + ' id="' + u.slug(titulo) + '"' + (n === 2 ? ' class="h-sec"' : '') + '>' + (n === 2 ? icoSeccion(titulo) : '') + u.inline(titulo) + badge + '</h' + n + '>';
     }
 
@@ -78,7 +80,7 @@ FA.md = (function () {
         if (ord) return '<ol class="pasos-md">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ol>';
         if (hs.every(function (h) { return plano(h.txt).length <= 75; }))
             return '<ul class="tiles-md">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ul>';
-        return '<ul class="puntos-md">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ul>';
+        return '<ul class="puntos-md' + (seccionAccion ? ' puntos-md--check' : '') + '">' + hs.map(function (h) { return '<li><span>' + u.inline(h.txt) + '</span></li>'; }).join('') + '</ul>';
     }
 
     function listaHtml(nodo) {
@@ -92,6 +94,7 @@ FA.md = (function () {
     }
 
     function aHtml(md) {
+        seccionAccion = false;
         var L = md.replace(/\r/g, '').split('\n');
         var i = 0, out = [];
         var reLista = /^(\s*)([-*]|\d+\.)\s+(.*)$/;
