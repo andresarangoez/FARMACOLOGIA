@@ -28,7 +28,7 @@ FA.router = (function () {
         { re: /^\/examen\/([\w-]+)$/,           vista: 'recurso',     params: ['id'] },
         { re: /^\/progreso$/,                   vista: 'inicio' }   // «Mi progreso» oculto por ahora (no hay base de datos de estudiantes)
     ];
-    var SECCION = { listado: 'listado', emparejar: 'quiz', distractores: 'quiz', comparar: 'estudio', pizarra: 'estudio', buscar: 'buscar', inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
+    var SECCION = { listado: 'listado', emparejar: 'quiz', distractores: 'quiz', comparar: 'estudio', pizarra: 'pizarra', buscar: 'buscar', inicio: 'inicio', sesiones: 'sesiones', sesion: 'sesiones', farmaco: 'sesiones',
                     flashcards: 'flashcards', quiz: 'quiz', calculadora: 'calculadora',
                     examen: 'sesiones', recurso: 'sesiones', bancoExamen: 'sesiones', progreso: 'progreso', estudio: 'estudio' };
 
